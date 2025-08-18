@@ -1,0 +1,1172 @@
+{
+  "casualties": [
+    {
+      "name": "Vasil'kov Volodymyr Volodymyrovych",
+      "birthDate": "Jan. 3, 1987",
+      "deathDate": "June 7, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Shpekal Mykola Oleksandrovych",
+      "birthDate": "July 24, 1978",
+      "deathDate": "Oct. 12, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Panfilov Volodymyr Stanislavovych",
+      "birthDate": "Dec. 14, 1995",
+      "deathDate": "June 1, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Simonenko Hryhorij Hryhorovych",
+      "birthDate": "March 13, 1973",
+      "deathDate": "June 8, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Tsybul'njak Oleksandr Mykolajovych",
+      "birthDate": "Feb. 25, 1983",
+      "deathDate": "Dec. 26, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Jakovenko Ruslan Oleksandrovych",
+      "birthDate": "Sept. 19, 1980",
+      "deathDate": "April 4, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Burkovs'kyj Jurij Ihorovych",
+      "birthDate": "May 8, 1987",
+      "deathDate": "June 13, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Kolokol'tsev Oleksandr Mykolajovych",
+      "birthDate": "March 31, 1978",
+      "deathDate": "March 11, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Hotsuljak Vasyl' Volodymyrovych",
+      "birthDate": "July 27, 1985",
+      "deathDate": "Nov. 4, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Janchuk Serhij Ivanovych",
+      "birthDate": "June 19, 1968",
+      "deathDate": "July 15, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Hajdadym Denys Andrijovych",
+      "birthDate": "March 10, 1997",
+      "deathDate": "June 30, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Bezverkhnij Oleksandr Oleksandrovych",
+      "birthDate": "Dec. 27, 1983",
+      "deathDate": "March 9, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Naumenko Taras Viktorovych",
+      "birthDate": "Dec. 3, 1982",
+      "deathDate": "Feb. 26, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Vorotnjak Vasyl' Fedorovych",
+      "birthDate": "Feb. 11, 1997",
+      "deathDate": "March 7, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Adamko Mykhajlo Borysovych",
+      "birthDate": "Nov. 4, 1968",
+      "deathDate": "Feb. 18, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Kushnirenko Vadym Serhijovych",
+      "birthDate": "March 6, 1988",
+      "deathDate": "Jan. 15, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "S'omochkin Oleksandr Oleksandrovych",
+      "birthDate": "Aug. 19, 1997",
+      "deathDate": "April 2, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Vintonjak Nazar Mykolajovych",
+      "birthDate": "July 8, 1991",
+      "deathDate": "April 24, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Stryzhak Oleksandr Serhijovych",
+      "birthDate": "Feb. 21, 1989",
+      "deathDate": "Oct. 21, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Bozhok Andrij Anatolijovych",
+      "birthDate": "Nov. 2, 1985",
+      "deathDate": "Sept. 13, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Pavelko Oleksij Serhijovych",
+      "birthDate": "May 10, 2003",
+      "deathDate": "July 6, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Tsepin' Serhij Ivanovych",
+      "birthDate": "April 23, 1986",
+      "deathDate": "Jan. 8, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Ruban Vitalij Volodymyrovych",
+      "birthDate": "Feb. 14, 1972",
+      "deathDate": "Feb. 10, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Hepp Attilo Josyfovych",
+      "birthDate": "May 10, 1982",
+      "deathDate": "April 17, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Kreshchenets'kyj Oleksandr Mykolajovych",
+      "birthDate": "March 21, 1981",
+      "deathDate": "Nov. 3, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Hryshko Taras Anatolijovych",
+      "birthDate": "July 7, 1992",
+      "deathDate": "June 10, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Korniyenko Oleksandr Volodymyrovych",
+      "birthDate": "June 19, 1978",
+      "deathDate": "Jan. 20, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Manuilov Mykyta Andrijovych",
+      "birthDate": "March 20, 2001",
+      "deathDate": "May 20, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Berezin Danylo Oleksandrovych",
+      "birthDate": "March 16, 2002",
+      "deathDate": "Oct. 24, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Hrubas' Hennadij Vasyl'ovych",
+      "birthDate": "Jan. 22, 1980",
+      "deathDate": "Sept. 27, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Havrylov Roman Serhijovych",
+      "birthDate": "Aug. 3, 1976",
+      "deathDate": "June 14, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Mahochi Vasyl' Vasyl'ovych",
+      "birthDate": "June 16, 1979",
+      "deathDate": "Dec. 29, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Samusenko Mykhajlo Mykolajovych",
+      "birthDate": "Oct. 23, 1992",
+      "deathDate": "Jan. 16, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Slobodjan Orest Stepanovych",
+      "birthDate": "Dec. 2, 1982",
+      "deathDate": "May 14, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Sholud'ko Yevhenij Leonidovych",
+      "birthDate": "Feb. 8, 1997",
+      "deathDate": "Dec. 9, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Baranovs'kyj Serhij Petrovych",
+      "birthDate": "Jan. 15, 1979",
+      "deathDate": "April 22, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Buhajchenko Vitalij Oleksandrovych",
+      "birthDate": "Oct. 26, 1999",
+      "deathDate": "May 31, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Nahornyj Serhij Semenovych",
+      "birthDate": "Feb. 10, 1963",
+      "deathDate": "May 5, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Usatyj Andrij Heorhijovych",
+      "birthDate": "June 13, 1978",
+      "deathDate": "Dec. 16, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Kichov Vitalij Viktorovych",
+      "birthDate": "Dec. 10, 1971",
+      "deathDate": "Nov. 17, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Lykhohljad Ruslan Mykolajovych",
+      "birthDate": "Aug. 31, 1974",
+      "deathDate": "March 2, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Pavlykivs'kyj Pavlo Ihorovych",
+      "birthDate": "March 31, 1982",
+      "deathDate": "Jan. 21, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Serdjuchenko Rustam Janovych",
+      "birthDate": "March 25, 1996",
+      "deathDate": "June 15, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Skljarov Serhij Andrijovych",
+      "birthDate": "March 7, 1996",
+      "deathDate": "May 6, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Il'chenko Anton Oleksandrovych",
+      "birthDate": "June 21, 1982",
+      "deathDate": "Nov. 15, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Koval'chuk Serhij Stanislavovych",
+      "birthDate": "Dec. 20, 1975",
+      "deathDate": "June 27, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Barnashevs'kyj Serhij Anatolijovych",
+      "birthDate": "Jan. 16, 1992",
+      "deathDate": "June 8, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Rostyslavov Jurij Jurijovych",
+      "birthDate": "Jan. 9, 1988",
+      "deathDate": "Dec. 1, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Marishchuk Volodymyr Mykolajovych",
+      "birthDate": "May 8, 1978",
+      "deathDate": "June 11, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Murashko Andrij Mykolajovych",
+      "birthDate": "Aug. 12, 1973",
+      "deathDate": "Nov. 2, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Kindjakov Oleksandr Mykolajovych",
+      "birthDate": "July 16, 1978",
+      "deathDate": "Oct. 31, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Habchenko Andrij Oleksandrovych",
+      "birthDate": "Nov. 10, 1975",
+      "deathDate": "Feb. 1, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Pyvovar Maksym Serhijovych",
+      "birthDate": "Sept. 28, 1986",
+      "deathDate": "July 19, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Verbnjak Petro Volodymyrovych",
+      "birthDate": "July 2, 1983",
+      "deathDate": "April 24, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Vitvits'kyj Valerij Volodymyrovych",
+      "birthDate": "April 9, 1968",
+      "deathDate": "March 8, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Ohol' Artem Hennadijovych",
+      "birthDate": "Dec. 26, 1991",
+      "deathDate": "Oct. 23, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Burhun Oleksij Ivanovych",
+      "birthDate": "May 31, 1982",
+      "deathDate": "Nov. 17, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Palykhata Volodymyr Vasyl'ovych",
+      "birthDate": "Feb. 23, 1989",
+      "deathDate": "May 12, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Kapust'jan Ihor Valerijovych",
+      "birthDate": "Jan. 30, 1994",
+      "deathDate": "Dec. 2, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Tkalich Serhij Anatolijovych",
+      "birthDate": "Sept. 10, 1979",
+      "deathDate": "Nov. 12, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Poleshko Yevhenij Serhijovych",
+      "birthDate": "June 3, 1984",
+      "deathDate": "Feb. 9, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Korzh Oleksandr Volodymyrovych",
+      "birthDate": "July 1, 1978",
+      "deathDate": "Feb. 6, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Zelens'kyj Oleksandr Mykolajovych",
+      "birthDate": "Sept. 15, 1985",
+      "deathDate": "May 20, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Jurchenko Ihor Serhijovych",
+      "birthDate": "June 1, 1996",
+      "deathDate": "March 18, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Marynych Vasyl' Valentynovych",
+      "birthDate": "Sept. 15, 1995",
+      "deathDate": "March 26, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Doronchenko Viktor Leonidovych",
+      "birthDate": "Nov. 27, 1985",
+      "deathDate": "March 23, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Abolentsev Jurij Volodymyrovych",
+      "birthDate": "April 13, 1989",
+      "deathDate": "June 1, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Kramarenko Illja Yevhenijovych",
+      "birthDate": "Sept. 22, 2003",
+      "deathDate": "May 12, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Budnik V'jacheslav Oleksandrovych",
+      "birthDate": "May 3, 1996",
+      "deathDate": "Jan. 20, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Zinkov Vadym Viktorovych",
+      "birthDate": "Nov. 12, 1967",
+      "deathDate": "March 16, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Korjakin Jurij Vladyslavovych",
+      "birthDate": "March 30, 1981",
+      "deathDate": "June 2, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Nesen Volodymyr Volodymyrovych",
+      "birthDate": "Jan. 25, 1981",
+      "deathDate": "March 2, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Hryhorenko Stanislav Viktorovych",
+      "birthDate": "Dec. 17, 1980",
+      "deathDate": "April 8, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Danilejko Oleksandr Ivanovych",
+      "birthDate": "Dec. 12, 1975",
+      "deathDate": "April 11, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Nyshta Jurij Volodymyrovych",
+      "birthDate": "May 22, 1998",
+      "deathDate": "April 2, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Stoljar Oleksandr Volodymyrovych",
+      "birthDate": "June 3, 1975",
+      "deathDate": "June 4, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Ovsjannik Yevhen Oleksandrovych",
+      "birthDate": "July 21, 1980",
+      "deathDate": "Nov. 7, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Mozharovs'kyj Mykhajlo Hryhorovych",
+      "birthDate": "Nov. 19, 1975",
+      "deathDate": "Feb. 15, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Podolynnyj Roman Mykhajlovych",
+      "birthDate": "March 8, 1977",
+      "deathDate": "Nov. 11, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Novokhatnij Andrij Oleksandrovych",
+      "birthDate": "May 25, 1985",
+      "deathDate": "Jan. 30, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Manzhos Viktor Mykhajlovych",
+      "birthDate": "Jan. 10, 1972",
+      "deathDate": "July 19, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Tkachenko Oleksandr Mykhajlovych",
+      "birthDate": "Sept. 17, 1985",
+      "deathDate": "June 22, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Bazhura Valentyn Valentynovych",
+      "birthDate": "Jan. 4, 1987",
+      "deathDate": "Feb. 19, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Hubin Ihor Oleksandrovych",
+      "birthDate": "March 7, 1984",
+      "deathDate": "June 2, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Korchemnyj V'jacheslav Leonidovych",
+      "birthDate": "April 21, 1984",
+      "deathDate": "Dec. 23, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Mushtruk Artem Oleksandrovych",
+      "birthDate": "July 12, 1994",
+      "deathDate": "May 26, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Shvets' Oleksandr Semenovych",
+      "birthDate": "May 30, 2002",
+      "deathDate": "April 8, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Lysenko Andrij Serhijovych",
+      "birthDate": "July 14, 1993",
+      "deathDate": "July 23, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Kuz'menko Roman Anatolijovych",
+      "birthDate": "Jan. 11, 1995",
+      "deathDate": "Sept. 21, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Ivanov Jurij Oleksandrovych",
+      "birthDate": "Dec. 27, 1981",
+      "deathDate": "Nov. 4, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Denysyk Viktor Mykhajlovych",
+      "birthDate": "July 23, 1984",
+      "deathDate": "April 22, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Holjanyts'kyj Oleksandr Borysovych",
+      "birthDate": "July 8, 1973",
+      "deathDate": "Sept. 2, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Kosolapov Andrij Jurijovych",
+      "birthDate": "Nov. 14, 1977",
+      "deathDate": "June 16, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Pashkov Mykola Mykolajovych",
+      "birthDate": "Dec. 19, 1990",
+      "deathDate": "Dec. 8, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Korzh Kostjantyn Serhijovych",
+      "birthDate": "March 12, 1977",
+      "deathDate": "Feb. 4, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Kurjatnyk V'jacheslav Vasyl'ovych",
+      "birthDate": "March 5, 1974",
+      "deathDate": "April 18, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Sukhachov Vladyslav Oleksijovych",
+      "birthDate": "Aug. 31, 1993",
+      "deathDate": "March 11, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Koval'ov Vitalij Vasyl'ovych",
+      "birthDate": "Oct. 17, 1982",
+      "deathDate": "Nov. 14, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Hromovyj Oleksandr Anatolijovych",
+      "birthDate": "March 24, 1974",
+      "deathDate": "Oct. 3, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Atamaniv Vasyl' Zinovijovych",
+      "birthDate": "Jan. 13, 1972",
+      "deathDate": "May 1, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Olijnyk Volodymyr Volodymyrovych",
+      "birthDate": "Aug. 28, 1994",
+      "deathDate": "June 29, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Varlamov Volodymyr Romanovych",
+      "birthDate": "June 14, 1999",
+      "deathDate": "Feb. 26, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Savyn Vitalij Andrijovych",
+      "birthDate": "May 7, 1975",
+      "deathDate": "Feb. 2, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Vlasynovych Jurij Ihorovych",
+      "birthDate": "May 30, 1986",
+      "deathDate": "Nov. 16, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Hnatjuk Oleh Volodymyrovych",
+      "birthDate": "Sept. 25, 1982",
+      "deathDate": "March 30, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Kurpita Ostap Ihorovych",
+      "birthDate": "April 25, 1983",
+      "deathDate": "May 13, 2023",
+      "isEstimated": false
+    },
+    {
+      "name": "Veprykov Artem Mykolajovych",
+      "birthDate": "Feb. 15, 1987",
+      "deathDate": "Aug. 25, 2023",
+      "isEstimated": false
+    },
+    {
+      "name": "Jares'ko Serhij Ivanovych",
+      "birthDate": "Jan. 29, 1975",
+      "deathDate": "June 3, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Danilov Serhij Mykhajlovych",
+      "birthDate": "July 15, 1972",
+      "deathDate": "Aug. 8, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Kosykh Vasyl' Vasyl'ovych",
+      "birthDate": "May 2, 1997",
+      "deathDate": "April 13, 2025",
+      "isEstimated": false
+    },
+    {
+      "name": "Osiyevs'kyj Dmytro Vasyl'ovych",
+      "birthDate": "March 23, 1991",
+      "deathDate": "Oct. 15, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Kedyk Ivan Vasyl'ovych",
+      "birthDate": "Feb. 21, 1995",
+      "deathDate": "Aug. 13, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Marchuk Myroslav Anatolijovych",
+      "birthDate": "Sept. 11, 1974",
+      "deathDate": "Jan. 8, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Vasjuta Serhij Volodymyrovych",
+      "birthDate": "Feb. 24, 1976",
+      "deathDate": "June 18, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Titkov Oleksij Semenovych",
+      "birthDate": "Jan. 30, 1973",
+      "deathDate": "Feb. 6, 2023",
+      "isEstimated": false
+    },
+    {
+      "name": "Danilevych Ruslan Fedorovych",
+      "birthDate": "Feb. 12, 1982",
+      "deathDate": "Dec. 10, 2023",
+      "isEstimated": false
+    },
+    {
+      "name": "Teters'kyj Vladyslav Oleksandrovych",
+      "birthDate": "March 6, 2004",
+      "deathDate": "Dec. 11, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Perkanjuk Jan Petrovych",
+      "birthDate": "Dec. 31, 2000",
+      "deathDate": "May 1, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Snizhko Yevhen Oleksandrovych",
+      "birthDate": "Nov. 25, 1989",
+      "deathDate": "Jan. 21, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Pasichnyj Oleksandr Volodymyrovych",
+      "birthDate": "March 12, 1977",
+      "deathDate": "April 4, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Tereshchenko Serhij Volodymyrovych",
+      "birthDate": "Aug. 11, 1981",
+      "deathDate": "June 19, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Porinets' Serhij Mykhajlovych",
+      "birthDate": "May 24, 1970",
+      "deathDate": "Aug. 21, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Poljans'kyj Bohdan Hryhorovych",
+      "birthDate": "Dec. 29, 1997",
+      "deathDate": "May 3, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Ivlyev Bohdan Oleksandrovych",
+      "birthDate": "Nov. 8, 1976",
+      "deathDate": "Dec. 27, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Hupaljuk Petro Mykolajovych",
+      "birthDate": "July 11, 1982",
+      "deathDate": "Nov. 20, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Poltavets' Andrij Mykhajlovych",
+      "birthDate": "April 29, 1974",
+      "deathDate": "June 5, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Zholnovach Oleksandr Ivanovych",
+      "birthDate": "June 21, 1984",
+      "deathDate": "Feb. 14, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Tarabanovs'kyj Ivan Volodymyrovych",
+      "birthDate": "April 12, 1989",
+      "deathDate": "Feb. 28, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Tarasenko Volodymyr Vitalijovych",
+      "birthDate": "July 17, 1989",
+      "deathDate": "Aug. 14, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Hradusov Volodymyr Oleksijovych",
+      "birthDate": "April 20, 1950",
+      "deathDate": "March 1, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Suprun Maksym Leonidovych",
+      "birthDate": "July 8, 1986",
+      "deathDate": "April 21, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Chorij Ivan Vasyl'ovych",
+      "birthDate": "March 21, 2001",
+      "deathDate": "July 3, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Hapula Jurij Viktorovych",
+      "birthDate": "May 3, 1978",
+      "deathDate": "May 6, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Popjuk Mykhajlo Tanasijovych",
+      "birthDate": "Sept. 23, 1976",
+      "deathDate": "April 19, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Tyelyebyenyev Artem Kostjantynovych",
+      "birthDate": "May 8, 1987",
+      "deathDate": "July 3, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Partyka Serhij Viktorovych",
+      "birthDate": "March 9, 1985",
+      "deathDate": "March 3, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Butseroha Pavlo Andrijovych",
+      "birthDate": "June 9, 1972",
+      "deathDate": "July 28, 2023",
+      "isEstimated": false
+    },
+    {
+      "name": "Tsymbal Viktor Anatolijovych",
+      "birthDate": "Feb. 9, 1975",
+      "deathDate": "Oct. 6, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Semenjuk Mykhajlo Mykhajlovych",
+      "birthDate": "Jan. 27, 1997",
+      "deathDate": "Aug. 24, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Lupan Oleh Ivanovych",
+      "birthDate": "Nov. 24, 1982",
+      "deathDate": "April 25, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Hoda Ruslan Olehovych",
+      "birthDate": "June 24, 1991",
+      "deathDate": "Aug. 9, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Nikolayenko Viktor Jurijovych",
+      "birthDate": "March 19, 1968",
+      "deathDate": "Nov. 29, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Horbachov Matvij Mykolajovych",
+      "birthDate": "April 12, 1984",
+      "deathDate": "May 15, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Pohybenko V'jacheslav Volodymyrovych",
+      "birthDate": "June 26, 1973",
+      "deathDate": "Sept. 26, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Ustymenko Oleh Hryhorovych",
+      "birthDate": "March 14, 1972",
+      "deathDate": "June 10, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Ovsjak Ruslan Romanovych",
+      "birthDate": "Feb. 18, 1983",
+      "deathDate": "Jan. 10, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Savorovs'kyj Mykola Hryhorovych",
+      "birthDate": "April 24, 1978",
+      "deathDate": "Aug. 28, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Danylevych Andrij Volodymyrovych",
+      "birthDate": "Dec. 16, 1994",
+      "deathDate": "Jan. 26, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Protskov Mykola Petrovych",
+      "birthDate": "Dec. 27, 1980",
+      "deathDate": "June 30, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Hudz' Myroslav Serhijovych",
+      "birthDate": "Feb. 16, 2003",
+      "deathDate": "Dec. 25, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Jukhymchuk Pavlo Volodymyrovych",
+      "birthDate": "Feb. 1, 1991",
+      "deathDate": "July 3, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Chudik Serhij Jakovych",
+      "birthDate": "Dec. 31, 1992",
+      "deathDate": "Oct. 12, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Matsejko Dmytro Oleksandrovych",
+      "birthDate": "March 2, 1995",
+      "deathDate": "Oct. 3, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Pozhydayev Maksym Serhijovych",
+      "birthDate": "Feb. 21, 1991",
+      "deathDate": "Aug. 28, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Zhukov Illja Serhijovych",
+      "birthDate": "Jan. 25, 1988",
+      "deathDate": "Jan. 28, 2025",
+      "isEstimated": false
+    },
+    {
+      "name": "Jaremenko Leonid Andrijovych",
+      "birthDate": "May 1, 1971",
+      "deathDate": "Nov. 9, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Muzyka Andrij Petrovych",
+      "birthDate": "Aug. 30, 1989",
+      "deathDate": "June 30, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Vlasenko V'jacheslav Andrijovych",
+      "birthDate": "May 9, 1990",
+      "deathDate": "June 1, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Bohachov Dmytro Ivanovych",
+      "birthDate": "Aug. 25, 1992",
+      "deathDate": "Oct. 21, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Horodovyj Oleksandr Ivanovych",
+      "birthDate": "April 6, 1984",
+      "deathDate": "May 28, 2016",
+      "isEstimated": false
+    },
+    {
+      "name": "Polufakin Ivan Oleksandrovych",
+      "birthDate": "Jan. 10, 1997",
+      "deathDate": "June 27, 2023",
+      "isEstimated": false
+    },
+    {
+      "name": "Haponenko Viktor Oleksandrovych",
+      "birthDate": "June 20, 1974",
+      "deathDate": "Sept. 4, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Pahurets' Mykola Serhijovych",
+      "birthDate": "June 14, 1986",
+      "deathDate": "May 17, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Bondar Mykhajlo Mykolajovych",
+      "birthDate": "Feb. 23, 1986",
+      "deathDate": "March 21, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Olyeshchenko Oleksandr Mykhajlovych",
+      "birthDate": "May 7, 1981",
+      "deathDate": "March 18, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Majdanets' Viktor Oleksijovych",
+      "birthDate": "Sept. 4, 1972",
+      "deathDate": "June 27, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Soroka Ihor Leonidovych",
+      "birthDate": "Dec. 14, 1983",
+      "deathDate": "Nov. 28, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Pavljuk Jurij Oleksandrovych",
+      "birthDate": "July 30, 1992",
+      "deathDate": "June 4, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Bandurak Ivan Mykhajlovych",
+      "birthDate": "July 8, 1986",
+      "deathDate": "March 28, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Kushniruk Jurij Mykolajovych",
+      "birthDate": "May 4, 1987",
+      "deathDate": "Dec. 14, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Rudchenko Dmytro Valerijovych",
+      "birthDate": "April 21, 1976",
+      "deathDate": "Aug. 12, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Bykov Denys Anatolijovych",
+      "birthDate": "Sept. 10, 1982",
+      "deathDate": "July 19, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Bezhynar Vitalij Volodymyrovych",
+      "birthDate": "Oct. 29, 1975",
+      "deathDate": "Nov. 24, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Voloshchuk Ruslan Valerijovych",
+      "birthDate": "Jan. 25, 1984",
+      "deathDate": "Oct. 3, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Sokolovs'kyj Pavlo Mykolajovych",
+      "birthDate": "July 13, 1985",
+      "deathDate": "April 29, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Skorokhod Vitalij Anatolijovych",
+      "birthDate": "Jan. 31, 1980",
+      "deathDate": "July 30, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Tymoshchuk Volodymyr Dmytrovych",
+      "birthDate": "Oct. 6, 1971",
+      "deathDate": "May 29, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Ostrovs'kyj Serhij Mykolajovych",
+      "birthDate": "Jan. 24, 1988",
+      "deathDate": "Nov. 9, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Kozhemjakin Serhij Vitalijovych",
+      "birthDate": "Dec. 9, 1984",
+      "deathDate": "Aug. 4, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "L'vov Oleh Mykolajovych",
+      "birthDate": "June 21, 1989",
+      "deathDate": "Feb. 11, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Sokyra Volodymyr Petrovych",
+      "birthDate": "May 29, 1979",
+      "deathDate": "Aug. 16, 2023",
+      "isEstimated": false
+    },
+    {
+      "name": "Vasjuk Ihor Vasyl'ovych",
+      "birthDate": "Jan. 1, 1971",
+      "deathDate": "March 27, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Tychkovs'kyj Vasyl' Ihorovych",
+      "birthDate": "July 18, 1990",
+      "deathDate": "Sept. 3, 2022",
+      "isEstimated": false
+    },
+    {
+      "name": "Khvatov Denys Oleksandrovych",
+      "birthDate": "Jan. 17, 1983",
+      "deathDate": "March 4, 2025",
+      "isEstimated": false
+    },
+    {
+      "name": "Kartovyj Vasyl' Serhijovych",
+      "birthDate": "Jan. 3, 1996",
+      "deathDate": "Sept. 21, 2024",
+      "isEstimated": false
+    },
+    {
+      "name": "Jakovenko Roman Serhijovych",
+      "birthDate": "March 15, 1998",
+      "deathDate": "Feb. 24, 2022",
+      "isEstimated": true
+    },
+    {
+      "name": "Khoroshun Yevhen Oleksandrovych",
+      "birthDate": "March 20, 1990",
+      "deathDate": "June 4, 2025",
+      "isEstimated": true
+    },
+    {
+      "name": "Synenko Andrij Andrijovych",
+      "birthDate": "Jan. 20, 1989",
+      "deathDate": "June 18, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Danyl'chuk Vasyl' Vitalijovych",
+      "birthDate": "Jan. 8, 1985",
+      "deathDate": "Oct. 29, 2023",
+      "isEstimated": true
+    },
+    {
+      "name": "Kajdan Maksym Valentynovych",
+      "birthDate": "Feb. 24, 1990",
+      "deathDate": "Sept. 25, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Mishurenko Roman Leonidovych",
+      "birthDate": "Nov. 27, 1975",
+      "deathDate": "Dec. 13, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Kysel'ov Maksym Oleksandrovych",
+      "birthDate": "Jan. 28, 1978",
+      "deathDate": "March 24, 2024",
+      "isEstimated": true
+    },
+    {
+      "name": "Jalovenko Mykola Mykolajovych",
+      "birthDate": "Sept. 2, 1982",
+      "deathDate": "June 21, 2022",
+      "isEstimated": true
+    }
+  ],
+  "totalPages": 2,
+  "scrapedPages": 2,
+  "errors": [],
+  "summary": {
+    "totalEntries": 193,
+    "validDeathDates": 193,
+    "estimatedDeaths": 158,
+    "confirmedDeaths": 35,
+    "failedParses": 0
+  }
+}

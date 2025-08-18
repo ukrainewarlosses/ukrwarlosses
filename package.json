@@ -1,0 +1,54 @@
+{
+  "name": "ukrwarlosses",
+  "version": "1.0.0",
+  "description": "Ukraine-Russia War Personnel Losses Tracker",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "scrape": "node scripts/scrape.js",
+    "test-scraper": "npx tsx scripts/test-scraper.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukrainewarlosses/ukrwarlosses.git"
+  },
+  "keywords": [
+    "ukraine",
+    "russia",
+    "war",
+    "casualties",
+    "tracker"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.54.2",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.8.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.451.0",
+    "next": "^15.4.6",
+    "playwright": "^1.54.2",
+    "postcss": "^8.5.1",
+    "puppeteer": "^23.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.13.3",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
+  },
+  "bugs": {
+    "url": "https://github.com/ukrainewarlosses/ukrwarlosses/issues"
+  },
+  "homepage": "https://github.com/ukrainewarlosses/ukrwarlosses#readme",
+  "devDependencies": {
+    "tsx": "^4.20.4"
+  }
+}

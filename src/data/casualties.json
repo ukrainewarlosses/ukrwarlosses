@@ -1,0 +1,432 @@
+{
+  "ukraine": {
+    "country": "ukraine",
+    "total_losses": 158892,
+    "dead": 79061,
+    "missing": 75253,
+    "prisoners": 4578,
+    "last_updated": "2025-08-18T23:38:47.427Z",
+    "source_url": "https://ualosses.org/en/soldiers/"
+  },
+  "russia": {
+    "country": "russia",
+    "total_losses": 121507,
+    "last_updated": "2025-08-18T23:38:47.427Z",
+    "source_url": "https://en.zona.media/article/2025/08/01/casualties_eng-trl"
+  },
+  "ukraineHistorical": [
+    {
+      "date": "2022-02-01",
+      "casualties": 2483,
+      "unconfirmed": 2483
+    },
+    {
+      "date": "2022-03-01",
+      "casualties": 1655,
+      "confirmed": 828,
+      "unconfirmed": 828
+    },
+    {
+      "date": "2022-04-01",
+      "casualties": 2483,
+      "confirmed": 828,
+      "unconfirmed": 1655
+    },
+    {
+      "date": "2022-05-01",
+      "casualties": 1655,
+      "confirmed": 828,
+      "unconfirmed": 828
+    },
+    {
+      "date": "2022-06-01",
+      "casualties": 3310,
+      "confirmed": 1655,
+      "unconfirmed": 1655
+    },
+    {
+      "date": "2022-08-01",
+      "casualties": 2483,
+      "confirmed": 1655,
+      "unconfirmed": 828
+    },
+    {
+      "date": "2022-09-01",
+      "casualties": 828,
+      "confirmed": 828
+    },
+    {
+      "date": "2022-10-01",
+      "casualties": 1655,
+      "confirmed": 828,
+      "unconfirmed": 828
+    },
+    {
+      "date": "2022-11-01",
+      "casualties": 1655,
+      "unconfirmed": 1655
+    },
+    {
+      "date": "2023-01-01",
+      "casualties": 2483,
+      "unconfirmed": 2483
+    },
+    {
+      "date": "2023-02-01",
+      "casualties": 2483,
+      "confirmed": 828,
+      "unconfirmed": 1655
+    },
+    {
+      "date": "2023-03-01",
+      "casualties": 1655,
+      "unconfirmed": 1655
+    },
+    {
+      "date": "2023-04-01",
+      "casualties": 828,
+      "unconfirmed": 828
+    },
+    {
+      "date": "2023-05-01",
+      "casualties": 828,
+      "confirmed": 828
+    },
+    {
+      "date": "2023-06-01",
+      "casualties": 1655,
+      "confirmed": 828,
+      "unconfirmed": 828
+    },
+    {
+      "date": "2023-07-01",
+      "casualties": 828,
+      "confirmed": 828
+    },
+    {
+      "date": "2023-08-01",
+      "casualties": 1655,
+      "confirmed": 1655
+    },
+    {
+      "date": "2023-09-01",
+      "casualties": 828,
+      "unconfirmed": 828
+    },
+    {
+      "date": "2023-10-01",
+      "casualties": 1655,
+      "unconfirmed": 1655
+    },
+    {
+      "date": "2023-11-01",
+      "casualties": 4965,
+      "unconfirmed": 4965
+    },
+    {
+      "date": "2023-12-01",
+      "casualties": 5793,
+      "confirmed": 828,
+      "unconfirmed": 4965
+    },
+    {
+      "date": "2024-01-01",
+      "casualties": 4138,
+      "confirmed": 828,
+      "unconfirmed": 3310
+    },
+    {
+      "date": "2024-02-01",
+      "casualties": 4965,
+      "confirmed": 828,
+      "unconfirmed": 4138
+    },
+    {
+      "date": "2024-03-01",
+      "casualties": 7448,
+      "confirmed": 1655,
+      "unconfirmed": 5793
+    },
+    {
+      "date": "2024-04-01",
+      "casualties": 4965,
+      "unconfirmed": 4965
+    },
+    {
+      "date": "2024-05-01",
+      "casualties": 3310,
+      "unconfirmed": 3310
+    },
+    {
+      "date": "2024-06-01",
+      "casualties": 7448,
+      "confirmed": 1655,
+      "unconfirmed": 5793
+    },
+    {
+      "date": "2024-07-01",
+      "casualties": 5793,
+      "confirmed": 1655,
+      "unconfirmed": 4138
+    },
+    {
+      "date": "2024-08-01",
+      "casualties": 5793,
+      "confirmed": 1655,
+      "unconfirmed": 4138
+    },
+    {
+      "date": "2024-09-01",
+      "casualties": 5793,
+      "confirmed": 828,
+      "unconfirmed": 4965
+    },
+    {
+      "date": "2024-10-01",
+      "casualties": 7448,
+      "confirmed": 2483,
+      "unconfirmed": 4965
+    },
+    {
+      "date": "2024-11-01",
+      "casualties": 8276,
+      "confirmed": 828,
+      "unconfirmed": 7448
+    },
+    {
+      "date": "2024-12-01",
+      "casualties": 5793,
+      "unconfirmed": 5793
+    },
+    {
+      "date": "2025-01-01",
+      "casualties": 3310,
+      "confirmed": 828,
+      "unconfirmed": 2483
+    },
+    {
+      "date": "2025-02-01",
+      "casualties": 3310,
+      "unconfirmed": 3310
+    },
+    {
+      "date": "2025-03-01",
+      "casualties": 5793,
+      "confirmed": 828,
+      "unconfirmed": 4965
+    },
+    {
+      "date": "2025-04-01",
+      "casualties": 6621,
+      "confirmed": 828,
+      "unconfirmed": 5793
+    },
+    {
+      "date": "2025-05-01",
+      "casualties": 8276,
+      "unconfirmed": 8276
+    },
+    {
+      "date": "2025-06-01",
+      "casualties": 14069,
+      "unconfirmed": 14069
+    },
+    {
+      "date": "2025-07-01",
+      "casualties": 2483,
+      "unconfirmed": 2483
+    }
+  ],
+  "russiaHistorical": [
+    {
+      "date": "2022-02-01",
+      "casualties": 1791
+    },
+    {
+      "date": "2022-03-04",
+      "casualties": 1825
+    },
+    {
+      "date": "2022-04-03",
+      "casualties": 2438
+    },
+    {
+      "date": "2022-05-03",
+      "casualties": 1670
+    },
+    {
+      "date": "2022-06-03",
+      "casualties": 3250
+    },
+    {
+      "date": "2022-07-03",
+      "casualties": 2775
+    },
+    {
+      "date": "2022-08-03",
+      "casualties": 2826
+    },
+    {
+      "date": "2022-09-03",
+      "casualties": 2793
+    },
+    {
+      "date": "2022-10-03",
+      "casualties": 1694
+    },
+    {
+      "date": "2022-11-03",
+      "casualties": 3313
+    },
+    {
+      "date": "2022-12-04",
+      "casualties": 3305
+    },
+    {
+      "date": "2023-01-04",
+      "casualties": 2356
+    },
+    {
+      "date": "2023-02-04",
+      "casualties": 1984
+    },
+    {
+      "date": "2023-03-04",
+      "casualties": 2995
+    },
+    {
+      "date": "2023-04-03",
+      "casualties": 2502
+    },
+    {
+      "date": "2023-05-03",
+      "casualties": 3220
+    },
+    {
+      "date": "2023-06-03",
+      "casualties": 3309
+    },
+    {
+      "date": "2023-07-03",
+      "casualties": 3756
+    },
+    {
+      "date": "2023-08-03",
+      "casualties": 2287
+    },
+    {
+      "date": "2023-09-03",
+      "casualties": 1994
+    },
+    {
+      "date": "2023-10-03",
+      "casualties": 2242
+    },
+    {
+      "date": "2023-11-03",
+      "casualties": 3390
+    },
+    {
+      "date": "2023-12-04",
+      "casualties": 2600
+    },
+    {
+      "date": "2024-01-04",
+      "casualties": 2658
+    },
+    {
+      "date": "2024-02-04",
+      "casualties": 3599
+    },
+    {
+      "date": "2024-03-04",
+      "casualties": 3362
+    },
+    {
+      "date": "2024-04-03",
+      "casualties": 2801
+    },
+    {
+      "date": "2024-05-03",
+      "casualties": 3498
+    },
+    {
+      "date": "2024-06-03",
+      "casualties": 2765
+    },
+    {
+      "date": "2024-07-03",
+      "casualties": 1968
+    },
+    {
+      "date": "2024-08-03",
+      "casualties": 3766
+    },
+    {
+      "date": "2024-09-03",
+      "casualties": 2937
+    },
+    {
+      "date": "2024-10-03",
+      "casualties": 3012
+    },
+    {
+      "date": "2024-11-04",
+      "casualties": 2995
+    },
+    {
+      "date": "2024-12-04",
+      "casualties": 2968
+    },
+    {
+      "date": "2025-01-04",
+      "casualties": 3472
+    },
+    {
+      "date": "2025-02-04",
+      "casualties": 2766
+    },
+    {
+      "date": "2025-03-04",
+      "casualties": 2472
+    },
+    {
+      "date": "2025-04-03",
+      "casualties": 2781
+    },
+    {
+      "date": "2025-05-03",
+      "casualties": 3361
+    },
+    {
+      "date": "2025-06-03",
+      "casualties": 2405
+    },
+    {
+      "date": "2025-07-03",
+      "casualties": 3567
+    },
+    {
+      "date": "2025-08-03",
+      "casualties": 4039
+    }
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Russia’s SHOCKING Breakthrough North of Pokrovsk",
+      "youtube_id": "qMCScRZgnBs",
+      "channel_name": "History Legends"
+    },
+    {
+      "title": "How 300 Romanian Mercenaries Faced 8,000 Rebels in Congo",
+      "youtube_id": "gkfKkcsVEQg",
+      "channel_name": "History Legends"
+    },
+    {
+      "title": "Can Police Officers Make Good Soldiers? ⚔️",
+      "youtube_id": "kQ8CP_tB7DM",
+      "channel_name": "History Legends"
+    }
+  ],
+  "lastUpdated": "2025-08-18T23:38:48.287Z"
+}

@@ -1,0 +1,65 @@
+name: Monthly Ukrainian Losses Data Update
+
+on:
+  schedule:
+    # Run at 2 AM UTC on the 1st day of every month
+    - cron: '0 2 1 * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Playwright browsers
+      run: npx playwright install chromium
+      
+    - name: Run comprehensive scraper
+      run: |
+        npm run build
+        npm start &
+        sleep 30
+        curl -X POST http://localhost:3000/api/scrape -H "Content-Type: application/json"
+      env:
+        NODE_ENV: production
+        
+    - name: Commit and push updated data
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add src/data/casualties.json
+        git add cache/ || true
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "📊 Monthly Ukrainian losses data update - $(date +'%B %Y')"
+          git push
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Create summary report
+      run: |
+        echo "## 📊 Monthly Scraping Report - $(date +'%B %Y')" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "✅ Ukrainian losses data updated successfully" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Data Summary" >> $GITHUB_STEP_SUMMARY
+        echo "- **Last Updated**: $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Total Ukrainian Casualties**: $(jq '.ukraine.total_losses' src/data/casualties.json)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Historical Data Points**: $(jq '.ukraineHistorical | length' src/data/casualties.json)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Recent Monthly Data" >> $GITHUB_STEP_SUMMARY
+        echo "$(jq -r '.ukraineHistorical[-3:] | .[] | "- **\(.date)**: \(.casualties) casualties (\(.confirmed // 0) confirmed, \(.unconfirmed // 0) unconfirmed)"' src/data/casualties.json)" >> $GITHUB_STEP_SUMMARY

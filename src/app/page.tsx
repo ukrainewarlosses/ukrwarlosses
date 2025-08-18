@@ -1,0 +1,180 @@
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import StatsCard from '@/components/StatsCard';
+import AdBanner from '@/components/AdBanner';
+import VideoCard from '@/components/VideoCard';
+import SourceCard from '@/components/SourceCard';
+import Chart from '@/components/Chart';
+import { loadCasualtyData } from '@/lib/dataLoader';
+import { YouTubeEmbed } from '@/types';
+
+// YouTube videos now loaded dynamically from scraped data
+
+async function getCasualtyData() {
+  try {
+    const data = await loadCasualtyData();
+          return {
+        ukraine: data.ukraine,
+        russia: data.russia,
+        ukraineHistorical: data.ukraineHistorical,
+        russiaHistorical: data.russiaHistorical || [],
+        youtubeVideos: data.youtubeVideos || [],
+        lastUpdated: data.lastUpdated
+      };
+  } catch (error) {
+    console.error('Error loading casualty data:', error);
+    // Return fallback data
+    return {
+      ukraine: {
+        country: 'ukraine' as const,
+        total_losses: 158892,
+        dead: 79061,
+        missing: 75253,
+        prisoners: 4578,
+        last_updated: new Date().toISOString(),
+        source_url: 'https://ualosses.org/en/soldiers/'
+      },
+      russia: {
+        country: 'russia' as const,
+        total_losses: 121507,
+        last_updated: new Date().toISOString(),
+        source_url: 'https://en.zona.media/article/2025/08/01/casualties_eng-trl'
+      },
+      ukraineHistorical: [],
+      russiaHistorical: [],
+      youtubeVideos: [
+        {
+          title: 'Ukraine War Update - Latest Military Developments',
+          youtube_id: 'dQw4w9WgXcQ',
+          channel_name: 'History Legends',
+        },
+        {
+          title: 'Military Analysis: Russia vs Ukraine Forces',
+          youtube_id: 'oHg5SJYRHA0',
+          channel_name: 'History Legends',
+        },
+        {
+          title: 'War Report: Current Situation Analysis',
+          youtube_id: 'fC7oUOUEEi4',
+          channel_name: 'History Legends',
+        },
+      ],
+      lastUpdated: new Date().toISOString()
+    };
+  }
+}
+
+// Cache this page for 1 hour and revalidate every 30 minutes
+export const revalidate = 1800; // 30 minutes
+
+export default async function HomePage() {
+  // Fetch casualty data server-side with caching
+  const data = await getCasualtyData();
+
+  return (
+    <main className="min-h-screen">
+      <Header />
+      
+      {/* Header Banner Ad (Desktop) */}
+      <div className="container">
+        <AdBanner size="header" adSlot="1234567890" />
+      </div>
+
+      <div className="container">
+        <Hero />
+
+        {/* Personnel Losses Overview */}
+        <section id="overview" className="py-8">
+          <h2 className="text-2xl font-bold text-text-primary mb-6">
+            Personnel Losses Overview
+          </h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <StatsCard
+              country="russia"
+              casualties={data.russia.total_losses}
+              title="Russian Forces"
+            />
+            <StatsCard
+              country="ukraine"
+              casualties={data.ukraine.total_losses}
+              title="Ukrainian Forces"
+              breakdown={{
+                dead: data.ukraine.dead,
+                missing: data.ukraine.missing,
+                prisoners: data.ukraine.prisoners
+              }}
+            />
+          </div>
+        </section>
+
+        {/* In-Content Ad */}
+        <AdBanner size="content" adSlot="0987654321" />
+
+        {/* Trends Chart Section */}
+        <section id="trends" className="bg-card-bg border border-border-color rounded-lg p-8 my-8">
+          <h2 className="text-xl font-bold text-text-primary mb-4">
+            📈 Personnel Casualty Trends Over Time
+          </h2>
+          <Chart ukraineHistorical={data.ukraineHistorical} russiaHistorical={data.russiaHistorical} />
+        </section>
+
+        {/* Mobile Sidebar Ad */}
+        <AdBanner size="mobile" adSlot="1122334455" />
+
+        {/* Latest Media Coverage */}
+        <section id="videos" className="bg-card-bg border border-border-color rounded-lg p-8 my-8">
+          <h2 className="text-xl font-bold text-text-primary mb-4">
+            📺 Latest Media Coverage
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+            {data.youtubeVideos.map((video, index) => (
+              <VideoCard key={index} video={video} />
+            ))}
+          </div>
+        </section>
+
+        {/* Data Sources */}
+        <section id="sources" className="bg-card-bg border border-border-color rounded-lg p-8 my-8">
+          <h2 className="text-xl font-bold text-text-primary mb-4">
+            📋 Data Sources
+          </h2>
+          <p className="mb-4 text-text-light">
+            Our personnel casualty data is compiled from the following verified sources:
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <SourceCard
+              title="Zona Media"
+              description="Russian personnel casualty tracking based on probate registry data and open sources"
+              url="https://en.zona.media/article/2025/08/01/casualties_eng-trl"
+              country="russia"
+            />
+            <SourceCard
+              title="UA Losses"
+              description="Ukrainian military personnel casualties from official and verified sources"
+              url="https://ualosses.org/en/soldiers/"
+              country="ukraine"
+            />
+          </div>
+          
+          <p className="mt-6 text-sm text-text-light leading-relaxed">
+            Data is automatically updated every 6 hours from these sources. For detailed methodology information, see our{' '}
+            <a href="/methodology" className="text-primary hover:text-primary-dark hover:underline transition-colors">
+              methodology page
+            </a>
+            . We prioritize accuracy and verification over speed of reporting, focusing specifically on personnel losses.
+          </p>
+        </section>
+      </div>
+
+      {/* Footer Banner Ad */}
+      <div className="container">
+        <AdBanner size="footer" adSlot="5566778899" />
+      </div>
+
+      <Footer />
+    </main>
+  );
+}

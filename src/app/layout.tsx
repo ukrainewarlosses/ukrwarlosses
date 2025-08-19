@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: '%s | Ukraine War Losses Tracker'
   },
   description: 'Comprehensive real-time tracking of Ukraine-Russia war personnel casualties. Get accurate statistics, historical trends, and verified data from official sources. Updated daily with advanced web scraping technology.',
-  keywords: 'ukraine russia war casualties, ukraine war losses, russia war losses, military casualties tracker, ukraine russia conflict statistics, war casualties data, ukraine military losses, russia military losses, conflict casualty tracking, ukraine war statistics, russia war statistics, military personnel losses, war data analysis, ukraine russia war tracker',
+     keywords: 'ukraine russia war casualties, ukraine war losses, russia war losses, military casualties tracker, ukraine russia conflict statistics, war casualties data, ukraine military losses, russia military losses, conflict casualty tracking, ukraine war statistics, russia war statistics, military personnel losses, war data analysis, ukraine russia war tracker, historylegends, history legends',
   authors: [{ name: 'Ukraine War Losses Team' }],
   creator: 'Ukraine War Losses Tracker',
   publisher: 'Ukraine War Losses Tracker',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://ukrainewarlosses.com'),
+     metadataBase: new URL('https://ukrainewarlosses.org'),
   alternates: {
-    canonical: 'https://ukrainewarlosses.com',
+         canonical: 'https://ukrainewarlosses.org',
   },
   openGraph: {
     title: 'Ukraine-Russia War Personnel Losses Tracker',
@@ -74,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="canonical" href="https://ukrainewarlosses.com" />
+        <link rel="canonical" href="https://ukrainewarlosses.org" />
         <script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" 
@@ -90,22 +90,22 @@ export default function RootLayout({
               '@type': 'WebSite',
               name: 'Ukraine War Losses Tracker',
               description: 'Real-time tracking of Ukraine-Russia war personnel casualties with verified data and comprehensive statistics',
-              url: 'https://ukrainewarlosses.com',
+              url: 'https://ukrainewarlosses.org',
               author: {
                 '@type': 'Organization',
                 name: 'Ukraine War Losses Tracker',
-                url: 'https://ukrainewarlosses.com'
+                url: 'https://ukrainewarlosses.org'
               },
               publisher: {
                 '@type': 'Organization',
                 name: 'Ukraine War Losses Tracker',
-                url: 'https://ukrainewarlosses.com'
+                url: 'https://ukrainewarlosses.org'
               },
-              keywords: 'ukraine russia war casualties, military losses tracker, war statistics, conflict data',
+                             keywords: 'ukraine russia war casualties, military losses tracker, war statistics, conflict data, historylegends, history legends',
               inLanguage: 'en-US',
               potentialAction: {
                 '@type': 'SearchAction',
-                target: 'https://ukrainewarlosses.com/search?q={search_term_string}',
+                target: 'https://ukrainewarlosses.org/search?q={search_term_string}',
                 'query-input': 'required name=search_term_string'
               }
             })
@@ -119,7 +119,7 @@ export default function RootLayout({
               '@type': 'Dataset',
               name: 'Ukraine-Russia War Personnel Casualties Dataset',
               description: 'Comprehensive dataset of Ukraine-Russia war personnel casualties with verified data from official sources',
-              url: 'https://ukrainewarlosses.com',
+              url: 'https://ukrainewarlosses.org',
               identifier: 'ukraine-russia-war-casualties-2022-2025',
               creator: {
                 '@type': 'Organization',
@@ -139,13 +139,13 @@ export default function RootLayout({
                   longitude: 31.1656
                 }
               },
-              keywords: ['ukraine war', 'russia war', 'casualties', 'military losses', 'conflict data'],
+                             keywords: ['ukraine war', 'russia war', 'casualties', 'military losses', 'conflict data', 'historylegends', 'history legends'],
               license: 'https://creativecommons.org/licenses/by-nc/4.0/',
               distribution: [
                 {
                   '@type': 'DataDownload',
                   encodingFormat: 'JSON',
-                  contentUrl: 'https://ukrainewarlosses.com/api/data'
+                  contentUrl: 'https://ukrainewarlosses.org/api/data'
                 }
               ]
             })

@@ -6,12 +6,12 @@ import AdBanner from '@/components/AdBanner';
 export const metadata: Metadata = {
   title: 'Methodology - Ukraine-Russia War Personnel Losses Tracking | Data Sources & Analysis',
   description: 'Comprehensive methodology for tracking Ukraine-Russia war personnel casualties. Learn about our data sources, collection methods, verification processes, and statistical analysis techniques.',
-  keywords: 'ukraine russia war methodology, casualty tracking methodology, military losses data sources, war casualties verification, ukraine war statistics methodology, russia war losses methodology, conflict data collection, military personnel tracking',
+     keywords: 'ukraine russia war methodology, casualty tracking methodology, military losses data sources, war casualties verification, ukraine war statistics methodology, russia war losses methodology, conflict data collection, military personnel tracking, historylegends, history legends',
   openGraph: {
     title: 'Methodology - Ukraine-Russia War Personnel Losses Tracking',
     description: 'Comprehensive methodology for tracking Ukraine-Russia war personnel casualties. Learn about our data sources, collection methods, verification processes, and statistical analysis techniques.',
     type: 'website',
-    url: 'https://ukrainewarlosses.com/methodology',
+    url: 'https://ukrainewarlosses.org/methodology',
     images: [
       {
         url: '/og-methodology.jpg',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     images: ['/og-methodology.jpg']
   },
   alternates: {
-    canonical: 'https://ukrainewarlosses.com/methodology'
+    canonical: 'https://ukrainewarlosses.org/methodology'
   },
   robots: {
     index: true,
@@ -54,7 +54,7 @@ export default function MethodologyPage() {
     '@type': 'WebPage',
     name: 'Methodology - Ukraine-Russia War Personnel Losses Tracking',
     description: 'Comprehensive methodology for tracking Ukraine-Russia war personnel casualties. Learn about our data sources, collection methods, verification processes, and statistical analysis techniques.',
-    url: 'https://ukrainewarlosses.com/methodology',
+    url: 'https://ukrainewarlosses.org/methodology',
     mainEntity: {
       '@type': 'Article',
       headline: 'Methodology for Ukraine-Russia War Personnel Losses Tracking',
@@ -70,7 +70,7 @@ export default function MethodologyPage() {
       datePublished: '2025-01-01',
       dateModified: new Date().toISOString().split('T')[0],
       articleSection: 'Methodology',
-      keywords: 'ukraine russia war methodology, casualty tracking methodology, military losses data sources, war casualties verification'
+             keywords: 'ukraine russia war methodology, casualty tracking methodology, military losses data sources, war casualties verification, historylegends, history legends'
     },
     breadcrumb: {
       '@type': 'BreadcrumbList',
@@ -79,13 +79,13 @@ export default function MethodologyPage() {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://ukrainewarlosses.com'
+          item: 'https://ukrainewarlosses.org'
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Methodology',
-          item: 'https://ukrainewarlosses.com/methodology'
+          item: 'https://ukrainewarlosses.org/methodology'
         }
       ]
     }
@@ -375,7 +375,7 @@ export default function MethodologyPage() {
               </h3>
               <ul className="text-sm text-text-light space-y-1">
                 <li>• Data represents minimum confirmed casualties</li>
-                <li>• Actual numbers may be significantly higher</li>
+                <li>• Actual numbers may be higher</li>
                 <li>• Not all casualties are publicly reported</li>
                 <li>• Some data may be subject to revision</li>
                 <li>• This is not an official military source</li>

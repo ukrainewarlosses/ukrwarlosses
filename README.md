@@ -91,7 +91,7 @@ Create a `.env.local` file based on `.env.example`:
 NEXT_PUBLIC_GOOGLE_ADSENSE_ID=ca-pub-your-adsense-id
 
 # Base URL (for production)
-NEXT_PUBLIC_BASE_URL=https://warlosses.info
+NEXT_PUBLIC_BASE_URL=https://ukrainewarlosses.org
 
 # Environment (development uses mock data)
 NODE_ENV=development
@@ -193,7 +193,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Disclaimer
 
-This application tracks publicly available casualty data from open sources. Numbers represent confirmed minimum losses and actual figures may be significantly higher due to unreported casualties and classification restrictions. The application is not affiliated with any government or military organization.
+This application tracks publicly available casualty data from open sources. Numbers represent confirmed minimum losses and actual figures may be higher due to unreported casualties and classification restrictions. The application is not affiliated with any government or military organization.
 
 ## Support
 

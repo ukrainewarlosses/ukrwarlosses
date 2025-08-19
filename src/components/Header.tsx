@@ -20,9 +20,9 @@ export default function Header() {
     <header className={`bg-card-bg border-b border-border-color sticky top-0 z-50 transition-all duration-200 ${isSticky ? 'shadow-lg shadow-black/30' : 'shadow-sm shadow-black/10'}`}>
       <div className="container">
         <div className="flex justify-between items-center py-4">
-          <Link href="/" className="text-2xl font-bold text-primary no-underline hover:text-primary-dark transition-colors">
-            WarLosses.info
-          </Link>
+                     <Link href="/" className="text-2xl font-bold text-primary no-underline hover:text-primary-dark transition-colors">
+             UkraineWarLosses.org
+           </Link>
           <nav className="hidden md:flex gap-8">
             <Link href="/" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
               Home

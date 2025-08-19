@@ -208,23 +208,23 @@ export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProp
   }
 
   return (
-    <div className="h-64 sm:h-80 lg:h-96 w-full overflow-hidden">
+    <div className="h-80 sm:h-96 lg:h-[28rem] w-full overflow-hidden">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart 
           data={chartData} 
           margin={{ 
-            top: 20, 
-            right: isMobile ? 15 : 30, 
-            left: isMobile ? 10 : 20, 
-            bottom: isMobile ? 60 : 5 
+            top: isMobile ? 25 : 20, 
+            right: isMobile ? 20 : 30, 
+            left: isMobile ? 15 : 20, 
+            bottom: isMobile ? 80 : 5 
           }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#3d3d3d" />
           <XAxis 
             dataKey="date" 
             stroke="#a0aec0" 
-            fontSize={isMobile ? 9 : 12}
-            tick={{ fill: '#a0aec0', fontSize: isMobile ? 9 : 12 }}
+            fontSize={isMobile ? 10 : 12}
+            tick={{ fill: '#a0aec0', fontSize: isMobile ? 10 : 12 }}
             angle={isMobile ? -45 : 0}
             textAnchor={isMobile ? 'end' : 'middle'}
             height={isMobile ? 60 : 30}
@@ -233,8 +233,8 @@ export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProp
           <YAxis 
             yAxisId="monthly"
             stroke="#a0aec0" 
-            fontSize={isMobile ? 8 : 12}
-            tick={{ fill: '#a0aec0', fontSize: isMobile ? 8 : 12 }}
+            fontSize={isMobile ? 9 : 12}
+            tick={{ fill: '#a0aec0', fontSize: isMobile ? 9 : 12 }}
             tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
             width={isMobile ? 30 : 50}
           />
@@ -242,8 +242,8 @@ export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProp
             yAxisId="cumulative"
             orientation="right"
             stroke="#666"
-            fontSize={isMobile ? 8 : 12}
-            tick={{ fill: '#666', fontSize: isMobile ? 8 : 12 }}
+            fontSize={isMobile ? 9 : 12}
+            tick={{ fill: '#666', fontSize: isMobile ? 9 : 12 }}
             tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
             width={isMobile ? 30 : 50}
           />
@@ -251,7 +251,7 @@ export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProp
           <Legend 
             wrapperStyle={{ 
               color: '#a0aec0', 
-              fontSize: isMobile ? '11px' : '12px',
+              fontSize: isMobile ? '12px' : '12px',
               paddingTop: '10px'
             }}
             iconType="line"

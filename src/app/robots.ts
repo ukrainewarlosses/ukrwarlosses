@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/scrape'],
       },
     ],
-    sitemap: 'https://ukrainewarlosses.com/sitemap.xml',
-    host: 'https://ukrainewarlosses.com',
+               sitemap: 'https://ukrainewarlosses.org/sitemap.xml',
+           host: 'https://ukrainewarlosses.org',
   };
 }

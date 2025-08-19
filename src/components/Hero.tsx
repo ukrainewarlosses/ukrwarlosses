@@ -16,7 +16,7 @@ export default function Hero() {
           
           <div className="bg-yellow-900/20 border border-yellow-700/40 rounded-md p-4 mt-4">
             <p className="text-sm text-primary leading-relaxed">
-              <strong>⚠️ Methodology Note:</strong> Casualty figures are compiled from publicly available sources including obituaries, social media reports, and official announcements. Numbers represent confirmed minimum losses and actual figures may be significantly higher due to unreported casualties and classification restrictions.
+              <strong>⚠️ Methodology Note:</strong> Casualty figures are compiled from publicly available sources including obituaries, social media reports, and official announcements. Numbers represent confirmed minimum losses and actual figures may be higher due to unreported casualties and classification restrictions.
             </p>
           </div>
         </div>

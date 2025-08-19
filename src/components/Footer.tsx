@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="text-center text-text-light text-sm leading-relaxed">
           <p className="font-semibold">
-            <span className="text-text-primary">WarLosses.info</span> | Independent tracking of military personnel casualties in the Ukraine-Russia conflict
+            <span className="text-text-primary">UkraineWarLosses.org</span> | Independent tracking of military personnel casualties in the Ukraine-Russia conflict
           </p>
           <p className="mt-2">
             Personnel data compiled from public sources • Not affiliated with any government or military organization

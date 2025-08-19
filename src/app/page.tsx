@@ -13,7 +13,7 @@ import { YouTubeEmbed } from '@/types';
 export const metadata: Metadata = {
   title: 'Ukraine-Russia War Personnel Losses Tracker | Real-Time Casualty Data & Statistics',
   description: 'Comprehensive real-time tracking of Ukraine-Russia war personnel casualties. Get accurate statistics, historical trends, and verified data from official sources. Updated daily with advanced web scraping technology.',
-  keywords: 'ukraine russia war casualties, ukraine war losses, russia war losses, military casualties tracker, ukraine russia conflict statistics, war casualties data, ukraine military losses, russia military losses, conflict casualty tracking, ukraine war statistics, russia war statistics, military personnel losses, war data analysis, ukraine russia war tracker',
+     keywords: 'ukraine russia war casualties, ukraine war losses, russia war losses, military casualties tracker, ukraine russia conflict statistics, war casualties data, ukraine military losses, russia military losses, conflict casualty tracking, ukraine war statistics, russia war statistics, military personnel losses, war data analysis, ukraine russia war tracker, historylegends, history legends',
   authors: [{ name: 'Ukraine War Losses Team' }],
   creator: 'Ukraine War Losses Tracker',
   publisher: 'Ukraine War Losses Tracker',
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://ukrainewarlosses.com'),
+     metadataBase: new URL('https://ukrainewarlosses.org'),
   alternates: {
-    canonical: 'https://ukrainewarlosses.com',
+         canonical: 'https://ukrainewarlosses.org',
   },
   openGraph: {
     title: 'Ukraine-Russia War Personnel Losses Tracker',
     description: 'Real-time tracking of Ukraine-Russia war personnel casualties with verified data, historical trends, and comprehensive statistics.',
-    url: 'https://ukrainewarlosses.com',
+    url: 'https://ukrainewarlosses.org',
     siteName: 'Ukraine War Losses Tracker',
     images: [
       {
@@ -141,7 +141,7 @@ export default async function HomePage() {
     '@type': 'WebPage',
     name: 'Ukraine-Russia War Personnel Losses Tracker',
     description: 'Real-time tracking of Ukraine-Russia war personnel casualties with verified data and comprehensive statistics',
-    url: 'https://ukrainewarlosses.com',
+    url: 'https://ukrainewarlosses.org',
     mainEntity: {
       '@type': 'Dataset',
       name: 'Ukraine-Russia War Personnel Casualties',
@@ -151,7 +151,8 @@ export default async function HomePage() {
         '@type': 'Place',
         name: 'Ukraine and Russia'
       },
-      variableMeasured: ['Ukrainian military casualties', 'Russian military casualties'],
+             variableMeasured: ['Ukrainian military casualties', 'Russian military casualties'],
+       keywords: ['ukraine war', 'russia war', 'casualties', 'military losses', 'conflict data', 'historylegends', 'history legends'],
       measurementTechnique: 'Web scraping and data verification',
       creator: {
         '@type': 'Organization',
@@ -165,7 +166,7 @@ export default async function HomePage() {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://ukrainewarlosses.com'
+          item: 'https://ukrainewarlosses.org'
         }
       ]
     }

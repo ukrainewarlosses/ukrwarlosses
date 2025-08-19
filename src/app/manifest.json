@@ -1,6 +1,6 @@
 {
   "name": "Ukraine-Russia War Personnel Losses Tracker",
-  "short_name": "WarLosses.info",
+  "short_name": "UkraineWarLosses.org",
   "description": "Real-time tracking of military personnel casualties in the Ukraine-Russia conflict",
   "start_url": "/",
   "display": "standalone",

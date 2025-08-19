@@ -113,11 +113,13 @@ export default async function HomePage() {
         <AdBanner size="content" adSlot="0987654321" />
 
         {/* Trends Chart Section */}
-        <section id="trends" className="bg-card-bg border border-border-color rounded-lg p-8 my-8">
-          <h2 className="text-xl font-bold text-text-primary mb-4">
+        <section id="trends" className="bg-card-bg border border-border-color rounded-lg p-4 sm:p-6 lg:p-8 my-8">
+          <h2 className="text-lg sm:text-xl font-bold text-text-primary mb-4">
             📈 Personnel Casualty Trends Over Time
           </h2>
-          <Chart ukraineHistorical={data.ukraineHistorical} russiaHistorical={data.russiaHistorical} />
+          <div className="w-full overflow-x-auto">
+            <Chart ukraineHistorical={data.ukraineHistorical} russiaHistorical={data.russiaHistorical} />
+          </div>
         </section>
 
         {/* Mobile Sidebar Ad */}

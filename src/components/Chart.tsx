@@ -15,6 +15,19 @@ interface ChartData {
 export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProps) {
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Mobile detection
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const processHistoricalData = () => {
@@ -147,20 +160,34 @@ export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProp
       const data = payload[0].payload; // Get the full data point
       
       return (
-        <div className="bg-gray-800 border border-border-color rounded-lg p-4 shadow-lg">
-          <p className="text-text-primary font-medium mb-3">{`Month: ${label}`}</p>
+        <div className={`bg-gray-800 border border-border-color rounded-lg shadow-lg ${isMobile ? 'p-2 text-xs' : 'p-4'}`}>
+          <p className={`text-text-primary font-medium ${isMobile ? 'mb-1 text-xs' : 'mb-3'}`}>
+            {isMobile ? label : `Month: ${label}`}
+          </p>
           
-          <div className="space-y-2">
+          <div className={isMobile ? 'space-y-1' : 'space-y-2'}>
             <div>
-              <p className="text-sm font-medium text-yellow-400">Ukrainian Forces</p>
-              <p className="text-xs text-gray-300">Monthly: {data.ukraine?.toLocaleString() || 0}</p>
-              <p className="text-xs text-gray-300">Cumulative: {data.ukraineCumulative?.toLocaleString() || 0}</p>
+              <p className={`font-medium text-yellow-400 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+                {isMobile ? 'UA' : 'Ukrainian Forces'}
+              </p>
+              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
+                {isMobile ? 'M' : 'Monthly'}: {data.ukraine?.toLocaleString() || 0}
+              </p>
+              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
+                {isMobile ? 'T' : 'Cumulative'}: {data.ukraineCumulative?.toLocaleString() || 0}
+              </p>
             </div>
             
             <div>
-              <p className="text-sm font-medium text-red-400">Russian Forces</p>
-              <p className="text-xs text-gray-300">Monthly: {data.russia?.toLocaleString() || 0}</p>
-              <p className="text-xs text-gray-300">Cumulative: {data.russiaCumulative?.toLocaleString() || 0}</p>
+              <p className={`font-medium text-red-400 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+                {isMobile ? 'RU' : 'Russian Forces'}
+              </p>
+              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
+                {isMobile ? 'M' : 'Monthly'}: {data.russia?.toLocaleString() || 0}
+              </p>
+              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
+                {isMobile ? 'T' : 'Cumulative'}: {data.russiaCumulative?.toLocaleString() || 0}
+              </p>
             </div>
           </div>
         </div>
@@ -181,77 +208,98 @@ export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProp
   }
 
   return (
-    <div className="h-80 w-full">
+    <div className="h-64 sm:h-80 lg:h-96 w-full overflow-hidden">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+        <LineChart 
+          data={chartData} 
+          margin={{ 
+            top: 20, 
+            right: isMobile ? 15 : 30, 
+            left: isMobile ? 10 : 20, 
+            bottom: isMobile ? 60 : 5 
+          }}
+        >
           <CartesianGrid strokeDasharray="3 3" stroke="#3d3d3d" />
           <XAxis 
             dataKey="date" 
             stroke="#a0aec0" 
-            fontSize={12}
-            tick={{ fill: '#a0aec0' }}
+            fontSize={isMobile ? 9 : 12}
+            tick={{ fill: '#a0aec0', fontSize: isMobile ? 9 : 12 }}
+            angle={isMobile ? -45 : 0}
+            textAnchor={isMobile ? 'end' : 'middle'}
+            height={isMobile ? 60 : 30}
+            interval={isMobile ? 'preserveStartEnd' : 0}
           />
           <YAxis 
             yAxisId="monthly"
             stroke="#a0aec0" 
-            fontSize={12}
-            tick={{ fill: '#a0aec0' }}
+            fontSize={isMobile ? 8 : 12}
+            tick={{ fill: '#a0aec0', fontSize: isMobile ? 8 : 12 }}
             tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
+            width={isMobile ? 30 : 50}
           />
           <YAxis 
             yAxisId="cumulative"
             orientation="right"
             stroke="#666"
-            fontSize={12}
-            tick={{ fill: '#666' }}
+            fontSize={isMobile ? 8 : 12}
+            tick={{ fill: '#666', fontSize: isMobile ? 8 : 12 }}
             tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
+            width={isMobile ? 30 : 50}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend 
-            wrapperStyle={{ color: '#a0aec0' }}
+            wrapperStyle={{ 
+              color: '#a0aec0', 
+              fontSize: isMobile ? '11px' : '12px',
+              paddingTop: '10px'
+            }}
             iconType="line"
+            layout={isMobile ? 'vertical' : 'horizontal'}
+            align={isMobile ? 'right' : 'center'}
+            verticalAlign={isMobile ? 'top' : 'bottom'}
           />
           <Line 
             yAxisId="monthly"
             type="monotone" 
             dataKey="ukraine" 
             stroke="#ffd700" 
-            strokeWidth={2}
-            name="Ukrainian Monthly Losses"
-            dot={{ fill: '#ffd700', strokeWidth: 2, r: 3 }}
-            activeDot={{ r: 5, stroke: '#ffd700', strokeWidth: 2, fill: '#ffd700' }}
+            strokeWidth={isMobile ? 1.5 : 2}
+            name={isMobile ? "UA Monthly" : "Ukrainian Monthly Losses"}
+            dot={{ fill: '#ffd700', strokeWidth: 1, r: isMobile ? 2 : 3 }}
+            activeDot={{ r: isMobile ? 3 : 5, stroke: '#ffd700', strokeWidth: 1, fill: '#ffd700' }}
           />
           <Line 
             yAxisId="monthly"
             type="monotone" 
             dataKey="russia" 
             stroke="#ff6b6b" 
-            strokeWidth={2}
-            name="Russian Monthly Losses"
-            dot={{ fill: '#ff6b6b', strokeWidth: 2, r: 3 }}
-            activeDot={{ r: 5, stroke: '#ff6b6b', strokeWidth: 2, fill: '#ff6b6b' }}
+            strokeWidth={isMobile ? 1.5 : 2}
+            name={isMobile ? "RU Monthly" : "Russian Monthly Losses"}
+            dot={{ fill: '#ff6b6b', strokeWidth: 1, r: isMobile ? 2 : 3 }}
+            activeDot={{ r: isMobile ? 3 : 5, stroke: '#ff6b6b', strokeWidth: 1, fill: '#ff6b6b' }}
           />
           <Line 
             yAxisId="cumulative"
             type="monotone" 
             dataKey="ukraineCumulative" 
             stroke="#b8860b" 
-            strokeWidth={2}
-            strokeDasharray="5 5"
-            name="Ukrainian Cumulative Total"
+            strokeWidth={isMobile ? 1.5 : 2}
+            strokeDasharray={isMobile ? "3 3" : "5 5"}
+            name={isMobile ? "UA Total" : "Ukrainian Cumulative Total"}
             dot={false}
-            activeDot={{ r: 4, stroke: '#b8860b', strokeWidth: 2, fill: '#b8860b' }}
+            activeDot={{ r: isMobile ? 2 : 4, stroke: '#b8860b', strokeWidth: 1, fill: '#b8860b' }}
           />
           <Line 
             yAxisId="cumulative"
             type="monotone" 
             dataKey="russiaCumulative" 
             stroke="#8b0000" 
-            strokeWidth={2}
-            strokeDasharray="5 5"
-            name="Russian Cumulative Total"
+            strokeWidth={isMobile ? 1.5 : 2}
+            strokeDasharray={isMobile ? "3 3" : "5 5"}
+            name={isMobile ? "RU Total" : "Russian Cumulative Total"}
             dot={false}
-            activeDot={{ r: 4, stroke: '#8b0000', strokeWidth: 2, fill: '#8b0000' }}
+            activeDot={{ r: isMobile ? 2 : 4, stroke: '#8b0000', strokeWidth: 1, fill: '#8b0000' }}
           />
         </LineChart>
       </ResponsiveContainer>

@@ -1,6 +1,6 @@
 # Ukraine-Russia War Personnel Losses Tracker
 
-A high-performance, database-free NextJS 14 static website that provides real-time tracking of military personnel casualties in the Ukraine-Russia conflict. All data is scraped directly from official sources and stored as static JSON files.
+A high-performance, database-free NextJS 14 static website that provides real-time tracking of military personnel casualties in the Ukraine-Russia conflict. All data is scraped directly from official sources and stored as static JSON files. 1
 
 ## Features
 

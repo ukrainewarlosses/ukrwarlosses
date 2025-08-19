@@ -3,22 +3,22 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://warlosses.info',
+      url: 'https://ukrainewarlosses.com',
       lastModified: new Date(),
-      changeFrequency: 'hourly',
+      changeFrequency: 'daily',
       priority: 1,
     },
     {
-      url: 'https://warlosses.info/methodology',
+      url: 'https://ukrainewarlosses.com/methodology',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: 'https://warlosses.info/contact',
+      url: 'https://ukrainewarlosses.com/api/data',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
+      changeFrequency: 'hourly',
+      priority: 0.6,
     },
   ];
 }

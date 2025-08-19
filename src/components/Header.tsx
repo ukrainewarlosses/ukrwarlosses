@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,23 +24,86 @@ export default function Header() {
             WarLosses.info
           </Link>
           <nav className="hidden md:flex gap-8">
-            <Link href="#overview" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
+            <Link href="/" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
+              Home
+            </Link>
+            <Link href="/#overview" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
               Overview
             </Link>
-            <Link href="#trends" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
+            <Link href="/#trends" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
               Trends
             </Link>
-            <Link href="#videos" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
+            <Link href="/#videos" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
               Coverage
             </Link>
-            <Link href="#sources" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
+            <Link href="/#sources" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
               Sources
             </Link>
+            <Link href="/methodology" className="text-primary-dark font-medium py-2 border-b-2 border-transparent hover:text-primary hover:border-primary transition-all duration-200">
+              Methodology
+            </Link>
           </nav>
-          <div className="md:hidden flex justify-center">
-            {/* Mobile menu can be added here if needed */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-primary-dark hover:text-primary transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-border-color bg-card-bg">
+            <nav className="flex flex-col py-4">
+              <Link 
+                href="/" 
+                className="text-primary-dark font-medium py-3 px-4 hover:text-primary hover:bg-gray-800 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                href="/#overview" 
+                className="text-primary-dark font-medium py-3 px-4 hover:text-primary hover:bg-gray-800 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Overview
+              </Link>
+              <Link 
+                href="/#trends" 
+                className="text-primary-dark font-medium py-3 px-4 hover:text-primary hover:bg-gray-800 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Trends
+              </Link>
+              <Link 
+                href="/#videos" 
+                className="text-primary-dark font-medium py-3 px-4 hover:text-primary hover:bg-gray-800 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Coverage
+              </Link>
+              <Link 
+                href="/#sources" 
+                className="text-primary-dark font-medium py-3 px-4 hover:text-primary hover:bg-gray-800 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Sources
+              </Link>
+              <Link 
+                href="/methodology" 
+                className="text-primary-dark font-medium py-3 px-4 hover:text-primary hover:bg-gray-800 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Methodology
+              </Link>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

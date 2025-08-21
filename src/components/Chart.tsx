@@ -205,7 +205,7 @@ export default function Chart({ ukraineHistorical, russiaHistorical, ukraineWeek
           
           <div className={isMobile ? 'space-y-1' : 'space-y-2'}>
             <div>
-              <p className={`font-medium text-yellow-400 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+              <p className={`font-medium ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ color: '#0057B7' }}>
                 {isMobile ? 'UA Total' : 'Ukrainian Total (Deaths + Missing)'}
               </p>
               <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
@@ -216,7 +216,7 @@ export default function Chart({ ukraineHistorical, russiaHistorical, ukraineWeek
             </div>
             
             <div>
-              <p className={`font-medium text-red-400 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+              <p className={`font-medium ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ color: '#DA291C' }}>
                 {isMobile ? 'RU Deaths' : 'Russian Deaths'}
               </p>
               <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>{isMobile ? 'Period' : timePeriod === 'monthly' ? 'Monthly' : 'Weekly'}: {data.russiaDeaths?.toLocaleString() || 0}</p>
@@ -324,44 +324,44 @@ export default function Chart({ ukraineHistorical, russiaHistorical, ukraineWeek
               yAxisId="period"
               type="monotone" 
               dataKey="ukraineTotal" 
-              stroke="#ffd700" 
+              stroke="#0057B7" 
               strokeWidth={isMobile ? 3 : 4}
               name={isMobile ? "UA Total" : "Ukrainian Total (Deaths + Missing)"}
-              dot={{ fill: '#ffd700', strokeWidth: 1, r: isMobile ? 3 : 4 }}
-              activeDot={{ r: isMobile ? 4 : 6, stroke: '#ffd700', strokeWidth: 1, fill: '#ffd700' }}
+              dot={{ fill: '#0057B7', strokeWidth: 1, r: isMobile ? 3 : 4 }}
+              activeDot={{ r: isMobile ? 4 : 6, stroke: '#0057B7', strokeWidth: 1, fill: '#0057B7' }}
             />
 
             <Line 
               yAxisId="period"
               type="monotone" 
               dataKey="russiaDeaths" 
-              stroke="#f44336" 
+              stroke="#DA291C" 
               strokeWidth={isMobile ? 2 : 2.5}
               name={isMobile ? "RU Deaths" : "Russian Deaths"}
-              dot={{ fill: '#f44336', strokeWidth: 1, r: isMobile ? 2 : 3 }}
-              activeDot={{ r: isMobile ? 3 : 5, stroke: '#f44336', strokeWidth: 1, fill: '#f44336' }}
+              dot={{ fill: '#DA291C', strokeWidth: 1, r: isMobile ? 2 : 3 }}
+              activeDot={{ r: isMobile ? 3 : 5, stroke: '#DA291C', strokeWidth: 1, fill: '#DA291C' }}
             />
             <Line 
               yAxisId="cumulative"
               type="monotone" 
               dataKey="ukraineTotalCumulative" 
-              stroke="#ffeb3b" 
+              stroke="#0057B7" 
               strokeWidth={isMobile ? 2 : 3}
               strokeDasharray="5 5"
               name={isMobile ? "UA Total (Cum)" : "Ukrainian Total (Cumulative)"}
               dot={false}
-              activeDot={{ r: isMobile ? 3 : 5, stroke: '#ffeb3b', strokeWidth: 1, fill: '#ffeb3b' }}
+              activeDot={{ r: isMobile ? 3 : 5, stroke: '#0057B7', strokeWidth: 1, fill: '#0057B7' }}
             />
             <Line 
               yAxisId="cumulative"
               type="monotone" 
               dataKey="russiaTotalCumulative" 
-              stroke="#ef5350" 
+              stroke="#DA291C" 
               strokeWidth={isMobile ? 2 : 3}
               strokeDasharray="5 5"
               name={isMobile ? "RU Total (Cum)" : "Russian Total (Cumulative)"}
               dot={false}
-              activeDot={{ r: isMobile ? 3 : 5, stroke: '#ef5350', strokeWidth: 1, fill: '#ef5350' }}
+              activeDot={{ r: isMobile ? 3 : 5, stroke: '#DA291C', strokeWidth: 1, fill: '#DA291C' }}
             />
           </LineChart>
         </ResponsiveContainer>

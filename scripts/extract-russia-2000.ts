@@ -180,7 +180,7 @@ async function extractRussia2000() {
             
             // Show compiler output
             const lines = compilerResult.stdout.trim().split('\n');
-            lines.slice(-5).forEach(line => console.log(`   ${line}`));
+            lines.slice(-5).forEach((line: string) => console.log(`   ${line}`));
             
         } catch (compilerError) {
             console.log('❌ Monthly compiler failed:', compilerError);

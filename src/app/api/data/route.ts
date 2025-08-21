@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { loadCasualtyData } from '@/lib/dataLoader';
+import { loadCasualtyDataHybrid } from '@/lib/hybridDataLoader';
 
 export async function GET() {
   try {
-    const data = await loadCasualtyData();
+    const data = await loadCasualtyDataHybrid();
     
     return NextResponse.json(data, {
       headers: {

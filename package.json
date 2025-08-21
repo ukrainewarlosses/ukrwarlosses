@@ -9,12 +9,12 @@
     "start": "next start",
     "lint": "next lint",
     "scrape": "node scripts/scrape.js",
-
     "export-soldiers-csv": "npx tsx scripts/export-soldiers-csv.ts",
     "compile-ukraine-monthly": "npx tsx scripts/compile-ukraine-monthly.ts",
     "compile-russia-monthly": "npx tsx scripts/compile-russia-monthly.ts",
     "compile-ukraine-weekly": "npx tsx scripts/compile-ukraine-weekly.ts",
-    "compile-russia-weekly": "npx tsx scripts/compile-russia-weekly.ts"
+    "compile-russia-weekly": "npx tsx scripts/compile-russia-weekly.ts",
+    "upload-to-blob": "npx tsx scripts/upload-to-blob.ts"
   },
   "repository": {
     "type": "git",

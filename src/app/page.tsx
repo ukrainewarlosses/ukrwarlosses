@@ -7,7 +7,7 @@ import AdBanner from '@/components/AdBanner';
 import VideoCard from '@/components/VideoCard';
 import SourceCard from '@/components/SourceCard';
 import Chart from '@/components/Chart';
-import { loadCasualtyData } from '@/lib/dataLoader';
+import { loadCasualtyDataHybrid } from '@/lib/hybridDataLoader';
 import { YouTubeEmbed } from '@/types';
 
 export const metadata: Metadata = {
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 
 async function getCasualtyData() {
   try {
-    const data = await loadCasualtyData();
+    const data = await loadCasualtyDataHybrid();
           return {
         ukraine: data.ukraine,
         russia: data.russia,

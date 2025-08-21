@@ -99,6 +99,34 @@ NODE_ENV=development
 
 ### 3. Data Setup
 
+#### Option A: Using Vercel Blob Storage (Recommended for Production)
+
+The application now uses Vercel Blob Storage to store large data files, preventing serverless function size limits.
+
+1. **Upload data files to blob storage:**
+   ```bash
+   npm run upload-to-blob
+   ```
+
+2. **Add environment variables to your Vercel project:**
+   The upload script will output the required environment variables. Add them to your Vercel project settings:
+   - `UKRAINE_SOLDIERS_BLOB_URL`
+   - `UKRAINE_MONTHLY_BLOB_URL`
+   - `RUSSIA_MONTHLY_BLOB_URL`
+   - `UKRAINE_WEEKLY_BLOB_URL`
+   - `RUSSIA_WEEKLY_BLOB_URL`
+
+3. **For local development, add to `.env.local`:**
+   ```env
+   UKRAINE_SOLDIERS_BLOB_URL=your-blob-url
+   UKRAINE_MONTHLY_BLOB_URL=your-blob-url
+   RUSSIA_MONTHLY_BLOB_URL=your-blob-url
+   UKRAINE_WEEKLY_BLOB_URL=your-blob-url
+   RUSSIA_WEEKLY_BLOB_URL=your-blob-url
+   ```
+
+#### Option B: Local Data Files (Development Only)
+
 No database setup required! The application uses static JSON files:
 
 - Data is automatically generated from the mock scraper in development

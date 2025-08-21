@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large data files (now stored in blob storage)
+src/data/ukraine/soldiers-raw.json
+src/data/ukraine/soldiers-raw-backup.json
+src/data/russia/casualties.json
+src/data/russia/casualties-raw.json

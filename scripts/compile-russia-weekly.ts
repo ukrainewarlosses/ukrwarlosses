@@ -126,7 +126,7 @@ async function main() {
     }
     
   } catch (error) {
-    if (error instanceof Error && error.code === 'ENOENT') {
+    if (error instanceof Error && (error as any).code === 'ENOENT') {
       console.error(`❌ Input file not found: ${inputPath}`);
       console.error('💡 Make sure to run the Russian scraper first to generate the data file.');
     } else {

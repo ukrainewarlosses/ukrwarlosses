@@ -61,7 +61,11 @@ export default function StatsCard({ country, casualties, title, breakdown }: Sta
         Total Personnel Losses
       </div>
       <div className="text-xs text-text-muted mt-1">
-        February 24, 2022 - Present
+        February 24, 2022 - {(() => {
+          const now = new Date();
+          const prevMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+          return prevMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        })()}
       </div>
       
       {breakdown && (breakdown.dead || breakdown.missing || breakdown.prisoners) && (

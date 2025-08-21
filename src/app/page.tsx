@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 async function getCasualtyData() {
   try {
     const data = await loadCasualtyDataHybrid();
-          return {
+    return {
         ukraine: data.ukraine,
         russia: data.russia,
         ukraineHistorical: data.ukraineHistorical,

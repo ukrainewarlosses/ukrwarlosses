@@ -241,6 +241,46 @@ export async function loadCasualtyDataFromBlob(): Promise<ScrapedData> {
       data.russiaWeekly = russiaWeeklyHistorical;
     }
     
+    // Calculate grand totals from monthly historical data
+    // Date range: February 24, 2022 until current month
+    const startDate = new Date('2022-02-24');
+    const now = new Date();
+    const endDate = new Date(now.getFullYear(), now.getMonth(), 1);
+    
+    let ukraineGrandTotal = 0;
+    let russiaGrandTotal = 0;
+    
+    // Calculate Ukraine grand total from monthly data
+    if (data.ukraineHistorical && data.ukraineHistorical.length > 0) {
+      ukraineGrandTotal = data.ukraineHistorical
+        .filter(item => {
+          const [year, month] = item.date.split('-');
+          const itemDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+          return itemDate >= startDate && itemDate <= endDate;
+        })
+        .reduce((total, item) => total + (item.casualties || 0), 0);
+    }
+    
+    // Calculate Russia grand total from monthly data
+    if (data.russiaHistorical && data.russiaHistorical.length > 0) {
+      russiaGrandTotal = data.russiaHistorical
+        .filter(item => {
+          const [year, month] = item.date.split('-');
+          const itemDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+          return itemDate >= startDate && itemDate <= endDate;
+        })
+        .reduce((total, item) => total + (item.casualties || 0), 0);
+    }
+    
+    // Update the totals with grand totals from monthly data
+    if (ukraineGrandTotal > 0) {
+      data.ukraine.total_losses = ukraineGrandTotal;
+    }
+    
+    if (russiaGrandTotal > 0) {
+      data.russia.total_losses = russiaGrandTotal;
+    }
+    
     // Update last updated timestamp
     data.lastUpdated = new Date().toISOString();
     

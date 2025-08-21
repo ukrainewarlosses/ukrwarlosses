@@ -163,6 +163,16 @@ export async function loadCasualtyDataFromBlob(): Promise<ScrapedData> {
   try {
     let data: ScrapedData = { ...fallbackData };
     
+    // Check if blob URLs are available
+    const hasBlobUrls = process.env.UKRAINE_SOLDIERS_BLOB_URL && 
+                       process.env.UKRAINE_MONTHLY_BLOB_URL && 
+                       process.env.RUSSIA_MONTHLY_BLOB_URL;
+    
+    if (!hasBlobUrls) {
+      console.warn('Blob URLs not configured, using fallback data');
+      return fallbackData;
+    }
+    
     // Load current Ukraine totals from Lost Armour data
     const ukraineTotals = await loadUkraineLostArmourTotals();
     if (ukraineTotals) {

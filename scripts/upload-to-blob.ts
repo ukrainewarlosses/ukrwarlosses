@@ -13,7 +13,8 @@ async function uploadFileToBlob(filePath: string, blobName: string) {
     const fileContent = await fs.readFile(filePath);
     const result = await put(blobName, fileContent, {
       access: 'public',
-      contentType: 'application/json'
+      contentType: 'application/json',
+      token: process.env.BLOB_READ_WRITE_TOKEN
     });
     
     console.log(`✅ Uploaded ${blobName}: ${result.url}`);

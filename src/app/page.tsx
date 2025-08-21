@@ -130,8 +130,8 @@ async function getCasualtyData() {
   }
 }
 
-// Cache this page for 1 hour and revalidate every 30 minutes
-export const revalidate = 1800; // 30 minutes
+// Use dynamic rendering to avoid build-time data loading issues
+export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
   // Fetch casualty data server-side with caching

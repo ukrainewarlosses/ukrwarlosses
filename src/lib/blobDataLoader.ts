@@ -1,4 +1,5 @@
 import { CasualtyData, HistoricalData, ScrapedData } from '@/types';
+import { discoverLatestBlobUrl } from './blobDiscovery';
 
 // Fallback data in case blob files don't exist
 const fallbackData: ScrapedData = {
@@ -56,7 +57,13 @@ async function fetchFromBlob<T>(blobUrl: string): Promise<T | null> {
 // Load Ukraine Lost Armour totals from blob
 async function loadUkraineLostArmourTotals(): Promise<CasualtyData | null> {
   try {
-    const data = await fetchFromBlob<CasualtyData[]>(process.env.UKRAINE_SOLDIERS_BLOB_URL || '');
+    const soldiersUrl = await discoverLatestBlobUrl('soldiers');
+    if (!soldiersUrl) {
+      console.warn('No soldiers blob URL available');
+      return null;
+    }
+
+    const data = await fetchFromBlob<CasualtyData[]>(soldiersUrl);
     if (data && data.length > 0) {
       const latest = data[data.length - 1];
       return {
@@ -75,12 +82,35 @@ async function loadUkraineLostArmourTotals(): Promise<CasualtyData | null> {
   return null;
 }
 
-// Load compiled Ukraine monthly data from blob
-async function loadCompiledUkraineMonthly(): Promise<HistoricalData[]> {
+// Load Russia casualties data from blob
+async function loadRussiaCasualtiesFromBlob(): Promise<CasualtyData | null> {
   try {
-    const data = await fetchFromBlob<Record<string, { deaths: number; missing: number; total: number }>>(
-      process.env.UKRAINE_MONTHLY_BLOB_URL || ''
-    );
+    const casualtiesUrl = await discoverLatestBlobUrl('casualties');
+    if (!casualtiesUrl) {
+      console.warn('No casualties blob URL available');
+      return null;
+    }
+
+    const data = await fetchFromBlob<{ russia: CasualtyData }>(casualtiesUrl);
+    if (data && data.russia) {
+      return data.russia;
+    }
+  } catch (error) {
+    console.warn('Failed to load Russia casualties from blob:', error);
+  }
+  return null;
+}
+
+// Load compiled Ukraine monthly data from blob
+export async function loadCompiledUkraineMonthly(): Promise<HistoricalData[]> {
+  try {
+    const monthlyUrl = await discoverLatestBlobUrl('ukraine_monthly');
+    if (!monthlyUrl) {
+      console.warn('No Ukraine monthly blob URL available');
+      return [];
+    }
+
+    const data = await fetchFromBlob<Record<string, { deaths: number; missing: number; total: number }>>(monthlyUrl);
     if (data) {
       return Object.entries(data)
         .map(([date, stats]) => ({
@@ -98,11 +128,15 @@ async function loadCompiledUkraineMonthly(): Promise<HistoricalData[]> {
 }
 
 // Load compiled Russia monthly data from blob
-async function loadCompiledRussiaMonthly(): Promise<HistoricalData[]> {
+export async function loadCompiledRussiaMonthly(): Promise<HistoricalData[]> {
   try {
-    const data = await fetchFromBlob<Record<string, { deaths: number; total: number }>>(
-      process.env.RUSSIA_MONTHLY_BLOB_URL || ''
-    );
+    const monthlyUrl = await discoverLatestBlobUrl('russia_monthly');
+    if (!monthlyUrl) {
+      console.warn('No Russia monthly blob URL available');
+      return [];
+    }
+
+    const data = await fetchFromBlob<Record<string, { deaths: number; total: number }>>(monthlyUrl);
     if (data) {
       return Object.entries(data)
         .map(([date, stats]) => ({
@@ -120,9 +154,13 @@ async function loadCompiledRussiaMonthly(): Promise<HistoricalData[]> {
 // Load compiled Ukraine weekly data from blob
 async function loadCompiledUkraineWeekly(): Promise<HistoricalData[]> {
   try {
-    const data = await fetchFromBlob<Record<string, { deaths: number; missing: number; total: number }>>(
-      process.env.UKRAINE_WEEKLY_BLOB_URL || ''
-    );
+    const weeklyUrl = await discoverLatestBlobUrl('ukraine_weekly');
+    if (!weeklyUrl) {
+      console.warn('No Ukraine weekly blob URL available');
+      return [];
+    }
+
+    const data = await fetchFromBlob<Record<string, { deaths: number; missing: number; total: number }>>(weeklyUrl);
     if (data) {
       return Object.entries(data)
         .map(([date, stats]) => ({
@@ -142,9 +180,13 @@ async function loadCompiledUkraineWeekly(): Promise<HistoricalData[]> {
 // Load compiled Russia weekly data from blob
 async function loadCompiledRussiaWeekly(): Promise<HistoricalData[]> {
   try {
-    const data = await fetchFromBlob<Record<string, { deaths: number; total: number }>>(
-      process.env.RUSSIA_WEEKLY_BLOB_URL || ''
-    );
+    const weeklyUrl = await discoverLatestBlobUrl('russia_weekly');
+    if (!weeklyUrl) {
+      console.warn('No Russia weekly blob URL available');
+      return [];
+    }
+
+    const data = await fetchFromBlob<Record<string, { deaths: number; total: number }>>(weeklyUrl);
     if (data) {
       return Object.entries(data)
         .map(([date, stats]) => ({
@@ -163,20 +205,16 @@ export async function loadCasualtyDataFromBlob(): Promise<ScrapedData> {
   try {
     let data: ScrapedData = { ...fallbackData };
     
-    // Check if blob URLs are available
-    const hasBlobUrls = process.env.UKRAINE_SOLDIERS_BLOB_URL && 
-                       process.env.UKRAINE_MONTHLY_BLOB_URL && 
-                       process.env.RUSSIA_MONTHLY_BLOB_URL;
-    
-    if (!hasBlobUrls) {
-      console.warn('Blob URLs not configured, using fallback data');
-      return fallbackData;
-    }
-    
     // Load current Ukraine totals from Lost Armour data
     const ukraineTotals = await loadUkraineLostArmourTotals();
     if (ukraineTotals) {
       data.ukraine = ukraineTotals;
+    }
+    
+    // Load Russia casualties data from blob
+    const russiaCasualties = await loadRussiaCasualtiesFromBlob();
+    if (russiaCasualties) {
+      data.russia = russiaCasualties;
     }
     
     // Load Ukraine monthly historical from blob

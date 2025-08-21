@@ -1,5 +1,6 @@
 import { CasualtyData, HistoricalData, ScrapedData } from '@/types';
 import { discoverLatestBlobUrl } from './blobDiscovery';
+import { YouTubeService } from './youtube';
 
 // Fallback data in case blob files don't exist
 const fallbackData: ScrapedData = {
@@ -20,23 +21,7 @@ const fallbackData: ScrapedData = {
   },
   ukraineHistorical: [],
   russiaHistorical: [],
-  youtubeVideos: [
-    {
-      title: 'Ukraine War Update - Latest Military Developments',
-      youtube_id: 'dQw4w9WgXcQ',
-      channel_name: 'History Legends',
-    },
-    {
-      title: 'Military Analysis: Russia vs Ukraine Forces',
-      youtube_id: 'oHg5SJYRHA0',
-      channel_name: 'History Legends',
-    },
-    {
-      title: 'War Report: Current Situation Analysis',
-      youtube_id: 'fC7oUOUEEi4',
-      channel_name: 'History Legends',
-    },
-  ],
+  youtubeVideos: [],
   lastUpdated: new Date().toISOString()
 };
 
@@ -239,6 +224,23 @@ export async function loadCasualtyDataFromBlob(): Promise<ScrapedData> {
     const russiaWeeklyHistorical = await loadCompiledRussiaWeekly();
     if (russiaWeeklyHistorical.length > 0) {
       data.russiaWeekly = russiaWeeklyHistorical;
+    }
+    
+    // Load YouTube videos dynamically
+    try {
+      const youtubeService = new YouTubeService();
+      const youtubeVideos = await youtubeService.getHistoryLegendsLatestVideos();
+      if (youtubeVideos && youtubeVideos.length > 0) {
+        // Convert YouTubeVideo format to YouTubeEmbed format
+        data.youtubeVideos = youtubeVideos.map(video => ({
+          title: video.title,
+          youtube_id: video.id,
+          channel_name: 'History Legends'
+        }));
+      }
+    } catch (error) {
+      console.warn('Failed to load YouTube videos:', error);
+      // Keep empty array if YouTube loading fails
     }
     
     // Calculate grand totals from monthly historical data

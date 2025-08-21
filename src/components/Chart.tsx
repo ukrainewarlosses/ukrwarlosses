@@ -6,16 +6,22 @@ import { ChartProps } from '@/types';
 
 interface ChartData {
   date: string;
-  ukraine: number;
-  russia: number;
-  ukraineCumulative: number;
-  russiaCumulative: number;
+  isoDate: string; // For sorting/filtering
+  ukraineTotal: number;
+  ukraineDeaths: number;
+  ukraineMissing: number;
+  ukraineTotalCumulative: number;
+  russiaDeaths: number;
+  russiaTotalCumulative: number;
 }
 
-export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProps) {
+type TimePeriod = 'monthly' | 'weekly';
+
+export default function Chart({ ukraineHistorical, russiaHistorical, ukraineWeekly, russiaWeekly }: ChartProps) {
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [timePeriod, setTimePeriod] = useState<TimePeriod>('monthly');
 
   useEffect(() => {
     // Mobile detection
@@ -31,163 +37,190 @@ export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProp
 
   useEffect(() => {
     const processHistoricalData = () => {
-
-      
-      // Combine Ukrainian and Russian data by date
       const dataMap: { [key: string]: ChartData } = {};
-      
-      if (ukraineHistorical && ukraineHistorical.length > 0) {
 
-        ukraineHistorical.forEach((item, index) => {
-          // Parse the date correctly - item.date is in format "2025-07-01"
-          const [year, month, day] = item.date.split('-');
-          const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day)); // month is 0-indexed
-          const dateKey = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+      // Choose data source based on time period
+      const ukraineData = timePeriod === 'monthly' ? ukraineHistorical : (ukraineWeekly || []);
+      const russiaData = timePeriod === 'monthly' ? russiaHistorical : (russiaWeekly || []);
+      
+      // Debug logging
+      console.log(`Chart processing ${timePeriod} data:`, {
+        ukraineDataLength: ukraineData.length,
+        russiaDataLength: russiaData.length,
+        timePeriod
+      });
+
+      if (ukraineData && ukraineData.length > 0) {
+        ukraineData.forEach(item => {
+          let dateKey: string;
+          let isoDate: string;
+          
+          if (timePeriod === 'monthly') {
+            // Monthly data: "2022-02-01" format
+            const [year, month] = item.date.split('-');
+            const date = new Date(parseInt(year), parseInt(month) - 1, 1);
+            dateKey = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            isoDate = `${year}-${month}-01`;
+          } else {
+            // Weekly data: "2022-W09" format
+            dateKey = item.date; // Use week key directly
+            isoDate = item.date;
+          }
+          
           if (!dataMap[dateKey]) {
-            dataMap[dateKey] = { date: dateKey, ukraine: 0, russia: 0, ukraineCumulative: 0, russiaCumulative: 0 };
+            dataMap[dateKey] = { 
+              date: dateKey, 
+              isoDate, 
+              ukraineTotal: 0, 
+              ukraineDeaths: 0, 
+              ukraineMissing: 0, 
+              ukraineTotalCumulative: 0,
+              russiaDeaths: 0,
+              russiaTotalCumulative: 0
+            };
           }
           
-          // Ensure we're using the total casualties (confirmed + unconfirmed)
-          let totalCasualties = item.casualties;
-          
-          // If casualties is 0 or undefined, try to calculate from confirmed + unconfirmed
-          if (!totalCasualties && (item.confirmed || item.unconfirmed)) {
-            totalCasualties = (item.confirmed || 0) + (item.unconfirmed || 0);
-          }
-          
-          dataMap[dateKey].ukraine = totalCasualties || 0;
-          
-
+          const deaths = item.confirmed || 0;
+          const missing = item.unconfirmed || 0;
+          const total = deaths + missing;
+          dataMap[dateKey].ukraineTotal = total;
+          dataMap[dateKey].ukraineDeaths = deaths;
+          dataMap[dateKey].ukraineMissing = missing;
         });
-        
-
-      } else {
-        console.warn('No Ukrainian historical data available');
       }
-      
-      if (russiaHistorical && russiaHistorical.length > 0) {
 
-        russiaHistorical.forEach((item, index) => {
-          // Parse the date correctly - item.date is in format "2025-07-03"  
-          const [year, month, day] = item.date.split('-');
-          const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day)); // month is 0-indexed
-          const dateKey = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+      if (russiaData && russiaData.length > 0) {
+        russiaData.forEach(item => {
+          let dateKey: string;
+          let isoDate: string;
+          
+          if (timePeriod === 'monthly') {
+            // Monthly data: "2022-02-01" format
+            const [year, month] = item.date.split('-');
+            const date = new Date(parseInt(year), parseInt(month) - 1, 1);
+            dateKey = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            isoDate = `${year}-${month}-01`;
+          } else {
+            // Weekly data: "2022-W09" format
+            dateKey = item.date; // Use week key directly
+            isoDate = item.date;
+          }
+          
           if (!dataMap[dateKey]) {
-            dataMap[dateKey] = { date: dateKey, ukraine: 0, russia: 0, ukraineCumulative: 0, russiaCumulative: 0 };
+            dataMap[dateKey] = { 
+              date: dateKey, 
+              isoDate, 
+              ukraineTotal: 0, 
+              ukraineDeaths: 0, 
+              ukraineMissing: 0, 
+              ukraineTotalCumulative: 0,
+              russiaDeaths: 0,
+              russiaTotalCumulative: 0
+            };
           }
-          dataMap[dateKey].russia = item.casualties;
           
-
+          const deaths = item.casualties || 0; // Russia data has deaths in casualties field
+          dataMap[dateKey].russiaDeaths = deaths;
         });
       }
-      
+
       const processedData = Object.values(dataMap);
-      
       if (processedData.length > 0) {
-        const sortedData = processedData.sort((a, b) => {
-          // Better date sorting - extract year from the date string
-          const [monthA, yearA] = a.date.split(' ');
-          const [monthB, yearB] = b.date.split(' ');
+        // Cut off at last fully completed period (exclude current period and future)
+        const now = new Date();
+        let filtered: ChartData[];
+        
+        if (timePeriod === 'monthly') {
+          const cutoffDate = new Date(now.getFullYear(), now.getMonth() - 1, 1); // Previous month
+          filtered = processedData.filter(p => {
+            const d = new Date(p.isoDate);
+            return d < cutoffDate;
+          });
+        } else {
+          // For weekly data, we need to handle the ISO week format differently
+          // Calculate the current week number and exclude current week
+          const currentYear = now.getFullYear();
+          const startOfYear = new Date(currentYear, 0, 1);
+          const days = Math.floor((now.getTime() - startOfYear.getTime()) / (24 * 60 * 60 * 1000));
+          const currentWeekNumber = Math.ceil((days + startOfYear.getDay() + 1) / 7);
+          const currentWeekKey = `${currentYear}-W${String(currentWeekNumber).padStart(2, '0')}`;
           
-          const dateA = new Date(monthA + ' 1, ' + yearA);
-          const dateB = new Date(monthB + ' 1, ' + yearB);
-          return dateA.getTime() - dateB.getTime();
+          filtered = processedData.filter(p => {
+            // For weekly data, compare week keys directly
+            return p.date < currentWeekKey;
+          });
+        }
+
+        const sortedData = filtered.sort((a, b) => {
+          if (timePeriod === 'monthly') {
+            const [monthA, yearA] = a.date.split(' ');
+            const [monthB, yearB] = b.date.split(' ');
+            const dateA = new Date(monthA + ' 1, ' + yearA);
+            const dateB = new Date(monthB + ' 1, ' + yearB);
+            return dateA.getTime() - dateB.getTime();
+          } else {
+            // Weekly data is already in sortable format (YYYY-W##)
+            return a.date.localeCompare(b.date);
+          }
         });
-        
-        // Calculate cumulative totals
-        let ukraineCumulative = 0;
-        let russiaCumulative = 0;
-        
-        const dataWithCumulative = sortedData.map(item => {
-          ukraineCumulative += item.ukraine;
-          russiaCumulative += item.russia;
-          
+
+        let ukraineTotalCum = 0;
+        let russiaTotalCum = 0;
+        const finalData = sortedData.map(item => {
+          ukraineTotalCum += item.ukraineTotal;
+          russiaTotalCum += item.russiaDeaths;
           return {
             ...item,
-            ukraineCumulative,
-            russiaCumulative
+            ukraineTotalCumulative: ukraineTotalCum,
+            russiaTotalCumulative: russiaTotalCum
           };
         });
-
-        return dataWithCumulative;
-      }
-      
-      console.warn('No data available, using fallback');
-      // Fallback mock data if no historical data available
-      const data: ChartData[] = [];
-      const startDate = new Date('2022-02-01');
-
-      for (let i = 0; i < 36; i++) { // 36 months from Feb 2022 to current
-        const date = new Date(startDate);
-        date.setMonth(date.getMonth() + i);
         
-        const ukraineMonthly = Math.floor(Math.random() * 5000) + 2000;
-        const russiaMonthly = Math.floor(Math.random() * 8000) + 6000;
-
-        data.push({
-          date: date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }),
-          ukraine: ukraineMonthly,
-          russia: russiaMonthly,
-          ukraineCumulative: 0, // Will be calculated below
-          russiaCumulative: 0   // Will be calculated below
+        console.log(`Final ${timePeriod} chart data:`, {
+          dataPoints: finalData.length,
+          firstPoint: finalData[0]?.date,
+          lastPoint: finalData[finalData.length - 1]?.date
         });
-      }
-      
-      // Calculate cumulative totals for fallback data
-      let ukraineCumulative = 0;
-      let russiaCumulative = 0;
-      
-      return data.map(item => {
-        ukraineCumulative += item.ukraine;
-        russiaCumulative += item.russia;
         
-        return {
-          ...item,
-          ukraineCumulative,
-          russiaCumulative
-        };
-      });
+        return finalData;
+      }
+
+      return [] as ChartData[];
     };
 
-    // Process the data
     const processedData = processHistoricalData();
     setChartData(processedData);
     setLoading(false);
-  }, [ukraineHistorical, russiaHistorical]);
+  }, [ukraineHistorical, russiaHistorical, ukraineWeekly, russiaWeekly, timePeriod]);
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
-      const data = payload[0].payload; // Get the full data point
+      const data = payload[0].payload;
       
       return (
         <div className={`bg-gray-800 border border-border-color rounded-lg shadow-lg ${isMobile ? 'p-2 text-xs' : 'p-4'}`}>
           <p className={`text-text-primary font-medium ${isMobile ? 'mb-1 text-xs' : 'mb-3'}`}>
-            {isMobile ? label : `Month: ${label}`}
+            {isMobile ? label : `${timePeriod === 'monthly' ? 'Month' : 'Week'}: ${label}`}
           </p>
           
           <div className={isMobile ? 'space-y-1' : 'space-y-2'}>
             <div>
               <p className={`font-medium text-yellow-400 ${isMobile ? 'text-xs' : 'text-sm'}`}>
-                {isMobile ? 'UA' : 'Ukrainian Forces'}
+                {isMobile ? 'UA Total' : 'Ukrainian Total (Deaths + Missing)'}
               </p>
               <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
-                {isMobile ? 'M' : 'Monthly'}: {data.ukraine?.toLocaleString() || 0}
+                {isMobile ? 'Period' : timePeriod === 'monthly' ? 'Monthly' : 'Weekly'}: {data.ukraineTotal?.toLocaleString() || 0}
+                {!isMobile && ` (${(data.ukraineDeaths || 0).toLocaleString()} + ${(data.ukraineMissing || 0).toLocaleString()})`}
               </p>
-              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
-                {isMobile ? 'T' : 'Cumulative'}: {data.ukraineCumulative?.toLocaleString() || 0}
-              </p>
+              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>{isMobile ? 'Cum' : 'Cumulative'}: {data.ukraineTotalCumulative?.toLocaleString() || 0}</p>
             </div>
             
             <div>
               <p className={`font-medium text-red-400 ${isMobile ? 'text-xs' : 'text-sm'}`}>
-                {isMobile ? 'RU' : 'Russian Forces'}
+                {isMobile ? 'RU Deaths' : 'Russian Deaths'}
               </p>
-              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
-                {isMobile ? 'M' : 'Monthly'}: {data.russia?.toLocaleString() || 0}
-              </p>
-              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>
-                {isMobile ? 'T' : 'Cumulative'}: {data.russiaCumulative?.toLocaleString() || 0}
-              </p>
+              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>{isMobile ? 'Period' : timePeriod === 'monthly' ? 'Monthly' : 'Weekly'}: {data.russiaDeaths?.toLocaleString() || 0}</p>
+              <p className={`text-gray-300 ${isMobile ? 'text-xs' : 'text-xs'}`}>{isMobile ? 'Cum' : 'Cumulative'}: {data.russiaTotalCumulative?.toLocaleString() || 0}</p>
             </div>
           </div>
         </div>
@@ -208,101 +241,131 @@ export default function Chart({ ukraineHistorical, russiaHistorical }: ChartProp
   }
 
   return (
-    <div className="h-80 sm:h-96 lg:h-[28rem] w-full overflow-hidden">
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart 
-          data={chartData} 
-          margin={{ 
-            top: isMobile ? 25 : 20, 
-            right: isMobile ? 20 : 30, 
-            left: isMobile ? 15 : 20, 
-            bottom: isMobile ? 80 : 5 
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" stroke="#3d3d3d" />
-          <XAxis 
-            dataKey="date" 
-            stroke="#a0aec0" 
-            fontSize={isMobile ? 10 : 12}
-            tick={{ fill: '#a0aec0', fontSize: isMobile ? 10 : 12 }}
-            angle={isMobile ? -45 : 0}
-            textAnchor={isMobile ? 'end' : 'middle'}
-            height={isMobile ? 60 : 30}
-            interval={isMobile ? 'preserveStartEnd' : 0}
-          />
-          <YAxis 
-            yAxisId="monthly"
-            stroke="#a0aec0" 
-            fontSize={isMobile ? 9 : 12}
-            tick={{ fill: '#a0aec0', fontSize: isMobile ? 9 : 12 }}
-            tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
-            width={isMobile ? 30 : 50}
-          />
-          <YAxis 
-            yAxisId="cumulative"
-            orientation="right"
-            stroke="#666"
-            fontSize={isMobile ? 9 : 12}
-            tick={{ fill: '#666', fontSize: isMobile ? 9 : 12 }}
-            tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
-            width={isMobile ? 30 : 50}
-          />
-          <Tooltip content={<CustomTooltip />} />
-          <Legend 
-            wrapperStyle={{ 
-              color: '#a0aec0', 
-              fontSize: isMobile ? '12px' : '12px',
-              paddingTop: '10px'
+    <div className="w-full">
+      {/* Tab Navigation */}
+      <div className="flex justify-center mb-6">
+        <div className="flex bg-gray-700 rounded-lg p-1">
+          <button
+            onClick={() => setTimePeriod('monthly')}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              timePeriod === 'monthly'
+                ? 'bg-primary text-white'
+                : 'text-gray-300 hover:text-white hover:bg-gray-600'
+            }`}
+          >
+            Monthly
+          </button>
+          <button
+            onClick={() => setTimePeriod('weekly')}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              timePeriod === 'weekly'
+                ? 'bg-primary text-white'
+                : 'text-gray-300 hover:text-white hover:bg-gray-600'
+            }`}
+          >
+            Weekly
+          </button>
+        </div>
+      </div>
+
+      {/* Chart Container */}
+      <div className="h-80 sm:h-96 lg:h-[28rem] w-full overflow-hidden">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart 
+            data={chartData} 
+            margin={{ 
+              top: isMobile ? 25 : 20, 
+              right: isMobile ? 20 : 30, 
+              left: isMobile ? 15 : 20, 
+              bottom: isMobile ? 80 : 40 
             }}
-            iconType="line"
-            layout={isMobile ? 'vertical' : 'horizontal'}
-            align={isMobile ? 'right' : 'center'}
-            verticalAlign={isMobile ? 'top' : 'bottom'}
-          />
-          <Line 
-            yAxisId="monthly"
-            type="monotone" 
-            dataKey="ukraine" 
-            stroke="#ffd700" 
-            strokeWidth={isMobile ? 1.5 : 2}
-            name={isMobile ? "UA Monthly" : "Ukrainian Monthly Losses"}
-            dot={{ fill: '#ffd700', strokeWidth: 1, r: isMobile ? 2 : 3 }}
-            activeDot={{ r: isMobile ? 3 : 5, stroke: '#ffd700', strokeWidth: 1, fill: '#ffd700' }}
-          />
-          <Line 
-            yAxisId="monthly"
-            type="monotone" 
-            dataKey="russia" 
-            stroke="#ff6b6b" 
-            strokeWidth={isMobile ? 1.5 : 2}
-            name={isMobile ? "RU Monthly" : "Russian Monthly Losses"}
-            dot={{ fill: '#ff6b6b', strokeWidth: 1, r: isMobile ? 2 : 3 }}
-            activeDot={{ r: isMobile ? 3 : 5, stroke: '#ff6b6b', strokeWidth: 1, fill: '#ff6b6b' }}
-          />
-          <Line 
-            yAxisId="cumulative"
-            type="monotone" 
-            dataKey="ukraineCumulative" 
-            stroke="#b8860b" 
-            strokeWidth={isMobile ? 1.5 : 2}
-            strokeDasharray={isMobile ? "3 3" : "5 5"}
-            name={isMobile ? "UA Total" : "Ukrainian Cumulative Total"}
-            dot={false}
-            activeDot={{ r: isMobile ? 2 : 4, stroke: '#b8860b', strokeWidth: 1, fill: '#b8860b' }}
-          />
-          <Line 
-            yAxisId="cumulative"
-            type="monotone" 
-            dataKey="russiaCumulative" 
-            stroke="#8b0000" 
-            strokeWidth={isMobile ? 1.5 : 2}
-            strokeDasharray={isMobile ? "3 3" : "5 5"}
-            name={isMobile ? "RU Total" : "Russian Cumulative Total"}
-            dot={false}
-            activeDot={{ r: isMobile ? 2 : 4, stroke: '#8b0000', strokeWidth: 1, fill: '#8b0000' }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+          >
+            <CartesianGrid strokeDasharray="3 3" stroke="#3d3d3d" />
+            <XAxis 
+              dataKey="date" 
+              stroke="#a0aec0" 
+              fontSize={isMobile ? 10 : 12}
+              tick={{ fill: '#a0aec0', fontSize: isMobile ? 10 : 12 }}
+              angle={isMobile ? -45 : 0}
+              textAnchor={isMobile ? 'end' : 'middle'}
+              height={isMobile ? 60 : 40}
+              interval={isMobile ? 'preserveStartEnd' : (timePeriod === 'weekly' ? 10 : 3)}
+            />
+            <YAxis 
+              yAxisId="period"
+              stroke="#a0aec0" 
+              fontSize={isMobile ? 9 : 12}
+              tick={{ fill: '#a0aec0', fontSize: isMobile ? 9 : 12 }}
+              tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
+              width={isMobile ? 30 : 50}
+            />
+            <YAxis 
+              yAxisId="cumulative"
+              orientation="right"
+              stroke="#a0aec0" 
+              fontSize={isMobile ? 9 : 12}
+              tick={{ fill: '#a0aec0', fontSize: isMobile ? 9 : 12 }}
+              tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
+              width={isMobile ? 30 : 50}
+            />
+            <Tooltip content={<CustomTooltip />} />
+            <Legend 
+              wrapperStyle={{ 
+                color: '#a0aec0', 
+                fontSize: isMobile ? '12px' : '12px',
+                paddingTop: '10px'
+              }}
+              iconType="line"
+              layout={isMobile ? 'vertical' : 'horizontal'}
+              align={isMobile ? 'right' : 'center'}
+              verticalAlign={isMobile ? 'top' : 'bottom'}
+            />
+            <Line 
+              yAxisId="period"
+              type="monotone" 
+              dataKey="ukraineTotal" 
+              stroke="#ffd700" 
+              strokeWidth={isMobile ? 3 : 4}
+              name={isMobile ? "UA Total" : "Ukrainian Total (Deaths + Missing)"}
+              dot={{ fill: '#ffd700', strokeWidth: 1, r: isMobile ? 3 : 4 }}
+              activeDot={{ r: isMobile ? 4 : 6, stroke: '#ffd700', strokeWidth: 1, fill: '#ffd700' }}
+            />
+
+            <Line 
+              yAxisId="period"
+              type="monotone" 
+              dataKey="russiaDeaths" 
+              stroke="#f44336" 
+              strokeWidth={isMobile ? 2 : 2.5}
+              name={isMobile ? "RU Deaths" : "Russian Deaths"}
+              dot={{ fill: '#f44336', strokeWidth: 1, r: isMobile ? 2 : 3 }}
+              activeDot={{ r: isMobile ? 3 : 5, stroke: '#f44336', strokeWidth: 1, fill: '#f44336' }}
+            />
+            <Line 
+              yAxisId="cumulative"
+              type="monotone" 
+              dataKey="ukraineTotalCumulative" 
+              stroke="#ffeb3b" 
+              strokeWidth={isMobile ? 2 : 3}
+              strokeDasharray="5 5"
+              name={isMobile ? "UA Total (Cum)" : "Ukrainian Total (Cumulative)"}
+              dot={false}
+              activeDot={{ r: isMobile ? 3 : 5, stroke: '#ffeb3b', strokeWidth: 1, fill: '#ffeb3b' }}
+            />
+            <Line 
+              yAxisId="cumulative"
+              type="monotone" 
+              dataKey="russiaTotalCumulative" 
+              stroke="#ef5350" 
+              strokeWidth={isMobile ? 2 : 3}
+              strokeDasharray="5 5"
+              name={isMobile ? "RU Total (Cum)" : "Russian Total (Cumulative)"}
+              dot={false}
+              activeDot={{ r: isMobile ? 3 : 5, stroke: '#ef5350', strokeWidth: 1, fill: '#ef5350' }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }

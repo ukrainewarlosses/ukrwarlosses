@@ -60,6 +60,9 @@ export default function StatsCard({ country, casualties, title, breakdown }: Sta
       <div className="text-sm text-text-light uppercase tracking-wide font-semibold">
         Total Personnel Losses
       </div>
+      <div className="text-xs text-text-muted mt-1">
+        February 24, 2022 - Present
+      </div>
       
       {breakdown && (breakdown.dead || breakdown.missing || breakdown.prisoners) && (
         <div className="mt-3 pt-3 border-t border-border-color">

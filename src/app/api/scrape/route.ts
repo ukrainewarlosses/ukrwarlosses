@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createComprehensiveScraper } from '@/lib/comprehensive-scraper';
+import { createLostArmourUkraineScraper } from '@/lib/lostarmour-ukraine-scraper';
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,37 +9,42 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Debug environment variables
-    console.log('🔍 DEBUG: Environment check');
-    console.log('NODE_ENV:', process.env.NODE_ENV);
-    console.log('YOUTUBE_API_KEY available:', !!process.env.YOUTUBE_API_KEY);
-    console.log('YOUTUBE_API_KEY length:', process.env.YOUTUBE_API_KEY ? process.env.YOUTUBE_API_KEY.length : 0);
+    console.log('🚀 Starting Lost Armour Ukraine scraper...');
+    
+    const scraper = createLostArmourUkraineScraper({
+      delayBetweenRequests: 1000,
+      maxRetries: 3,
+      enableCaching: true
+    });
 
-    const scraper = createComprehensiveScraper();
-
-    console.log('Starting daily war losses scraping...');
-
-    // Scrape all data and save to static JSON
-    const scrapedData = await scraper.scrapeAll();
-
-    if (!scrapedData) {
-      return NextResponse.json({
-        success: false,
-        message: 'Failed to scrape war losses data',
-        timestamp: new Date().toISOString()
-      }, { status: 500 });
+    // Scrape all Ukrainian letters
+    const records = await scraper.scrapeAllLetters();
+    
+    // Convert to standard format for compatibility
+    const standardRecords = scraper.convertToStandardFormat(records);
+    
+    // Save the raw Lost Armour data
+    const savedPath = await scraper.saveToFile(records);
+    
+    // Also save in standard format
+    if (standardRecords.length > 0) {
+      const fs = await import('fs/promises');
+      const path = await import('path');
+      
+      const standardPath = path.join(process.cwd(), 'src', 'data', 'ukraine', 'soldiers-raw.json');
+      await fs.writeFile(standardPath, JSON.stringify(standardRecords, null, 2));
+      console.log(`💾 Standard format saved: ${standardPath}`);
     }
 
     return NextResponse.json({
       success: true,
-      message: 'Daily war losses scraping completed successfully',
+      message: 'Lost Armour Ukraine scraping completed successfully',
       data: {
-        ukraine: scrapedData.ukraine.total_losses,
-        russia: scrapedData.russia.total_losses,
-        historicalPoints: scrapedData.ukraineHistorical.length,
-        lastUpdated: scrapedData.lastUpdated
-      },
-      timestamp: new Date().toISOString()
+        totalRecords: records.length,
+        standardRecords: standardRecords.length,
+        savedPath,
+        timestamp: new Date().toISOString()
+      }
     });
   } catch (error) {
     console.error('Error in scrape API:', error);

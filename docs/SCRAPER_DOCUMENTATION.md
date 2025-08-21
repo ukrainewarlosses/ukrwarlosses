@@ -165,7 +165,9 @@ interface ScrapingResult {
 
 ### Unit Tests
 ```bash
-npm run test-scraper
+# Test the Lost Armour scraper
+npm run dev
+# Then visit http://localhost:3000/api/scrape-ukraine-lostarmour
 ```
 
 ### Test Coverage

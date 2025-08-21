@@ -23,6 +23,8 @@ export interface CountryData {
 export interface ChartProps {
   ukraineHistorical: HistoricalData[];
   russiaHistorical: HistoricalData[];
+  ukraineWeekly?: HistoricalData[];
+  russiaWeekly?: HistoricalData[];
 }
 
 export interface YouTubeEmbed {
@@ -64,6 +66,8 @@ export interface ScrapedData {
   russia: CasualtyData;
   ukraineHistorical: HistoricalData[];
   russiaHistorical: HistoricalData[];
+  ukraineWeekly?: HistoricalData[];
+  russiaWeekly?: HistoricalData[];
   youtubeVideos: YouTubeEmbed[];
   lastUpdated: string;
 }

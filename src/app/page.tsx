@@ -82,6 +82,8 @@ async function getCasualtyData() {
         russia: data.russia,
         ukraineHistorical: data.ukraineHistorical,
         russiaHistorical: data.russiaHistorical || [],
+        ukraineWeekly: data.ukraineWeekly || [],
+        russiaWeekly: data.russiaWeekly || [],
         youtubeVideos: data.youtubeVideos || [],
         lastUpdated: data.lastUpdated
       };
@@ -224,7 +226,12 @@ export default async function HomePage() {
             📈 Personnel Casualty Trends Over Time
           </h2>
           <div className="w-full overflow-x-auto">
-            <Chart ukraineHistorical={data.ukraineHistorical} russiaHistorical={data.russiaHistorical} />
+            <Chart 
+              ukraineHistorical={data.ukraineHistorical} 
+              russiaHistorical={data.russiaHistorical}
+              ukraineWeekly={data.ukraineWeekly}
+              russiaWeekly={data.russiaWeekly}
+            />
           </div>
         </section>
 

@@ -3,10 +3,20 @@
     {
       "path": "/api/scrape",
       "schedule": "0 2 1 * *"
+    },
+    {
+      "path": "/api/scrape-ukraine-soldiers",
+      "schedule": "0 0 1 * *"
     }
   ],
   "functions": {
     "src/app/api/scrape/route.ts": {
+      "maxDuration": 300
+    },
+    "src/app/api/scrape-ukraine-soldiers/route.ts": {
+      "maxDuration": 300
+    },
+    "src/app/api/scrape-russia-casualties/route.ts": {
       "maxDuration": 300
     }
   }

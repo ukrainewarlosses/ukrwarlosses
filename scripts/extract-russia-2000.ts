@@ -1,7 +1,7 @@
 #!/usr/bin/env tsx
 
-import fs from 'fs/promises';
-import path from 'path';
+import * as fs from 'fs/promises';
+import * as path from 'path';
 import { createWriteStream } from 'fs';
 
 type ZonaListItem = {

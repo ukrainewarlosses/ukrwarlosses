@@ -1,0 +1,922 @@
+{
+  "2022-W09": {
+    "deaths": 708,
+    "missing": 940,
+    "total": 1648
+  },
+  "2022-W10": {
+    "deaths": 727,
+    "missing": 419,
+    "total": 1146
+  },
+  "2022-W11": {
+    "deaths": 856,
+    "missing": 191,
+    "total": 1047
+  },
+  "2022-W12": {
+    "deaths": 895,
+    "missing": 250,
+    "total": 1145
+  },
+  "2022-W13": {
+    "deaths": 633,
+    "missing": 217,
+    "total": 850
+  },
+  "2022-W14": {
+    "deaths": 543,
+    "missing": 222,
+    "total": 765
+  },
+  "2022-W15": {
+    "deaths": 419,
+    "missing": 162,
+    "total": 581
+  },
+  "2022-W16": {
+    "deaths": 498,
+    "missing": 185,
+    "total": 683
+  },
+  "2022-W17": {
+    "deaths": 525,
+    "missing": 170,
+    "total": 695
+  },
+  "2022-W18": {
+    "deaths": 422,
+    "missing": 136,
+    "total": 558
+  },
+  "2022-W19": {
+    "deaths": 538,
+    "missing": 182,
+    "total": 720
+  },
+  "2022-W20": {
+    "deaths": 478,
+    "missing": 134,
+    "total": 612
+  },
+  "2022-W21": {
+    "deaths": 543,
+    "missing": 255,
+    "total": 798
+  },
+  "2022-W22": {
+    "deaths": 476,
+    "missing": 190,
+    "total": 666
+  },
+  "2022-W23": {
+    "deaths": 351,
+    "missing": 118,
+    "total": 469
+  },
+  "2022-W24": {
+    "deaths": 316,
+    "missing": 118,
+    "total": 434
+  },
+  "2022-W25": {
+    "deaths": 314,
+    "missing": 87,
+    "total": 401
+  },
+  "2022-W26": {
+    "deaths": 363,
+    "missing": 135,
+    "total": 498
+  },
+  "2022-W27": {
+    "deaths": 354,
+    "missing": 159,
+    "total": 513
+  },
+  "2022-W28": {
+    "deaths": 319,
+    "missing": 73,
+    "total": 392
+  },
+  "2022-W29": {
+    "deaths": 330,
+    "missing": 49,
+    "total": 379
+  },
+  "2022-W30": {
+    "deaths": 322,
+    "missing": 62,
+    "total": 384
+  },
+  "2022-W31": {
+    "deaths": 424,
+    "missing": 92,
+    "total": 516
+  },
+  "2022-W32": {
+    "deaths": 284,
+    "missing": 127,
+    "total": 411
+  },
+  "2022-W33": {
+    "deaths": 357,
+    "missing": 113,
+    "total": 470
+  },
+  "2022-W34": {
+    "deaths": 365,
+    "missing": 77,
+    "total": 442
+  },
+  "2022-W35": {
+    "deaths": 333,
+    "missing": 57,
+    "total": 390
+  },
+  "2022-W36": {
+    "deaths": 570,
+    "missing": 84,
+    "total": 654
+  },
+  "2022-W37": {
+    "deaths": 605,
+    "missing": 93,
+    "total": 698
+  },
+  "2022-W38": {
+    "deaths": 448,
+    "missing": 90,
+    "total": 538
+  },
+  "2022-W39": {
+    "deaths": 412,
+    "missing": 77,
+    "total": 489
+  },
+  "2022-W40": {
+    "deaths": 480,
+    "missing": 99,
+    "total": 579
+  },
+  "2022-W41": {
+    "deaths": 512,
+    "missing": 87,
+    "total": 599
+  },
+  "2022-W42": {
+    "deaths": 398,
+    "missing": 99,
+    "total": 497
+  },
+  "2022-W43": {
+    "deaths": 458,
+    "missing": 150,
+    "total": 608
+  },
+  "2022-W44": {
+    "deaths": 438,
+    "missing": 157,
+    "total": 595
+  },
+  "2022-W45": {
+    "deaths": 411,
+    "missing": 169,
+    "total": 580
+  },
+  "2022-W46": {
+    "deaths": 459,
+    "missing": 168,
+    "total": 627
+  },
+  "2022-W47": {
+    "deaths": 294,
+    "missing": 122,
+    "total": 416
+  },
+  "2022-W48": {
+    "deaths": 270,
+    "missing": 192,
+    "total": 462
+  },
+  "2022-W49": {
+    "deaths": 402,
+    "missing": 228,
+    "total": 630
+  },
+  "2022-W50": {
+    "deaths": 340,
+    "missing": 135,
+    "total": 475
+  },
+  "2022-W51": {
+    "deaths": 390,
+    "missing": 214,
+    "total": 604
+  },
+  "2022-W52": {
+    "deaths": 431,
+    "missing": 167,
+    "total": 598
+  },
+  "2022-W53": {
+    "deaths": 524,
+    "missing": 294,
+    "total": 818
+  },
+  "2023-W01": {
+    "deaths": 435,
+    "missing": 177,
+    "total": 612
+  },
+  "2023-W02": {
+    "deaths": 463,
+    "missing": 240,
+    "total": 703
+  },
+  "2023-W03": {
+    "deaths": 508,
+    "missing": 285,
+    "total": 793
+  },
+  "2023-W04": {
+    "deaths": 548,
+    "missing": 214,
+    "total": 762
+  },
+  "2023-W05": {
+    "deaths": 477,
+    "missing": 288,
+    "total": 765
+  },
+  "2023-W06": {
+    "deaths": 516,
+    "missing": 198,
+    "total": 714
+  },
+  "2023-W07": {
+    "deaths": 503,
+    "missing": 214,
+    "total": 717
+  },
+  "2023-W08": {
+    "deaths": 467,
+    "missing": 217,
+    "total": 684
+  },
+  "2023-W09": {
+    "deaths": 496,
+    "missing": 299,
+    "total": 795
+  },
+  "2023-W10": {
+    "deaths": 478,
+    "missing": 269,
+    "total": 747
+  },
+  "2023-W11": {
+    "deaths": 500,
+    "missing": 200,
+    "total": 700
+  },
+  "2023-W12": {
+    "deaths": 547,
+    "missing": 234,
+    "total": 781
+  },
+  "2023-W13": {
+    "deaths": 456,
+    "missing": 176,
+    "total": 632
+  },
+  "2023-W14": {
+    "deaths": 347,
+    "missing": 221,
+    "total": 568
+  },
+  "2023-W15": {
+    "deaths": 346,
+    "missing": 230,
+    "total": 576
+  },
+  "2023-W16": {
+    "deaths": 414,
+    "missing": 237,
+    "total": 651
+  },
+  "2023-W17": {
+    "deaths": 319,
+    "missing": 112,
+    "total": 431
+  },
+  "2023-W18": {
+    "deaths": 404,
+    "missing": 114,
+    "total": 518
+  },
+  "2023-W19": {
+    "deaths": 436,
+    "missing": 176,
+    "total": 612
+  },
+  "2023-W20": {
+    "deaths": 416,
+    "missing": 212,
+    "total": 628
+  },
+  "2023-W21": {
+    "deaths": 272,
+    "missing": 67,
+    "total": 339
+  },
+  "2023-W22": {
+    "deaths": 319,
+    "missing": 68,
+    "total": 387
+  },
+  "2023-W23": {
+    "deaths": 624,
+    "missing": 152,
+    "total": 776
+  },
+  "2023-W24": {
+    "deaths": 533,
+    "missing": 91,
+    "total": 624
+  },
+  "2023-W25": {
+    "deaths": 538,
+    "missing": 194,
+    "total": 732
+  },
+  "2023-W26": {
+    "deaths": 453,
+    "missing": 178,
+    "total": 631
+  },
+  "2023-W27": {
+    "deaths": 540,
+    "missing": 132,
+    "total": 672
+  },
+  "2023-W28": {
+    "deaths": 495,
+    "missing": 150,
+    "total": 645
+  },
+  "2023-W29": {
+    "deaths": 604,
+    "missing": 266,
+    "total": 870
+  },
+  "2023-W30": {
+    "deaths": 537,
+    "missing": 188,
+    "total": 725
+  },
+  "2023-W31": {
+    "deaths": 460,
+    "missing": 135,
+    "total": 595
+  },
+  "2023-W32": {
+    "deaths": 536,
+    "missing": 113,
+    "total": 649
+  },
+  "2023-W33": {
+    "deaths": 521,
+    "missing": 180,
+    "total": 701
+  },
+  "2023-W34": {
+    "deaths": 509,
+    "missing": 99,
+    "total": 608
+  },
+  "2023-W35": {
+    "deaths": 480,
+    "missing": 150,
+    "total": 630
+  },
+  "2023-W36": {
+    "deaths": 438,
+    "missing": 126,
+    "total": 564
+  },
+  "2023-W37": {
+    "deaths": 401,
+    "missing": 137,
+    "total": 538
+  },
+  "2023-W38": {
+    "deaths": 425,
+    "missing": 164,
+    "total": 589
+  },
+  "2023-W39": {
+    "deaths": 427,
+    "missing": 145,
+    "total": 572
+  },
+  "2023-W40": {
+    "deaths": 390,
+    "missing": 212,
+    "total": 602
+  },
+  "2023-W41": {
+    "deaths": 700,
+    "missing": 346,
+    "total": 1046
+  },
+  "2023-W42": {
+    "deaths": 583,
+    "missing": 324,
+    "total": 907
+  },
+  "2023-W43": {
+    "deaths": 533,
+    "missing": 286,
+    "total": 819
+  },
+  "2023-W44": {
+    "deaths": 512,
+    "missing": 276,
+    "total": 788
+  },
+  "2023-W45": {
+    "deaths": 473,
+    "missing": 283,
+    "total": 756
+  },
+  "2023-W46": {
+    "deaths": 437,
+    "missing": 224,
+    "total": 661
+  },
+  "2023-W47": {
+    "deaths": 382,
+    "missing": 209,
+    "total": 591
+  },
+  "2023-W48": {
+    "deaths": 430,
+    "missing": 322,
+    "total": 752
+  },
+  "2023-W49": {
+    "deaths": 478,
+    "missing": 361,
+    "total": 839
+  },
+  "2023-W50": {
+    "deaths": 448,
+    "missing": 390,
+    "total": 838
+  },
+  "2023-W51": {
+    "deaths": 428,
+    "missing": 278,
+    "total": 706
+  },
+  "2023-W52": {
+    "deaths": 502,
+    "missing": 262,
+    "total": 764
+  },
+  "2023-W53": {
+    "deaths": 69,
+    "missing": 35,
+    "total": 104
+  },
+  "2024-W01": {
+    "deaths": 335,
+    "missing": 167,
+    "total": 502
+  },
+  "2024-W02": {
+    "deaths": 402,
+    "missing": 253,
+    "total": 655
+  },
+  "2024-W03": {
+    "deaths": 443,
+    "missing": 298,
+    "total": 741
+  },
+  "2024-W04": {
+    "deaths": 504,
+    "missing": 213,
+    "total": 717
+  },
+  "2024-W05": {
+    "deaths": 424,
+    "missing": 241,
+    "total": 665
+  },
+  "2024-W06": {
+    "deaths": 393,
+    "missing": 293,
+    "total": 686
+  },
+  "2024-W07": {
+    "deaths": 502,
+    "missing": 379,
+    "total": 881
+  },
+  "2024-W08": {
+    "deaths": 525,
+    "missing": 366,
+    "total": 891
+  },
+  "2024-W09": {
+    "deaths": 464,
+    "missing": 325,
+    "total": 789
+  },
+  "2024-W10": {
+    "deaths": 423,
+    "missing": 256,
+    "total": 679
+  },
+  "2024-W11": {
+    "deaths": 418,
+    "missing": 253,
+    "total": 671
+  },
+  "2024-W12": {
+    "deaths": 394,
+    "missing": 276,
+    "total": 670
+  },
+  "2024-W13": {
+    "deaths": 356,
+    "missing": 266,
+    "total": 622
+  },
+  "2024-W14": {
+    "deaths": 408,
+    "missing": 404,
+    "total": 812
+  },
+  "2024-W15": {
+    "deaths": 352,
+    "missing": 461,
+    "total": 813
+  },
+  "2024-W16": {
+    "deaths": 338,
+    "missing": 323,
+    "total": 661
+  },
+  "2024-W17": {
+    "deaths": 357,
+    "missing": 303,
+    "total": 660
+  },
+  "2024-W18": {
+    "deaths": 445,
+    "missing": 399,
+    "total": 844
+  },
+  "2024-W19": {
+    "deaths": 442,
+    "missing": 542,
+    "total": 984
+  },
+  "2024-W20": {
+    "deaths": 471,
+    "missing": 609,
+    "total": 1080
+  },
+  "2024-W21": {
+    "deaths": 390,
+    "missing": 453,
+    "total": 843
+  },
+  "2024-W22": {
+    "deaths": 451,
+    "missing": 484,
+    "total": 935
+  },
+  "2024-W23": {
+    "deaths": 393,
+    "missing": 466,
+    "total": 859
+  },
+  "2024-W24": {
+    "deaths": 377,
+    "missing": 581,
+    "total": 958
+  },
+  "2024-W25": {
+    "deaths": 442,
+    "missing": 538,
+    "total": 980
+  },
+  "2024-W26": {
+    "deaths": 389,
+    "missing": 613,
+    "total": 1002
+  },
+  "2024-W27": {
+    "deaths": 473,
+    "missing": 631,
+    "total": 1104
+  },
+  "2024-W28": {
+    "deaths": 383,
+    "missing": 683,
+    "total": 1066
+  },
+  "2024-W29": {
+    "deaths": 444,
+    "missing": 684,
+    "total": 1128
+  },
+  "2024-W30": {
+    "deaths": 406,
+    "missing": 768,
+    "total": 1174
+  },
+  "2024-W31": {
+    "deaths": 394,
+    "missing": 611,
+    "total": 1005
+  },
+  "2024-W32": {
+    "deaths": 466,
+    "missing": 621,
+    "total": 1087
+  },
+  "2024-W33": {
+    "deaths": 449,
+    "missing": 600,
+    "total": 1049
+  },
+  "2024-W34": {
+    "deaths": 478,
+    "missing": 596,
+    "total": 1074
+  },
+  "2024-W35": {
+    "deaths": 496,
+    "missing": 741,
+    "total": 1237
+  },
+  "2024-W36": {
+    "deaths": 539,
+    "missing": 806,
+    "total": 1345
+  },
+  "2024-W37": {
+    "deaths": 490,
+    "missing": 785,
+    "total": 1275
+  },
+  "2024-W38": {
+    "deaths": 436,
+    "missing": 854,
+    "total": 1290
+  },
+  "2024-W39": {
+    "deaths": 382,
+    "missing": 793,
+    "total": 1175
+  },
+  "2024-W40": {
+    "deaths": 436,
+    "missing": 723,
+    "total": 1159
+  },
+  "2024-W41": {
+    "deaths": 383,
+    "missing": 634,
+    "total": 1017
+  },
+  "2024-W42": {
+    "deaths": 448,
+    "missing": 766,
+    "total": 1214
+  },
+  "2024-W43": {
+    "deaths": 447,
+    "missing": 804,
+    "total": 1251
+  },
+  "2024-W44": {
+    "deaths": 406,
+    "missing": 678,
+    "total": 1084
+  },
+  "2024-W45": {
+    "deaths": 397,
+    "missing": 684,
+    "total": 1081
+  },
+  "2024-W46": {
+    "deaths": 452,
+    "missing": 998,
+    "total": 1450
+  },
+  "2024-W47": {
+    "deaths": 366,
+    "missing": 777,
+    "total": 1143
+  },
+  "2024-W48": {
+    "deaths": 396,
+    "missing": 715,
+    "total": 1111
+  },
+  "2024-W49": {
+    "deaths": 374,
+    "missing": 710,
+    "total": 1084
+  },
+  "2024-W50": {
+    "deaths": 326,
+    "missing": 929,
+    "total": 1255
+  },
+  "2024-W51": {
+    "deaths": 350,
+    "missing": 864,
+    "total": 1214
+  },
+  "2024-W52": {
+    "deaths": 438,
+    "missing": 755,
+    "total": 1193
+  },
+  "2024-W53": {
+    "deaths": 165,
+    "missing": 361,
+    "total": 526
+  },
+  "2025-W01": {
+    "deaths": 240,
+    "missing": 475,
+    "total": 715
+  },
+  "2025-W02": {
+    "deaths": 396,
+    "missing": 933,
+    "total": 1329
+  },
+  "2025-W03": {
+    "deaths": 368,
+    "missing": 691,
+    "total": 1059
+  },
+  "2025-W04": {
+    "deaths": 313,
+    "missing": 647,
+    "total": 960
+  },
+  "2025-W05": {
+    "deaths": 348,
+    "missing": 550,
+    "total": 898
+  },
+  "2025-W06": {
+    "deaths": 265,
+    "missing": 550,
+    "total": 815
+  },
+  "2025-W07": {
+    "deaths": 322,
+    "missing": 794,
+    "total": 1116
+  },
+  "2025-W08": {
+    "deaths": 376,
+    "missing": 732,
+    "total": 1108
+  },
+  "2025-W09": {
+    "deaths": 369,
+    "missing": 642,
+    "total": 1011
+  },
+  "2025-W10": {
+    "deaths": 266,
+    "missing": 951,
+    "total": 1217
+  },
+  "2025-W11": {
+    "deaths": 337,
+    "missing": 1054,
+    "total": 1391
+  },
+  "2025-W12": {
+    "deaths": 308,
+    "missing": 786,
+    "total": 1094
+  },
+  "2025-W13": {
+    "deaths": 277,
+    "missing": 819,
+    "total": 1096
+  },
+  "2025-W14": {
+    "deaths": 298,
+    "missing": 795,
+    "total": 1093
+  },
+  "2025-W15": {
+    "deaths": 314,
+    "missing": 749,
+    "total": 1063
+  },
+  "2025-W16": {
+    "deaths": 273,
+    "missing": 716,
+    "total": 989
+  },
+  "2025-W17": {
+    "deaths": 280,
+    "missing": 780,
+    "total": 1060
+  },
+  "2025-W18": {
+    "deaths": 305,
+    "missing": 909,
+    "total": 1214
+  },
+  "2025-W19": {
+    "deaths": 304,
+    "missing": 880,
+    "total": 1184
+  },
+  "2025-W20": {
+    "deaths": 237,
+    "missing": 823,
+    "total": 1060
+  },
+  "2025-W21": {
+    "deaths": 266,
+    "missing": 793,
+    "total": 1059
+  },
+  "2025-W22": {
+    "deaths": 286,
+    "missing": 871,
+    "total": 1157
+  },
+  "2025-W23": {
+    "deaths": 240,
+    "missing": 743,
+    "total": 983
+  },
+  "2025-W24": {
+    "deaths": 264,
+    "missing": 889,
+    "total": 1153
+  },
+  "2025-W25": {
+    "deaths": 246,
+    "missing": 910,
+    "total": 1156
+  },
+  "2025-W26": {
+    "deaths": 251,
+    "missing": 798,
+    "total": 1049
+  },
+  "2025-W27": {
+    "deaths": 208,
+    "missing": 793,
+    "total": 1001
+  },
+  "2025-W28": {
+    "deaths": 205,
+    "missing": 773,
+    "total": 978
+  },
+  "2025-W29": {
+    "deaths": 200,
+    "missing": 717,
+    "total": 917
+  },
+  "2025-W30": {
+    "deaths": 152,
+    "missing": 579,
+    "total": 731
+  },
+  "2025-W31": {
+    "deaths": 143,
+    "missing": 584,
+    "total": 727
+  },
+  "2025-W32": {
+    "deaths": 59,
+    "missing": 236,
+    "total": 295
+  },
+  "2025-W33": {
+    "deaths": 5,
+    "missing": 0,
+    "total": 5
+  }
+}

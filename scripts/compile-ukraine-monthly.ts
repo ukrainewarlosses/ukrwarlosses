@@ -71,7 +71,9 @@ async function main() {
       continue;
     }
     
-    const eventDate = new Date(eventDateStr);
+    // Clean up malformed dates (e.g., "2022)-12-(09" -> "2022-12-09")
+    const cleanedDateStr = eventDateStr.replace(/\)/g, '').replace(/\(/g, '-').replace(/--+/g, '-');
+    const eventDate = new Date(cleanedDateStr);
     
     // Skip invalid dates or dates before war start
     if (isNaN(eventDate.getTime()) || eventDate < warStart) {

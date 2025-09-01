@@ -19,26 +19,10 @@ interface UkraineLostArmourRecord {
   estimatedDeathDate?: string;
 }
 
-interface UkraineWeeklyData {
+interface UkraineDailyData {
   deaths: number;
   missing: number;
   total: number;
-}
-
-// Helper function to get week number and year
-function getWeekKey(date: Date): string {
-  const year = date.getFullYear();
-  const startOfYear = new Date(year, 0, 1);
-  const days = Math.floor((date.getTime() - startOfYear.getTime()) / (24 * 60 * 60 * 1000));
-  const weekNumber = Math.ceil((days + startOfYear.getDay() + 1) / 7);
-  return `${year}-W${String(weekNumber).padStart(2, '0')}`;
-}
-
-// Helper function to get week start date
-function getWeekStartDate(date: Date): Date {
-  const dayOfWeek = date.getDay();
-  const diff = date.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1); // Adjust when day is Sunday
-  return new Date(date.getFullYear(), date.getMonth(), diff);
 }
 
 async function main() {
@@ -46,7 +30,7 @@ async function main() {
   // Use the new Lost Armour raw data
   const inputPath = inputArg ? inputArg.split('=')[1] : path.join(process.cwd(), 'src', 'data', 'ukraine', 'soldiers-raw.json');
   
-  console.log(`📊 Compiling Ukraine weekly data from RAW Lost Armour records: ${inputPath}`);
+  console.log(`📊 Compiling Ukraine daily data from RAW Lost Armour records: ${inputPath}`);
   
   const raw = await fs.readFile(inputPath, 'utf-8');
   const records: UkraineLostArmourRecord[] = JSON.parse(raw);
@@ -61,11 +45,11 @@ async function main() {
   console.log(`   Missing: ${missingRecords.length.toLocaleString()}`);
   
   const warStart = new Date('2022-02-01T00:00:00Z');
-  // Stop at current month minus one (e.g., if current month is August, stop at July)
+  // Stop at current date minus one (e.g., if current date is August 21, stop at August 20)
   const now = new Date();
-  const cutoffMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1); // Previous month
+  const cutoffDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1); // Previous day
   
-  const weeklyData: Record<string, UkraineWeeklyData> = {};
+  const dailyData: Record<string, UkraineDailyData> = {};
 
   let processedCount = 0;
   let skippedCount = 0;
@@ -98,28 +82,27 @@ async function main() {
     }
     
     // Skip future dates beyond cutoff
-    const recordMonth = new Date(eventDate.getFullYear(), eventDate.getMonth(), 1);
-    if (recordMonth > cutoffMonth) {
+    if (eventDate > cutoffDate) {
       skippedCount++;
       continue;
     }
     
-    // Create week key
-    const weekKey = getWeekKey(eventDate);
+    // Create day key (YYYY-MM-DD format)
+    const dayKey = `${eventDate.getFullYear()}-${String(eventDate.getMonth() + 1).padStart(2, '0')}-${String(eventDate.getDate()).padStart(2, '0')}`;
     
-    // Initialize week data if not exists
-    if (!weeklyData[weekKey]) {
-      weeklyData[weekKey] = { deaths: 0, missing: 0, total: 0 };
+    // Initialize day data if not exists
+    if (!dailyData[dayKey]) {
+      dailyData[dayKey] = { deaths: 0, missing: 0, total: 0 };
     }
     
     // Increment appropriate counter based on record type
     if (isDeathRecord) {
-      weeklyData[weekKey].deaths += 1;
+      dailyData[dayKey].deaths += 1;
     } else {
-      weeklyData[weekKey].missing += 1;
+      dailyData[dayKey].missing += 1;
     }
     
-    weeklyData[weekKey].total += 1;
+    dailyData[dayKey].total += 1;
     processedCount++;
   }
   
@@ -127,31 +110,31 @@ async function main() {
   console.log(`   Processed: ${processedCount.toLocaleString()}`);
   console.log(`   Skipped: ${skippedCount.toLocaleString()}`);
 
-  // Sort by week key and create final output
-  const sortedKeys = Object.keys(weeklyData).sort();
-  const sortedWeeklyData: Record<string, UkraineWeeklyData> = {};
+  // Sort by day key and create final output
+  const sortedKeys = Object.keys(dailyData).sort();
+  const sortedDailyData: Record<string, UkraineDailyData> = {};
   for (const key of sortedKeys) {
-    sortedWeeklyData[key] = weeklyData[key];
+    sortedDailyData[key] = dailyData[key];
   }
 
-  // Save the compiled weekly data as raw summary
-  const outputPath = path.join(process.cwd(), 'src', 'data', 'ukraine', `weekly-raw_${new Date().toISOString().split('T')[0]}.json`);
+  // Save the compiled daily data as raw summary
+  const outputPath = path.join(process.cwd(), 'src', 'data', 'ukraine', `daily-raw_${new Date().toISOString().split('T')[0]}.json`);
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
-  await fs.writeFile(outputPath, JSON.stringify(sortedWeeklyData, null, 2), 'utf-8');
+  await fs.writeFile(outputPath, JSON.stringify(sortedDailyData, null, 2), 'utf-8');
   
-  console.log(`✅ Ukraine weekly data compiled: ${outputPath}`);
-  console.log(`📈 Total weeks: ${sortedKeys.length}`);
+  console.log(`✅ Ukraine daily data compiled: ${outputPath}`);
+  console.log(`📈 Total days: ${sortedKeys.length}`);
   console.log(`📅 Date range: ${sortedKeys[0]} to ${sortedKeys[sortedKeys.length - 1]}`);
   
   // Show sample data
-  const sampleEntries = Object.entries(sortedWeeklyData).slice(-3);
-  console.log('📊 Last 3 weeks sample:');
-  for (const [week, data] of sampleEntries) {
-    console.log(`  ${week}: ${data.total} total (${data.deaths} deaths, ${data.missing} missing)`);
+  const sampleEntries = Object.entries(sortedDailyData).slice(-5);
+  console.log('📊 Last 5 days sample:');
+  for (const [day, data] of sampleEntries) {
+    console.log(`  ${day}: ${data.total} total (${data.deaths} deaths, ${data.missing} missing)`);
   }
 }
 
 main().catch(err => {
-  console.error('❌ Error compiling Ukraine weekly data:', err);
+  console.error('❌ Error compiling Ukraine daily data:', err);
   process.exit(1);
 });

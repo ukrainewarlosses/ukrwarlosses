@@ -18,6 +18,10 @@ export default function ChartEnhanced() {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState<number | null>(null);
   const [dragEnd, setDragEnd] = useState<number | null>(null);
+  
+  // Country visibility toggles
+  const [showUkraine, setShowUkraine] = useState(true);
+  const [showRussia, setShowRussia] = useState(true);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -226,38 +230,46 @@ export default function ChartEnhanced() {
           )}
 
           {/* Ukraine Period Line */}
-          <path
-            d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScalePeriod(d.ukraineTotal)}`).join(' L ')}`}
-            fill="none"
-            stroke="#0057B7"
-            strokeWidth="2"
-            opacity="0.8"
-          />
+          {showUkraine && (
+            <path
+              d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScalePeriod(d.ukraineTotal)}`).join(' L ')}`}
+              fill="none"
+              stroke="#0057B7"
+              strokeWidth="2"
+              opacity="0.8"
+            />
+          )}
 
           {/* Russia Period Line */}
-          <path
-            d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScalePeriod(d.russiaDeaths)}`).join(' L ')}`}
-            fill="none"
-            stroke="#DA291C"
-            strokeWidth="2"
-            opacity="0.8"
-          />
+          {showRussia && (
+            <path
+              d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScalePeriod(d.russiaDeaths)}`).join(' L ')}`}
+              fill="none"
+              stroke="#DA291C"
+              strokeWidth="2"
+              opacity="0.8"
+            />
+          )}
 
           {/* Ukraine Cumulative Line */}
-          <path
-            d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScaleCum(d.ukraineTotalCumulative)}`).join(' L ')}`}
-            fill="none"
-            stroke="#0057B7"
-            strokeWidth="3"
-          />
+          {showUkraine && (
+            <path
+              d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScaleCum(d.ukraineTotalCumulative)}`).join(' L ')}`}
+              fill="none"
+              stroke="#0057B7"
+              strokeWidth="3"
+            />
+          )}
 
           {/* Russia Cumulative Line */}
-          <path
-            d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScaleCum(d.russiaTotalCumulative)}`).join(' L ')}`}
-            fill="none"
-            stroke="#DA291C"
-            strokeWidth="3"
-          />
+          {showRussia && (
+            <path
+              d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScaleCum(d.russiaTotalCumulative)}`).join(' L ')}`}
+              fill="none"
+              stroke="#DA291C"
+              strokeWidth="3"
+            />
+          )}
 
           {/* X-axis */}
           <line
@@ -480,52 +492,60 @@ export default function ChartEnhanced() {
         )}
         
         {/* Period Lines (Thinner, Semi-transparent) */}
-        <Line 
-          yAxisId="period"
-          type="monotone" 
-          dataKey="ukraineTotal" 
-          stroke="#0057B7" 
-          strokeWidth={2}
-          opacity={0.8}
-          name="Ukraine Period"
-          dot={{ fill: '#0057B7', r: 3 }}
-          activeDot={{ r: 5 }}
-        />
+        {showUkraine && (
+          <Line 
+            yAxisId="period"
+            type="monotone" 
+            dataKey="ukraineTotal" 
+            stroke="#0057B7" 
+            strokeWidth={2}
+            opacity={0.8}
+            name="Ukraine Period"
+            dot={{ fill: '#0057B7', r: 3 }}
+            activeDot={{ r: 5 }}
+          />
+        )}
         
-        <Line 
-          yAxisId="period"
-          type="monotone" 
-          dataKey="russiaDeaths" 
-          stroke="#DA291C" 
-          strokeWidth={2}
-          opacity={0.8}
-          name="Russia Period"
-          dot={{ fill: '#DA291C', r: 3 }}
-          activeDot={{ r: 5 }}
-        />
+        {showRussia && (
+          <Line 
+            yAxisId="period"
+            type="monotone" 
+            dataKey="russiaDeaths" 
+            stroke="#DA291C" 
+            strokeWidth={2}
+            opacity={0.8}
+            name="Russia Period"
+            dot={{ fill: '#DA291C', r: 3 }}
+            activeDot={{ r: 5 }}
+          />
+        )}
         
         {/* Cumulative Lines (Thicker, Always Visible) */}
-        <Line 
-          yAxisId="cumulative"
-          type="monotone" 
-          dataKey="ukraineTotalCumulative" 
-          stroke="#0057B7" 
-          strokeWidth={3}
-          name="Ukraine Cumulative"
-          dot={false}
-          activeDot={{ r: 6 }}
-        />
+        {showUkraine && (
+          <Line 
+            yAxisId="cumulative"
+            type="monotone" 
+            dataKey="ukraineTotalCumulative" 
+            stroke="#0057B7" 
+            strokeWidth={3}
+            name="Ukraine Cumulative"
+            dot={false}
+            activeDot={{ r: 6 }}
+          />
+        )}
         
-        <Line 
-          yAxisId="cumulative"
-          type="monotone" 
-          dataKey="russiaTotalCumulative" 
-          stroke="#DA291C" 
-          strokeWidth={3}
-          name="Russia Cumulative"
-          dot={false}
-          activeDot={{ r: 6 }}
-        />
+        {showRussia && (
+          <Line 
+            yAxisId="cumulative"
+            type="monotone" 
+            dataKey="russiaTotalCumulative" 
+            stroke="#DA291C" 
+            strokeWidth={3}
+            name="Russia Cumulative"
+            dot={false}
+            activeDot={{ r: 6 }}
+          />
+        )}
         </LineChart>
       </ResponsiveContainer>
     );
@@ -573,6 +593,34 @@ export default function ChartEnhanced() {
             }`}
           >
             Monthly
+          </button>
+        </div>
+      </div>
+
+      {/* Country Selection */}
+      <div className="flex justify-center mb-4">
+        <div className="flex bg-card-bg rounded-lg p-1 border border-border-color gap-1">
+          <button
+            onClick={() => setShowUkraine(!showUkraine)}
+            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors flex items-center gap-1 ${
+              showUkraine
+                ? 'bg-[#0057B7] text-white'
+                : 'text-text-secondary hover:text-text-primary hover:bg-gray-700'
+            }`}
+          >
+            <div className={`w-2 h-2 rounded-full ${showUkraine ? 'bg-white' : 'bg-[#0057B7]'}`}></div>
+            Ukraine
+          </button>
+          <button
+            onClick={() => setShowRussia(!showRussia)}
+            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors flex items-center gap-1 ${
+              showRussia
+                ? 'bg-[#DA291C] text-white'
+                : 'text-text-secondary hover:text-text-primary hover:bg-gray-700'
+            }`}
+          >
+            <div className={`w-2 h-2 rounded-full ${showRussia ? 'bg-white' : 'bg-[#DA291C]'}`}></div>
+            Russia
           </button>
         </div>
       </div>
@@ -686,19 +734,23 @@ export default function ChartEnhanced() {
             </button>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            <div className="bg-background rounded p-2">
-              <p className="text-text-muted text-xs">Ukraine Total</p>
-              <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#0057B7' }}>
-                {selectedRange.ukraineTotal?.toLocaleString()}
-              </p>
-            </div>
-            <div className="bg-background rounded p-2">
-              <p className="text-text-muted text-xs">Russia Total</p>
-              <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#DA291C' }}>
-                {selectedRange.russiaTotal?.toLocaleString()}
-              </p>
-            </div>
+          <div className={`grid gap-2 ${showUkraine && showRussia ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-3'}`}>
+            {showUkraine && (
+              <div className="bg-background rounded p-2">
+                <p className="text-text-muted text-xs">Ukraine Total</p>
+                <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#0057B7' }}>
+                  {selectedRange.ukraineTotal?.toLocaleString()}
+                </p>
+              </div>
+            )}
+            {showRussia && (
+              <div className="bg-background rounded p-2">
+                <p className="text-text-muted text-xs">Russia Total</p>
+                <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#DA291C' }}>
+                  {selectedRange.russiaTotal?.toLocaleString()}
+                </p>
+              </div>
+            )}
             <div className="bg-background rounded p-2">
               <p className="text-text-muted text-xs">
                 {timePeriod === 'daily' ? 'Days in Range' : 
@@ -716,7 +768,7 @@ export default function ChartEnhanced() {
                  'Monthly Average'}
               </p>
               <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold text-primary`}>
-                {Math.round((selectedRange.ukraineTotal + selectedRange.russiaTotal) / selectedRange.data.length).toLocaleString()}
+                {Math.round(((showUkraine ? selectedRange.ukraineTotal : 0) + (showRussia ? selectedRange.russiaTotal : 0)) / selectedRange.data.length).toLocaleString()}
               </p>
             </div>
           </div>
@@ -725,22 +777,30 @@ export default function ChartEnhanced() {
 
       {/* Legend */}
       <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs">
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-0.5 bg-[#0057B7] opacity-80"></div>
-          <span className="text-text-muted">Ukraine Period</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-1 bg-[#0057B7]"></div>
-          <span className="text-text-muted">Ukraine Cumulative</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-0.5 bg-[#DA291C] opacity-80"></div>
-          <span className="text-text-muted">Russia Period</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-1 bg-[#DA291C]"></div>
-          <span className="text-text-muted">Russia Cumulative</span>
-        </div>
+        {showUkraine && (
+          <>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-0.5 bg-[#0057B7] opacity-80"></div>
+              <span className="text-text-muted">Ukraine Period</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-1 bg-[#0057B7]"></div>
+              <span className="text-text-muted">Ukraine Cumulative</span>
+            </div>
+          </>
+        )}
+        {showRussia && (
+          <>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-0.5 bg-[#DA291C] opacity-80"></div>
+              <span className="text-text-muted">Russia Period</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-3 h-1 bg-[#DA291C]"></div>
+              <span className="text-text-muted">Russia Cumulative</span>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

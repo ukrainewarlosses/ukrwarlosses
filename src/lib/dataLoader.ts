@@ -98,27 +98,7 @@ export async function loadCasualtyData(): Promise<ScrapedData> {
   }
 }
 
-export async function loadCasualtyDataClient(): Promise<ScrapedData> {
-  try {
-    // For client-side, we'll fetch from a public API endpoint or static file
-    const response = await fetch('/api/data');
-    if (response.ok) {
-      const payload = await response.json();
-      return payload;
-    }
-    
-    // Fallback to static file served by Next.js
-    const staticResponse = await fetch('/data/casualties.json');
-    if (staticResponse.ok) {
-      return await staticResponse.json();
-    }
-    
-    return fallbackData;
-  } catch (error) {
-    console.warn('Could not load casualty data on client:', error);
-    return fallbackData;
-  }
-}
+// loadCasualtyDataClient function removed - Chart component now uses hardcoded data
 
 export function getCasualtyBreakdown(data: CasualtyData): {
   dead: number;

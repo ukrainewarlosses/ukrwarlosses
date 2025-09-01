@@ -20,12 +20,7 @@ export interface CountryData {
   historical: HistoricalData[];
 }
 
-export interface ChartProps {
-  ukraineHistorical: HistoricalData[];
-  russiaHistorical: HistoricalData[];
-  ukraineWeekly?: HistoricalData[];
-  russiaWeekly?: HistoricalData[];
-}
+// ChartProps interface removed - Chart component now uses hardcoded data
 
 export interface YouTubeEmbed {
   title: string;

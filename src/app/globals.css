@@ -142,4 +142,53 @@ body {
   .header-content {
     justify-content: center;
   }
+  
+  /* Mobile-specific chart styles */
+  .mobile-compact-chart {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  
+  /* Ensure minimum width for readability */
+  .mobile-compact-chart .recharts-wrapper {
+    min-width: 500px;
+  }
+  
+  /* Add scroll indicator */
+  .mobile-compact-chart::after {
+    content: '←→';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+  }
+}
+
+/* Full screen modal specific styles */
+.fixed.inset-0 .recharts-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Modal chart container styles */
+.fixed.inset-0 .flex-1.relative.overflow-hidden {
+  height: calc(100vh - 60px); /* Subtract header height */
+}
+
+.fixed.inset-0 .recharts-responsive-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure chart takes full available space in modal */
+.fixed.inset-0 .recharts-responsive-container .recharts-wrapper {
+  width: 100% !important;
+  height: 100% !important;
 }

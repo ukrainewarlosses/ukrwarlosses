@@ -2,22 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { ChartProps } from '@/types';
-
-interface ChartData {
-  date: string;
-  isoDate: string; // For sorting/filtering
-  ukraineTotal: number;
-  ukraineDeaths: number;
-  ukraineMissing: number;
-  ukraineTotalCumulative: number;
-  russiaDeaths: number;
-  russiaTotalCumulative: number;
-}
+import { hardcodedChartData, ChartData } from '@/data/hardcoded-chart-data';
 
 type TimePeriod = 'monthly' | 'weekly';
 
-export default function Chart({ ukraineHistorical, russiaHistorical, ukraineWeekly, russiaWeekly }: ChartProps) {
+export default function Chart() {
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
@@ -36,162 +25,19 @@ export default function Chart({ ukraineHistorical, russiaHistorical, ukraineWeek
   }, []);
 
   useEffect(() => {
-    const processHistoricalData = () => {
-      const dataMap: { [key: string]: ChartData } = {};
-
-      // Choose data source based on time period
-      const ukraineData = timePeriod === 'monthly' ? ukraineHistorical : (ukraineWeekly || []);
-      const russiaData = timePeriod === 'monthly' ? russiaHistorical : (russiaWeekly || []);
-      
-      // Debug logging
-      console.log(`Chart processing ${timePeriod} data:`, {
-        ukraineDataLength: ukraineData.length,
-        russiaDataLength: russiaData.length,
-        timePeriod
-      });
-
-      if (ukraineData && ukraineData.length > 0) {
-        ukraineData.forEach(item => {
-          let dateKey: string;
-          let isoDate: string;
-          
-          if (timePeriod === 'monthly') {
-            // Monthly data: "2022-02-01" format
-            const [year, month] = item.date.split('-');
-            const date = new Date(parseInt(year), parseInt(month) - 1, 1);
-            dateKey = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-            isoDate = `${year}-${month}-01`;
-          } else {
-            // Weekly data: "2022-W09" format
-            dateKey = item.date; // Use week key directly
-            isoDate = item.date;
-          }
-          
-          if (!dataMap[dateKey]) {
-            dataMap[dateKey] = { 
-              date: dateKey, 
-              isoDate, 
-              ukraineTotal: 0, 
-              ukraineDeaths: 0, 
-              ukraineMissing: 0, 
-              ukraineTotalCumulative: 0,
-              russiaDeaths: 0,
-              russiaTotalCumulative: 0
-            };
-          }
-          
-          const deaths = item.confirmed || 0;
-          const missing = item.unconfirmed || 0;
-          const total = deaths + missing;
-          dataMap[dateKey].ukraineTotal = total;
-          dataMap[dateKey].ukraineDeaths = deaths;
-          dataMap[dateKey].ukraineMissing = missing;
-        });
-      }
-
-      if (russiaData && russiaData.length > 0) {
-        russiaData.forEach(item => {
-          let dateKey: string;
-          let isoDate: string;
-          
-          if (timePeriod === 'monthly') {
-            // Monthly data: "2022-02-01" format
-            const [year, month] = item.date.split('-');
-            const date = new Date(parseInt(year), parseInt(month) - 1, 1);
-            dateKey = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-            isoDate = `${year}-${month}-01`;
-          } else {
-            // Weekly data: "2022-W09" format
-            dateKey = item.date; // Use week key directly
-            isoDate = item.date;
-          }
-          
-          if (!dataMap[dateKey]) {
-            dataMap[dateKey] = { 
-              date: dateKey, 
-              isoDate, 
-              ukraineTotal: 0, 
-              ukraineDeaths: 0, 
-              ukraineMissing: 0, 
-              ukraineTotalCumulative: 0,
-              russiaDeaths: 0,
-              russiaTotalCumulative: 0
-            };
-          }
-          
-          const deaths = item.casualties || 0; // Russia data has deaths in casualties field
-          dataMap[dateKey].russiaDeaths = deaths;
-        });
-      }
-
-      const processedData = Object.values(dataMap);
-      if (processedData.length > 0) {
-        // Cut off at last fully completed period (exclude current period and future)
-        const now = new Date();
-        let filtered: ChartData[];
-        
-        if (timePeriod === 'monthly') {
-          const cutoffDate = new Date(now.getFullYear(), now.getMonth() - 1, 1); // Previous month
-          filtered = processedData.filter(p => {
-            const d = new Date(p.isoDate);
-            return d < cutoffDate;
-          });
-        } else {
-          // For weekly data, we need to handle the ISO week format differently
-          // Calculate the current week number and exclude current week
-          const currentYear = now.getFullYear();
-          const startOfYear = new Date(currentYear, 0, 1);
-          const days = Math.floor((now.getTime() - startOfYear.getTime()) / (24 * 60 * 60 * 1000));
-          const currentWeekNumber = Math.ceil((days + startOfYear.getDay() + 1) / 7);
-          const currentWeekKey = `${currentYear}-W${String(currentWeekNumber).padStart(2, '0')}`;
-          
-          filtered = processedData.filter(p => {
-            // For weekly data, compare week keys directly
-            return p.date < currentWeekKey;
-          });
-        }
-
-        const sortedData = filtered.sort((a, b) => {
-          if (timePeriod === 'monthly') {
-            const [monthA, yearA] = a.date.split(' ');
-            const [monthB, yearB] = b.date.split(' ');
-            const dateA = new Date(monthA + ' 1, ' + yearA);
-            const dateB = new Date(monthB + ' 1, ' + yearB);
-            return dateA.getTime() - dateB.getTime();
-          } else {
-            // Weekly data is already in sortable format (YYYY-W##)
-            return a.date.localeCompare(b.date);
-          }
-        });
-
-        let ukraineTotalCum = 0;
-        let russiaTotalCum = 0;
-        const finalData = sortedData.map(item => {
-          ukraineTotalCum += item.ukraineTotal;
-          russiaTotalCum += item.russiaDeaths;
-          return {
-            ...item,
-            ukraineTotalCumulative: ukraineTotalCum,
-            russiaTotalCumulative: russiaTotalCum
-          };
-        });
-        
-        console.log(`Final ${timePeriod} chart data:`, {
-          dataPoints: finalData.length,
-          firstPoint: finalData[0]?.date,
-          lastPoint: finalData[finalData.length - 1]?.date
-        });
-        
-        return finalData;
-      }
-
-      return [] as ChartData[];
-    };
-
-    const processedData = processHistoricalData();
-    setChartData(processedData);
+    // Use hardcoded data based on time period
+    const data = timePeriod === 'monthly' ? hardcodedChartData.monthly : hardcodedChartData.weekly;
+    
+    console.log(`Chart loading ${timePeriod} hardcoded data:`, {
+      dataPoints: data.length,
+      firstPoint: data[0]?.date,
+      lastPoint: data[data.length - 1]?.date,
+      lastUpdated: hardcodedChartData.lastUpdated
+    });
+    
+    setChartData(data);
     setLoading(false);
-  }, [ukraineHistorical, russiaHistorical, ukraineWeekly, russiaWeekly, timePeriod]);
+  }, [timePeriod]);
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {

@@ -7,8 +7,10 @@ import AdBanner from '@/components/AdBanner';
 import VideoCard from '@/components/VideoCard';
 import SourceCard from '@/components/SourceCard';
 import Chart from '@/components/Chart';
-import { loadCasualtyDataHybrid } from '@/lib/hybridDataLoader';
+import ChartMobileWrapper from '@/components/ChartMobileWrapper';
 import { YouTubeEmbed } from '@/types';
+import { hardcodedYouTubeData } from '@/data/hardcoded-youtube-data';
+import { hardcodedCasualtyData } from '@/data/hardcoded-casualty-totals';
 
 export const metadata: Metadata = {
   title: 'Ukraine-Russia War Personnel Losses Tracker | Real-Time Casualty Data & Statistics',
@@ -74,68 +76,14 @@ export const metadata: Metadata = {
 
 // YouTube videos now loaded dynamically from scraped data
 
-async function getCasualtyData() {
-  try {
-    const data = await loadCasualtyDataHybrid();
-    return {
-        ukraine: data.ukraine,
-        russia: data.russia,
-        ukraineHistorical: data.ukraineHistorical,
-        russiaHistorical: data.russiaHistorical || [],
-        ukraineWeekly: data.ukraineWeekly || [],
-        russiaWeekly: data.russiaWeekly || [],
-        youtubeVideos: data.youtubeVideos || [],
-        lastUpdated: data.lastUpdated
-      };
-  } catch (error) {
-    console.error('Error loading casualty data:', error);
-    // Return fallback data
-    return {
-      ukraine: {
-        country: 'ukraine' as const,
-        total_losses: 158892,
-        dead: 79061,
-        missing: 75253,
-        prisoners: 4578,
-        last_updated: new Date().toISOString(),
-        source_url: 'https://ualosses.org/en/soldiers/'
-      },
-      russia: {
-        country: 'russia' as const,
-        total_losses: 121507,
-        last_updated: new Date().toISOString(),
-        source_url: 'https://en.zona.media/article/2025/08/01/casualties_eng-trl'
-      },
-      ukraineHistorical: [],
-      russiaHistorical: [],
-      youtubeVideos: [
-        {
-          title: 'Ukraine War Update - Latest Military Developments',
-          youtube_id: 'dQw4w9WgXcQ',
-          channel_name: 'History Legends',
-        },
-        {
-          title: 'Military Analysis: Russia vs Ukraine Forces',
-          youtube_id: 'oHg5SJYRHA0',
-          channel_name: 'History Legends',
-        },
-        {
-          title: 'War Report: Current Situation Analysis',
-          youtube_id: 'fC7oUOUEEi4',
-          channel_name: 'History Legends',
-        },
-      ],
-      lastUpdated: new Date().toISOString()
-    };
-  }
-}
+// Hardcoded casualty totals are now imported from the data file
 
 // Use dynamic rendering to avoid build-time data loading issues
 export const dynamic = 'force-dynamic';
 
-export default async function HomePage() {
-  // Fetch casualty data server-side with caching
-  const data = await getCasualtyData();
+export default function HomePage() {
+  // Use hardcoded casualty data - no API calls or blob fetching
+  const data = hardcodedCasualtyData;
 
   // Structured data for the main page
   const structuredData = {
@@ -226,12 +174,15 @@ export default async function HomePage() {
             📈 Personnel Casualty Trends Over Time
           </h2>
           <div className="w-full overflow-x-auto">
-            <Chart 
-              ukraineHistorical={data.ukraineHistorical} 
-              russiaHistorical={data.russiaHistorical}
-              ukraineWeekly={data.ukraineWeekly}
-              russiaWeekly={data.russiaWeekly}
-            />
+            <ChartMobileWrapper 
+              currentStats={{
+                ukraineTotal: data.ukraine.total_losses,
+                russiaTotal: data.russia.total_losses,
+                lastUpdated: data.lastUpdated
+              }}
+            >
+              <Chart />
+            </ChartMobileWrapper>
           </div>
         </section>
 
@@ -244,7 +195,7 @@ export default async function HomePage() {
             📺 Latest Media Coverage
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-            {data.youtubeVideos.map((video, index) => (
+            {hardcodedYouTubeData.videos.map((video, index) => (
               <VideoCard key={index} video={video} />
             ))}
           </div>

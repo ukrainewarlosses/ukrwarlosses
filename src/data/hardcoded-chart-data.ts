@@ -1,5 +1,5 @@
 // Auto-generated hardcoded chart data
-// Last updated: 2025-09-01T21:36:21.403Z
+// Last updated: 2025-09-01T23:10:49.200Z
 
 export interface ChartData {
   date: string;
@@ -13,12 +13,12685 @@ export interface ChartData {
 }
 
 export interface HardcodedChartData {
+  daily: ChartData[];
   monthly: ChartData[];
   weekly: ChartData[];
   lastUpdated: string;
 }
 
 export const hardcodedChartData: HardcodedChartData = {
+  "daily": [
+    {
+      "date": "2022-02-23",
+      "isoDate": "2022-02-23",
+      "ukraineTotal": 1092,
+      "ukraineDeaths": 242,
+      "ukraineMissing": 850,
+      "ukraineTotalCumulative": 1092,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 0
+    },
+    {
+      "date": "2022-02-24",
+      "isoDate": "2022-02-24",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 112,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 1238,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 68
+    },
+    {
+      "date": "2022-02-25",
+      "isoDate": "2022-02-25",
+      "ukraineTotal": 264,
+      "ukraineDeaths": 232,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 1502,
+      "russiaDeaths": 80,
+      "russiaTotalCumulative": 148
+    },
+    {
+      "date": "2022-02-26",
+      "isoDate": "2022-02-26",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 122,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 1648,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 243
+    },
+    {
+      "date": "2022-02-27",
+      "isoDate": "2022-02-27",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 86,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 1781,
+      "russiaDeaths": 93,
+      "russiaTotalCumulative": 336
+    },
+    {
+      "date": "2022-02-28",
+      "isoDate": "2022-02-28",
+      "ukraineTotal": 224,
+      "ukraineDeaths": 136,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 2005,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 406
+    },
+    {
+      "date": "2022-03-01",
+      "isoDate": "2022-03-01",
+      "ukraineTotal": 243,
+      "ukraineDeaths": 106,
+      "ukraineMissing": 137,
+      "ukraineTotalCumulative": 2248,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 465
+    },
+    {
+      "date": "2022-03-02",
+      "isoDate": "2022-03-02",
+      "ukraineTotal": 205,
+      "ukraineDeaths": 136,
+      "ukraineMissing": 69,
+      "ukraineTotalCumulative": 2453,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 506
+    },
+    {
+      "date": "2022-03-03",
+      "isoDate": "2022-03-03",
+      "ukraineTotal": 100,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 2553,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 592
+    },
+    {
+      "date": "2022-03-04",
+      "isoDate": "2022-03-04",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 94,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 2677,
+      "russiaDeaths": 66,
+      "russiaTotalCumulative": 658
+    },
+    {
+      "date": "2022-03-05",
+      "isoDate": "2022-03-05",
+      "ukraineTotal": 117,
+      "ukraineDeaths": 90,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 2794,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 742
+    },
+    {
+      "date": "2022-03-06",
+      "isoDate": "2022-03-06",
+      "ukraineTotal": 179,
+      "ukraineDeaths": 160,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 2973,
+      "russiaDeaths": 126,
+      "russiaTotalCumulative": 868
+    },
+    {
+      "date": "2022-03-07",
+      "isoDate": "2022-03-07",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 3081,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 965
+    },
+    {
+      "date": "2022-03-08",
+      "isoDate": "2022-03-08",
+      "ukraineTotal": 158,
+      "ukraineDeaths": 118,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 3239,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 1056
+    },
+    {
+      "date": "2022-03-09",
+      "isoDate": "2022-03-09",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 3343,
+      "russiaDeaths": 75,
+      "russiaTotalCumulative": 1131
+    },
+    {
+      "date": "2022-03-10",
+      "isoDate": "2022-03-10",
+      "ukraineTotal": 147,
+      "ukraineDeaths": 121,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 3490,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 1194
+    },
+    {
+      "date": "2022-03-11",
+      "isoDate": "2022-03-11",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 117,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 3635,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 1263
+    },
+    {
+      "date": "2022-03-12",
+      "isoDate": "2022-03-12",
+      "ukraineTotal": 206,
+      "ukraineDeaths": 185,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 3841,
+      "russiaDeaths": 108,
+      "russiaTotalCumulative": 1371
+    },
+    {
+      "date": "2022-03-13",
+      "isoDate": "2022-03-13",
+      "ukraineTotal": 179,
+      "ukraineDeaths": 159,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 4020,
+      "russiaDeaths": 75,
+      "russiaTotalCumulative": 1446
+    },
+    {
+      "date": "2022-03-14",
+      "isoDate": "2022-03-14",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 4179,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 1541
+    },
+    {
+      "date": "2022-03-15",
+      "isoDate": "2022-03-15",
+      "ukraineTotal": 138,
+      "ukraineDeaths": 102,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 4317,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 1627
+    },
+    {
+      "date": "2022-03-16",
+      "isoDate": "2022-03-16",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 4403,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 1682
+    },
+    {
+      "date": "2022-03-17",
+      "isoDate": "2022-03-17",
+      "ukraineTotal": 318,
+      "ukraineDeaths": 293,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 4721,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 1718
+    },
+    {
+      "date": "2022-03-18",
+      "isoDate": "2022-03-18",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 4814,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 1764
+    },
+    {
+      "date": "2022-03-19",
+      "isoDate": "2022-03-19",
+      "ukraineTotal": 172,
+      "ukraineDeaths": 122,
+      "ukraineMissing": 50,
+      "ukraineTotalCumulative": 4986,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 1803
+    },
+    {
+      "date": "2022-03-20",
+      "isoDate": "2022-03-20",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 5116,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 1862
+    },
+    {
+      "date": "2022-03-21",
+      "isoDate": "2022-03-21",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 96,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 5251,
+      "russiaDeaths": 54,
+      "russiaTotalCumulative": 1916
+    },
+    {
+      "date": "2022-03-22",
+      "isoDate": "2022-03-22",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 5349,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 1951
+    },
+    {
+      "date": "2022-03-23",
+      "isoDate": "2022-03-23",
+      "ukraineTotal": 131,
+      "ukraineDeaths": 93,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 5480,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 1999
+    },
+    {
+      "date": "2022-03-24",
+      "isoDate": "2022-03-24",
+      "ukraineTotal": 137,
+      "ukraineDeaths": 108,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 5617,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 1999
+    },
+    {
+      "date": "2022-03-25",
+      "isoDate": "2022-03-25",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 95,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 5752,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 1999
+    },
+    {
+      "date": "2022-03-26",
+      "isoDate": "2022-03-26",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 5836,
+      "russiaDeaths": 9,
+      "russiaTotalCumulative": 2008
+    },
+    {
+      "date": "2022-03-27",
+      "isoDate": "2022-03-27",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 5934,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 2045
+    },
+    {
+      "date": "2022-03-28",
+      "isoDate": "2022-03-28",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 104,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 6086,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 2103
+    },
+    {
+      "date": "2022-03-29",
+      "isoDate": "2022-03-29",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 6169,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 2168
+    },
+    {
+      "date": "2022-03-30",
+      "isoDate": "2022-03-30",
+      "ukraineTotal": 143,
+      "ukraineDeaths": 120,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 6312,
+      "russiaDeaths": 76,
+      "russiaTotalCumulative": 2244
+    },
+    {
+      "date": "2022-03-31",
+      "isoDate": "2022-03-31",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 62,
+      "ukraineTotalCumulative": 6472,
+      "russiaDeaths": 51,
+      "russiaTotalCumulative": 2295
+    },
+    {
+      "date": "2022-04-01",
+      "isoDate": "2022-04-01",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 6539,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 2354
+    },
+    {
+      "date": "2022-04-02",
+      "isoDate": "2022-04-02",
+      "ukraineTotal": 62,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 6601,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 2394
+    },
+    {
+      "date": "2022-04-03",
+      "isoDate": "2022-04-03",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 6679,
+      "russiaDeaths": 16,
+      "russiaTotalCumulative": 2410
+    },
+    {
+      "date": "2022-04-04",
+      "isoDate": "2022-04-04",
+      "ukraineTotal": 105,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 6784,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 2439
+    },
+    {
+      "date": "2022-04-05",
+      "isoDate": "2022-04-05",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 6865,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 2472
+    },
+    {
+      "date": "2022-04-06",
+      "isoDate": "2022-04-06",
+      "ukraineTotal": 105,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 6970,
+      "russiaDeaths": 28,
+      "russiaTotalCumulative": 2500
+    },
+    {
+      "date": "2022-04-07",
+      "isoDate": "2022-04-07",
+      "ukraineTotal": 42,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 7012,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 2526
+    },
+    {
+      "date": "2022-04-08",
+      "isoDate": "2022-04-08",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 7089,
+      "russiaDeaths": 14,
+      "russiaTotalCumulative": 2540
+    },
+    {
+      "date": "2022-04-09",
+      "isoDate": "2022-04-09",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 7182,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 2569
+    },
+    {
+      "date": "2022-04-10",
+      "isoDate": "2022-04-10",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 7247,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 2599
+    },
+    {
+      "date": "2022-04-11",
+      "isoDate": "2022-04-11",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 7348,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 2599
+    },
+    {
+      "date": "2022-04-12",
+      "isoDate": "2022-04-12",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 7423,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 2599
+    },
+    {
+      "date": "2022-04-13",
+      "isoDate": "2022-04-13",
+      "ukraineTotal": 60,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 7483,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 2599
+    },
+    {
+      "date": "2022-04-14",
+      "isoDate": "2022-04-14",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 97,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 7613,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 2599
+    },
+    {
+      "date": "2022-04-15",
+      "isoDate": "2022-04-15",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 7721,
+      "russiaDeaths": 9,
+      "russiaTotalCumulative": 2608
+    },
+    {
+      "date": "2022-04-16",
+      "isoDate": "2022-04-16",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 115,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 7865,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 2640
+    },
+    {
+      "date": "2022-04-17",
+      "isoDate": "2022-04-17",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 7947,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 2676
+    },
+    {
+      "date": "2022-04-18",
+      "isoDate": "2022-04-18",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 91,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 8055,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 2713
+    },
+    {
+      "date": "2022-04-19",
+      "isoDate": "2022-04-19",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 8166,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 2746
+    },
+    {
+      "date": "2022-04-20",
+      "isoDate": "2022-04-20",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 8258,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 2785
+    },
+    {
+      "date": "2022-04-21",
+      "isoDate": "2022-04-21",
+      "ukraineTotal": 120,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 8378,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 2841
+    },
+    {
+      "date": "2022-04-22",
+      "isoDate": "2022-04-22",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 8474,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 2906
+    },
+    {
+      "date": "2022-04-23",
+      "isoDate": "2022-04-23",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 8560,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 2944
+    },
+    {
+      "date": "2022-04-24",
+      "isoDate": "2022-04-24",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 8652,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 2966
+    },
+    {
+      "date": "2022-04-25",
+      "isoDate": "2022-04-25",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 8720,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 3025
+    },
+    {
+      "date": "2022-04-26",
+      "isoDate": "2022-04-26",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 8788,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 3051
+    },
+    {
+      "date": "2022-04-27",
+      "isoDate": "2022-04-27",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 8885,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 3100
+    },
+    {
+      "date": "2022-04-28",
+      "isoDate": "2022-04-28",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 8964,
+      "russiaDeaths": 31,
+      "russiaTotalCumulative": 3131
+    },
+    {
+      "date": "2022-04-29",
+      "isoDate": "2022-04-29",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 9045,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 3157
+    },
+    {
+      "date": "2022-04-30",
+      "isoDate": "2022-04-30",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 9118,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 3194
+    },
+    {
+      "date": "2022-05-01",
+      "isoDate": "2022-05-01",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 9205,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 3231
+    },
+    {
+      "date": "2022-05-02",
+      "isoDate": "2022-05-02",
+      "ukraineTotal": 70,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 9275,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 3267
+    },
+    {
+      "date": "2022-05-03",
+      "isoDate": "2022-05-03",
+      "ukraineTotal": 70,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 9345,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 3306
+    },
+    {
+      "date": "2022-05-04",
+      "isoDate": "2022-05-04",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 9467,
+      "russiaDeaths": 27,
+      "russiaTotalCumulative": 3333
+    },
+    {
+      "date": "2022-05-05",
+      "isoDate": "2022-05-05",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 9544,
+      "russiaDeaths": 44,
+      "russiaTotalCumulative": 3377
+    },
+    {
+      "date": "2022-05-06",
+      "isoDate": "2022-05-06",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 9683,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 3436
+    },
+    {
+      "date": "2022-05-07",
+      "isoDate": "2022-05-07",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 130,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 9838,
+      "russiaDeaths": 44,
+      "russiaTotalCumulative": 3480
+    },
+    {
+      "date": "2022-05-08",
+      "isoDate": "2022-05-08",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 9920,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 3526
+    },
+    {
+      "date": "2022-05-09",
+      "isoDate": "2022-05-09",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 10004,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 3556
+    },
+    {
+      "date": "2022-05-10",
+      "isoDate": "2022-05-10",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 10096,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 3608
+    },
+    {
+      "date": "2022-05-11",
+      "isoDate": "2022-05-11",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 10183,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 3657
+    },
+    {
+      "date": "2022-05-12",
+      "isoDate": "2022-05-12",
+      "ukraineTotal": 63,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 10246,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 3696
+    },
+    {
+      "date": "2022-05-13",
+      "isoDate": "2022-05-13",
+      "ukraineTotal": 100,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 10346,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 3722
+    },
+    {
+      "date": "2022-05-14",
+      "isoDate": "2022-05-14",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 10450,
+      "russiaDeaths": 28,
+      "russiaTotalCumulative": 3750
+    },
+    {
+      "date": "2022-05-15",
+      "isoDate": "2022-05-15",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 10551,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 3783
+    },
+    {
+      "date": "2022-05-16",
+      "isoDate": "2022-05-16",
+      "ukraineTotal": 220,
+      "ukraineDeaths": 173,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 10771,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 3816
+    },
+    {
+      "date": "2022-05-17",
+      "isoDate": "2022-05-17",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 10857,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 3859
+    },
+    {
+      "date": "2022-05-18",
+      "isoDate": "2022-05-18",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 10943,
+      "russiaDeaths": 31,
+      "russiaTotalCumulative": 3890
+    },
+    {
+      "date": "2022-05-19",
+      "isoDate": "2022-05-19",
+      "ukraineTotal": 117,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 11060,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 3967
+    },
+    {
+      "date": "2022-05-20",
+      "isoDate": "2022-05-20",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 11141,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 4016
+    },
+    {
+      "date": "2022-05-21",
+      "isoDate": "2022-05-21",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 11248,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 4058
+    },
+    {
+      "date": "2022-05-22",
+      "isoDate": "2022-05-22",
+      "ukraineTotal": 120,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 11368,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 4098
+    },
+    {
+      "date": "2022-05-23",
+      "isoDate": "2022-05-23",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 11486,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 4154
+    },
+    {
+      "date": "2022-05-24",
+      "isoDate": "2022-05-24",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 11590,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 4200
+    },
+    {
+      "date": "2022-05-25",
+      "isoDate": "2022-05-25",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 11661,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 4233
+    },
+    {
+      "date": "2022-05-26",
+      "isoDate": "2022-05-26",
+      "ukraineTotal": 119,
+      "ukraineDeaths": 108,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 11780,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 4271
+    },
+    {
+      "date": "2022-05-27",
+      "isoDate": "2022-05-27",
+      "ukraineTotal": 70,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 11850,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 4309
+    },
+    {
+      "date": "2022-05-28",
+      "isoDate": "2022-05-28",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 11914,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 4346
+    },
+    {
+      "date": "2022-05-29",
+      "isoDate": "2022-05-29",
+      "ukraineTotal": 74,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 11988,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 4389
+    },
+    {
+      "date": "2022-05-30",
+      "isoDate": "2022-05-30",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 12074,
+      "russiaDeaths": 10,
+      "russiaTotalCumulative": 4399
+    },
+    {
+      "date": "2022-05-31",
+      "isoDate": "2022-05-31",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 12167,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 4399
+    },
+    {
+      "date": "2022-06-01",
+      "isoDate": "2022-06-01",
+      "ukraineTotal": 49,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 12216,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 4399
+    },
+    {
+      "date": "2022-06-02",
+      "isoDate": "2022-06-02",
+      "ukraineTotal": 47,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 12263,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 4399
+    },
+    {
+      "date": "2022-06-03",
+      "isoDate": "2022-06-03",
+      "ukraineTotal": 45,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 12308,
+      "russiaDeaths": 4,
+      "russiaTotalCumulative": 4403
+    },
+    {
+      "date": "2022-06-04",
+      "isoDate": "2022-06-04",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 12383,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 4429
+    },
+    {
+      "date": "2022-06-05",
+      "isoDate": "2022-06-05",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 12468,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 4472
+    },
+    {
+      "date": "2022-06-06",
+      "isoDate": "2022-06-06",
+      "ukraineTotal": 52,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 12520,
+      "russiaDeaths": 21,
+      "russiaTotalCumulative": 4493
+    },
+    {
+      "date": "2022-06-07",
+      "isoDate": "2022-06-07",
+      "ukraineTotal": 52,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 12572,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 4528
+    },
+    {
+      "date": "2022-06-08",
+      "isoDate": "2022-06-08",
+      "ukraineTotal": 66,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 12638,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 4563
+    },
+    {
+      "date": "2022-06-09",
+      "isoDate": "2022-06-09",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 12703,
+      "russiaDeaths": 45,
+      "russiaTotalCumulative": 4608
+    },
+    {
+      "date": "2022-06-10",
+      "isoDate": "2022-06-10",
+      "ukraineTotal": 62,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 12765,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 4648
+    },
+    {
+      "date": "2022-06-11",
+      "isoDate": "2022-06-11",
+      "ukraineTotal": 52,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 12817,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 4674
+    },
+    {
+      "date": "2022-06-12",
+      "isoDate": "2022-06-12",
+      "ukraineTotal": 40,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 12857,
+      "russiaDeaths": 25,
+      "russiaTotalCumulative": 4699
+    },
+    {
+      "date": "2022-06-13",
+      "isoDate": "2022-06-13",
+      "ukraineTotal": 32,
+      "ukraineDeaths": 27,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 12889,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 4721
+    },
+    {
+      "date": "2022-06-14",
+      "isoDate": "2022-06-14",
+      "ukraineTotal": 56,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 12945,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 4763
+    },
+    {
+      "date": "2022-06-15",
+      "isoDate": "2022-06-15",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 13012,
+      "russiaDeaths": 17,
+      "russiaTotalCumulative": 4780
+    },
+    {
+      "date": "2022-06-16",
+      "isoDate": "2022-06-16",
+      "ukraineTotal": 59,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 13071,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 4813
+    },
+    {
+      "date": "2022-06-17",
+      "isoDate": "2022-06-17",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 13150,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 4843
+    },
+    {
+      "date": "2022-06-18",
+      "isoDate": "2022-06-18",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 13218,
+      "russiaDeaths": 19,
+      "russiaTotalCumulative": 4862
+    },
+    {
+      "date": "2022-06-19",
+      "isoDate": "2022-06-19",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 13308,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 4885
+    },
+    {
+      "date": "2022-06-20",
+      "isoDate": "2022-06-20",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 13383,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 4925
+    },
+    {
+      "date": "2022-06-21",
+      "isoDate": "2022-06-21",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 13451,
+      "russiaDeaths": 44,
+      "russiaTotalCumulative": 4969
+    },
+    {
+      "date": "2022-06-22",
+      "isoDate": "2022-06-22",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 13519,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 5008
+    },
+    {
+      "date": "2022-06-23",
+      "isoDate": "2022-06-23",
+      "ukraineTotal": 41,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 13560,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 5031
+    },
+    {
+      "date": "2022-06-24",
+      "isoDate": "2022-06-24",
+      "ukraineTotal": 59,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 13619,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5031
+    },
+    {
+      "date": "2022-06-25",
+      "isoDate": "2022-06-25",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 13716,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5031
+    },
+    {
+      "date": "2022-06-26",
+      "isoDate": "2022-06-26",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 13784,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5031
+    },
+    {
+      "date": "2022-06-27",
+      "isoDate": "2022-06-27",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 13852,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5031
+    },
+    {
+      "date": "2022-06-28",
+      "isoDate": "2022-06-28",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 13916,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5031
+    },
+    {
+      "date": "2022-06-29",
+      "isoDate": "2022-06-29",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 71,
+      "ukraineTotalCumulative": 14071,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 5054
+    },
+    {
+      "date": "2022-06-30",
+      "isoDate": "2022-06-30",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 14135,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 5092
+    },
+    {
+      "date": "2022-07-01",
+      "isoDate": "2022-07-01",
+      "ukraineTotal": 47,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 14182,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 5115
+    },
+    {
+      "date": "2022-07-02",
+      "isoDate": "2022-07-02",
+      "ukraineTotal": 47,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 14229,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 5157
+    },
+    {
+      "date": "2022-07-03",
+      "isoDate": "2022-07-03",
+      "ukraineTotal": 61,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 14290,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 5190
+    },
+    {
+      "date": "2022-07-04",
+      "isoDate": "2022-07-04",
+      "ukraineTotal": 41,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 14331,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 5232
+    },
+    {
+      "date": "2022-07-05",
+      "isoDate": "2022-07-05",
+      "ukraineTotal": 55,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 2,
+      "ukraineTotalCumulative": 14386,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 5265
+    },
+    {
+      "date": "2022-07-06",
+      "isoDate": "2022-07-06",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 14465,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 5298
+    },
+    {
+      "date": "2022-07-07",
+      "isoDate": "2022-07-07",
+      "ukraineTotal": 50,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 14515,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 5328
+    },
+    {
+      "date": "2022-07-08",
+      "isoDate": "2022-07-08",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 14588,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 5377
+    },
+    {
+      "date": "2022-07-09",
+      "isoDate": "2022-07-09",
+      "ukraineTotal": 33,
+      "ukraineDeaths": 25,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 14621,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 5425
+    },
+    {
+      "date": "2022-07-10",
+      "isoDate": "2022-07-10",
+      "ukraineTotal": 26,
+      "ukraineDeaths": 21,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 14647,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 5454
+    },
+    {
+      "date": "2022-07-11",
+      "isoDate": "2022-07-11",
+      "ukraineTotal": 62,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 14709,
+      "russiaDeaths": 17,
+      "russiaTotalCumulative": 5471
+    },
+    {
+      "date": "2022-07-12",
+      "isoDate": "2022-07-12",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 7,
+      "ukraineTotalCumulative": 14788,
+      "russiaDeaths": 19,
+      "russiaTotalCumulative": 5490
+    },
+    {
+      "date": "2022-07-13",
+      "isoDate": "2022-07-13",
+      "ukraineTotal": 40,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 4,
+      "ukraineTotalCumulative": 14828,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 5523
+    },
+    {
+      "date": "2022-07-14",
+      "isoDate": "2022-07-14",
+      "ukraineTotal": 55,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 7,
+      "ukraineTotalCumulative": 14883,
+      "russiaDeaths": 24,
+      "russiaTotalCumulative": 5547
+    },
+    {
+      "date": "2022-07-15",
+      "isoDate": "2022-07-15",
+      "ukraineTotal": 39,
+      "ukraineDeaths": 27,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 14922,
+      "russiaDeaths": 20,
+      "russiaTotalCumulative": 5567
+    },
+    {
+      "date": "2022-07-16",
+      "isoDate": "2022-07-16",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 15000,
+      "russiaDeaths": 28,
+      "russiaTotalCumulative": 5595
+    },
+    {
+      "date": "2022-07-17",
+      "isoDate": "2022-07-17",
+      "ukraineTotal": 62,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 15062,
+      "russiaDeaths": 24,
+      "russiaTotalCumulative": 5619
+    },
+    {
+      "date": "2022-07-18",
+      "isoDate": "2022-07-18",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 15126,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 5648
+    },
+    {
+      "date": "2022-07-19",
+      "isoDate": "2022-07-19",
+      "ukraineTotal": 53,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 15179,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 5694
+    },
+    {
+      "date": "2022-07-20",
+      "isoDate": "2022-07-20",
+      "ukraineTotal": 48,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 4,
+      "ukraineTotalCumulative": 15227,
+      "russiaDeaths": 45,
+      "russiaTotalCumulative": 5739
+    },
+    {
+      "date": "2022-07-21",
+      "isoDate": "2022-07-21",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 15291,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 5765
+    },
+    {
+      "date": "2022-07-22",
+      "isoDate": "2022-07-22",
+      "ukraineTotal": 38,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 1,
+      "ukraineTotalCumulative": 15329,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 5805
+    },
+    {
+      "date": "2022-07-23",
+      "isoDate": "2022-07-23",
+      "ukraineTotal": 55,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 15384,
+      "russiaDeaths": 17,
+      "russiaTotalCumulative": 5822
+    },
+    {
+      "date": "2022-07-24",
+      "isoDate": "2022-07-24",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 15464,
+      "russiaDeaths": 7,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-07-25",
+      "isoDate": "2022-07-25",
+      "ukraineTotal": 63,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 15527,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-07-26",
+      "isoDate": "2022-07-26",
+      "ukraineTotal": 62,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 15589,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-07-27",
+      "isoDate": "2022-07-27",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 3,
+      "ukraineTotalCumulative": 15675,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-07-28",
+      "isoDate": "2022-07-28",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 90,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 15779,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-07-29",
+      "isoDate": "2022-07-29",
+      "ukraineTotal": 58,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 15837,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-07-30",
+      "isoDate": "2022-07-30",
+      "ukraineTotal": 63,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 15900,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-07-31",
+      "isoDate": "2022-07-31",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 15971,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-08-01",
+      "isoDate": "2022-08-01",
+      "ukraineTotal": 55,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 16026,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-08-02",
+      "isoDate": "2022-08-02",
+      "ukraineTotal": 46,
+      "ukraineDeaths": 24,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 16072,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-08-03",
+      "isoDate": "2022-08-03",
+      "ukraineTotal": 53,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 16125,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 5829
+    },
+    {
+      "date": "2022-08-04",
+      "isoDate": "2022-08-04",
+      "ukraineTotal": 45,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 16170,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 5852
+    },
+    {
+      "date": "2022-08-05",
+      "isoDate": "2022-08-05",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 16259,
+      "russiaDeaths": 15,
+      "russiaTotalCumulative": 5867
+    },
+    {
+      "date": "2022-08-06",
+      "isoDate": "2022-08-06",
+      "ukraineTotal": 52,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 16311,
+      "russiaDeaths": 19,
+      "russiaTotalCumulative": 5886
+    },
+    {
+      "date": "2022-08-07",
+      "isoDate": "2022-08-07",
+      "ukraineTotal": 57,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 16368,
+      "russiaDeaths": 18,
+      "russiaTotalCumulative": 5904
+    },
+    {
+      "date": "2022-08-08",
+      "isoDate": "2022-08-08",
+      "ukraineTotal": 74,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 16442,
+      "russiaDeaths": 17,
+      "russiaTotalCumulative": 5921
+    },
+    {
+      "date": "2022-08-09",
+      "isoDate": "2022-08-09",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 16517,
+      "russiaDeaths": 15,
+      "russiaTotalCumulative": 5936
+    },
+    {
+      "date": "2022-08-10",
+      "isoDate": "2022-08-10",
+      "ukraineTotal": 50,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 7,
+      "ukraineTotalCumulative": 16567,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 5977
+    },
+    {
+      "date": "2022-08-11",
+      "isoDate": "2022-08-11",
+      "ukraineTotal": 61,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 16628,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 5999
+    },
+    {
+      "date": "2022-08-12",
+      "isoDate": "2022-08-12",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 16701,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 6028
+    },
+    {
+      "date": "2022-08-13",
+      "isoDate": "2022-08-13",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 16781,
+      "russiaDeaths": 24,
+      "russiaTotalCumulative": 6052
+    },
+    {
+      "date": "2022-08-14",
+      "isoDate": "2022-08-14",
+      "ukraineTotal": 58,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 16839,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 6078
+    },
+    {
+      "date": "2022-08-15",
+      "isoDate": "2022-08-15",
+      "ukraineTotal": 76,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 16915,
+      "russiaDeaths": 34,
+      "russiaTotalCumulative": 6112
+    },
+    {
+      "date": "2022-08-16",
+      "isoDate": "2022-08-16",
+      "ukraineTotal": 58,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 16973,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 6149
+    },
+    {
+      "date": "2022-08-17",
+      "isoDate": "2022-08-17",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 17061,
+      "russiaDeaths": 28,
+      "russiaTotalCumulative": 6177
+    },
+    {
+      "date": "2022-08-18",
+      "isoDate": "2022-08-18",
+      "ukraineTotal": 70,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 17131,
+      "russiaDeaths": 21,
+      "russiaTotalCumulative": 6198
+    },
+    {
+      "date": "2022-08-19",
+      "isoDate": "2022-08-19",
+      "ukraineTotal": 50,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 17181,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 6220
+    },
+    {
+      "date": "2022-08-20",
+      "isoDate": "2022-08-20",
+      "ukraineTotal": 42,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 17223,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 6243
+    },
+    {
+      "date": "2022-08-21",
+      "isoDate": "2022-08-21",
+      "ukraineTotal": 56,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 17279,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 6265
+    },
+    {
+      "date": "2022-08-22",
+      "isoDate": "2022-08-22",
+      "ukraineTotal": 61,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 17340,
+      "russiaDeaths": 13,
+      "russiaTotalCumulative": 6278
+    },
+    {
+      "date": "2022-08-23",
+      "isoDate": "2022-08-23",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 17413,
+      "russiaDeaths": 27,
+      "russiaTotalCumulative": 6305
+    },
+    {
+      "date": "2022-08-24",
+      "isoDate": "2022-08-24",
+      "ukraineTotal": 45,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 4,
+      "ukraineTotalCumulative": 17458,
+      "russiaDeaths": 24,
+      "russiaTotalCumulative": 6329
+    },
+    {
+      "date": "2022-08-25",
+      "isoDate": "2022-08-25",
+      "ukraineTotal": 45,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 17503,
+      "russiaDeaths": 20,
+      "russiaTotalCumulative": 6349
+    },
+    {
+      "date": "2022-08-26",
+      "isoDate": "2022-08-26",
+      "ukraineTotal": 55,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 17558,
+      "russiaDeaths": 20,
+      "russiaTotalCumulative": 6369
+    },
+    {
+      "date": "2022-08-27",
+      "isoDate": "2022-08-27",
+      "ukraineTotal": 55,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 17613,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 6392
+    },
+    {
+      "date": "2022-08-28",
+      "isoDate": "2022-08-28",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 139,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 17758,
+      "russiaDeaths": 19,
+      "russiaTotalCumulative": 6411
+    },
+    {
+      "date": "2022-08-29",
+      "isoDate": "2022-08-29",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 96,
+      "ukraineMissing": 7,
+      "ukraineTotalCumulative": 17861,
+      "russiaDeaths": 18,
+      "russiaTotalCumulative": 6429
+    },
+    {
+      "date": "2022-08-30",
+      "isoDate": "2022-08-30",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 92,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 17964,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 6429
+    },
+    {
+      "date": "2022-08-31",
+      "isoDate": "2022-08-31",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 18053,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 6429
+    },
+    {
+      "date": "2022-09-01",
+      "isoDate": "2022-09-01",
+      "ukraineTotal": 61,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 18114,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 6429
+    },
+    {
+      "date": "2022-09-02",
+      "isoDate": "2022-09-02",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 18192,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 6429
+    },
+    {
+      "date": "2022-09-03",
+      "isoDate": "2022-09-03",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 18267,
+      "russiaDeaths": 25,
+      "russiaTotalCumulative": 6454
+    },
+    {
+      "date": "2022-09-04",
+      "isoDate": "2022-09-04",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 82,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 18376,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 6501
+    },
+    {
+      "date": "2022-09-05",
+      "isoDate": "2022-09-05",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 18474,
+      "russiaDeaths": 27,
+      "russiaTotalCumulative": 6528
+    },
+    {
+      "date": "2022-09-06",
+      "isoDate": "2022-09-06",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 110,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 18609,
+      "russiaDeaths": 44,
+      "russiaTotalCumulative": 6572
+    },
+    {
+      "date": "2022-09-07",
+      "isoDate": "2022-09-07",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 85,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 18699,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 6635
+    },
+    {
+      "date": "2022-09-08",
+      "isoDate": "2022-09-08",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 3,
+      "ukraineTotalCumulative": 18766,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 6676
+    },
+    {
+      "date": "2022-09-09",
+      "isoDate": "2022-09-09",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 104,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 18882,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 6712
+    },
+    {
+      "date": "2022-09-10",
+      "isoDate": "2022-09-10",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 18965,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 6753
+    },
+    {
+      "date": "2022-09-11",
+      "isoDate": "2022-09-11",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 19053,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 6788
+    },
+    {
+      "date": "2022-09-12",
+      "isoDate": "2022-09-12",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 19147,
+      "russiaDeaths": 9,
+      "russiaTotalCumulative": 6797
+    },
+    {
+      "date": "2022-09-13",
+      "isoDate": "2022-09-13",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 19216,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 6826
+    },
+    {
+      "date": "2022-09-14",
+      "isoDate": "2022-09-14",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 19301,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 6858
+    },
+    {
+      "date": "2022-09-15",
+      "isoDate": "2022-09-15",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 19383,
+      "russiaDeaths": 28,
+      "russiaTotalCumulative": 6886
+    },
+    {
+      "date": "2022-09-16",
+      "isoDate": "2022-09-16",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 19463,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 6924
+    },
+    {
+      "date": "2022-09-17",
+      "isoDate": "2022-09-17",
+      "ukraineTotal": 40,
+      "ukraineDeaths": 28,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 19503,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 6965
+    },
+    {
+      "date": "2022-09-18",
+      "isoDate": "2022-09-18",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 19571,
+      "russiaDeaths": 18,
+      "russiaTotalCumulative": 6983
+    },
+    {
+      "date": "2022-09-19",
+      "isoDate": "2022-09-19",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 19638,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 7015
+    },
+    {
+      "date": "2022-09-20",
+      "isoDate": "2022-09-20",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 19713,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 7053
+    },
+    {
+      "date": "2022-09-21",
+      "isoDate": "2022-09-21",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 19782,
+      "russiaDeaths": 19,
+      "russiaTotalCumulative": 7072
+    },
+    {
+      "date": "2022-09-22",
+      "isoDate": "2022-09-22",
+      "ukraineTotal": 62,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 19844,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 7119
+    },
+    {
+      "date": "2022-09-23",
+      "isoDate": "2022-09-23",
+      "ukraineTotal": 66,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 19910,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 7148
+    },
+    {
+      "date": "2022-09-24",
+      "isoDate": "2022-09-24",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 19992,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 7187
+    },
+    {
+      "date": "2022-09-25",
+      "isoDate": "2022-09-25",
+      "ukraineTotal": 61,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 20053,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 7251
+    },
+    {
+      "date": "2022-09-26",
+      "isoDate": "2022-09-26",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 20118,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 7303
+    },
+    {
+      "date": "2022-09-27",
+      "isoDate": "2022-09-27",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 20199,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 7344
+    },
+    {
+      "date": "2022-09-28",
+      "isoDate": "2022-09-28",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 20268,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 7392
+    },
+    {
+      "date": "2022-09-29",
+      "isoDate": "2022-09-29",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 20357,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 7448
+    },
+    {
+      "date": "2022-09-30",
+      "isoDate": "2022-09-30",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 113,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 20502,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 7516
+    },
+    {
+      "date": "2022-10-01",
+      "isoDate": "2022-10-01",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 4,
+      "ukraineTotalCumulative": 20571,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 7565
+    },
+    {
+      "date": "2022-10-02",
+      "isoDate": "2022-10-02",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 20638,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 7591
+    },
+    {
+      "date": "2022-10-03",
+      "isoDate": "2022-10-03",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 20706,
+      "russiaDeaths": 45,
+      "russiaTotalCumulative": 7636
+    },
+    {
+      "date": "2022-10-04",
+      "isoDate": "2022-10-04",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 20799,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 7692
+    },
+    {
+      "date": "2022-10-05",
+      "isoDate": "2022-10-05",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 85,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 20892,
+      "russiaDeaths": 81,
+      "russiaTotalCumulative": 7773
+    },
+    {
+      "date": "2022-10-06",
+      "isoDate": "2022-10-06",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 103,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 21014,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 7829
+    },
+    {
+      "date": "2022-10-07",
+      "isoDate": "2022-10-07",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 21096,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 7882
+    },
+    {
+      "date": "2022-10-08",
+      "isoDate": "2022-10-08",
+      "ukraineTotal": 74,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 21170,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 7928
+    },
+    {
+      "date": "2022-10-09",
+      "isoDate": "2022-10-09",
+      "ukraineTotal": 70,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 21240,
+      "russiaDeaths": 45,
+      "russiaTotalCumulative": 7973
+    },
+    {
+      "date": "2022-10-10",
+      "isoDate": "2022-10-10",
+      "ukraineTotal": 34,
+      "ukraineDeaths": 28,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 21274,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 8009
+    },
+    {
+      "date": "2022-10-11",
+      "isoDate": "2022-10-11",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 21349,
+      "russiaDeaths": 44,
+      "russiaTotalCumulative": 8053
+    },
+    {
+      "date": "2022-10-12",
+      "isoDate": "2022-10-12",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 21437,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 8111
+    },
+    {
+      "date": "2022-10-13",
+      "isoDate": "2022-10-13",
+      "ukraineTotal": 59,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 21496,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 8153
+    },
+    {
+      "date": "2022-10-14",
+      "isoDate": "2022-10-14",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 21592,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 8202
+    },
+    {
+      "date": "2022-10-15",
+      "isoDate": "2022-10-15",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 21667,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 8263
+    },
+    {
+      "date": "2022-10-16",
+      "isoDate": "2022-10-16",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 21744,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 8299
+    },
+    {
+      "date": "2022-10-17",
+      "isoDate": "2022-10-17",
+      "ukraineTotal": 66,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 21810,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 8339
+    },
+    {
+      "date": "2022-10-18",
+      "isoDate": "2022-10-18",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 117,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 21943,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 8380
+    },
+    {
+      "date": "2022-10-19",
+      "isoDate": "2022-10-19",
+      "ukraineTotal": 66,
+      "ukraineDeaths": 31,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 22009,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 8438
+    },
+    {
+      "date": "2022-10-20",
+      "isoDate": "2022-10-20",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 22093,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 8486
+    },
+    {
+      "date": "2022-10-21",
+      "isoDate": "2022-10-21",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 22207,
+      "russiaDeaths": 27,
+      "russiaTotalCumulative": 8513
+    },
+    {
+      "date": "2022-10-22",
+      "isoDate": "2022-10-22",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 22275,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 8568
+    },
+    {
+      "date": "2022-10-23",
+      "isoDate": "2022-10-23",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 22342,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 8611
+    },
+    {
+      "date": "2022-10-24",
+      "isoDate": "2022-10-24",
+      "ukraineTotal": 76,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 22418,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 8716
+    },
+    {
+      "date": "2022-10-25",
+      "isoDate": "2022-10-25",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 22483,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 8766
+    },
+    {
+      "date": "2022-10-26",
+      "isoDate": "2022-10-26",
+      "ukraineTotal": 63,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 22546,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 8799
+    },
+    {
+      "date": "2022-10-27",
+      "isoDate": "2022-10-27",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 22636,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 8849
+    },
+    {
+      "date": "2022-10-28",
+      "isoDate": "2022-10-28",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 110,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 22791,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 8878
+    },
+    {
+      "date": "2022-10-29",
+      "isoDate": "2022-10-29",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 22870,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 8931
+    },
+    {
+      "date": "2022-10-30",
+      "isoDate": "2022-10-30",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 22951,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 8964
+    },
+    {
+      "date": "2022-10-31",
+      "isoDate": "2022-10-31",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 23061,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 8964
+    },
+    {
+      "date": "2022-11-01",
+      "isoDate": "2022-11-01",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 23151,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 8964
+    },
+    {
+      "date": "2022-11-02",
+      "isoDate": "2022-11-02",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 23259,
+      "russiaDeaths": 4,
+      "russiaTotalCumulative": 8968
+    },
+    {
+      "date": "2022-11-03",
+      "isoDate": "2022-11-03",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 23341,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 9015
+    },
+    {
+      "date": "2022-11-04",
+      "isoDate": "2022-11-04",
+      "ukraineTotal": 47,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 23388,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 9074
+    },
+    {
+      "date": "2022-11-05",
+      "isoDate": "2022-11-05",
+      "ukraineTotal": 62,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 23450,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 9129
+    },
+    {
+      "date": "2022-11-06",
+      "isoDate": "2022-11-06",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 23535,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 9185
+    },
+    {
+      "date": "2022-11-07",
+      "isoDate": "2022-11-07",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 23632,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 9248
+    },
+    {
+      "date": "2022-11-08",
+      "isoDate": "2022-11-08",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 23724,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 9298
+    },
+    {
+      "date": "2022-11-09",
+      "isoDate": "2022-11-09",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 23814,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 9346
+    },
+    {
+      "date": "2022-11-10",
+      "isoDate": "2022-11-10",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 23908,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 9398
+    },
+    {
+      "date": "2022-11-11",
+      "isoDate": "2022-11-11",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 24000,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 9446
+    },
+    {
+      "date": "2022-11-12",
+      "isoDate": "2022-11-12",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 24077,
+      "russiaDeaths": 60,
+      "russiaTotalCumulative": 9506
+    },
+    {
+      "date": "2022-11-13",
+      "isoDate": "2022-11-13",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 24141,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 9554
+    },
+    {
+      "date": "2022-11-14",
+      "isoDate": "2022-11-14",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 24226,
+      "russiaDeaths": 10,
+      "russiaTotalCumulative": 9564
+    },
+    {
+      "date": "2022-11-15",
+      "isoDate": "2022-11-15",
+      "ukraineTotal": 48,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 24274,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 9564
+    },
+    {
+      "date": "2022-11-16",
+      "isoDate": "2022-11-16",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 24352,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 9564
+    },
+    {
+      "date": "2022-11-17",
+      "isoDate": "2022-11-17",
+      "ukraineTotal": 53,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 24405,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 9564
+    },
+    {
+      "date": "2022-11-18",
+      "isoDate": "2022-11-18",
+      "ukraineTotal": 54,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 24459,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 9599
+    },
+    {
+      "date": "2022-11-19",
+      "isoDate": "2022-11-19",
+      "ukraineTotal": 34,
+      "ukraineDeaths": 24,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 24493,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 9642
+    },
+    {
+      "date": "2022-11-20",
+      "isoDate": "2022-11-20",
+      "ukraineTotal": 54,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 24547,
+      "russiaDeaths": 51,
+      "russiaTotalCumulative": 9693
+    },
+    {
+      "date": "2022-11-21",
+      "isoDate": "2022-11-21",
+      "ukraineTotal": 60,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 24607,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 9736
+    },
+    {
+      "date": "2022-11-22",
+      "isoDate": "2022-11-22",
+      "ukraineTotal": 59,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 24666,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 9782
+    },
+    {
+      "date": "2022-11-23",
+      "isoDate": "2022-11-23",
+      "ukraineTotal": 95,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 24761,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 9824
+    },
+    {
+      "date": "2022-11-24",
+      "isoDate": "2022-11-24",
+      "ukraineTotal": 56,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 24817,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 9874
+    },
+    {
+      "date": "2022-11-25",
+      "isoDate": "2022-11-25",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 27,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 24884,
+      "russiaDeaths": 51,
+      "russiaTotalCumulative": 9925
+    },
+    {
+      "date": "2022-11-26",
+      "isoDate": "2022-11-26",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 24955,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 9964
+    },
+    {
+      "date": "2022-11-27",
+      "isoDate": "2022-11-27",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 25051,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 10007
+    },
+    {
+      "date": "2022-11-28",
+      "isoDate": "2022-11-28",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 25130,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 10043
+    },
+    {
+      "date": "2022-11-29",
+      "isoDate": "2022-11-29",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 25208,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 10073
+    },
+    {
+      "date": "2022-11-30",
+      "isoDate": "2022-11-30",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 25323,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 10125
+    },
+    {
+      "date": "2022-12-01",
+      "isoDate": "2022-12-01",
+      "ukraineTotal": 95,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 25418,
+      "russiaDeaths": 76,
+      "russiaTotalCumulative": 10201
+    },
+    {
+      "date": "2022-12-02",
+      "isoDate": "2022-12-02",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 25509,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 10278
+    },
+    {
+      "date": "2022-12-03",
+      "isoDate": "2022-12-03",
+      "ukraineTotal": 76,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 25585,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 10335
+    },
+    {
+      "date": "2022-12-04",
+      "isoDate": "2022-12-04",
+      "ukraineTotal": 72,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 25657,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 10400
+    },
+    {
+      "date": "2022-12-05",
+      "isoDate": "2022-12-05",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 25745,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 10464
+    },
+    {
+      "date": "2022-12-06",
+      "isoDate": "2022-12-06",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 25823,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 10514
+    },
+    {
+      "date": "2022-12-07",
+      "isoDate": "2022-12-07",
+      "ukraineTotal": 47,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 25870,
+      "russiaDeaths": 60,
+      "russiaTotalCumulative": 10574
+    },
+    {
+      "date": "2022-12-08",
+      "isoDate": "2022-12-08",
+      "ukraineTotal": 49,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 25919,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 10645
+    },
+    {
+      "date": "2022-12-09",
+      "isoDate": "2022-12-09",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 25992,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 10698
+    },
+    {
+      "date": "2022-12-10",
+      "isoDate": "2022-12-10",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 26060,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 10730
+    },
+    {
+      "date": "2022-12-11",
+      "isoDate": "2022-12-11",
+      "ukraineTotal": 66,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 26126,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 10789
+    },
+    {
+      "date": "2022-12-12",
+      "isoDate": "2022-12-12",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 26214,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 10854
+    },
+    {
+      "date": "2022-12-13",
+      "isoDate": "2022-12-13",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 26307,
+      "russiaDeaths": 44,
+      "russiaTotalCumulative": 10898
+    },
+    {
+      "date": "2022-12-14",
+      "isoDate": "2022-12-14",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 26408,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 10961
+    },
+    {
+      "date": "2022-12-15",
+      "isoDate": "2022-12-15",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 26475,
+      "russiaDeaths": 79,
+      "russiaTotalCumulative": 11040
+    },
+    {
+      "date": "2022-12-16",
+      "isoDate": "2022-12-16",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 26563,
+      "russiaDeaths": 62,
+      "russiaTotalCumulative": 11102
+    },
+    {
+      "date": "2022-12-17",
+      "isoDate": "2022-12-17",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 26664,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 11139
+    },
+    {
+      "date": "2022-12-18",
+      "isoDate": "2022-12-18",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 26751,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 11176
+    },
+    {
+      "date": "2022-12-19",
+      "isoDate": "2022-12-19",
+      "ukraineTotal": 102,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 26853,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 11219
+    },
+    {
+      "date": "2022-12-20",
+      "isoDate": "2022-12-20",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 26940,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 11293
+    },
+    {
+      "date": "2022-12-21",
+      "isoDate": "2022-12-21",
+      "ukraineTotal": 70,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 27010,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 11352
+    },
+    {
+      "date": "2022-12-22",
+      "isoDate": "2022-12-22",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 27088,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 11415
+    },
+    {
+      "date": "2022-12-23",
+      "isoDate": "2022-12-23",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 27171,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 11464
+    },
+    {
+      "date": "2022-12-24",
+      "isoDate": "2022-12-24",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 27262,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 11521
+    },
+    {
+      "date": "2022-12-25",
+      "isoDate": "2022-12-25",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 27346,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 11589
+    },
+    {
+      "date": "2022-12-26",
+      "isoDate": "2022-12-26",
+      "ukraineTotal": 120,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 60,
+      "ukraineTotalCumulative": 27466,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 11638
+    },
+    {
+      "date": "2022-12-27",
+      "isoDate": "2022-12-27",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 27580,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 11699
+    },
+    {
+      "date": "2022-12-28",
+      "isoDate": "2022-12-28",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 64,
+      "ukraineTotalCumulative": 27742,
+      "russiaDeaths": 66,
+      "russiaTotalCumulative": 11765
+    },
+    {
+      "date": "2022-12-29",
+      "isoDate": "2022-12-29",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 112,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 27888,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 11812
+    },
+    {
+      "date": "2022-12-30",
+      "isoDate": "2022-12-30",
+      "ukraineTotal": 95,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 27983,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 11885
+    },
+    {
+      "date": "2022-12-31",
+      "isoDate": "2022-12-31",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 28080,
+      "russiaDeaths": 90,
+      "russiaTotalCumulative": 11975
+    },
+    {
+      "date": "2023-01-01",
+      "isoDate": "2023-01-01",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 28167,
+      "russiaDeaths": 198,
+      "russiaTotalCumulative": 12173
+    },
+    {
+      "date": "2023-01-02",
+      "isoDate": "2023-01-02",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 28271,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 12232
+    },
+    {
+      "date": "2023-01-03",
+      "isoDate": "2023-01-03",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 28356,
+      "russiaDeaths": 81,
+      "russiaTotalCumulative": 12313
+    },
+    {
+      "date": "2023-01-04",
+      "isoDate": "2023-01-04",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 28445,
+      "russiaDeaths": 82,
+      "russiaTotalCumulative": 12395
+    },
+    {
+      "date": "2023-01-05",
+      "isoDate": "2023-01-05",
+      "ukraineTotal": 72,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 28517,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 12498
+    },
+    {
+      "date": "2023-01-06",
+      "isoDate": "2023-01-06",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 28596,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 12572
+    },
+    {
+      "date": "2023-01-07",
+      "isoDate": "2023-01-07",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 28692,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 12667
+    },
+    {
+      "date": "2023-01-08",
+      "isoDate": "2023-01-08",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 121,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 28837,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 12739
+    },
+    {
+      "date": "2023-01-09",
+      "isoDate": "2023-01-09",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 28906,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 12809
+    },
+    {
+      "date": "2023-01-10",
+      "isoDate": "2023-01-10",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 28985,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 12894
+    },
+    {
+      "date": "2023-01-11",
+      "isoDate": "2023-01-11",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 29071,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 12968
+    },
+    {
+      "date": "2023-01-12",
+      "isoDate": "2023-01-12",
+      "ukraineTotal": 117,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 51,
+      "ukraineTotalCumulative": 29188,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 13070
+    },
+    {
+      "date": "2023-01-13",
+      "isoDate": "2023-01-13",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 29299,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 13139
+    },
+    {
+      "date": "2023-01-14",
+      "isoDate": "2023-01-14",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 42,
+      "ukraineTotalCumulative": 29395,
+      "russiaDeaths": 98,
+      "russiaTotalCumulative": 13237
+    },
+    {
+      "date": "2023-01-15",
+      "isoDate": "2023-01-15",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 29519,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 13328
+    },
+    {
+      "date": "2023-01-16",
+      "isoDate": "2023-01-16",
+      "ukraineTotal": 127,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 29646,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 13411
+    },
+    {
+      "date": "2023-01-17",
+      "isoDate": "2023-01-17",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 29743,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 13495
+    },
+    {
+      "date": "2023-01-18",
+      "isoDate": "2023-01-18",
+      "ukraineTotal": 117,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 29860,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 13592
+    },
+    {
+      "date": "2023-01-19",
+      "isoDate": "2023-01-19",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 82,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 29982,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 13687
+    },
+    {
+      "date": "2023-01-20",
+      "isoDate": "2023-01-20",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 30091,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 13773
+    },
+    {
+      "date": "2023-01-21",
+      "isoDate": "2023-01-21",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 30188,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 13872
+    },
+    {
+      "date": "2023-01-22",
+      "isoDate": "2023-01-22",
+      "ukraineTotal": 134,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 30322,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 13919
+    },
+    {
+      "date": "2023-01-23",
+      "isoDate": "2023-01-23",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 101,
+      "ukraineMissing": 64,
+      "ukraineTotalCumulative": 30487,
+      "russiaDeaths": 90,
+      "russiaTotalCumulative": 14009
+    },
+    {
+      "date": "2023-01-24",
+      "isoDate": "2023-01-24",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 30584,
+      "russiaDeaths": 117,
+      "russiaTotalCumulative": 14126
+    },
+    {
+      "date": "2023-01-25",
+      "isoDate": "2023-01-25",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 30675,
+      "russiaDeaths": 109,
+      "russiaTotalCumulative": 14235
+    },
+    {
+      "date": "2023-01-26",
+      "isoDate": "2023-01-26",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 99,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 30801,
+      "russiaDeaths": 101,
+      "russiaTotalCumulative": 14336
+    },
+    {
+      "date": "2023-01-27",
+      "isoDate": "2023-01-27",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 30876,
+      "russiaDeaths": 138,
+      "russiaTotalCumulative": 14474
+    },
+    {
+      "date": "2023-01-28",
+      "isoDate": "2023-01-28",
+      "ukraineTotal": 74,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 30950,
+      "russiaDeaths": 111,
+      "russiaTotalCumulative": 14585
+    },
+    {
+      "date": "2023-01-29",
+      "isoDate": "2023-01-29",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 31030,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 14671
+    },
+    {
+      "date": "2023-01-30",
+      "isoDate": "2023-01-30",
+      "ukraineTotal": 95,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 31125,
+      "russiaDeaths": 93,
+      "russiaTotalCumulative": 14764
+    },
+    {
+      "date": "2023-01-31",
+      "isoDate": "2023-01-31",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 31232,
+      "russiaDeaths": 9,
+      "russiaTotalCumulative": 14773
+    },
+    {
+      "date": "2023-02-01",
+      "isoDate": "2023-02-01",
+      "ukraineTotal": 143,
+      "ukraineDeaths": 82,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 31375,
+      "russiaDeaths": 152,
+      "russiaTotalCumulative": 14925
+    },
+    {
+      "date": "2023-02-02",
+      "isoDate": "2023-02-02",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 53,
+      "ukraineTotalCumulative": 31490,
+      "russiaDeaths": 126,
+      "russiaTotalCumulative": 15051
+    },
+    {
+      "date": "2023-02-03",
+      "isoDate": "2023-02-03",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 56,
+      "ukraineTotalCumulative": 31604,
+      "russiaDeaths": 113,
+      "russiaTotalCumulative": 15164
+    },
+    {
+      "date": "2023-02-04",
+      "isoDate": "2023-02-04",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 85,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 31715,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 15255
+    },
+    {
+      "date": "2023-02-05",
+      "isoDate": "2023-02-05",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 31823,
+      "russiaDeaths": 137,
+      "russiaTotalCumulative": 15392
+    },
+    {
+      "date": "2023-02-06",
+      "isoDate": "2023-02-06",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 31945,
+      "russiaDeaths": 3,
+      "russiaTotalCumulative": 15395
+    },
+    {
+      "date": "2023-02-07",
+      "isoDate": "2023-02-07",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 32029,
+      "russiaDeaths": 111,
+      "russiaTotalCumulative": 15506
+    },
+    {
+      "date": "2023-02-08",
+      "isoDate": "2023-02-08",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 91,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 32142,
+      "russiaDeaths": 134,
+      "russiaTotalCumulative": 15640
+    },
+    {
+      "date": "2023-02-09",
+      "isoDate": "2023-02-09",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 32266,
+      "russiaDeaths": 120,
+      "russiaTotalCumulative": 15760
+    },
+    {
+      "date": "2023-02-10",
+      "isoDate": "2023-02-10",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 32374,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 15857
+    },
+    {
+      "date": "2023-02-11",
+      "isoDate": "2023-02-11",
+      "ukraineTotal": 55,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 32429,
+      "russiaDeaths": 93,
+      "russiaTotalCumulative": 15950
+    },
+    {
+      "date": "2023-02-12",
+      "isoDate": "2023-02-12",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 32539,
+      "russiaDeaths": 87,
+      "russiaTotalCumulative": 16037
+    },
+    {
+      "date": "2023-02-13",
+      "isoDate": "2023-02-13",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 32631,
+      "russiaDeaths": 87,
+      "russiaTotalCumulative": 16124
+    },
+    {
+      "date": "2023-02-14",
+      "isoDate": "2023-02-14",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 32720,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 16195
+    },
+    {
+      "date": "2023-02-15",
+      "isoDate": "2023-02-15",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 32824,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 16195
+    },
+    {
+      "date": "2023-02-16",
+      "isoDate": "2023-02-16",
+      "ukraineTotal": 119,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 32943,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 16221
+    },
+    {
+      "date": "2023-02-17",
+      "isoDate": "2023-02-17",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 33037,
+      "russiaDeaths": 127,
+      "russiaTotalCumulative": 16348
+    },
+    {
+      "date": "2023-02-18",
+      "isoDate": "2023-02-18",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 33146,
+      "russiaDeaths": 135,
+      "russiaTotalCumulative": 16483
+    },
+    {
+      "date": "2023-02-19",
+      "isoDate": "2023-02-19",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 42,
+      "ukraineTotalCumulative": 33264,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 16567
+    },
+    {
+      "date": "2023-02-20",
+      "isoDate": "2023-02-20",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 85,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 33371,
+      "russiaDeaths": 125,
+      "russiaTotalCumulative": 16692
+    },
+    {
+      "date": "2023-02-21",
+      "isoDate": "2023-02-21",
+      "ukraineTotal": 105,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 42,
+      "ukraineTotalCumulative": 33476,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 16795
+    },
+    {
+      "date": "2023-02-22",
+      "isoDate": "2023-02-22",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 33586,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 16795
+    },
+    {
+      "date": "2023-02-23",
+      "isoDate": "2023-02-23",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 33694,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 16887
+    },
+    {
+      "date": "2023-02-24",
+      "isoDate": "2023-02-24",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 33777,
+      "russiaDeaths": 123,
+      "russiaTotalCumulative": 17010
+    },
+    {
+      "date": "2023-02-25",
+      "isoDate": "2023-02-25",
+      "ukraineTotal": 53,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 33830,
+      "russiaDeaths": 78,
+      "russiaTotalCumulative": 17088
+    },
+    {
+      "date": "2023-02-26",
+      "isoDate": "2023-02-26",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 33916,
+      "russiaDeaths": 80,
+      "russiaTotalCumulative": 17168
+    },
+    {
+      "date": "2023-02-27",
+      "isoDate": "2023-02-27",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 49,
+      "ukraineTotalCumulative": 34031,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 17260
+    },
+    {
+      "date": "2023-02-28",
+      "isoDate": "2023-02-28",
+      "ukraineTotal": 105,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 34136,
+      "russiaDeaths": 128,
+      "russiaTotalCumulative": 17388
+    },
+    {
+      "date": "2023-03-01",
+      "isoDate": "2023-03-01",
+      "ukraineTotal": 148,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 50,
+      "ukraineTotalCumulative": 34284,
+      "russiaDeaths": 148,
+      "russiaTotalCumulative": 17536
+    },
+    {
+      "date": "2023-03-02",
+      "isoDate": "2023-03-02",
+      "ukraineTotal": 151,
+      "ukraineDeaths": 91,
+      "ukraineMissing": 60,
+      "ukraineTotalCumulative": 34435,
+      "russiaDeaths": 101,
+      "russiaTotalCumulative": 17637
+    },
+    {
+      "date": "2023-03-03",
+      "isoDate": "2023-03-03",
+      "ukraineTotal": 100,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 34535,
+      "russiaDeaths": 118,
+      "russiaTotalCumulative": 17755
+    },
+    {
+      "date": "2023-03-04",
+      "isoDate": "2023-03-04",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 34625,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 17838
+    },
+    {
+      "date": "2023-03-05",
+      "isoDate": "2023-03-05",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 34712,
+      "russiaDeaths": 114,
+      "russiaTotalCumulative": 17952
+    },
+    {
+      "date": "2023-03-06",
+      "isoDate": "2023-03-06",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 34799,
+      "russiaDeaths": 118,
+      "russiaTotalCumulative": 18070
+    },
+    {
+      "date": "2023-03-07",
+      "isoDate": "2023-03-07",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 34907,
+      "russiaDeaths": 115,
+      "russiaTotalCumulative": 18185
+    },
+    {
+      "date": "2023-03-08",
+      "isoDate": "2023-03-08",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 35001,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 18290
+    },
+    {
+      "date": "2023-03-09",
+      "isoDate": "2023-03-09",
+      "ukraineTotal": 168,
+      "ukraineDeaths": 96,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 35169,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 18367
+    },
+    {
+      "date": "2023-03-10",
+      "isoDate": "2023-03-10",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 35284,
+      "russiaDeaths": 122,
+      "russiaTotalCumulative": 18489
+    },
+    {
+      "date": "2023-03-11",
+      "isoDate": "2023-03-11",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 35372,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 18573
+    },
+    {
+      "date": "2023-03-12",
+      "isoDate": "2023-03-12",
+      "ukraineTotal": 125,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 35497,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 18669
+    },
+    {
+      "date": "2023-03-13",
+      "isoDate": "2023-03-13",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 35587,
+      "russiaDeaths": 62,
+      "russiaTotalCumulative": 18731
+    },
+    {
+      "date": "2023-03-14",
+      "isoDate": "2023-03-14",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 86,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 35695,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 18816
+    },
+    {
+      "date": "2023-03-15",
+      "isoDate": "2023-03-15",
+      "ukraineTotal": 72,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 35767,
+      "russiaDeaths": 118,
+      "russiaTotalCumulative": 18934
+    },
+    {
+      "date": "2023-03-16",
+      "isoDate": "2023-03-16",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 92,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 35889,
+      "russiaDeaths": 123,
+      "russiaTotalCumulative": 19057
+    },
+    {
+      "date": "2023-03-17",
+      "isoDate": "2023-03-17",
+      "ukraineTotal": 106,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 35995,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 19159
+    },
+    {
+      "date": "2023-03-18",
+      "isoDate": "2023-03-18",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 36072,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 19264
+    },
+    {
+      "date": "2023-03-19",
+      "isoDate": "2023-03-19",
+      "ukraineTotal": 119,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 36191,
+      "russiaDeaths": 101,
+      "russiaTotalCumulative": 19365
+    },
+    {
+      "date": "2023-03-20",
+      "isoDate": "2023-03-20",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 94,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 36323,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 19468
+    },
+    {
+      "date": "2023-03-21",
+      "isoDate": "2023-03-21",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 51,
+      "ukraineTotalCumulative": 36462,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 19570
+    },
+    {
+      "date": "2023-03-22",
+      "isoDate": "2023-03-22",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 44,
+      "ukraineTotalCumulative": 36584,
+      "russiaDeaths": 106,
+      "russiaTotalCumulative": 19676
+    },
+    {
+      "date": "2023-03-23",
+      "isoDate": "2023-03-23",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 36695,
+      "russiaDeaths": 116,
+      "russiaTotalCumulative": 19792
+    },
+    {
+      "date": "2023-03-24",
+      "isoDate": "2023-03-24",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 36773,
+      "russiaDeaths": 113,
+      "russiaTotalCumulative": 19905
+    },
+    {
+      "date": "2023-03-25",
+      "isoDate": "2023-03-25",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 36853,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 20015
+    },
+    {
+      "date": "2023-03-26",
+      "isoDate": "2023-03-26",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 36935,
+      "russiaDeaths": 82,
+      "russiaTotalCumulative": 20097
+    },
+    {
+      "date": "2023-03-27",
+      "isoDate": "2023-03-27",
+      "ukraineTotal": 61,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 36996,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 20171
+    },
+    {
+      "date": "2023-03-28",
+      "isoDate": "2023-03-28",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 37083,
+      "russiaDeaths": 62,
+      "russiaTotalCumulative": 20233
+    },
+    {
+      "date": "2023-03-29",
+      "isoDate": "2023-03-29",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 37167,
+      "russiaDeaths": 81,
+      "russiaTotalCumulative": 20314
+    },
+    {
+      "date": "2023-03-30",
+      "isoDate": "2023-03-30",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 37250,
+      "russiaDeaths": 117,
+      "russiaTotalCumulative": 20431
+    },
+    {
+      "date": "2023-03-31",
+      "isoDate": "2023-03-31",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 37359,
+      "russiaDeaths": 89,
+      "russiaTotalCumulative": 20520
+    },
+    {
+      "date": "2023-04-01",
+      "isoDate": "2023-04-01",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 93,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 37485,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 20593
+    },
+    {
+      "date": "2023-04-02",
+      "isoDate": "2023-04-02",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 37562,
+      "russiaDeaths": 51,
+      "russiaTotalCumulative": 20644
+    },
+    {
+      "date": "2023-04-03",
+      "isoDate": "2023-04-03",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 37644,
+      "russiaDeaths": 82,
+      "russiaTotalCumulative": 20726
+    },
+    {
+      "date": "2023-04-04",
+      "isoDate": "2023-04-04",
+      "ukraineTotal": 74,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 37718,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 20826
+    },
+    {
+      "date": "2023-04-05",
+      "isoDate": "2023-04-05",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 37795,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 20928
+    },
+    {
+      "date": "2023-04-06",
+      "isoDate": "2023-04-06",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 37888,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 21012
+    },
+    {
+      "date": "2023-04-07",
+      "isoDate": "2023-04-07",
+      "ukraineTotal": 74,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 37962,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 21086
+    },
+    {
+      "date": "2023-04-08",
+      "isoDate": "2023-04-08",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 38053,
+      "russiaDeaths": 98,
+      "russiaTotalCumulative": 21184
+    },
+    {
+      "date": "2023-04-09",
+      "isoDate": "2023-04-09",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 38128,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 21221
+    },
+    {
+      "date": "2023-04-10",
+      "isoDate": "2023-04-10",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 38196,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 21304
+    },
+    {
+      "date": "2023-04-11",
+      "isoDate": "2023-04-11",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 38280,
+      "russiaDeaths": 90,
+      "russiaTotalCumulative": 21394
+    },
+    {
+      "date": "2023-04-12",
+      "isoDate": "2023-04-12",
+      "ukraineTotal": 54,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 38334,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 21465
+    },
+    {
+      "date": "2023-04-13",
+      "isoDate": "2023-04-13",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 38411,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 21548
+    },
+    {
+      "date": "2023-04-14",
+      "isoDate": "2023-04-14",
+      "ukraineTotal": 76,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 38487,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 21595
+    },
+    {
+      "date": "2023-04-15",
+      "isoDate": "2023-04-15",
+      "ukraineTotal": 142,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 74,
+      "ukraineTotalCumulative": 38629,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 21650
+    },
+    {
+      "date": "2023-04-16",
+      "isoDate": "2023-04-16",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 38738,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 21691
+    },
+    {
+      "date": "2023-04-17",
+      "isoDate": "2023-04-17",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 38846,
+      "russiaDeaths": 174,
+      "russiaTotalCumulative": 21865
+    },
+    {
+      "date": "2023-04-18",
+      "isoDate": "2023-04-18",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 49,
+      "ukraineTotalCumulative": 38943,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 21926
+    },
+    {
+      "date": "2023-04-19",
+      "isoDate": "2023-04-19",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 39021,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 21994
+    },
+    {
+      "date": "2023-04-20",
+      "isoDate": "2023-04-20",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 39088,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 21994
+    },
+    {
+      "date": "2023-04-21",
+      "isoDate": "2023-04-21",
+      "ukraineTotal": 60,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 39148,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 21994
+    },
+    {
+      "date": "2023-04-22",
+      "isoDate": "2023-04-22",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 91,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 39280,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 22032
+    },
+    {
+      "date": "2023-04-23",
+      "isoDate": "2023-04-23",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 39348,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 22081
+    },
+    {
+      "date": "2023-04-24",
+      "isoDate": "2023-04-24",
+      "ukraineTotal": 51,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 39399,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 22152
+    },
+    {
+      "date": "2023-04-25",
+      "isoDate": "2023-04-25",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 39464,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 22220
+    },
+    {
+      "date": "2023-04-26",
+      "isoDate": "2023-04-26",
+      "ukraineTotal": 72,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 39536,
+      "russiaDeaths": 78,
+      "russiaTotalCumulative": 22298
+    },
+    {
+      "date": "2023-04-27",
+      "isoDate": "2023-04-27",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 7,
+      "ukraineTotalCumulative": 39603,
+      "russiaDeaths": 62,
+      "russiaTotalCumulative": 22360
+    },
+    {
+      "date": "2023-04-28",
+      "isoDate": "2023-04-28",
+      "ukraineTotal": 47,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 39650,
+      "russiaDeaths": 82,
+      "russiaTotalCumulative": 22442
+    },
+    {
+      "date": "2023-04-29",
+      "isoDate": "2023-04-29",
+      "ukraineTotal": 61,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 39711,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 22500
+    },
+    {
+      "date": "2023-04-30",
+      "isoDate": "2023-04-30",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 39780,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 22553
+    },
+    {
+      "date": "2023-05-01",
+      "isoDate": "2023-05-01",
+      "ukraineTotal": 43,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 39823,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 22605
+    },
+    {
+      "date": "2023-05-02",
+      "isoDate": "2023-05-02",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 39901,
+      "russiaDeaths": 21,
+      "russiaTotalCumulative": 22626
+    },
+    {
+      "date": "2023-05-03",
+      "isoDate": "2023-05-03",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 39972,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 22626
+    },
+    {
+      "date": "2023-05-04",
+      "isoDate": "2023-05-04",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 40059,
+      "russiaDeaths": 18,
+      "russiaTotalCumulative": 22644
+    },
+    {
+      "date": "2023-05-05",
+      "isoDate": "2023-05-05",
+      "ukraineTotal": 102,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 40161,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 22727
+    },
+    {
+      "date": "2023-05-06",
+      "isoDate": "2023-05-06",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 40229,
+      "russiaDeaths": 45,
+      "russiaTotalCumulative": 22772
+    },
+    {
+      "date": "2023-05-07",
+      "isoDate": "2023-05-07",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 40294,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 22867
+    },
+    {
+      "date": "2023-05-08",
+      "isoDate": "2023-05-08",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 40367,
+      "russiaDeaths": 101,
+      "russiaTotalCumulative": 22968
+    },
+    {
+      "date": "2023-05-09",
+      "isoDate": "2023-05-09",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 40432,
+      "russiaDeaths": 135,
+      "russiaTotalCumulative": 23103
+    },
+    {
+      "date": "2023-05-10",
+      "isoDate": "2023-05-10",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 95,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 40564,
+      "russiaDeaths": 124,
+      "russiaTotalCumulative": 23227
+    },
+    {
+      "date": "2023-05-11",
+      "isoDate": "2023-05-11",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 40658,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 23332
+    },
+    {
+      "date": "2023-05-12",
+      "isoDate": "2023-05-12",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 40759,
+      "russiaDeaths": 94,
+      "russiaTotalCumulative": 23426
+    },
+    {
+      "date": "2023-05-13",
+      "isoDate": "2023-05-13",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 40841,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 23426
+    },
+    {
+      "date": "2023-05-14",
+      "isoDate": "2023-05-14",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 40926,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 23426
+    },
+    {
+      "date": "2023-05-15",
+      "isoDate": "2023-05-15",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 41022,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 23479
+    },
+    {
+      "date": "2023-05-16",
+      "isoDate": "2023-05-16",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 41119,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 23582
+    },
+    {
+      "date": "2023-05-17",
+      "isoDate": "2023-05-17",
+      "ukraineTotal": 62,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 41181,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 23659
+    },
+    {
+      "date": "2023-05-18",
+      "isoDate": "2023-05-18",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 41273,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 23728
+    },
+    {
+      "date": "2023-05-19",
+      "isoDate": "2023-05-19",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 41376,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 23828
+    },
+    {
+      "date": "2023-05-20",
+      "isoDate": "2023-05-20",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 41469,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 23883
+    },
+    {
+      "date": "2023-05-21",
+      "isoDate": "2023-05-21",
+      "ukraineTotal": 50,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 41519,
+      "russiaDeaths": 98,
+      "russiaTotalCumulative": 23981
+    },
+    {
+      "date": "2023-05-22",
+      "isoDate": "2023-05-22",
+      "ukraineTotal": 51,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 41570,
+      "russiaDeaths": 45,
+      "russiaTotalCumulative": 24026
+    },
+    {
+      "date": "2023-05-23",
+      "isoDate": "2023-05-23",
+      "ukraineTotal": 49,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 41619,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 24026
+    },
+    {
+      "date": "2023-05-24",
+      "isoDate": "2023-05-24",
+      "ukraineTotal": 57,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 41676,
+      "russiaDeaths": 44,
+      "russiaTotalCumulative": 24070
+    },
+    {
+      "date": "2023-05-25",
+      "isoDate": "2023-05-25",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 41741,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 24175
+    },
+    {
+      "date": "2023-05-26",
+      "isoDate": "2023-05-26",
+      "ukraineTotal": 23,
+      "ukraineDeaths": 16,
+      "ukraineMissing": 7,
+      "ukraineTotalCumulative": 41764,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 24213
+    },
+    {
+      "date": "2023-05-27",
+      "isoDate": "2023-05-27",
+      "ukraineTotal": 44,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 41808,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 24256
+    },
+    {
+      "date": "2023-05-28",
+      "isoDate": "2023-05-28",
+      "ukraineTotal": 36,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 4,
+      "ukraineTotalCumulative": 41844,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 24317
+    },
+    {
+      "date": "2023-05-29",
+      "isoDate": "2023-05-29",
+      "ukraineTotal": 38,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 41882,
+      "russiaDeaths": 127,
+      "russiaTotalCumulative": 24444
+    },
+    {
+      "date": "2023-05-30",
+      "isoDate": "2023-05-30",
+      "ukraineTotal": 54,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 41936,
+      "russiaDeaths": 117,
+      "russiaTotalCumulative": 24561
+    },
+    {
+      "date": "2023-05-31",
+      "isoDate": "2023-05-31",
+      "ukraineTotal": 52,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 41988,
+      "russiaDeaths": 80,
+      "russiaTotalCumulative": 24641
+    },
+    {
+      "date": "2023-06-01",
+      "isoDate": "2023-06-01",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 42066,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 24746
+    },
+    {
+      "date": "2023-06-02",
+      "isoDate": "2023-06-02",
+      "ukraineTotal": 38,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 4,
+      "ukraineTotalCumulative": 42104,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 24796
+    },
+    {
+      "date": "2023-06-03",
+      "isoDate": "2023-06-03",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 42195,
+      "russiaDeaths": 31,
+      "russiaTotalCumulative": 24827
+    },
+    {
+      "date": "2023-06-04",
+      "isoDate": "2023-06-04",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 108,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 42330,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 24875
+    },
+    {
+      "date": "2023-06-05",
+      "isoDate": "2023-06-05",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 42427,
+      "russiaDeaths": 142,
+      "russiaTotalCumulative": 25017
+    },
+    {
+      "date": "2023-06-06",
+      "isoDate": "2023-06-06",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 100,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 42562,
+      "russiaDeaths": 141,
+      "russiaTotalCumulative": 25158
+    },
+    {
+      "date": "2023-06-07",
+      "isoDate": "2023-06-07",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 112,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 42698,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 25258
+    },
+    {
+      "date": "2023-06-08",
+      "isoDate": "2023-06-08",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 42801,
+      "russiaDeaths": 139,
+      "russiaTotalCumulative": 25397
+    },
+    {
+      "date": "2023-06-09",
+      "isoDate": "2023-06-09",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 97,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 42912,
+      "russiaDeaths": 130,
+      "russiaTotalCumulative": 25527
+    },
+    {
+      "date": "2023-06-10",
+      "isoDate": "2023-06-10",
+      "ukraineTotal": 59,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 5,
+      "ukraineTotalCumulative": 42971,
+      "russiaDeaths": 98,
+      "russiaTotalCumulative": 25625
+    },
+    {
+      "date": "2023-06-11",
+      "isoDate": "2023-06-11",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 43051,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 25677
+    },
+    {
+      "date": "2023-06-12",
+      "isoDate": "2023-06-12",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 146,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 43216,
+      "russiaDeaths": 93,
+      "russiaTotalCumulative": 25770
+    },
+    {
+      "date": "2023-06-13",
+      "isoDate": "2023-06-13",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 43305,
+      "russiaDeaths": 161,
+      "russiaTotalCumulative": 25931
+    },
+    {
+      "date": "2023-06-14",
+      "isoDate": "2023-06-14",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 43396,
+      "russiaDeaths": 75,
+      "russiaTotalCumulative": 26006
+    },
+    {
+      "date": "2023-06-15",
+      "isoDate": "2023-06-15",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 43469,
+      "russiaDeaths": 117,
+      "russiaTotalCumulative": 26123
+    },
+    {
+      "date": "2023-06-16",
+      "isoDate": "2023-06-16",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 43548,
+      "russiaDeaths": 123,
+      "russiaTotalCumulative": 26246
+    },
+    {
+      "date": "2023-06-17",
+      "isoDate": "2023-06-17",
+      "ukraineTotal": 47,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 43595,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 26330
+    },
+    {
+      "date": "2023-06-18",
+      "isoDate": "2023-06-18",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 99,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 43755,
+      "russiaDeaths": 124,
+      "russiaTotalCumulative": 26454
+    },
+    {
+      "date": "2023-06-19",
+      "isoDate": "2023-06-19",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 7,
+      "ukraineTotalCumulative": 43833,
+      "russiaDeaths": 120,
+      "russiaTotalCumulative": 26574
+    },
+    {
+      "date": "2023-06-20",
+      "isoDate": "2023-06-20",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 43936,
+      "russiaDeaths": 106,
+      "russiaTotalCumulative": 26680
+    },
+    {
+      "date": "2023-06-21",
+      "isoDate": "2023-06-21",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 44000,
+      "russiaDeaths": 78,
+      "russiaTotalCumulative": 26758
+    },
+    {
+      "date": "2023-06-22",
+      "isoDate": "2023-06-22",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 86,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 44111,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 26843
+    },
+    {
+      "date": "2023-06-23",
+      "isoDate": "2023-06-23",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 42,
+      "ukraineTotalCumulative": 44227,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 26935
+    },
+    {
+      "date": "2023-06-24",
+      "isoDate": "2023-06-24",
+      "ukraineTotal": 100,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 44327,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 26996
+    },
+    {
+      "date": "2023-06-25",
+      "isoDate": "2023-06-25",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 44425,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 27067
+    },
+    {
+      "date": "2023-06-26",
+      "isoDate": "2023-06-26",
+      "ukraineTotal": 58,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 44483,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 27139
+    },
+    {
+      "date": "2023-06-27",
+      "isoDate": "2023-06-27",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 44572,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 27210
+    },
+    {
+      "date": "2023-06-28",
+      "isoDate": "2023-06-28",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 44649,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 27267
+    },
+    {
+      "date": "2023-06-29",
+      "isoDate": "2023-06-29",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 44767,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 27332
+    },
+    {
+      "date": "2023-06-30",
+      "isoDate": "2023-06-30",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 44,
+      "ukraineTotalCumulative": 44880,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 27415
+    },
+    {
+      "date": "2023-07-01",
+      "isoDate": "2023-07-01",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 44958,
+      "russiaDeaths": 11,
+      "russiaTotalCumulative": 27426
+    },
+    {
+      "date": "2023-07-02",
+      "isoDate": "2023-07-02",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 100,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 45076,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 27426
+    },
+    {
+      "date": "2023-07-03",
+      "isoDate": "2023-07-03",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 82,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 45183,
+      "russiaDeaths": 15,
+      "russiaTotalCumulative": 27441
+    },
+    {
+      "date": "2023-07-04",
+      "isoDate": "2023-07-04",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 45273,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 27497
+    },
+    {
+      "date": "2023-07-05",
+      "isoDate": "2023-07-05",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 45362,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 27555
+    },
+    {
+      "date": "2023-07-06",
+      "isoDate": "2023-07-06",
+      "ukraineTotal": 119,
+      "ukraineDeaths": 86,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 45481,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 27601
+    },
+    {
+      "date": "2023-07-07",
+      "isoDate": "2023-07-07",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 7,
+      "ukraineTotalCumulative": 45558,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 27656
+    },
+    {
+      "date": "2023-07-08",
+      "isoDate": "2023-07-08",
+      "ukraineTotal": 72,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 45630,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 27703
+    },
+    {
+      "date": "2023-07-09",
+      "isoDate": "2023-07-09",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 45724,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 27736
+    },
+    {
+      "date": "2023-07-10",
+      "isoDate": "2023-07-10",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 45797,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 27785
+    },
+    {
+      "date": "2023-07-11",
+      "isoDate": "2023-07-11",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 82,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 45888,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 27850
+    },
+    {
+      "date": "2023-07-12",
+      "isoDate": "2023-07-12",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 45976,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 27911
+    },
+    {
+      "date": "2023-07-13",
+      "isoDate": "2023-07-13",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 46064,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 27983
+    },
+    {
+      "date": "2023-07-14",
+      "isoDate": "2023-07-14",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 86,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 46172,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 28026
+    },
+    {
+      "date": "2023-07-15",
+      "isoDate": "2023-07-15",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 46275,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 28026
+    },
+    {
+      "date": "2023-07-16",
+      "isoDate": "2023-07-16",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 94,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 46391,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 28026
+    },
+    {
+      "date": "2023-07-17",
+      "isoDate": "2023-07-17",
+      "ukraineTotal": 148,
+      "ukraineDeaths": 100,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 46539,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 28026
+    },
+    {
+      "date": "2023-07-18",
+      "isoDate": "2023-07-18",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 100,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 46678,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 28074
+    },
+    {
+      "date": "2023-07-19",
+      "isoDate": "2023-07-19",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 62,
+      "ukraineTotalCumulative": 46817,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 28123
+    },
+    {
+      "date": "2023-07-20",
+      "isoDate": "2023-07-20",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 46939,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 28188
+    },
+    {
+      "date": "2023-07-21",
+      "isoDate": "2023-07-21",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 85,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 47046,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 28258
+    },
+    {
+      "date": "2023-07-22",
+      "isoDate": "2023-07-22",
+      "ukraineTotal": 99,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 47145,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 28258
+    },
+    {
+      "date": "2023-07-23",
+      "isoDate": "2023-07-23",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 47236,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 28258
+    },
+    {
+      "date": "2023-07-24",
+      "isoDate": "2023-07-24",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 47345,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 28258
+    },
+    {
+      "date": "2023-07-25",
+      "isoDate": "2023-07-25",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 110,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 47502,
+      "russiaDeaths": 9,
+      "russiaTotalCumulative": 28267
+    },
+    {
+      "date": "2023-07-26",
+      "isoDate": "2023-07-26",
+      "ukraineTotal": 131,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 47633,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 28323
+    },
+    {
+      "date": "2023-07-27",
+      "isoDate": "2023-07-27",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 47702,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 28384
+    },
+    {
+      "date": "2023-07-28",
+      "isoDate": "2023-07-28",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 47773,
+      "russiaDeaths": 34,
+      "russiaTotalCumulative": 28418
+    },
+    {
+      "date": "2023-07-29",
+      "isoDate": "2023-07-29",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 47870,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 28453
+    },
+    {
+      "date": "2023-07-30",
+      "isoDate": "2023-07-30",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 47953,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 28494
+    },
+    {
+      "date": "2023-07-31",
+      "isoDate": "2023-07-31",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 48040,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 28526
+    },
+    {
+      "date": "2023-08-01",
+      "isoDate": "2023-08-01",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 48126,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 28583
+    },
+    {
+      "date": "2023-08-02",
+      "isoDate": "2023-08-02",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 48207,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 28656
+    },
+    {
+      "date": "2023-08-03",
+      "isoDate": "2023-08-03",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 48299,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 28695
+    },
+    {
+      "date": "2023-08-04",
+      "isoDate": "2023-08-04",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 48374,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 28737
+    },
+    {
+      "date": "2023-08-05",
+      "isoDate": "2023-08-05",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 48465,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 28772
+    },
+    {
+      "date": "2023-08-06",
+      "isoDate": "2023-08-06",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 48568,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 28825
+    },
+    {
+      "date": "2023-08-07",
+      "isoDate": "2023-08-07",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 48647,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 28854
+    },
+    {
+      "date": "2023-08-08",
+      "isoDate": "2023-08-08",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 48744,
+      "russiaDeaths": 54,
+      "russiaTotalCumulative": 28908
+    },
+    {
+      "date": "2023-08-09",
+      "isoDate": "2023-08-09",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 9,
+      "ukraineTotalCumulative": 48829,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 28960
+    },
+    {
+      "date": "2023-08-10",
+      "isoDate": "2023-08-10",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 48916,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 28997
+    },
+    {
+      "date": "2023-08-11",
+      "isoDate": "2023-08-11",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 49003,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 29034
+    },
+    {
+      "date": "2023-08-12",
+      "isoDate": "2023-08-12",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 97,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 49114,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 29069
+    },
+    {
+      "date": "2023-08-13",
+      "isoDate": "2023-08-13",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 8,
+      "ukraineTotalCumulative": 49192,
+      "russiaDeaths": 25,
+      "russiaTotalCumulative": 29094
+    },
+    {
+      "date": "2023-08-14",
+      "isoDate": "2023-08-14",
+      "ukraineTotal": 88,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 49280,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 29166
+    },
+    {
+      "date": "2023-08-15",
+      "isoDate": "2023-08-15",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 49372,
+      "russiaDeaths": 60,
+      "russiaTotalCumulative": 29226
+    },
+    {
+      "date": "2023-08-16",
+      "isoDate": "2023-08-16",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 49496,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 29268
+    },
+    {
+      "date": "2023-08-17",
+      "isoDate": "2023-08-17",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 49610,
+      "russiaDeaths": 60,
+      "russiaTotalCumulative": 29328
+    },
+    {
+      "date": "2023-08-18",
+      "isoDate": "2023-08-18",
+      "ukraineTotal": 129,
+      "ukraineDeaths": 86,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 49739,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 29387
+    },
+    {
+      "date": "2023-08-19",
+      "isoDate": "2023-08-19",
+      "ukraineTotal": 76,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 49815,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 29417
+    },
+    {
+      "date": "2023-08-20",
+      "isoDate": "2023-08-20",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 49899,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 29475
+    },
+    {
+      "date": "2023-08-21",
+      "isoDate": "2023-08-21",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 49984,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 29507
+    },
+    {
+      "date": "2023-08-22",
+      "isoDate": "2023-08-22",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 98,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 50092,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 29564
+    },
+    {
+      "date": "2023-08-23",
+      "isoDate": "2023-08-23",
+      "ukraineTotal": 112,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 50204,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 29622
+    },
+    {
+      "date": "2023-08-24",
+      "isoDate": "2023-08-24",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 6,
+      "ukraineTotalCumulative": 50283,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 29679
+    },
+    {
+      "date": "2023-08-25",
+      "isoDate": "2023-08-25",
+      "ukraineTotal": 61,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 50344,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 29716
+    },
+    {
+      "date": "2023-08-26",
+      "isoDate": "2023-08-26",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 50423,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 29771
+    },
+    {
+      "date": "2023-08-27",
+      "isoDate": "2023-08-27",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 50501,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 29794
+    },
+    {
+      "date": "2023-08-28",
+      "isoDate": "2023-08-28",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 50616,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 29858
+    },
+    {
+      "date": "2023-08-29",
+      "isoDate": "2023-08-29",
+      "ukraineTotal": 95,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 50711,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 29908
+    },
+    {
+      "date": "2023-08-30",
+      "isoDate": "2023-08-30",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 50803,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 29963
+    },
+    {
+      "date": "2023-08-31",
+      "isoDate": "2023-08-31",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 50886,
+      "russiaDeaths": 51,
+      "russiaTotalCumulative": 30014
+    },
+    {
+      "date": "2023-09-01",
+      "isoDate": "2023-09-01",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 50953,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 30071
+    },
+    {
+      "date": "2023-09-02",
+      "isoDate": "2023-09-02",
+      "ukraineTotal": 100,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 51053,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 30093
+    },
+    {
+      "date": "2023-09-03",
+      "isoDate": "2023-09-03",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 51122,
+      "russiaDeaths": 20,
+      "russiaTotalCumulative": 30113
+    },
+    {
+      "date": "2023-09-04",
+      "isoDate": "2023-09-04",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 51205,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 30209
+    },
+    {
+      "date": "2023-09-05",
+      "isoDate": "2023-09-05",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 51314,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 30258
+    },
+    {
+      "date": "2023-09-06",
+      "isoDate": "2023-09-06",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 51406,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 30258
+    },
+    {
+      "date": "2023-09-07",
+      "isoDate": "2023-09-07",
+      "ukraineTotal": 76,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 14,
+      "ukraineTotalCumulative": 51482,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 30258
+    },
+    {
+      "date": "2023-09-08",
+      "isoDate": "2023-09-08",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 51547,
+      "russiaDeaths": 34,
+      "russiaTotalCumulative": 30292
+    },
+    {
+      "date": "2023-09-09",
+      "isoDate": "2023-09-09",
+      "ukraineTotal": 70,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 51617,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 30339
+    },
+    {
+      "date": "2023-09-10",
+      "isoDate": "2023-09-10",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 51688,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 30388
+    },
+    {
+      "date": "2023-09-11",
+      "isoDate": "2023-09-11",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 92,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 51809,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 30452
+    },
+    {
+      "date": "2023-09-12",
+      "isoDate": "2023-09-12",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 51884,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 30489
+    },
+    {
+      "date": "2023-09-13",
+      "isoDate": "2023-09-13",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 51951,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 30554
+    },
+    {
+      "date": "2023-09-14",
+      "isoDate": "2023-09-14",
+      "ukraineTotal": 52,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 52003,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 30594
+    },
+    {
+      "date": "2023-09-15",
+      "isoDate": "2023-09-15",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 10,
+      "ukraineTotalCumulative": 52082,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 30632
+    },
+    {
+      "date": "2023-09-16",
+      "isoDate": "2023-09-16",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 52155,
+      "russiaDeaths": 25,
+      "russiaTotalCumulative": 30657
+    },
+    {
+      "date": "2023-09-17",
+      "isoDate": "2023-09-17",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 52238,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 30693
+    },
+    {
+      "date": "2023-09-18",
+      "isoDate": "2023-09-18",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 52342,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 30742
+    },
+    {
+      "date": "2023-09-19",
+      "isoDate": "2023-09-19",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 13,
+      "ukraineTotalCumulative": 52420,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 30806
+    },
+    {
+      "date": "2023-09-20",
+      "isoDate": "2023-09-20",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 52485,
+      "russiaDeaths": 80,
+      "russiaTotalCumulative": 30886
+    },
+    {
+      "date": "2023-09-21",
+      "isoDate": "2023-09-21",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 52601,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 30938
+    },
+    {
+      "date": "2023-09-22",
+      "isoDate": "2023-09-22",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 52670,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 31037
+    },
+    {
+      "date": "2023-09-23",
+      "isoDate": "2023-09-23",
+      "ukraineTotal": 74,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 52744,
+      "russiaDeaths": 51,
+      "russiaTotalCumulative": 31088
+    },
+    {
+      "date": "2023-09-24",
+      "isoDate": "2023-09-24",
+      "ukraineTotal": 70,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 11,
+      "ukraineTotalCumulative": 52814,
+      "russiaDeaths": 66,
+      "russiaTotalCumulative": 31154
+    },
+    {
+      "date": "2023-09-25",
+      "isoDate": "2023-09-25",
+      "ukraineTotal": 65,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 20,
+      "ukraineTotalCumulative": 52879,
+      "russiaDeaths": 90,
+      "russiaTotalCumulative": 31244
+    },
+    {
+      "date": "2023-09-26",
+      "isoDate": "2023-09-26",
+      "ukraineTotal": 57,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 52936,
+      "russiaDeaths": 60,
+      "russiaTotalCumulative": 31304
+    },
+    {
+      "date": "2023-09-27",
+      "isoDate": "2023-09-27",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 82,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 53034,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 31344
+    },
+    {
+      "date": "2023-09-28",
+      "isoDate": "2023-09-28",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 53142,
+      "russiaDeaths": 81,
+      "russiaTotalCumulative": 31425
+    },
+    {
+      "date": "2023-09-29",
+      "isoDate": "2023-09-29",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 53238,
+      "russiaDeaths": 36,
+      "russiaTotalCumulative": 31461
+    },
+    {
+      "date": "2023-09-30",
+      "isoDate": "2023-09-30",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 53316,
+      "russiaDeaths": 25,
+      "russiaTotalCumulative": 31486
+    },
+    {
+      "date": "2023-10-01",
+      "isoDate": "2023-10-01",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 15,
+      "ukraineTotalCumulative": 53380,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 31526
+    },
+    {
+      "date": "2023-10-02",
+      "isoDate": "2023-10-02",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 53448,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 31603
+    },
+    {
+      "date": "2023-10-03",
+      "isoDate": "2023-10-03",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 53546,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 31658
+    },
+    {
+      "date": "2023-10-04",
+      "isoDate": "2023-10-04",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 53633,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 31658
+    },
+    {
+      "date": "2023-10-05",
+      "isoDate": "2023-10-05",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 53734,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 31658
+    },
+    {
+      "date": "2023-10-06",
+      "isoDate": "2023-10-06",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 58,
+      "ukraineTotalCumulative": 53849,
+      "russiaDeaths": 12,
+      "russiaTotalCumulative": 31670
+    },
+    {
+      "date": "2023-10-07",
+      "isoDate": "2023-10-07",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 53918,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 31712
+    },
+    {
+      "date": "2023-10-08",
+      "isoDate": "2023-10-08",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 90,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 54034,
+      "russiaDeaths": 25,
+      "russiaTotalCumulative": 31737
+    },
+    {
+      "date": "2023-10-09",
+      "isoDate": "2023-10-09",
+      "ukraineTotal": 199,
+      "ukraineDeaths": 114,
+      "ukraineMissing": 85,
+      "ukraineTotalCumulative": 54233,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 31802
+    },
+    {
+      "date": "2023-10-10",
+      "isoDate": "2023-10-10",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 99,
+      "ukraineMissing": 53,
+      "ukraineTotalCumulative": 54385,
+      "russiaDeaths": 90,
+      "russiaTotalCumulative": 31892
+    },
+    {
+      "date": "2023-10-11",
+      "isoDate": "2023-10-11",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 110,
+      "ukraineMissing": 44,
+      "ukraineTotalCumulative": 54539,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 31964
+    },
+    {
+      "date": "2023-10-12",
+      "isoDate": "2023-10-12",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 94,
+      "ukraineMissing": 60,
+      "ukraineTotalCumulative": 54693,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 32033
+    },
+    {
+      "date": "2023-10-13",
+      "isoDate": "2023-10-13",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 99,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 54838,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 32119
+    },
+    {
+      "date": "2023-10-14",
+      "isoDate": "2023-10-14",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 94,
+      "ukraineMissing": 32,
+      "ukraineTotalCumulative": 54964,
+      "russiaDeaths": 82,
+      "russiaTotalCumulative": 32201
+    },
+    {
+      "date": "2023-10-15",
+      "isoDate": "2023-10-15",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 55079,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 32248
+    },
+    {
+      "date": "2023-10-16",
+      "isoDate": "2023-10-16",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 55188,
+      "russiaDeaths": 80,
+      "russiaTotalCumulative": 32328
+    },
+    {
+      "date": "2023-10-17",
+      "isoDate": "2023-10-17",
+      "ukraineTotal": 147,
+      "ukraineDeaths": 97,
+      "ukraineMissing": 50,
+      "ukraineTotalCumulative": 55335,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 32384
+    },
+    {
+      "date": "2023-10-18",
+      "isoDate": "2023-10-18",
+      "ukraineTotal": 141,
+      "ukraineDeaths": 89,
+      "ukraineMissing": 52,
+      "ukraineTotalCumulative": 55476,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 32453
+    },
+    {
+      "date": "2023-10-19",
+      "isoDate": "2023-10-19",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 96,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 55633,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 32558
+    },
+    {
+      "date": "2023-10-20",
+      "isoDate": "2023-10-20",
+      "ukraineTotal": 112,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 55745,
+      "russiaDeaths": 93,
+      "russiaTotalCumulative": 32651
+    },
+    {
+      "date": "2023-10-21",
+      "isoDate": "2023-10-21",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 53,
+      "ukraineTotalCumulative": 55871,
+      "russiaDeaths": 7,
+      "russiaTotalCumulative": 32658
+    },
+    {
+      "date": "2023-10-22",
+      "isoDate": "2023-10-22",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 92,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 56003,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 32658
+    },
+    {
+      "date": "2023-10-23",
+      "isoDate": "2023-10-23",
+      "ukraineTotal": 180,
+      "ukraineDeaths": 111,
+      "ukraineMissing": 69,
+      "ukraineTotalCumulative": 56183,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 32658
+    },
+    {
+      "date": "2023-10-24",
+      "isoDate": "2023-10-24",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 56296,
+      "russiaDeaths": 78,
+      "russiaTotalCumulative": 32736
+    },
+    {
+      "date": "2023-10-25",
+      "isoDate": "2023-10-25",
+      "ukraineTotal": 63,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 56359,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 32822
+    },
+    {
+      "date": "2023-10-26",
+      "isoDate": "2023-10-26",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 56466,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 32914
+    },
+    {
+      "date": "2023-10-27",
+      "isoDate": "2023-10-27",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 56551,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 32971
+    },
+    {
+      "date": "2023-10-28",
+      "isoDate": "2023-10-28",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 55,
+      "ukraineTotalCumulative": 56690,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 33057
+    },
+    {
+      "date": "2023-10-29",
+      "isoDate": "2023-10-29",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 82,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 56808,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 33122
+    },
+    {
+      "date": "2023-10-30",
+      "isoDate": "2023-10-30",
+      "ukraineTotal": 105,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 56913,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 33207
+    },
+    {
+      "date": "2023-10-31",
+      "isoDate": "2023-10-31",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 57014,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 33291
+    },
+    {
+      "date": "2023-11-01",
+      "isoDate": "2023-11-01",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 54,
+      "ukraineTotalCumulative": 57146,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 33359
+    },
+    {
+      "date": "2023-11-02",
+      "isoDate": "2023-11-02",
+      "ukraineTotal": 149,
+      "ukraineDeaths": 103,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 57295,
+      "russiaDeaths": 67,
+      "russiaTotalCumulative": 33426
+    },
+    {
+      "date": "2023-11-03",
+      "isoDate": "2023-11-03",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 57398,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 33494
+    },
+    {
+      "date": "2023-11-04",
+      "isoDate": "2023-11-04",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 57478,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 33578
+    },
+    {
+      "date": "2023-11-05",
+      "isoDate": "2023-11-05",
+      "ukraineTotal": 85,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 57563,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 33641
+    },
+    {
+      "date": "2023-11-06",
+      "isoDate": "2023-11-06",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 50,
+      "ukraineTotalCumulative": 57676,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 33715
+    },
+    {
+      "date": "2023-11-07",
+      "isoDate": "2023-11-07",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 89,
+      "ukraineMissing": 44,
+      "ukraineTotalCumulative": 57809,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 33800
+    },
+    {
+      "date": "2023-11-08",
+      "isoDate": "2023-11-08",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 57888,
+      "russiaDeaths": 101,
+      "russiaTotalCumulative": 33901
+    },
+    {
+      "date": "2023-11-09",
+      "isoDate": "2023-11-09",
+      "ukraineTotal": 141,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 53,
+      "ukraineTotalCumulative": 58029,
+      "russiaDeaths": 88,
+      "russiaTotalCumulative": 33989
+    },
+    {
+      "date": "2023-11-10",
+      "isoDate": "2023-11-10",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 58120,
+      "russiaDeaths": 121,
+      "russiaTotalCumulative": 34110
+    },
+    {
+      "date": "2023-11-11",
+      "isoDate": "2023-11-11",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 54,
+      "ukraineTotalCumulative": 58234,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 34173
+    },
+    {
+      "date": "2023-11-12",
+      "isoDate": "2023-11-12",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 58345,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 34259
+    },
+    {
+      "date": "2023-11-13",
+      "isoDate": "2023-11-13",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 58420,
+      "russiaDeaths": 82,
+      "russiaTotalCumulative": 34341
+    },
+    {
+      "date": "2023-11-14",
+      "isoDate": "2023-11-14",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 58529,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 34426
+    },
+    {
+      "date": "2023-11-15",
+      "isoDate": "2023-11-15",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 42,
+      "ukraineTotalCumulative": 58637,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 34426
+    },
+    {
+      "date": "2023-11-16",
+      "isoDate": "2023-11-16",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 95,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 58763,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 34426
+    },
+    {
+      "date": "2023-11-17",
+      "isoDate": "2023-11-17",
+      "ukraineTotal": 72,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 58835,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 34510
+    },
+    {
+      "date": "2023-11-18",
+      "isoDate": "2023-11-18",
+      "ukraineTotal": 60,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 58895,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 34587
+    },
+    {
+      "date": "2023-11-19",
+      "isoDate": "2023-11-19",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 58987,
+      "russiaDeaths": 80,
+      "russiaTotalCumulative": 34667
+    },
+    {
+      "date": "2023-11-20",
+      "isoDate": "2023-11-20",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 19,
+      "ukraineTotalCumulative": 59058,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 34758
+    },
+    {
+      "date": "2023-11-21",
+      "isoDate": "2023-11-21",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 59155,
+      "russiaDeaths": 66,
+      "russiaTotalCumulative": 34824
+    },
+    {
+      "date": "2023-11-22",
+      "isoDate": "2023-11-22",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 59252,
+      "russiaDeaths": 75,
+      "russiaTotalCumulative": 34899
+    },
+    {
+      "date": "2023-11-23",
+      "isoDate": "2023-11-23",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 59334,
+      "russiaDeaths": 120,
+      "russiaTotalCumulative": 35019
+    },
+    {
+      "date": "2023-11-24",
+      "isoDate": "2023-11-24",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 59420,
+      "russiaDeaths": 7,
+      "russiaTotalCumulative": 35026
+    },
+    {
+      "date": "2023-11-25",
+      "isoDate": "2023-11-25",
+      "ukraineTotal": 66,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 59486,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 35026
+    },
+    {
+      "date": "2023-11-26",
+      "isoDate": "2023-11-26",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 59578,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 35026
+    },
+    {
+      "date": "2023-11-27",
+      "isoDate": "2023-11-27",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 50,
+      "ukraineTotalCumulative": 59702,
+      "russiaDeaths": 94,
+      "russiaTotalCumulative": 35120
+    },
+    {
+      "date": "2023-11-28",
+      "isoDate": "2023-11-28",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 59862,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 35203
+    },
+    {
+      "date": "2023-11-29",
+      "isoDate": "2023-11-29",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 59975,
+      "russiaDeaths": 23,
+      "russiaTotalCumulative": 35226
+    },
+    {
+      "date": "2023-11-30",
+      "isoDate": "2023-11-30",
+      "ukraineTotal": 102,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 60077,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 35226
+    },
+    {
+      "date": "2023-12-01",
+      "isoDate": "2023-12-01",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 60174,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 35294
+    },
+    {
+      "date": "2023-12-02",
+      "isoDate": "2023-12-02",
+      "ukraineTotal": 64,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 30,
+      "ukraineTotalCumulative": 60238,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 35346
+    },
+    {
+      "date": "2023-12-03",
+      "isoDate": "2023-12-03",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 86,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 60371,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 35437
+    },
+    {
+      "date": "2023-12-04",
+      "isoDate": "2023-12-04",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 50,
+      "ukraineTotalCumulative": 60501,
+      "russiaDeaths": 79,
+      "russiaTotalCumulative": 35516
+    },
+    {
+      "date": "2023-12-05",
+      "isoDate": "2023-12-05",
+      "ukraineTotal": 129,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 49,
+      "ukraineTotalCumulative": 60630,
+      "russiaDeaths": 107,
+      "russiaTotalCumulative": 35623
+    },
+    {
+      "date": "2023-12-06",
+      "isoDate": "2023-12-06",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 58,
+      "ukraineTotalCumulative": 60738,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 35694
+    },
+    {
+      "date": "2023-12-07",
+      "isoDate": "2023-12-07",
+      "ukraineTotal": 106,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 60844,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 35804
+    },
+    {
+      "date": "2023-12-08",
+      "isoDate": "2023-12-08",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 69,
+      "ukraineTotalCumulative": 60960,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 35826
+    },
+    {
+      "date": "2023-12-09",
+      "isoDate": "2023-12-09",
+      "ukraineTotal": 117,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 61077,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 35826
+    },
+    {
+      "date": "2023-12-10",
+      "isoDate": "2023-12-10",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 61187,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 35885
+    },
+    {
+      "date": "2023-12-11",
+      "isoDate": "2023-12-11",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 57,
+      "ukraineTotalCumulative": 61288,
+      "russiaDeaths": 75,
+      "russiaTotalCumulative": 35960
+    },
+    {
+      "date": "2023-12-12",
+      "isoDate": "2023-12-12",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 42,
+      "ukraineTotalCumulative": 61397,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 36033
+    },
+    {
+      "date": "2023-12-13",
+      "isoDate": "2023-12-13",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 94,
+      "ukraineTotalCumulative": 61562,
+      "russiaDeaths": 62,
+      "russiaTotalCumulative": 36095
+    },
+    {
+      "date": "2023-12-14",
+      "isoDate": "2023-12-14",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 59,
+      "ukraineTotalCumulative": 61672,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 36187
+    },
+    {
+      "date": "2023-12-15",
+      "isoDate": "2023-12-15",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 95,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 61828,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 36256
+    },
+    {
+      "date": "2023-12-16",
+      "isoDate": "2023-12-16",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 61915,
+      "russiaDeaths": 80,
+      "russiaTotalCumulative": 36336
+    },
+    {
+      "date": "2023-12-17",
+      "isoDate": "2023-12-17",
+      "ukraineTotal": 102,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 49,
+      "ukraineTotalCumulative": 62017,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 36407
+    },
+    {
+      "date": "2023-12-18",
+      "isoDate": "2023-12-18",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 62109,
+      "russiaDeaths": 76,
+      "russiaTotalCumulative": 36483
+    },
+    {
+      "date": "2023-12-19",
+      "isoDate": "2023-12-19",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 89,
+      "ukraineMissing": 56,
+      "ukraineTotalCumulative": 62254,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 36553
+    },
+    {
+      "date": "2023-12-20",
+      "isoDate": "2023-12-20",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 62345,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 36626
+    },
+    {
+      "date": "2023-12-21",
+      "isoDate": "2023-12-21",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 62448,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 36626
+    },
+    {
+      "date": "2023-12-22",
+      "isoDate": "2023-12-22",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 26,
+      "ukraineTotalCumulative": 62519,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 36626
+    },
+    {
+      "date": "2023-12-23",
+      "isoDate": "2023-12-23",
+      "ukraineTotal": 102,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 62621,
+      "russiaDeaths": 27,
+      "russiaTotalCumulative": 36653
+    },
+    {
+      "date": "2023-12-24",
+      "isoDate": "2023-12-24",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 62717,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 36694
+    },
+    {
+      "date": "2023-12-25",
+      "isoDate": "2023-12-25",
+      "ukraineTotal": 120,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 62837,
+      "russiaDeaths": 66,
+      "russiaTotalCumulative": 36760
+    },
+    {
+      "date": "2023-12-26",
+      "isoDate": "2023-12-26",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 62963,
+      "russiaDeaths": 122,
+      "russiaTotalCumulative": 36882
+    },
+    {
+      "date": "2023-12-27",
+      "isoDate": "2023-12-27",
+      "ukraineTotal": 125,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 63088,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 36967
+    },
+    {
+      "date": "2023-12-28",
+      "isoDate": "2023-12-28",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 63201,
+      "russiaDeaths": 81,
+      "russiaTotalCumulative": 37048
+    },
+    {
+      "date": "2023-12-29",
+      "isoDate": "2023-12-29",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 63308,
+      "russiaDeaths": 107,
+      "russiaTotalCumulative": 37155
+    },
+    {
+      "date": "2023-12-30",
+      "isoDate": "2023-12-30",
+      "ukraineTotal": 77,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 63385,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 37240
+    },
+    {
+      "date": "2023-12-31",
+      "isoDate": "2023-12-31",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 63489,
+      "russiaDeaths": 106,
+      "russiaTotalCumulative": 37346
+    },
+    {
+      "date": "2024-01-01",
+      "isoDate": "2024-01-01",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 25,
+      "ukraineTotalCumulative": 63569,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 37401
+    },
+    {
+      "date": "2024-01-02",
+      "isoDate": "2024-01-02",
+      "ukraineTotal": 76,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 63645,
+      "russiaDeaths": 54,
+      "russiaTotalCumulative": 37455
+    },
+    {
+      "date": "2024-01-03",
+      "isoDate": "2024-01-03",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 63741,
+      "russiaDeaths": 60,
+      "russiaTotalCumulative": 37515
+    },
+    {
+      "date": "2024-01-04",
+      "isoDate": "2024-01-04",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 63824,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 37579
+    },
+    {
+      "date": "2024-01-05",
+      "isoDate": "2024-01-05",
+      "ukraineTotal": 68,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 12,
+      "ukraineTotalCumulative": 63892,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 37632
+    },
+    {
+      "date": "2024-01-06",
+      "isoDate": "2024-01-06",
+      "ukraineTotal": 99,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 63991,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 37674
+    },
+    {
+      "date": "2024-01-07",
+      "isoDate": "2024-01-07",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 44,
+      "ukraineTotalCumulative": 64087,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 37745
+    },
+    {
+      "date": "2024-01-08",
+      "isoDate": "2024-01-08",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 66,
+      "ukraineTotalCumulative": 64220,
+      "russiaDeaths": 82,
+      "russiaTotalCumulative": 37827
+    },
+    {
+      "date": "2024-01-09",
+      "isoDate": "2024-01-09",
+      "ukraineTotal": 67,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 64287,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 37910
+    },
+    {
+      "date": "2024-01-10",
+      "isoDate": "2024-01-10",
+      "ukraineTotal": 60,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 16,
+      "ukraineTotalCumulative": 64347,
+      "russiaDeaths": 87,
+      "russiaTotalCumulative": 37997
+    },
+    {
+      "date": "2024-01-11",
+      "isoDate": "2024-01-11",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 64425,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 38055
+    },
+    {
+      "date": "2024-01-12",
+      "isoDate": "2024-01-12",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 64528,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 38159
+    },
+    {
+      "date": "2024-01-13",
+      "isoDate": "2024-01-13",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 64646,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 38220
+    },
+    {
+      "date": "2024-01-14",
+      "isoDate": "2024-01-14",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 50,
+      "ukraineTotalCumulative": 64772,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 38292
+    },
+    {
+      "date": "2024-01-15",
+      "isoDate": "2024-01-15",
+      "ukraineTotal": 57,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 64829,
+      "russiaDeaths": 126,
+      "russiaTotalCumulative": 38418
+    },
+    {
+      "date": "2024-01-16",
+      "isoDate": "2024-01-16",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 82,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 64947,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 38495
+    },
+    {
+      "date": "2024-01-17",
+      "isoDate": "2024-01-17",
+      "ukraineTotal": 131,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 64,
+      "ukraineTotalCumulative": 65078,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 38594
+    },
+    {
+      "date": "2024-01-18",
+      "isoDate": "2024-01-18",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 65158,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 38697
+    },
+    {
+      "date": "2024-01-19",
+      "isoDate": "2024-01-19",
+      "ukraineTotal": 79,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 65237,
+      "russiaDeaths": 129,
+      "russiaTotalCumulative": 38826
+    },
+    {
+      "date": "2024-01-20",
+      "isoDate": "2024-01-20",
+      "ukraineTotal": 150,
+      "ukraineDeaths": 101,
+      "ukraineMissing": 49,
+      "ukraineTotalCumulative": 65387,
+      "russiaDeaths": 76,
+      "russiaTotalCumulative": 38902
+    },
+    {
+      "date": "2024-01-21",
+      "isoDate": "2024-01-21",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 65473,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 38985
+    },
+    {
+      "date": "2024-01-22",
+      "isoDate": "2024-01-22",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 17,
+      "ukraineTotalCumulative": 65570,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 39076
+    },
+    {
+      "date": "2024-01-23",
+      "isoDate": "2024-01-23",
+      "ukraineTotal": 166,
+      "ukraineDeaths": 133,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 65736,
+      "russiaDeaths": 107,
+      "russiaTotalCumulative": 39183
+    },
+    {
+      "date": "2024-01-24",
+      "isoDate": "2024-01-24",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 65851,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 39226
+    },
+    {
+      "date": "2024-01-25",
+      "isoDate": "2024-01-25",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 38,
+      "ukraineTotalCumulative": 65942,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 39226
+    },
+    {
+      "date": "2024-01-26",
+      "isoDate": "2024-01-26",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 66023,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 39291
+    },
+    {
+      "date": "2024-01-27",
+      "isoDate": "2024-01-27",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 66104,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 39359
+    },
+    {
+      "date": "2024-01-28",
+      "isoDate": "2024-01-28",
+      "ukraineTotal": 117,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 66221,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 39405
+    },
+    {
+      "date": "2024-01-29",
+      "isoDate": "2024-01-29",
+      "ukraineTotal": 102,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 31,
+      "ukraineTotalCumulative": 66323,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 39488
+    },
+    {
+      "date": "2024-01-30",
+      "isoDate": "2024-01-30",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 66420,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 39587
+    },
+    {
+      "date": "2024-01-31",
+      "isoDate": "2024-01-31",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 66518,
+      "russiaDeaths": 111,
+      "russiaTotalCumulative": 39698
+    },
+    {
+      "date": "2024-02-01",
+      "isoDate": "2024-02-01",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 28,
+      "ukraineTotalCumulative": 66616,
+      "russiaDeaths": 81,
+      "russiaTotalCumulative": 39779
+    },
+    {
+      "date": "2024-02-02",
+      "isoDate": "2024-02-02",
+      "ukraineTotal": 73,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 18,
+      "ukraineTotalCumulative": 66689,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 39826
+    },
+    {
+      "date": "2024-02-03",
+      "isoDate": "2024-02-03",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 66769,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 39826
+    },
+    {
+      "date": "2024-02-04",
+      "isoDate": "2024-02-04",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 66856,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 39826
+    },
+    {
+      "date": "2024-02-05",
+      "isoDate": "2024-02-05",
+      "ukraineTotal": 101,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 66957,
+      "russiaDeaths": 89,
+      "russiaTotalCumulative": 39915
+    },
+    {
+      "date": "2024-02-06",
+      "isoDate": "2024-02-06",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 67049,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 40000
+    },
+    {
+      "date": "2024-02-07",
+      "isoDate": "2024-02-07",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 67135,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 40091
+    },
+    {
+      "date": "2024-02-08",
+      "isoDate": "2024-02-08",
+      "ukraineTotal": 150,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 82,
+      "ukraineTotalCumulative": 67285,
+      "russiaDeaths": 94,
+      "russiaTotalCumulative": 40185
+    },
+    {
+      "date": "2024-02-09",
+      "isoDate": "2024-02-09",
+      "ukraineTotal": 95,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 41,
+      "ukraineTotalCumulative": 67380,
+      "russiaDeaths": 140,
+      "russiaTotalCumulative": 40325
+    },
+    {
+      "date": "2024-02-10",
+      "isoDate": "2024-02-10",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 67455,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 40357
+    },
+    {
+      "date": "2024-02-11",
+      "isoDate": "2024-02-11",
+      "ukraineTotal": 123,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 67578,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 40409
+    },
+    {
+      "date": "2024-02-12",
+      "isoDate": "2024-02-12",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 57,
+      "ukraineTotalCumulative": 67704,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 40504
+    },
+    {
+      "date": "2024-02-13",
+      "isoDate": "2024-02-13",
+      "ukraineTotal": 102,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 67806,
+      "russiaDeaths": 114,
+      "russiaTotalCumulative": 40618
+    },
+    {
+      "date": "2024-02-14",
+      "isoDate": "2024-02-14",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 55,
+      "ukraineTotalCumulative": 67924,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 40714
+    },
+    {
+      "date": "2024-02-15",
+      "isoDate": "2024-02-15",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 62,
+      "ukraineTotalCumulative": 68056,
+      "russiaDeaths": 89,
+      "russiaTotalCumulative": 40803
+    },
+    {
+      "date": "2024-02-16",
+      "isoDate": "2024-02-16",
+      "ukraineTotal": 174,
+      "ukraineDeaths": 100,
+      "ukraineMissing": 74,
+      "ukraineTotalCumulative": 68230,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 40889
+    },
+    {
+      "date": "2024-02-17",
+      "isoDate": "2024-02-17",
+      "ukraineTotal": 106,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 50,
+      "ukraineTotalCumulative": 68336,
+      "russiaDeaths": 132,
+      "russiaTotalCumulative": 41021
+    },
+    {
+      "date": "2024-02-18",
+      "isoDate": "2024-02-18",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 90,
+      "ukraineMissing": 66,
+      "ukraineTotalCumulative": 68492,
+      "russiaDeaths": 37,
+      "russiaTotalCumulative": 41058
+    },
+    {
+      "date": "2024-02-19",
+      "isoDate": "2024-02-19",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 68586,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 41058
+    },
+    {
+      "date": "2024-02-20",
+      "isoDate": "2024-02-20",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 42,
+      "ukraineTotalCumulative": 68704,
+      "russiaDeaths": 152,
+      "russiaTotalCumulative": 41210
+    },
+    {
+      "date": "2024-02-21",
+      "isoDate": "2024-02-21",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 57,
+      "ukraineTotalCumulative": 68825,
+      "russiaDeaths": 106,
+      "russiaTotalCumulative": 41316
+    },
+    {
+      "date": "2024-02-22",
+      "isoDate": "2024-02-22",
+      "ukraineTotal": 128,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 68953,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 41420
+    },
+    {
+      "date": "2024-02-23",
+      "isoDate": "2024-02-23",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 56,
+      "ukraineTotalCumulative": 69067,
+      "russiaDeaths": 116,
+      "russiaTotalCumulative": 41536
+    },
+    {
+      "date": "2024-02-24",
+      "isoDate": "2024-02-24",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 96,
+      "ukraineMissing": 64,
+      "ukraineTotalCumulative": 69227,
+      "russiaDeaths": 107,
+      "russiaTotalCumulative": 41643
+    },
+    {
+      "date": "2024-02-25",
+      "isoDate": "2024-02-25",
+      "ukraineTotal": 143,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 69370,
+      "russiaDeaths": 15,
+      "russiaTotalCumulative": 41658
+    },
+    {
+      "date": "2024-02-26",
+      "isoDate": "2024-02-26",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 69479,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 41690
+    },
+    {
+      "date": "2024-02-27",
+      "isoDate": "2024-02-27",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 51,
+      "ukraineTotalCumulative": 69603,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 41786
+    },
+    {
+      "date": "2024-02-28",
+      "isoDate": "2024-02-28",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 69707,
+      "russiaDeaths": 129,
+      "russiaTotalCumulative": 41915
+    },
+    {
+      "date": "2024-02-29",
+      "isoDate": "2024-02-29",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 94,
+      "ukraineMissing": 42,
+      "ukraineTotalCumulative": 69843,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 42017
+    },
+    {
+      "date": "2024-03-01",
+      "isoDate": "2024-03-01",
+      "ukraineTotal": 83,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 69926,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 42063
+    },
+    {
+      "date": "2024-03-02",
+      "isoDate": "2024-03-02",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 51,
+      "ukraineTotalCumulative": 70016,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 42111
+    },
+    {
+      "date": "2024-03-03",
+      "isoDate": "2024-03-03",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 70098,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 42168
+    },
+    {
+      "date": "2024-03-04",
+      "isoDate": "2024-03-04",
+      "ukraineTotal": 137,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 53,
+      "ukraineTotalCumulative": 70235,
+      "russiaDeaths": 123,
+      "russiaTotalCumulative": 42291
+    },
+    {
+      "date": "2024-03-05",
+      "isoDate": "2024-03-05",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 70326,
+      "russiaDeaths": 141,
+      "russiaTotalCumulative": 42432
+    },
+    {
+      "date": "2024-03-06",
+      "isoDate": "2024-03-06",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 70447,
+      "russiaDeaths": 208,
+      "russiaTotalCumulative": 42640
+    },
+    {
+      "date": "2024-03-07",
+      "isoDate": "2024-03-07",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 24,
+      "ukraineTotalCumulative": 70529,
+      "russiaDeaths": 101,
+      "russiaTotalCumulative": 42741
+    },
+    {
+      "date": "2024-03-08",
+      "isoDate": "2024-03-08",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 70619,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 42844
+    },
+    {
+      "date": "2024-03-09",
+      "isoDate": "2024-03-09",
+      "ukraineTotal": 76,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 70695,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 42927
+    },
+    {
+      "date": "2024-03-10",
+      "isoDate": "2024-03-10",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 70770,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 42997
+    },
+    {
+      "date": "2024-03-11",
+      "isoDate": "2024-03-11",
+      "ukraineTotal": 112,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 70882,
+      "russiaDeaths": 124,
+      "russiaTotalCumulative": 43121
+    },
+    {
+      "date": "2024-03-12",
+      "isoDate": "2024-03-12",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 70976,
+      "russiaDeaths": 185,
+      "russiaTotalCumulative": 43306
+    },
+    {
+      "date": "2024-03-13",
+      "isoDate": "2024-03-13",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 71084,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 43410
+    },
+    {
+      "date": "2024-03-14",
+      "isoDate": "2024-03-14",
+      "ukraineTotal": 125,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 56,
+      "ukraineTotalCumulative": 71209,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 43467
+    },
+    {
+      "date": "2024-03-15",
+      "isoDate": "2024-03-15",
+      "ukraineTotal": 66,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 21,
+      "ukraineTotalCumulative": 71275,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 43569
+    },
+    {
+      "date": "2024-03-16",
+      "isoDate": "2024-03-16",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 71366,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 43626
+    },
+    {
+      "date": "2024-03-17",
+      "isoDate": "2024-03-17",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 71448,
+      "russiaDeaths": 60,
+      "russiaTotalCumulative": 43686
+    },
+    {
+      "date": "2024-03-18",
+      "isoDate": "2024-03-18",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 71556,
+      "russiaDeaths": 111,
+      "russiaTotalCumulative": 43797
+    },
+    {
+      "date": "2024-03-19",
+      "isoDate": "2024-03-19",
+      "ukraineTotal": 99,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 71655,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 43897
+    },
+    {
+      "date": "2024-03-20",
+      "isoDate": "2024-03-20",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 71771,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 43999
+    },
+    {
+      "date": "2024-03-21",
+      "isoDate": "2024-03-21",
+      "ukraineTotal": 94,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 22,
+      "ukraineTotalCumulative": 71865,
+      "russiaDeaths": 121,
+      "russiaTotalCumulative": 44120
+    },
+    {
+      "date": "2024-03-22",
+      "isoDate": "2024-03-22",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 33,
+      "ukraineTotalCumulative": 71955,
+      "russiaDeaths": 87,
+      "russiaTotalCumulative": 44207
+    },
+    {
+      "date": "2024-03-23",
+      "isoDate": "2024-03-23",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 72036,
+      "russiaDeaths": 19,
+      "russiaTotalCumulative": 44226
+    },
+    {
+      "date": "2024-03-24",
+      "isoDate": "2024-03-24",
+      "ukraineTotal": 74,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 72110,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 44226
+    },
+    {
+      "date": "2024-03-25",
+      "isoDate": "2024-03-25",
+      "ukraineTotal": 112,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 60,
+      "ukraineTotalCumulative": 72222,
+      "russiaDeaths": 3,
+      "russiaTotalCumulative": 44229
+    },
+    {
+      "date": "2024-03-26",
+      "isoDate": "2024-03-26",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 23,
+      "ukraineTotalCumulative": 72304,
+      "russiaDeaths": 113,
+      "russiaTotalCumulative": 44342
+    },
+    {
+      "date": "2024-03-27",
+      "isoDate": "2024-03-27",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 48,
+      "ukraineTotalCumulative": 72414,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 44441
+    },
+    {
+      "date": "2024-03-28",
+      "isoDate": "2024-03-28",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 39,
+      "ukraineTotalCumulative": 72505,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 44537
+    },
+    {
+      "date": "2024-03-29",
+      "isoDate": "2024-03-29",
+      "ukraineTotal": 82,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 72587,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 44633
+    },
+    {
+      "date": "2024-03-30",
+      "isoDate": "2024-03-30",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 27,
+      "ukraineTotalCumulative": 72658,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 44707
+    },
+    {
+      "date": "2024-03-31",
+      "isoDate": "2024-03-31",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 45,
+      "ukraineTotalCumulative": 72767,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 44733
+    },
+    {
+      "date": "2024-04-01",
+      "isoDate": "2024-04-01",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 72897,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 44824
+    },
+    {
+      "date": "2024-04-02",
+      "isoDate": "2024-04-02",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 89,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 73021,
+      "russiaDeaths": 2,
+      "russiaTotalCumulative": 44826
+    },
+    {
+      "date": "2024-04-03",
+      "isoDate": "2024-04-03",
+      "ukraineTotal": 91,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 44,
+      "ukraineTotalCumulative": 73112,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 44826
+    },
+    {
+      "date": "2024-04-04",
+      "isoDate": "2024-04-04",
+      "ukraineTotal": 112,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 59,
+      "ukraineTotalCumulative": 73224,
+      "russiaDeaths": 54,
+      "russiaTotalCumulative": 44880
+    },
+    {
+      "date": "2024-04-05",
+      "isoDate": "2024-04-05",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 73335,
+      "russiaDeaths": 131,
+      "russiaTotalCumulative": 45011
+    },
+    {
+      "date": "2024-04-06",
+      "isoDate": "2024-04-06",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 73470,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 45107
+    },
+    {
+      "date": "2024-04-07",
+      "isoDate": "2024-04-07",
+      "ukraineTotal": 177,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 119,
+      "ukraineTotalCumulative": 73647,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 45140
+    },
+    {
+      "date": "2024-04-08",
+      "isoDate": "2024-04-08",
+      "ukraineTotal": 106,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 52,
+      "ukraineTotalCumulative": 73753,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 45212
+    },
+    {
+      "date": "2024-04-09",
+      "isoDate": "2024-04-09",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 73860,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 45312
+    },
+    {
+      "date": "2024-04-10",
+      "isoDate": "2024-04-10",
+      "ukraineTotal": 99,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 73959,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 45414
+    },
+    {
+      "date": "2024-04-11",
+      "isoDate": "2024-04-11",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 90,
+      "ukraineTotalCumulative": 74104,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 45506
+    },
+    {
+      "date": "2024-04-12",
+      "isoDate": "2024-04-12",
+      "ukraineTotal": 95,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 52,
+      "ukraineTotalCumulative": 74199,
+      "russiaDeaths": 125,
+      "russiaTotalCumulative": 45631
+    },
+    {
+      "date": "2024-04-13",
+      "isoDate": "2024-04-13",
+      "ukraineTotal": 84,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 74283,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 45669
+    },
+    {
+      "date": "2024-04-14",
+      "isoDate": "2024-04-14",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 71,
+      "ukraineTotalCumulative": 74399,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 45709
+    },
+    {
+      "date": "2024-04-15",
+      "isoDate": "2024-04-15",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 74474,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 45779
+    },
+    {
+      "date": "2024-04-16",
+      "isoDate": "2024-04-16",
+      "ukraineTotal": 138,
+      "ukraineDeaths": 80,
+      "ukraineMissing": 58,
+      "ukraineTotalCumulative": 74612,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 45826
+    },
+    {
+      "date": "2024-04-17",
+      "isoDate": "2024-04-17",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 74701,
+      "russiaDeaths": 7,
+      "russiaTotalCumulative": 45833
+    },
+    {
+      "date": "2024-04-18",
+      "isoDate": "2024-04-18",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 44,
+      "ukraineTotalCumulative": 74793,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 45936
+    },
+    {
+      "date": "2024-04-19",
+      "isoDate": "2024-04-19",
+      "ukraineTotal": 71,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 74864,
+      "russiaDeaths": 142,
+      "russiaTotalCumulative": 46078
+    },
+    {
+      "date": "2024-04-20",
+      "isoDate": "2024-04-20",
+      "ukraineTotal": 80,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 37,
+      "ukraineTotalCumulative": 74944,
+      "russiaDeaths": 55,
+      "russiaTotalCumulative": 46133
+    },
+    {
+      "date": "2024-04-21",
+      "isoDate": "2024-04-21",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 35,
+      "ukraineTotalCumulative": 75031,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 46218
+    },
+    {
+      "date": "2024-04-22",
+      "isoDate": "2024-04-22",
+      "ukraineTotal": 95,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 34,
+      "ukraineTotalCumulative": 75126,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 46314
+    },
+    {
+      "date": "2024-04-23",
+      "isoDate": "2024-04-23",
+      "ukraineTotal": 108,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 51,
+      "ukraineTotalCumulative": 75234,
+      "russiaDeaths": 135,
+      "russiaTotalCumulative": 46449
+    },
+    {
+      "date": "2024-04-24",
+      "isoDate": "2024-04-24",
+      "ukraineTotal": 99,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 49,
+      "ukraineTotalCumulative": 75333,
+      "russiaDeaths": 132,
+      "russiaTotalCumulative": 46581
+    },
+    {
+      "date": "2024-04-25",
+      "isoDate": "2024-04-25",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 40,
+      "ukraineTotalCumulative": 75422,
+      "russiaDeaths": 134,
+      "russiaTotalCumulative": 46715
+    },
+    {
+      "date": "2024-04-26",
+      "isoDate": "2024-04-26",
+      "ukraineTotal": 69,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 29,
+      "ukraineTotalCumulative": 75491,
+      "russiaDeaths": 136,
+      "russiaTotalCumulative": 46851
+    },
+    {
+      "date": "2024-04-27",
+      "isoDate": "2024-04-27",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 65,
+      "ukraineTotalCumulative": 75604,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 46920
+    },
+    {
+      "date": "2024-04-28",
+      "isoDate": "2024-04-28",
+      "ukraineTotal": 106,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 57,
+      "ukraineTotalCumulative": 75710,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 46978
+    },
+    {
+      "date": "2024-04-29",
+      "isoDate": "2024-04-29",
+      "ukraineTotal": 141,
+      "ukraineDeaths": 92,
+      "ukraineMissing": 49,
+      "ukraineTotalCumulative": 75851,
+      "russiaDeaths": 87,
+      "russiaTotalCumulative": 47065
+    },
+    {
+      "date": "2024-04-30",
+      "isoDate": "2024-04-30",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 43,
+      "ukraineTotalCumulative": 75977,
+      "russiaDeaths": 109,
+      "russiaTotalCumulative": 47174
+    },
+    {
+      "date": "2024-05-01",
+      "isoDate": "2024-05-01",
+      "ukraineTotal": 99,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 46,
+      "ukraineTotalCumulative": 76076,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 47273
+    },
+    {
+      "date": "2024-05-02",
+      "isoDate": "2024-05-02",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 60,
+      "ukraineTotalCumulative": 76180,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 47383
+    },
+    {
+      "date": "2024-05-03",
+      "isoDate": "2024-05-03",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 57,
+      "ukraineTotalCumulative": 76294,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 47487
+    },
+    {
+      "date": "2024-05-04",
+      "isoDate": "2024-05-04",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 76448,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 47517
+    },
+    {
+      "date": "2024-05-05",
+      "isoDate": "2024-05-05",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 56,
+      "ukraineTotalCumulative": 76561,
+      "russiaDeaths": 42,
+      "russiaTotalCumulative": 47559
+    },
+    {
+      "date": "2024-05-06",
+      "isoDate": "2024-05-06",
+      "ukraineTotal": 119,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 53,
+      "ukraineTotalCumulative": 76680,
+      "russiaDeaths": 78,
+      "russiaTotalCumulative": 47637
+    },
+    {
+      "date": "2024-05-07",
+      "isoDate": "2024-05-07",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 65,
+      "ukraineTotalCumulative": 76793,
+      "russiaDeaths": 124,
+      "russiaTotalCumulative": 47761
+    },
+    {
+      "date": "2024-05-08",
+      "isoDate": "2024-05-08",
+      "ukraineTotal": 100,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 44,
+      "ukraineTotalCumulative": 76893,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 47825
+    },
+    {
+      "date": "2024-05-09",
+      "isoDate": "2024-05-09",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 104,
+      "ukraineTotalCumulative": 77058,
+      "russiaDeaths": 90,
+      "russiaTotalCumulative": 47915
+    },
+    {
+      "date": "2024-05-10",
+      "isoDate": "2024-05-10",
+      "ukraineTotal": 131,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 65,
+      "ukraineTotalCumulative": 77189,
+      "russiaDeaths": 116,
+      "russiaTotalCumulative": 48031
+    },
+    {
+      "date": "2024-05-11",
+      "isoDate": "2024-05-11",
+      "ukraineTotal": 243,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 155,
+      "ukraineTotalCumulative": 77432,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 48103
+    },
+    {
+      "date": "2024-05-12",
+      "isoDate": "2024-05-12",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 77592,
+      "russiaDeaths": 43,
+      "russiaTotalCumulative": 48146
+    },
+    {
+      "date": "2024-05-13",
+      "isoDate": "2024-05-13",
+      "ukraineTotal": 163,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 77755,
+      "russiaDeaths": 131,
+      "russiaTotalCumulative": 48277
+    },
+    {
+      "date": "2024-05-14",
+      "isoDate": "2024-05-14",
+      "ukraineTotal": 179,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 77934,
+      "russiaDeaths": 131,
+      "russiaTotalCumulative": 48408
+    },
+    {
+      "date": "2024-05-15",
+      "isoDate": "2024-05-15",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 80,
+      "ukraineTotalCumulative": 78089,
+      "russiaDeaths": 98,
+      "russiaTotalCumulative": 48506
+    },
+    {
+      "date": "2024-05-16",
+      "isoDate": "2024-05-16",
+      "ukraineTotal": 158,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 78247,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 48609
+    },
+    {
+      "date": "2024-05-17",
+      "isoDate": "2024-05-17",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 65,
+      "ukraineTotalCumulative": 78379,
+      "russiaDeaths": 106,
+      "russiaTotalCumulative": 48715
+    },
+    {
+      "date": "2024-05-18",
+      "isoDate": "2024-05-18",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 76,
+      "ukraineTotalCumulative": 78512,
+      "russiaDeaths": 51,
+      "russiaTotalCumulative": 48766
+    },
+    {
+      "date": "2024-05-19",
+      "isoDate": "2024-05-19",
+      "ukraineTotal": 129,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 78641,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 48835
+    },
+    {
+      "date": "2024-05-20",
+      "isoDate": "2024-05-20",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 89,
+      "ukraineTotalCumulative": 78800,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 48930
+    },
+    {
+      "date": "2024-05-21",
+      "isoDate": "2024-05-21",
+      "ukraineTotal": 123,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 64,
+      "ukraineTotalCumulative": 78923,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 49040
+    },
+    {
+      "date": "2024-05-22",
+      "isoDate": "2024-05-22",
+      "ukraineTotal": 120,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 67,
+      "ukraineTotalCumulative": 79043,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 49114
+    },
+    {
+      "date": "2024-05-23",
+      "isoDate": "2024-05-23",
+      "ukraineTotal": 81,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 36,
+      "ukraineTotalCumulative": 79124,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 49186
+    },
+    {
+      "date": "2024-05-24",
+      "isoDate": "2024-05-24",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 58,
+      "ukraineTotalCumulative": 79234,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 49215
+    },
+    {
+      "date": "2024-05-25",
+      "isoDate": "2024-05-25",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 67,
+      "ukraineTotalCumulative": 79355,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 49263
+    },
+    {
+      "date": "2024-05-26",
+      "isoDate": "2024-05-26",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 79469,
+      "russiaDeaths": 25,
+      "russiaTotalCumulative": 49288
+    },
+    {
+      "date": "2024-05-27",
+      "isoDate": "2024-05-27",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 77,
+      "ukraineTotalCumulative": 79602,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 49385
+    },
+    {
+      "date": "2024-05-28",
+      "isoDate": "2024-05-28",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 76,
+      "ukraineTotalCumulative": 79741,
+      "russiaDeaths": 41,
+      "russiaTotalCumulative": 49426
+    },
+    {
+      "date": "2024-05-29",
+      "isoDate": "2024-05-29",
+      "ukraineTotal": 190,
+      "ukraineDeaths": 90,
+      "ukraineMissing": 100,
+      "ukraineTotalCumulative": 79931,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 49426
+    },
+    {
+      "date": "2024-05-30",
+      "isoDate": "2024-05-30",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 58,
+      "ukraineTotalCumulative": 80040,
+      "russiaDeaths": 40,
+      "russiaTotalCumulative": 49466
+    },
+    {
+      "date": "2024-05-31",
+      "isoDate": "2024-05-31",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 71,
+      "ukraineTotalCumulative": 80184,
+      "russiaDeaths": 119,
+      "russiaTotalCumulative": 49585
+    },
+    {
+      "date": "2024-06-01",
+      "isoDate": "2024-06-01",
+      "ukraineTotal": 106,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 55,
+      "ukraineTotalCumulative": 80290,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 49633
+    },
+    {
+      "date": "2024-06-02",
+      "isoDate": "2024-06-02",
+      "ukraineTotal": 134,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 60,
+      "ukraineTotalCumulative": 80424,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 49706
+    },
+    {
+      "date": "2024-06-03",
+      "isoDate": "2024-06-03",
+      "ukraineTotal": 148,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 80572,
+      "russiaDeaths": 149,
+      "russiaTotalCumulative": 49855
+    },
+    {
+      "date": "2024-06-04",
+      "isoDate": "2024-06-04",
+      "ukraineTotal": 112,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 57,
+      "ukraineTotalCumulative": 80684,
+      "russiaDeaths": 171,
+      "russiaTotalCumulative": 50026
+    },
+    {
+      "date": "2024-06-05",
+      "isoDate": "2024-06-05",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 66,
+      "ukraineTotalCumulative": 80805,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 50026
+    },
+    {
+      "date": "2024-06-06",
+      "isoDate": "2024-06-06",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 62,
+      "ukraineTotalCumulative": 80902,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 50126
+    },
+    {
+      "date": "2024-06-07",
+      "isoDate": "2024-06-07",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 62,
+      "ukraineTotalCumulative": 81009,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 50222
+    },
+    {
+      "date": "2024-06-08",
+      "isoDate": "2024-06-08",
+      "ukraineTotal": 140,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 75,
+      "ukraineTotalCumulative": 81149,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 50281
+    },
+    {
+      "date": "2024-06-09",
+      "isoDate": "2024-06-09",
+      "ukraineTotal": 127,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 68,
+      "ukraineTotalCumulative": 81276,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 50350
+    },
+    {
+      "date": "2024-06-10",
+      "isoDate": "2024-06-10",
+      "ukraineTotal": 191,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 81467,
+      "russiaDeaths": 106,
+      "russiaTotalCumulative": 50456
+    },
+    {
+      "date": "2024-06-11",
+      "isoDate": "2024-06-11",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 81621,
+      "russiaDeaths": 94,
+      "russiaTotalCumulative": 50550
+    },
+    {
+      "date": "2024-06-12",
+      "isoDate": "2024-06-12",
+      "ukraineTotal": 104,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 68,
+      "ukraineTotalCumulative": 81725,
+      "russiaDeaths": 62,
+      "russiaTotalCumulative": 50612
+    },
+    {
+      "date": "2024-06-13",
+      "isoDate": "2024-06-13",
+      "ukraineTotal": 106,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 57,
+      "ukraineTotalCumulative": 81831,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 50686
+    },
+    {
+      "date": "2024-06-14",
+      "isoDate": "2024-06-14",
+      "ukraineTotal": 128,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 81959,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 50763
+    },
+    {
+      "date": "2024-06-15",
+      "isoDate": "2024-06-15",
+      "ukraineTotal": 148,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 82107,
+      "russiaDeaths": 98,
+      "russiaTotalCumulative": 50861
+    },
+    {
+      "date": "2024-06-16",
+      "isoDate": "2024-06-16",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 84,
+      "ukraineMissing": 75,
+      "ukraineTotalCumulative": 82266,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 50914
+    },
+    {
+      "date": "2024-06-17",
+      "isoDate": "2024-06-17",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 82,
+      "ukraineTotalCumulative": 82410,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 50947
+    },
+    {
+      "date": "2024-06-18",
+      "isoDate": "2024-06-18",
+      "ukraineTotal": 193,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 82603,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 51039
+    },
+    {
+      "date": "2024-06-19",
+      "isoDate": "2024-06-19",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 55,
+      "ukraineTotalCumulative": 82706,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 51136
+    },
+    {
+      "date": "2024-06-20",
+      "isoDate": "2024-06-20",
+      "ukraineTotal": 123,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 58,
+      "ukraineTotalCumulative": 82829,
+      "russiaDeaths": 82,
+      "russiaTotalCumulative": 51218
+    },
+    {
+      "date": "2024-06-21",
+      "isoDate": "2024-06-21",
+      "ukraineTotal": 128,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 83,
+      "ukraineTotalCumulative": 82957,
+      "russiaDeaths": 8,
+      "russiaTotalCumulative": 51226
+    },
+    {
+      "date": "2024-06-22",
+      "isoDate": "2024-06-22",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 70,
+      "ukraineTotalCumulative": 83087,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 51226
+    },
+    {
+      "date": "2024-06-23",
+      "isoDate": "2024-06-23",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 106,
+      "ukraineTotalCumulative": 83247,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 51261
+    },
+    {
+      "date": "2024-06-24",
+      "isoDate": "2024-06-24",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 83406,
+      "russiaDeaths": 60,
+      "russiaTotalCumulative": 51321
+    },
+    {
+      "date": "2024-06-25",
+      "isoDate": "2024-06-25",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 96,
+      "ukraineTotalCumulative": 83561,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 51418
+    },
+    {
+      "date": "2024-06-26",
+      "isoDate": "2024-06-26",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 82,
+      "ukraineTotalCumulative": 83697,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 51522
+    },
+    {
+      "date": "2024-06-27",
+      "isoDate": "2024-06-27",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 70,
+      "ukraineTotalCumulative": 83818,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 51607
+    },
+    {
+      "date": "2024-06-28",
+      "isoDate": "2024-06-28",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 83953,
+      "russiaDeaths": 119,
+      "russiaTotalCumulative": 51726
+    },
+    {
+      "date": "2024-06-29",
+      "isoDate": "2024-06-29",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 77,
+      "ukraineTotalCumulative": 84089,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 51826
+    },
+    {
+      "date": "2024-06-30",
+      "isoDate": "2024-06-30",
+      "ukraineTotal": 189,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 84278,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 51826
+    },
+    {
+      "date": "2024-07-01",
+      "isoDate": "2024-07-01",
+      "ukraineTotal": 151,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 84429,
+      "russiaDeaths": 93,
+      "russiaTotalCumulative": 51919
+    },
+    {
+      "date": "2024-07-02",
+      "isoDate": "2024-07-02",
+      "ukraineTotal": 171,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 94,
+      "ukraineTotalCumulative": 84600,
+      "russiaDeaths": 132,
+      "russiaTotalCumulative": 52051
+    },
+    {
+      "date": "2024-07-03",
+      "isoDate": "2024-07-03",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 94,
+      "ukraineTotalCumulative": 84764,
+      "russiaDeaths": 191,
+      "russiaTotalCumulative": 52242
+    },
+    {
+      "date": "2024-07-04",
+      "isoDate": "2024-07-04",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 85,
+      "ukraineTotalCumulative": 84921,
+      "russiaDeaths": 208,
+      "russiaTotalCumulative": 52450
+    },
+    {
+      "date": "2024-07-05",
+      "isoDate": "2024-07-05",
+      "ukraineTotal": 151,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 96,
+      "ukraineTotalCumulative": 85072,
+      "russiaDeaths": 186,
+      "russiaTotalCumulative": 52636
+    },
+    {
+      "date": "2024-07-06",
+      "isoDate": "2024-07-06",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 60,
+      "ukraineTotalCumulative": 85193,
+      "russiaDeaths": 165,
+      "russiaTotalCumulative": 52801
+    },
+    {
+      "date": "2024-07-07",
+      "isoDate": "2024-07-07",
+      "ukraineTotal": 151,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 86,
+      "ukraineTotalCumulative": 85344,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 52834
+    },
+    {
+      "date": "2024-07-08",
+      "isoDate": "2024-07-08",
+      "ukraineTotal": 173,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 85517,
+      "russiaDeaths": 126,
+      "russiaTotalCumulative": 52960
+    },
+    {
+      "date": "2024-07-09",
+      "isoDate": "2024-07-09",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 85656,
+      "russiaDeaths": 146,
+      "russiaTotalCumulative": 53106
+    },
+    {
+      "date": "2024-07-10",
+      "isoDate": "2024-07-10",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 78,
+      "ukraineTotalCumulative": 85782,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 53206
+    },
+    {
+      "date": "2024-07-11",
+      "isoDate": "2024-07-11",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 82,
+      "ukraineTotalCumulative": 85918,
+      "russiaDeaths": 56,
+      "russiaTotalCumulative": 53262
+    },
+    {
+      "date": "2024-07-12",
+      "isoDate": "2024-07-12",
+      "ukraineTotal": 192,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 133,
+      "ukraineTotalCumulative": 86110,
+      "russiaDeaths": 161,
+      "russiaTotalCumulative": 53423
+    },
+    {
+      "date": "2024-07-13",
+      "isoDate": "2024-07-13",
+      "ukraineTotal": 149,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 99,
+      "ukraineTotalCumulative": 86259,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 53526
+    },
+    {
+      "date": "2024-07-14",
+      "isoDate": "2024-07-14",
+      "ukraineTotal": 173,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 108,
+      "ukraineTotalCumulative": 86432,
+      "russiaDeaths": 129,
+      "russiaTotalCumulative": 53655
+    },
+    {
+      "date": "2024-07-15",
+      "isoDate": "2024-07-15",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 69,
+      "ukraineTotalCumulative": 86577,
+      "russiaDeaths": 153,
+      "russiaTotalCumulative": 53808
+    },
+    {
+      "date": "2024-07-16",
+      "isoDate": "2024-07-16",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 86733,
+      "russiaDeaths": 54,
+      "russiaTotalCumulative": 53862
+    },
+    {
+      "date": "2024-07-17",
+      "isoDate": "2024-07-17",
+      "ukraineTotal": 151,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 96,
+      "ukraineTotalCumulative": 86884,
+      "russiaDeaths": 129,
+      "russiaTotalCumulative": 53991
+    },
+    {
+      "date": "2024-07-18",
+      "isoDate": "2024-07-18",
+      "ukraineTotal": 186,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 124,
+      "ukraineTotalCumulative": 87070,
+      "russiaDeaths": 150,
+      "russiaTotalCumulative": 54141
+    },
+    {
+      "date": "2024-07-19",
+      "isoDate": "2024-07-19",
+      "ukraineTotal": 167,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 102,
+      "ukraineTotalCumulative": 87237,
+      "russiaDeaths": 107,
+      "russiaTotalCumulative": 54248
+    },
+    {
+      "date": "2024-07-20",
+      "isoDate": "2024-07-20",
+      "ukraineTotal": 150,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 98,
+      "ukraineTotalCumulative": 87387,
+      "russiaDeaths": 65,
+      "russiaTotalCumulative": 54313
+    },
+    {
+      "date": "2024-07-21",
+      "isoDate": "2024-07-21",
+      "ukraineTotal": 166,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 87553,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 54352
+    },
+    {
+      "date": "2024-07-22",
+      "isoDate": "2024-07-22",
+      "ukraineTotal": 169,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 87722,
+      "russiaDeaths": 133,
+      "russiaTotalCumulative": 54485
+    },
+    {
+      "date": "2024-07-23",
+      "isoDate": "2024-07-23",
+      "ukraineTotal": 208,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 136,
+      "ukraineTotalCumulative": 87930,
+      "russiaDeaths": 337,
+      "russiaTotalCumulative": 54822
+    },
+    {
+      "date": "2024-07-24",
+      "isoDate": "2024-07-24",
+      "ukraineTotal": 158,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 88088,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 54927
+    },
+    {
+      "date": "2024-07-25",
+      "isoDate": "2024-07-25",
+      "ukraineTotal": 197,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 127,
+      "ukraineTotalCumulative": 88285,
+      "russiaDeaths": 116,
+      "russiaTotalCumulative": 55043
+    },
+    {
+      "date": "2024-07-26",
+      "isoDate": "2024-07-26",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 70,
+      "ukraineTotalCumulative": 88409,
+      "russiaDeaths": 123,
+      "russiaTotalCumulative": 55166
+    },
+    {
+      "date": "2024-07-27",
+      "isoDate": "2024-07-27",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 88561,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 55230
+    },
+    {
+      "date": "2024-07-28",
+      "isoDate": "2024-07-28",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 88713,
+      "russiaDeaths": 49,
+      "russiaTotalCumulative": 55279
+    },
+    {
+      "date": "2024-07-29",
+      "isoDate": "2024-07-29",
+      "ukraineTotal": 128,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 73,
+      "ukraineTotalCumulative": 88841,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 55371
+    },
+    {
+      "date": "2024-07-30",
+      "isoDate": "2024-07-30",
+      "ukraineTotal": 149,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 96,
+      "ukraineTotalCumulative": 88990,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 55468
+    },
+    {
+      "date": "2024-07-31",
+      "isoDate": "2024-07-31",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 94,
+      "ukraineTotalCumulative": 89145,
+      "russiaDeaths": 174,
+      "russiaTotalCumulative": 55642
+    },
+    {
+      "date": "2024-08-01",
+      "isoDate": "2024-08-01",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 98,
+      "ukraineTotalCumulative": 89305,
+      "russiaDeaths": 146,
+      "russiaTotalCumulative": 55788
+    },
+    {
+      "date": "2024-08-02",
+      "isoDate": "2024-08-02",
+      "ukraineTotal": 123,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 69,
+      "ukraineTotalCumulative": 89428,
+      "russiaDeaths": 140,
+      "russiaTotalCumulative": 55928
+    },
+    {
+      "date": "2024-08-03",
+      "isoDate": "2024-08-03",
+      "ukraineTotal": 138,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 89566,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 56005
+    },
+    {
+      "date": "2024-08-04",
+      "isoDate": "2024-08-04",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 102,
+      "ukraineTotalCumulative": 89722,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 56089
+    },
+    {
+      "date": "2024-08-05",
+      "isoDate": "2024-08-05",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 71,
+      "ukraineTotalCumulative": 89858,
+      "russiaDeaths": 143,
+      "russiaTotalCumulative": 56232
+    },
+    {
+      "date": "2024-08-06",
+      "isoDate": "2024-08-06",
+      "ukraineTotal": 179,
+      "ukraineDeaths": 89,
+      "ukraineMissing": 90,
+      "ukraineTotalCumulative": 90037,
+      "russiaDeaths": 108,
+      "russiaTotalCumulative": 56340
+    },
+    {
+      "date": "2024-08-07",
+      "isoDate": "2024-08-07",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 77,
+      "ukraineTotalCumulative": 90158,
+      "russiaDeaths": 89,
+      "russiaTotalCumulative": 56429
+    },
+    {
+      "date": "2024-08-08",
+      "isoDate": "2024-08-08",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 77,
+      "ukraineTotalCumulative": 90323,
+      "russiaDeaths": 147,
+      "russiaTotalCumulative": 56576
+    },
+    {
+      "date": "2024-08-09",
+      "isoDate": "2024-08-09",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 86,
+      "ukraineTotalCumulative": 90458,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 56626
+    },
+    {
+      "date": "2024-08-10",
+      "isoDate": "2024-08-10",
+      "ukraineTotal": 195,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 118,
+      "ukraineTotalCumulative": 90653,
+      "russiaDeaths": 27,
+      "russiaTotalCumulative": 56653
+    },
+    {
+      "date": "2024-08-11",
+      "isoDate": "2024-08-11",
+      "ukraineTotal": 169,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 113,
+      "ukraineTotalCumulative": 90822,
+      "russiaDeaths": 24,
+      "russiaTotalCumulative": 56677
+    },
+    {
+      "date": "2024-08-12",
+      "isoDate": "2024-08-12",
+      "ukraineTotal": 169,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 90991,
+      "russiaDeaths": 78,
+      "russiaTotalCumulative": 56755
+    },
+    {
+      "date": "2024-08-13",
+      "isoDate": "2024-08-13",
+      "ukraineTotal": 134,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 68,
+      "ukraineTotalCumulative": 91125,
+      "russiaDeaths": 158,
+      "russiaTotalCumulative": 56913
+    },
+    {
+      "date": "2024-08-14",
+      "isoDate": "2024-08-14",
+      "ukraineTotal": 149,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 77,
+      "ukraineTotalCumulative": 91274,
+      "russiaDeaths": 154,
+      "russiaTotalCumulative": 57067
+    },
+    {
+      "date": "2024-08-15",
+      "isoDate": "2024-08-15",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 75,
+      "ukraineTotalCumulative": 91418,
+      "russiaDeaths": 130,
+      "russiaTotalCumulative": 57197
+    },
+    {
+      "date": "2024-08-16",
+      "isoDate": "2024-08-16",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 82,
+      "ukraineTotalCumulative": 91553,
+      "russiaDeaths": 29,
+      "russiaTotalCumulative": 57226
+    },
+    {
+      "date": "2024-08-17",
+      "isoDate": "2024-08-17",
+      "ukraineTotal": 149,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 78,
+      "ukraineTotalCumulative": 91702,
+      "russiaDeaths": 12,
+      "russiaTotalCumulative": 57238
+    },
+    {
+      "date": "2024-08-18",
+      "isoDate": "2024-08-18",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 91864,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 57290
+    },
+    {
+      "date": "2024-08-19",
+      "isoDate": "2024-08-19",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 101,
+      "ukraineTotalCumulative": 92023,
+      "russiaDeaths": 186,
+      "russiaTotalCumulative": 57476
+    },
+    {
+      "date": "2024-08-20",
+      "isoDate": "2024-08-20",
+      "ukraineTotal": 143,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 86,
+      "ukraineTotalCumulative": 92166,
+      "russiaDeaths": 172,
+      "russiaTotalCumulative": 57648
+    },
+    {
+      "date": "2024-08-21",
+      "isoDate": "2024-08-21",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 92318,
+      "russiaDeaths": 183,
+      "russiaTotalCumulative": 57831
+    },
+    {
+      "date": "2024-08-22",
+      "isoDate": "2024-08-22",
+      "ukraineTotal": 171,
+      "ukraineDeaths": 92,
+      "ukraineMissing": 79,
+      "ukraineTotalCumulative": 92489,
+      "russiaDeaths": 154,
+      "russiaTotalCumulative": 57985
+    },
+    {
+      "date": "2024-08-23",
+      "isoDate": "2024-08-23",
+      "ukraineTotal": 150,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 85,
+      "ukraineTotalCumulative": 92639,
+      "russiaDeaths": 190,
+      "russiaTotalCumulative": 58175
+    },
+    {
+      "date": "2024-08-24",
+      "isoDate": "2024-08-24",
+      "ukraineTotal": 137,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 70,
+      "ukraineTotalCumulative": 92776,
+      "russiaDeaths": 143,
+      "russiaTotalCumulative": 58318
+    },
+    {
+      "date": "2024-08-25",
+      "isoDate": "2024-08-25",
+      "ukraineTotal": 153,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 80,
+      "ukraineTotalCumulative": 92929,
+      "russiaDeaths": 108,
+      "russiaTotalCumulative": 58426
+    },
+    {
+      "date": "2024-08-26",
+      "isoDate": "2024-08-26",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 86,
+      "ukraineTotalCumulative": 93091,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 58426
+    },
+    {
+      "date": "2024-08-27",
+      "isoDate": "2024-08-27",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 93247,
+      "russiaDeaths": 6,
+      "russiaTotalCumulative": 58432
+    },
+    {
+      "date": "2024-08-28",
+      "isoDate": "2024-08-28",
+      "ukraineTotal": 181,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 93428,
+      "russiaDeaths": 149,
+      "russiaTotalCumulative": 58581
+    },
+    {
+      "date": "2024-08-29",
+      "isoDate": "2024-08-29",
+      "ukraineTotal": 213,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 140,
+      "ukraineTotalCumulative": 93641,
+      "russiaDeaths": 148,
+      "russiaTotalCumulative": 58729
+    },
+    {
+      "date": "2024-08-30",
+      "isoDate": "2024-08-30",
+      "ukraineTotal": 195,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 124,
+      "ukraineTotalCumulative": 93836,
+      "russiaDeaths": 190,
+      "russiaTotalCumulative": 58919
+    },
+    {
+      "date": "2024-08-31",
+      "isoDate": "2024-08-31",
+      "ukraineTotal": 177,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 104,
+      "ukraineTotalCumulative": 94013,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 58992
+    },
+    {
+      "date": "2024-09-01",
+      "isoDate": "2024-09-01",
+      "ukraineTotal": 200,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 129,
+      "ukraineTotalCumulative": 94213,
+      "russiaDeaths": 34,
+      "russiaTotalCumulative": 59026
+    },
+    {
+      "date": "2024-09-02",
+      "isoDate": "2024-09-02",
+      "ukraineTotal": 216,
+      "ukraineDeaths": 116,
+      "ukraineMissing": 100,
+      "ukraineTotalCumulative": 94429,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 59026
+    },
+    {
+      "date": "2024-09-03",
+      "isoDate": "2024-09-03",
+      "ukraineTotal": 194,
+      "ukraineDeaths": 85,
+      "ukraineMissing": 109,
+      "ukraineTotalCumulative": 94623,
+      "russiaDeaths": 203,
+      "russiaTotalCumulative": 59229
+    },
+    {
+      "date": "2024-09-04",
+      "isoDate": "2024-09-04",
+      "ukraineTotal": 181,
+      "ukraineDeaths": 73,
+      "ukraineMissing": 108,
+      "ukraineTotalCumulative": 94804,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 59328
+    },
+    {
+      "date": "2024-09-05",
+      "isoDate": "2024-09-05",
+      "ukraineTotal": 153,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 101,
+      "ukraineTotalCumulative": 94957,
+      "russiaDeaths": 197,
+      "russiaTotalCumulative": 59525
+    },
+    {
+      "date": "2024-09-06",
+      "isoDate": "2024-09-06",
+      "ukraineTotal": 195,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 119,
+      "ukraineTotalCumulative": 95152,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 59599
+    },
+    {
+      "date": "2024-09-07",
+      "isoDate": "2024-09-07",
+      "ukraineTotal": 206,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 140,
+      "ukraineTotalCumulative": 95358,
+      "russiaDeaths": 11,
+      "russiaTotalCumulative": 59610
+    },
+    {
+      "date": "2024-09-08",
+      "isoDate": "2024-09-08",
+      "ukraineTotal": 202,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 95560,
+      "russiaDeaths": 12,
+      "russiaTotalCumulative": 59622
+    },
+    {
+      "date": "2024-09-09",
+      "isoDate": "2024-09-09",
+      "ukraineTotal": 181,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 95741,
+      "russiaDeaths": 205,
+      "russiaTotalCumulative": 59827
+    },
+    {
+      "date": "2024-09-10",
+      "isoDate": "2024-09-10",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 83,
+      "ukraineTotalCumulative": 95896,
+      "russiaDeaths": 217,
+      "russiaTotalCumulative": 60044
+    },
+    {
+      "date": "2024-09-11",
+      "isoDate": "2024-09-11",
+      "ukraineTotal": 180,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 106,
+      "ukraineTotalCumulative": 96076,
+      "russiaDeaths": 200,
+      "russiaTotalCumulative": 60244
+    },
+    {
+      "date": "2024-09-12",
+      "isoDate": "2024-09-12",
+      "ukraineTotal": 166,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 96242,
+      "russiaDeaths": 195,
+      "russiaTotalCumulative": 60439
+    },
+    {
+      "date": "2024-09-13",
+      "isoDate": "2024-09-13",
+      "ukraineTotal": 168,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 104,
+      "ukraineTotalCumulative": 96410,
+      "russiaDeaths": 161,
+      "russiaTotalCumulative": 60600
+    },
+    {
+      "date": "2024-09-14",
+      "isoDate": "2024-09-14",
+      "ukraineTotal": 223,
+      "ukraineDeaths": 71,
+      "ukraineMissing": 152,
+      "ukraineTotalCumulative": 96633,
+      "russiaDeaths": 142,
+      "russiaTotalCumulative": 60742
+    },
+    {
+      "date": "2024-09-15",
+      "isoDate": "2024-09-15",
+      "ukraineTotal": 180,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 119,
+      "ukraineTotalCumulative": 96813,
+      "russiaDeaths": 107,
+      "russiaTotalCumulative": 60849
+    },
+    {
+      "date": "2024-09-16",
+      "isoDate": "2024-09-16",
+      "ukraineTotal": 181,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 96994,
+      "russiaDeaths": 185,
+      "russiaTotalCumulative": 61034
+    },
+    {
+      "date": "2024-09-17",
+      "isoDate": "2024-09-17",
+      "ukraineTotal": 172,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 111,
+      "ukraineTotalCumulative": 97166,
+      "russiaDeaths": 205,
+      "russiaTotalCumulative": 61239
+    },
+    {
+      "date": "2024-09-18",
+      "isoDate": "2024-09-18",
+      "ukraineTotal": 196,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 141,
+      "ukraineTotalCumulative": 97362,
+      "russiaDeaths": 201,
+      "russiaTotalCumulative": 61440
+    },
+    {
+      "date": "2024-09-19",
+      "isoDate": "2024-09-19",
+      "ukraineTotal": 198,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 130,
+      "ukraineTotalCumulative": 97560,
+      "russiaDeaths": 196,
+      "russiaTotalCumulative": 61636
+    },
+    {
+      "date": "2024-09-20",
+      "isoDate": "2024-09-20",
+      "ukraineTotal": 192,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 138,
+      "ukraineTotalCumulative": 97752,
+      "russiaDeaths": 118,
+      "russiaTotalCumulative": 61754
+    },
+    {
+      "date": "2024-09-21",
+      "isoDate": "2024-09-21",
+      "ukraineTotal": 171,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 108,
+      "ukraineTotalCumulative": 97923,
+      "russiaDeaths": 12,
+      "russiaTotalCumulative": 61766
+    },
+    {
+      "date": "2024-09-22",
+      "isoDate": "2024-09-22",
+      "ukraineTotal": 176,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 113,
+      "ukraineTotalCumulative": 98099,
+      "russiaDeaths": 17,
+      "russiaTotalCumulative": 61783
+    },
+    {
+      "date": "2024-09-23",
+      "isoDate": "2024-09-23",
+      "ukraineTotal": 131,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 90,
+      "ukraineTotalCumulative": 98230,
+      "russiaDeaths": 195,
+      "russiaTotalCumulative": 61978
+    },
+    {
+      "date": "2024-09-24",
+      "isoDate": "2024-09-24",
+      "ukraineTotal": 179,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 128,
+      "ukraineTotalCumulative": 98409,
+      "russiaDeaths": 198,
+      "russiaTotalCumulative": 62176
+    },
+    {
+      "date": "2024-09-25",
+      "isoDate": "2024-09-25",
+      "ukraineTotal": 174,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 98583,
+      "russiaDeaths": 196,
+      "russiaTotalCumulative": 62372
+    },
+    {
+      "date": "2024-09-26",
+      "isoDate": "2024-09-26",
+      "ukraineTotal": 191,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 129,
+      "ukraineTotalCumulative": 98774,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 62394
+    },
+    {
+      "date": "2024-09-27",
+      "isoDate": "2024-09-27",
+      "ukraineTotal": 195,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 141,
+      "ukraineTotalCumulative": 98969,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 62462
+    },
+    {
+      "date": "2024-09-28",
+      "isoDate": "2024-09-28",
+      "ukraineTotal": 129,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 78,
+      "ukraineTotalCumulative": 99098,
+      "russiaDeaths": 121,
+      "russiaTotalCumulative": 62583
+    },
+    {
+      "date": "2024-09-29",
+      "isoDate": "2024-09-29",
+      "ukraineTotal": 239,
+      "ukraineDeaths": 97,
+      "ukraineMissing": 142,
+      "ukraineTotalCumulative": 99337,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 62651
+    },
+    {
+      "date": "2024-09-30",
+      "isoDate": "2024-09-30",
+      "ukraineTotal": 172,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 99509,
+      "russiaDeaths": 188,
+      "russiaTotalCumulative": 62839
+    },
+    {
+      "date": "2024-10-01",
+      "isoDate": "2024-10-01",
+      "ukraineTotal": 167,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 101,
+      "ukraineTotalCumulative": 99676,
+      "russiaDeaths": 155,
+      "russiaTotalCumulative": 62994
+    },
+    {
+      "date": "2024-10-02",
+      "isoDate": "2024-10-02",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 99,
+      "ukraineTotalCumulative": 99832,
+      "russiaDeaths": 44,
+      "russiaTotalCumulative": 63038
+    },
+    {
+      "date": "2024-10-03",
+      "isoDate": "2024-10-03",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 85,
+      "ukraineTotalCumulative": 99962,
+      "russiaDeaths": 156,
+      "russiaTotalCumulative": 63194
+    },
+    {
+      "date": "2024-10-04",
+      "isoDate": "2024-10-04",
+      "ukraineTotal": 150,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 94,
+      "ukraineTotalCumulative": 100112,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 63194
+    },
+    {
+      "date": "2024-10-05",
+      "isoDate": "2024-10-05",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 100257,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 63267
+    },
+    {
+      "date": "2024-10-06",
+      "isoDate": "2024-10-06",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 100413,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 63366
+    },
+    {
+      "date": "2024-10-07",
+      "isoDate": "2024-10-07",
+      "ukraineTotal": 90,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 100503,
+      "russiaDeaths": 234,
+      "russiaTotalCumulative": 63600
+    },
+    {
+      "date": "2024-10-08",
+      "isoDate": "2024-10-08",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 98,
+      "ukraineTotalCumulative": 100657,
+      "russiaDeaths": 201,
+      "russiaTotalCumulative": 63801
+    },
+    {
+      "date": "2024-10-09",
+      "isoDate": "2024-10-09",
+      "ukraineTotal": 172,
+      "ukraineDeaths": 72,
+      "ukraineMissing": 100,
+      "ukraineTotalCumulative": 100829,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 63911
+    },
+    {
+      "date": "2024-10-10",
+      "isoDate": "2024-10-10",
+      "ukraineTotal": 189,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 101018,
+      "russiaDeaths": 158,
+      "russiaTotalCumulative": 64069
+    },
+    {
+      "date": "2024-10-11",
+      "isoDate": "2024-10-11",
+      "ukraineTotal": 138,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 101156,
+      "russiaDeaths": 209,
+      "russiaTotalCumulative": 64278
+    },
+    {
+      "date": "2024-10-12",
+      "isoDate": "2024-10-12",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 82,
+      "ukraineTotalCumulative": 101274,
+      "russiaDeaths": 71,
+      "russiaTotalCumulative": 64349
+    },
+    {
+      "date": "2024-10-13",
+      "isoDate": "2024-10-13",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 76,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 101431,
+      "russiaDeaths": 112,
+      "russiaTotalCumulative": 64461
+    },
+    {
+      "date": "2024-10-14",
+      "isoDate": "2024-10-14",
+      "ukraineTotal": 131,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 75,
+      "ukraineTotalCumulative": 101562,
+      "russiaDeaths": 132,
+      "russiaTotalCumulative": 64593
+    },
+    {
+      "date": "2024-10-15",
+      "isoDate": "2024-10-15",
+      "ukraineTotal": 236,
+      "ukraineDeaths": 90,
+      "ukraineMissing": 146,
+      "ukraineTotalCumulative": 101798,
+      "russiaDeaths": 166,
+      "russiaTotalCumulative": 64759
+    },
+    {
+      "date": "2024-10-16",
+      "isoDate": "2024-10-16",
+      "ukraineTotal": 202,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 138,
+      "ukraineTotalCumulative": 102000,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 64794
+    },
+    {
+      "date": "2024-10-17",
+      "isoDate": "2024-10-17",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 96,
+      "ukraineTotalCumulative": 102146,
+      "russiaDeaths": 24,
+      "russiaTotalCumulative": 64818
+    },
+    {
+      "date": "2024-10-18",
+      "isoDate": "2024-10-18",
+      "ukraineTotal": 182,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 102328,
+      "russiaDeaths": 170,
+      "russiaTotalCumulative": 64988
+    },
+    {
+      "date": "2024-10-19",
+      "isoDate": "2024-10-19",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 102488,
+      "russiaDeaths": 127,
+      "russiaTotalCumulative": 65115
+    },
+    {
+      "date": "2024-10-20",
+      "isoDate": "2024-10-20",
+      "ukraineTotal": 176,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 109,
+      "ukraineTotalCumulative": 102664,
+      "russiaDeaths": 115,
+      "russiaTotalCumulative": 65230
+    },
+    {
+      "date": "2024-10-21",
+      "isoDate": "2024-10-21",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 90,
+      "ukraineTotalCumulative": 102821,
+      "russiaDeaths": 107,
+      "russiaTotalCumulative": 65337
+    },
+    {
+      "date": "2024-10-22",
+      "isoDate": "2024-10-22",
+      "ukraineTotal": 227,
+      "ukraineDeaths": 81,
+      "ukraineMissing": 146,
+      "ukraineTotalCumulative": 103048,
+      "russiaDeaths": 143,
+      "russiaTotalCumulative": 65480
+    },
+    {
+      "date": "2024-10-23",
+      "isoDate": "2024-10-23",
+      "ukraineTotal": 189,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 132,
+      "ukraineTotalCumulative": 103237,
+      "russiaDeaths": 130,
+      "russiaTotalCumulative": 65610
+    },
+    {
+      "date": "2024-10-24",
+      "isoDate": "2024-10-24",
+      "ukraineTotal": 209,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 151,
+      "ukraineTotalCumulative": 103446,
+      "russiaDeaths": 190,
+      "russiaTotalCumulative": 65800
+    },
+    {
+      "date": "2024-10-25",
+      "isoDate": "2024-10-25",
+      "ukraineTotal": 141,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 90,
+      "ukraineTotalCumulative": 103587,
+      "russiaDeaths": 182,
+      "russiaTotalCumulative": 65982
+    },
+    {
+      "date": "2024-10-26",
+      "isoDate": "2024-10-26",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 86,
+      "ukraineTotalCumulative": 103739,
+      "russiaDeaths": 171,
+      "russiaTotalCumulative": 66153
+    },
+    {
+      "date": "2024-10-27",
+      "isoDate": "2024-10-27",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 92,
+      "ukraineTotalCumulative": 103894,
+      "russiaDeaths": 192,
+      "russiaTotalCumulative": 66345
+    },
+    {
+      "date": "2024-10-28",
+      "isoDate": "2024-10-28",
+      "ukraineTotal": 177,
+      "ukraineDeaths": 67,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 104071,
+      "russiaDeaths": 179,
+      "russiaTotalCumulative": 66524
+    },
+    {
+      "date": "2024-10-29",
+      "isoDate": "2024-10-29",
+      "ukraineTotal": 170,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 102,
+      "ukraineTotalCumulative": 104241,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 66594
+    },
+    {
+      "date": "2024-10-30",
+      "isoDate": "2024-10-30",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 98,
+      "ukraineTotalCumulative": 104396,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 66680
+    },
+    {
+      "date": "2024-10-31",
+      "isoDate": "2024-10-31",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 104555,
+      "russiaDeaths": 143,
+      "russiaTotalCumulative": 66823
+    },
+    {
+      "date": "2024-11-01",
+      "isoDate": "2024-11-01",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 82,
+      "ukraineTotalCumulative": 104677,
+      "russiaDeaths": 210,
+      "russiaTotalCumulative": 67033
+    },
+    {
+      "date": "2024-11-02",
+      "isoDate": "2024-11-02",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 104823,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 67118
+    },
+    {
+      "date": "2024-11-03",
+      "isoDate": "2024-11-03",
+      "ukraineTotal": 143,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 104966,
+      "russiaDeaths": 76,
+      "russiaTotalCumulative": 67194
+    },
+    {
+      "date": "2024-11-04",
+      "isoDate": "2024-11-04",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 105110,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 67278
+    },
+    {
+      "date": "2024-11-05",
+      "isoDate": "2024-11-05",
+      "ukraineTotal": 173,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 119,
+      "ukraineTotalCumulative": 105283,
+      "russiaDeaths": 152,
+      "russiaTotalCumulative": 67430
+    },
+    {
+      "date": "2024-11-06",
+      "isoDate": "2024-11-06",
+      "ukraineTotal": 142,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 105425,
+      "russiaDeaths": 262,
+      "russiaTotalCumulative": 67692
+    },
+    {
+      "date": "2024-11-07",
+      "isoDate": "2024-11-07",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 69,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 105589,
+      "russiaDeaths": 102,
+      "russiaTotalCumulative": 67794
+    },
+    {
+      "date": "2024-11-08",
+      "isoDate": "2024-11-08",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 105751,
+      "russiaDeaths": 47,
+      "russiaTotalCumulative": 67841
+    },
+    {
+      "date": "2024-11-09",
+      "isoDate": "2024-11-09",
+      "ukraineTotal": 153,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 105904,
+      "russiaDeaths": 141,
+      "russiaTotalCumulative": 67982
+    },
+    {
+      "date": "2024-11-10",
+      "isoDate": "2024-11-10",
+      "ukraineTotal": 241,
+      "ukraineDeaths": 87,
+      "ukraineMissing": 154,
+      "ukraineTotalCumulative": 106145,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 68051
+    },
+    {
+      "date": "2024-11-11",
+      "isoDate": "2024-11-11",
+      "ukraineTotal": 254,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 189,
+      "ukraineTotalCumulative": 106399,
+      "russiaDeaths": 143,
+      "russiaTotalCumulative": 68194
+    },
+    {
+      "date": "2024-11-12",
+      "isoDate": "2024-11-12",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 63,
+      "ukraineMissing": 91,
+      "ukraineTotalCumulative": 106553,
+      "russiaDeaths": 127,
+      "russiaTotalCumulative": 68321
+    },
+    {
+      "date": "2024-11-13",
+      "isoDate": "2024-11-13",
+      "ukraineTotal": 213,
+      "ukraineDeaths": 70,
+      "ukraineMissing": 143,
+      "ukraineTotalCumulative": 106766,
+      "russiaDeaths": 237,
+      "russiaTotalCumulative": 68558
+    },
+    {
+      "date": "2024-11-14",
+      "isoDate": "2024-11-14",
+      "ukraineTotal": 198,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 134,
+      "ukraineTotalCumulative": 106964,
+      "russiaDeaths": 198,
+      "russiaTotalCumulative": 68756
+    },
+    {
+      "date": "2024-11-15",
+      "isoDate": "2024-11-15",
+      "ukraineTotal": 184,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 128,
+      "ukraineTotalCumulative": 107148,
+      "russiaDeaths": 214,
+      "russiaTotalCumulative": 68970
+    },
+    {
+      "date": "2024-11-16",
+      "isoDate": "2024-11-16",
+      "ukraineTotal": 206,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 159,
+      "ukraineTotalCumulative": 107354,
+      "russiaDeaths": 194,
+      "russiaTotalCumulative": 69164
+    },
+    {
+      "date": "2024-11-17",
+      "isoDate": "2024-11-17",
+      "ukraineTotal": 213,
+      "ukraineDeaths": 74,
+      "ukraineMissing": 139,
+      "ukraineTotalCumulative": 107567,
+      "russiaDeaths": 78,
+      "russiaTotalCumulative": 69242
+    },
+    {
+      "date": "2024-11-18",
+      "isoDate": "2024-11-18",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 107703,
+      "russiaDeaths": 194,
+      "russiaTotalCumulative": 69436
+    },
+    {
+      "date": "2024-11-19",
+      "isoDate": "2024-11-19",
+      "ukraineTotal": 197,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 155,
+      "ukraineTotalCumulative": 107900,
+      "russiaDeaths": 229,
+      "russiaTotalCumulative": 69665
+    },
+    {
+      "date": "2024-11-20",
+      "isoDate": "2024-11-20",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 108033,
+      "russiaDeaths": 207,
+      "russiaTotalCumulative": 69872
+    },
+    {
+      "date": "2024-11-21",
+      "isoDate": "2024-11-21",
+      "ukraineTotal": 150,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 112,
+      "ukraineTotalCumulative": 108183,
+      "russiaDeaths": 174,
+      "russiaTotalCumulative": 70046
+    },
+    {
+      "date": "2024-11-22",
+      "isoDate": "2024-11-22",
+      "ukraineTotal": 180,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 121,
+      "ukraineTotalCumulative": 108363,
+      "russiaDeaths": 150,
+      "russiaTotalCumulative": 70196
+    },
+    {
+      "date": "2024-11-23",
+      "isoDate": "2024-11-23",
+      "ukraineTotal": 134,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 108497,
+      "russiaDeaths": 116,
+      "russiaTotalCumulative": 70312
+    },
+    {
+      "date": "2024-11-24",
+      "isoDate": "2024-11-24",
+      "ukraineTotal": 161,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 108658,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 70415
+    },
+    {
+      "date": "2024-11-25",
+      "isoDate": "2024-11-25",
+      "ukraineTotal": 172,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 108830,
+      "russiaDeaths": 183,
+      "russiaTotalCumulative": 70598
+    },
+    {
+      "date": "2024-11-26",
+      "isoDate": "2024-11-26",
+      "ukraineTotal": 190,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 102,
+      "ukraineTotalCumulative": 109020,
+      "russiaDeaths": 196,
+      "russiaTotalCumulative": 70794
+    },
+    {
+      "date": "2024-11-27",
+      "isoDate": "2024-11-27",
+      "ukraineTotal": 153,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 108,
+      "ukraineTotalCumulative": 109173,
+      "russiaDeaths": 67,
+      "russiaTotalCumulative": 70861
+    },
+    {
+      "date": "2024-11-28",
+      "isoDate": "2024-11-28",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 109330,
+      "russiaDeaths": 165,
+      "russiaTotalCumulative": 71026
+    },
+    {
+      "date": "2024-11-29",
+      "isoDate": "2024-11-29",
+      "ukraineTotal": 161,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 109491,
+      "russiaDeaths": 192,
+      "russiaTotalCumulative": 71218
+    },
+    {
+      "date": "2024-11-30",
+      "isoDate": "2024-11-30",
+      "ukraineTotal": 117,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 79,
+      "ukraineTotalCumulative": 109608,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 71318
+    },
+    {
+      "date": "2024-12-01",
+      "isoDate": "2024-12-01",
+      "ukraineTotal": 138,
+      "ukraineDeaths": 66,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 109746,
+      "russiaDeaths": 108,
+      "russiaTotalCumulative": 71426
+    },
+    {
+      "date": "2024-12-02",
+      "isoDate": "2024-12-02",
+      "ukraineTotal": 153,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 94,
+      "ukraineTotalCumulative": 109899,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 71426
+    },
+    {
+      "date": "2024-12-03",
+      "isoDate": "2024-12-03",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 110054,
+      "russiaDeaths": 181,
+      "russiaTotalCumulative": 71607
+    },
+    {
+      "date": "2024-12-04",
+      "isoDate": "2024-12-04",
+      "ukraineTotal": 140,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 110194,
+      "russiaDeaths": 230,
+      "russiaTotalCumulative": 71837
+    },
+    {
+      "date": "2024-12-05",
+      "isoDate": "2024-12-05",
+      "ukraineTotal": 255,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 209,
+      "ukraineTotalCumulative": 110449,
+      "russiaDeaths": 234,
+      "russiaTotalCumulative": 72071
+    },
+    {
+      "date": "2024-12-06",
+      "isoDate": "2024-12-06",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 110595,
+      "russiaDeaths": 155,
+      "russiaTotalCumulative": 72226
+    },
+    {
+      "date": "2024-12-07",
+      "isoDate": "2024-12-07",
+      "ukraineTotal": 97,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 61,
+      "ukraineTotalCumulative": 110692,
+      "russiaDeaths": 13,
+      "russiaTotalCumulative": 72239
+    },
+    {
+      "date": "2024-12-08",
+      "isoDate": "2024-12-08",
+      "ukraineTotal": 129,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 79,
+      "ukraineTotalCumulative": 110821,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 72349
+    },
+    {
+      "date": "2024-12-09",
+      "isoDate": "2024-12-09",
+      "ukraineTotal": 143,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 96,
+      "ukraineTotalCumulative": 110964,
+      "russiaDeaths": 263,
+      "russiaTotalCumulative": 72612
+    },
+    {
+      "date": "2024-12-10",
+      "isoDate": "2024-12-10",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 111094,
+      "russiaDeaths": 214,
+      "russiaTotalCumulative": 72826
+    },
+    {
+      "date": "2024-12-11",
+      "isoDate": "2024-12-11",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 111253,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 72936
+    },
+    {
+      "date": "2024-12-12",
+      "isoDate": "2024-12-12",
+      "ukraineTotal": 172,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 127,
+      "ukraineTotalCumulative": 111425,
+      "russiaDeaths": 122,
+      "russiaTotalCumulative": 73058
+    },
+    {
+      "date": "2024-12-13",
+      "isoDate": "2024-12-13",
+      "ukraineTotal": 303,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 256,
+      "ukraineTotalCumulative": 111728,
+      "russiaDeaths": 150,
+      "russiaTotalCumulative": 73208
+    },
+    {
+      "date": "2024-12-14",
+      "isoDate": "2024-12-14",
+      "ukraineTotal": 219,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 164,
+      "ukraineTotalCumulative": 111947,
+      "russiaDeaths": 214,
+      "russiaTotalCumulative": 73422
+    },
+    {
+      "date": "2024-12-15",
+      "isoDate": "2024-12-15",
+      "ukraineTotal": 215,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 158,
+      "ukraineTotalCumulative": 112162,
+      "russiaDeaths": 184,
+      "russiaTotalCumulative": 73606
+    },
+    {
+      "date": "2024-12-16",
+      "isoDate": "2024-12-16",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 117,
+      "ukraineTotalCumulative": 112327,
+      "russiaDeaths": 218,
+      "russiaTotalCumulative": 73824
+    },
+    {
+      "date": "2024-12-17",
+      "isoDate": "2024-12-17",
+      "ukraineTotal": 180,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 139,
+      "ukraineTotalCumulative": 112507,
+      "russiaDeaths": 204,
+      "russiaTotalCumulative": 74028
+    },
+    {
+      "date": "2024-12-18",
+      "isoDate": "2024-12-18",
+      "ukraineTotal": 214,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 161,
+      "ukraineTotalCumulative": 112721,
+      "russiaDeaths": 174,
+      "russiaTotalCumulative": 74202
+    },
+    {
+      "date": "2024-12-19",
+      "isoDate": "2024-12-19",
+      "ukraineTotal": 138,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 112859,
+      "russiaDeaths": 216,
+      "russiaTotalCumulative": 74418
+    },
+    {
+      "date": "2024-12-20",
+      "isoDate": "2024-12-20",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 116,
+      "ukraineTotalCumulative": 113019,
+      "russiaDeaths": 117,
+      "russiaTotalCumulative": 74535
+    },
+    {
+      "date": "2024-12-21",
+      "isoDate": "2024-12-21",
+      "ukraineTotal": 142,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 89,
+      "ukraineTotalCumulative": 113161,
+      "russiaDeaths": 192,
+      "russiaTotalCumulative": 74727
+    },
+    {
+      "date": "2024-12-22",
+      "isoDate": "2024-12-22",
+      "ukraineTotal": 142,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 113303,
+      "russiaDeaths": 105,
+      "russiaTotalCumulative": 74832
+    },
+    {
+      "date": "2024-12-23",
+      "isoDate": "2024-12-23",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 113449,
+      "russiaDeaths": 226,
+      "russiaTotalCumulative": 75058
+    },
+    {
+      "date": "2024-12-24",
+      "isoDate": "2024-12-24",
+      "ukraineTotal": 199,
+      "ukraineDeaths": 96,
+      "ukraineMissing": 103,
+      "ukraineTotalCumulative": 113648,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 75153
+    },
+    {
+      "date": "2024-12-25",
+      "isoDate": "2024-12-25",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 102,
+      "ukraineTotalCumulative": 113805,
+      "russiaDeaths": 130,
+      "russiaTotalCumulative": 75283
+    },
+    {
+      "date": "2024-12-26",
+      "isoDate": "2024-12-26",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 103,
+      "ukraineTotalCumulative": 113957,
+      "russiaDeaths": 128,
+      "russiaTotalCumulative": 75411
+    },
+    {
+      "date": "2024-12-27",
+      "isoDate": "2024-12-27",
+      "ukraineTotal": 203,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 128,
+      "ukraineTotalCumulative": 114160,
+      "russiaDeaths": 231,
+      "russiaTotalCumulative": 75642
+    },
+    {
+      "date": "2024-12-28",
+      "isoDate": "2024-12-28",
+      "ukraineTotal": 194,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 135,
+      "ukraineTotalCumulative": 114354,
+      "russiaDeaths": 179,
+      "russiaTotalCumulative": 75821
+    },
+    {
+      "date": "2024-12-29",
+      "isoDate": "2024-12-29",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 114506,
+      "russiaDeaths": 166,
+      "russiaTotalCumulative": 75987
+    },
+    {
+      "date": "2024-12-30",
+      "isoDate": "2024-12-30",
+      "ukraineTotal": 243,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 160,
+      "ukraineTotalCumulative": 114749,
+      "russiaDeaths": 247,
+      "russiaTotalCumulative": 76234
+    },
+    {
+      "date": "2024-12-31",
+      "isoDate": "2024-12-31",
+      "ukraineTotal": 131,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 86,
+      "ukraineTotalCumulative": 114880,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 76337
+    },
+    {
+      "date": "2025-01-01",
+      "isoDate": "2025-01-01",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 115015,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 76429
+    },
+    {
+      "date": "2025-01-02",
+      "isoDate": "2025-01-02",
+      "ukraineTotal": 167,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 115182,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 76525
+    },
+    {
+      "date": "2025-01-03",
+      "isoDate": "2025-01-03",
+      "ukraineTotal": 175,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 111,
+      "ukraineTotalCumulative": 115357,
+      "russiaDeaths": 122,
+      "russiaTotalCumulative": 76647
+    },
+    {
+      "date": "2025-01-04",
+      "isoDate": "2025-01-04",
+      "ukraineTotal": 238,
+      "ukraineDeaths": 77,
+      "ukraineMissing": 161,
+      "ukraineTotalCumulative": 115595,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 76747
+    },
+    {
+      "date": "2025-01-05",
+      "isoDate": "2025-01-05",
+      "ukraineTotal": 319,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 260,
+      "ukraineTotalCumulative": 115914,
+      "russiaDeaths": 85,
+      "russiaTotalCumulative": 76832
+    },
+    {
+      "date": "2025-01-06",
+      "isoDate": "2025-01-06",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 116078,
+      "russiaDeaths": 133,
+      "russiaTotalCumulative": 76965
+    },
+    {
+      "date": "2025-01-07",
+      "isoDate": "2025-01-07",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 99,
+      "ukraineTotalCumulative": 116230,
+      "russiaDeaths": 143,
+      "russiaTotalCumulative": 77108
+    },
+    {
+      "date": "2025-01-08",
+      "isoDate": "2025-01-08",
+      "ukraineTotal": 190,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 111,
+      "ukraineTotalCumulative": 116420,
+      "russiaDeaths": 151,
+      "russiaTotalCumulative": 77259
+    },
+    {
+      "date": "2025-01-09",
+      "isoDate": "2025-01-09",
+      "ukraineTotal": 166,
+      "ukraineDeaths": 60,
+      "ukraineMissing": 106,
+      "ukraineTotalCumulative": 116586,
+      "russiaDeaths": 204,
+      "russiaTotalCumulative": 77463
+    },
+    {
+      "date": "2025-01-10",
+      "isoDate": "2025-01-10",
+      "ukraineTotal": 170,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 119,
+      "ukraineTotalCumulative": 116756,
+      "russiaDeaths": 143,
+      "russiaTotalCumulative": 77606
+    },
+    {
+      "date": "2025-01-11",
+      "isoDate": "2025-01-11",
+      "ukraineTotal": 168,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 116924,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 77658
+    },
+    {
+      "date": "2025-01-12",
+      "isoDate": "2025-01-12",
+      "ukraineTotal": 138,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 117062,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 77658
+    },
+    {
+      "date": "2025-01-13",
+      "isoDate": "2025-01-13",
+      "ukraineTotal": 172,
+      "ukraineDeaths": 88,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 117234,
+      "russiaDeaths": 144,
+      "russiaTotalCumulative": 77802
+    },
+    {
+      "date": "2025-01-14",
+      "isoDate": "2025-01-14",
+      "ukraineTotal": 107,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 59,
+      "ukraineTotalCumulative": 117341,
+      "russiaDeaths": 218,
+      "russiaTotalCumulative": 78020
+    },
+    {
+      "date": "2025-01-15",
+      "isoDate": "2025-01-15",
+      "ukraineTotal": 195,
+      "ukraineDeaths": 65,
+      "ukraineMissing": 130,
+      "ukraineTotalCumulative": 117536,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 78089
+    },
+    {
+      "date": "2025-01-16",
+      "isoDate": "2025-01-16",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 49,
+      "ukraineMissing": 83,
+      "ukraineTotalCumulative": 117668,
+      "russiaDeaths": 165,
+      "russiaTotalCumulative": 78254
+    },
+    {
+      "date": "2025-01-17",
+      "isoDate": "2025-01-17",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 117812,
+      "russiaDeaths": 4,
+      "russiaTotalCumulative": 78258
+    },
+    {
+      "date": "2025-01-18",
+      "isoDate": "2025-01-18",
+      "ukraineTotal": 171,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 128,
+      "ukraineTotalCumulative": 117983,
+      "russiaDeaths": 73,
+      "russiaTotalCumulative": 78331
+    },
+    {
+      "date": "2025-01-19",
+      "isoDate": "2025-01-19",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 118143,
+      "russiaDeaths": 81,
+      "russiaTotalCumulative": 78412
+    },
+    {
+      "date": "2025-01-20",
+      "isoDate": "2025-01-20",
+      "ukraineTotal": 168,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 118311,
+      "russiaDeaths": 143,
+      "russiaTotalCumulative": 78555
+    },
+    {
+      "date": "2025-01-21",
+      "isoDate": "2025-01-21",
+      "ukraineTotal": 105,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 69,
+      "ukraineTotalCumulative": 118416,
+      "russiaDeaths": 216,
+      "russiaTotalCumulative": 78771
+    },
+    {
+      "date": "2025-01-22",
+      "isoDate": "2025-01-22",
+      "ukraineTotal": 114,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 67,
+      "ukraineTotalCumulative": 118530,
+      "russiaDeaths": 87,
+      "russiaTotalCumulative": 78858
+    },
+    {
+      "date": "2025-01-23",
+      "isoDate": "2025-01-23",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 124,
+      "ukraineTotalCumulative": 118690,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 78921
+    },
+    {
+      "date": "2025-01-24",
+      "isoDate": "2025-01-24",
+      "ukraineTotal": 150,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 118840,
+      "russiaDeaths": 130,
+      "russiaTotalCumulative": 79051
+    },
+    {
+      "date": "2025-01-25",
+      "isoDate": "2025-01-25",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 68,
+      "ukraineTotalCumulative": 118943,
+      "russiaDeaths": 98,
+      "russiaTotalCumulative": 79149
+    },
+    {
+      "date": "2025-01-26",
+      "isoDate": "2025-01-26",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 119103,
+      "russiaDeaths": 182,
+      "russiaTotalCumulative": 79331
+    },
+    {
+      "date": "2025-01-27",
+      "isoDate": "2025-01-27",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 24,
+      "ukraineMissing": 54,
+      "ukraineTotalCumulative": 119181,
+      "russiaDeaths": 263,
+      "russiaTotalCumulative": 79594
+    },
+    {
+      "date": "2025-01-28",
+      "isoDate": "2025-01-28",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 77,
+      "ukraineTotalCumulative": 119336,
+      "russiaDeaths": 242,
+      "russiaTotalCumulative": 79836
+    },
+    {
+      "date": "2025-01-29",
+      "isoDate": "2025-01-29",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 91,
+      "ukraineTotalCumulative": 119482,
+      "russiaDeaths": 214,
+      "russiaTotalCumulative": 80050
+    },
+    {
+      "date": "2025-01-30",
+      "isoDate": "2025-01-30",
+      "ukraineTotal": 134,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 79,
+      "ukraineTotalCumulative": 119616,
+      "russiaDeaths": 186,
+      "russiaTotalCumulative": 80236
+    },
+    {
+      "date": "2025-01-31",
+      "isoDate": "2025-01-31",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 60,
+      "ukraineTotalCumulative": 119714,
+      "russiaDeaths": 75,
+      "russiaTotalCumulative": 80311
+    },
+    {
+      "date": "2025-02-01",
+      "isoDate": "2025-02-01",
+      "ukraineTotal": 127,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 119841,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 80415
+    },
+    {
+      "date": "2025-02-02",
+      "isoDate": "2025-02-02",
+      "ukraineTotal": 120,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 75,
+      "ukraineTotalCumulative": 119961,
+      "russiaDeaths": 140,
+      "russiaTotalCumulative": 80555
+    },
+    {
+      "date": "2025-02-03",
+      "isoDate": "2025-02-03",
+      "ukraineTotal": 75,
+      "ukraineDeaths": 28,
+      "ukraineMissing": 47,
+      "ukraineTotalCumulative": 120036,
+      "russiaDeaths": 103,
+      "russiaTotalCumulative": 80658
+    },
+    {
+      "date": "2025-02-04",
+      "isoDate": "2025-02-04",
+      "ukraineTotal": 119,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 76,
+      "ukraineTotalCumulative": 120155,
+      "russiaDeaths": 138,
+      "russiaTotalCumulative": 80796
+    },
+    {
+      "date": "2025-02-05",
+      "isoDate": "2025-02-05",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 78,
+      "ukraineTotalCumulative": 120266,
+      "russiaDeaths": 281,
+      "russiaTotalCumulative": 81077
+    },
+    {
+      "date": "2025-02-06",
+      "isoDate": "2025-02-06",
+      "ukraineTotal": 125,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 86,
+      "ukraineTotalCumulative": 120391,
+      "russiaDeaths": 133,
+      "russiaTotalCumulative": 81210
+    },
+    {
+      "date": "2025-02-07",
+      "isoDate": "2025-02-07",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 120530,
+      "russiaDeaths": 80,
+      "russiaTotalCumulative": 81290
+    },
+    {
+      "date": "2025-02-08",
+      "isoDate": "2025-02-08",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 120656,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 81325
+    },
+    {
+      "date": "2025-02-09",
+      "isoDate": "2025-02-09",
+      "ukraineTotal": 213,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 171,
+      "ukraineTotalCumulative": 120869,
+      "russiaDeaths": 91,
+      "russiaTotalCumulative": 81416
+    },
+    {
+      "date": "2025-02-10",
+      "isoDate": "2025-02-10",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 120991,
+      "russiaDeaths": 234,
+      "russiaTotalCumulative": 81650
+    },
+    {
+      "date": "2025-02-11",
+      "isoDate": "2025-02-11",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 54,
+      "ukraineMissing": 90,
+      "ukraineTotalCumulative": 121135,
+      "russiaDeaths": 205,
+      "russiaTotalCumulative": 81855
+    },
+    {
+      "date": "2025-02-12",
+      "isoDate": "2025-02-12",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 79,
+      "ukraineTotalCumulative": 121253,
+      "russiaDeaths": 209,
+      "russiaTotalCumulative": 82064
+    },
+    {
+      "date": "2025-02-13",
+      "isoDate": "2025-02-13",
+      "ukraineTotal": 148,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 121401,
+      "russiaDeaths": 26,
+      "russiaTotalCumulative": 82090
+    },
+    {
+      "date": "2025-02-14",
+      "isoDate": "2025-02-14",
+      "ukraineTotal": 214,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 169,
+      "ukraineTotalCumulative": 121615,
+      "russiaDeaths": 139,
+      "russiaTotalCumulative": 82229
+    },
+    {
+      "date": "2025-02-15",
+      "isoDate": "2025-02-15",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 61,
+      "ukraineMissing": 96,
+      "ukraineTotalCumulative": 121772,
+      "russiaDeaths": 167,
+      "russiaTotalCumulative": 82396
+    },
+    {
+      "date": "2025-02-16",
+      "isoDate": "2025-02-16",
+      "ukraineTotal": 163,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 121,
+      "ukraineTotalCumulative": 121935,
+      "russiaDeaths": 138,
+      "russiaTotalCumulative": 82534
+    },
+    {
+      "date": "2025-02-17",
+      "isoDate": "2025-02-17",
+      "ukraineTotal": 187,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 135,
+      "ukraineTotalCumulative": 122122,
+      "russiaDeaths": 156,
+      "russiaTotalCumulative": 82690
+    },
+    {
+      "date": "2025-02-18",
+      "isoDate": "2025-02-18",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 117,
+      "ukraineTotalCumulative": 122278,
+      "russiaDeaths": 54,
+      "russiaTotalCumulative": 82744
+    },
+    {
+      "date": "2025-02-19",
+      "isoDate": "2025-02-19",
+      "ukraineTotal": 227,
+      "ukraineDeaths": 113,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 122505,
+      "russiaDeaths": 204,
+      "russiaTotalCumulative": 82948
+    },
+    {
+      "date": "2025-02-20",
+      "isoDate": "2025-02-20",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 79,
+      "ukraineTotalCumulative": 122627,
+      "russiaDeaths": 220,
+      "russiaTotalCumulative": 83168
+    },
+    {
+      "date": "2025-02-21",
+      "isoDate": "2025-02-21",
+      "ukraineTotal": 138,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 94,
+      "ukraineTotalCumulative": 122765,
+      "russiaDeaths": 203,
+      "russiaTotalCumulative": 83371
+    },
+    {
+      "date": "2025-02-22",
+      "isoDate": "2025-02-22",
+      "ukraineTotal": 115,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 122880,
+      "russiaDeaths": 89,
+      "russiaTotalCumulative": 83460
+    },
+    {
+      "date": "2025-02-23",
+      "isoDate": "2025-02-23",
+      "ukraineTotal": 129,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 123009,
+      "russiaDeaths": 230,
+      "russiaTotalCumulative": 83690
+    },
+    {
+      "date": "2025-02-24",
+      "isoDate": "2025-02-24",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 123144,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 83690
+    },
+    {
+      "date": "2025-02-25",
+      "isoDate": "2025-02-25",
+      "ukraineTotal": 167,
+      "ukraineDeaths": 83,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 123311,
+      "russiaDeaths": 72,
+      "russiaTotalCumulative": 83762
+    },
+    {
+      "date": "2025-02-26",
+      "isoDate": "2025-02-26",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 125,
+      "ukraineTotalCumulative": 123471,
+      "russiaDeaths": 117,
+      "russiaTotalCumulative": 83879
+    },
+    {
+      "date": "2025-02-27",
+      "isoDate": "2025-02-27",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 123593,
+      "russiaDeaths": 154,
+      "russiaTotalCumulative": 84033
+    },
+    {
+      "date": "2025-02-28",
+      "isoDate": "2025-02-28",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 62,
+      "ukraineMissing": 73,
+      "ukraineTotalCumulative": 123728,
+      "russiaDeaths": 125,
+      "russiaTotalCumulative": 84158
+    },
+    {
+      "date": "2025-03-01",
+      "isoDate": "2025-03-01",
+      "ukraineTotal": 163,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 116,
+      "ukraineTotalCumulative": 123891,
+      "russiaDeaths": 79,
+      "russiaTotalCumulative": 84237
+    },
+    {
+      "date": "2025-03-02",
+      "isoDate": "2025-03-02",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 79,
+      "ukraineTotalCumulative": 124015,
+      "russiaDeaths": 127,
+      "russiaTotalCumulative": 84364
+    },
+    {
+      "date": "2025-03-03",
+      "isoDate": "2025-03-03",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 127,
+      "ukraineTotalCumulative": 124177,
+      "russiaDeaths": 193,
+      "russiaTotalCumulative": 84557
+    },
+    {
+      "date": "2025-03-04",
+      "isoDate": "2025-03-04",
+      "ukraineTotal": 161,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 128,
+      "ukraineTotalCumulative": 124338,
+      "russiaDeaths": 187,
+      "russiaTotalCumulative": 84744
+    },
+    {
+      "date": "2025-03-05",
+      "isoDate": "2025-03-05",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 27,
+      "ukraineMissing": 137,
+      "ukraineTotalCumulative": 124502,
+      "russiaDeaths": 176,
+      "russiaTotalCumulative": 84920
+    },
+    {
+      "date": "2025-03-06",
+      "isoDate": "2025-03-06",
+      "ukraineTotal": 191,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 135,
+      "ukraineTotalCumulative": 124693,
+      "russiaDeaths": 68,
+      "russiaTotalCumulative": 84988
+    },
+    {
+      "date": "2025-03-07",
+      "isoDate": "2025-03-07",
+      "ukraineTotal": 193,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 159,
+      "ukraineTotalCumulative": 124886,
+      "russiaDeaths": 135,
+      "russiaTotalCumulative": 85123
+    },
+    {
+      "date": "2025-03-08",
+      "isoDate": "2025-03-08",
+      "ukraineTotal": 222,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 186,
+      "ukraineTotalCumulative": 125108,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 85192
+    },
+    {
+      "date": "2025-03-09",
+      "isoDate": "2025-03-09",
+      "ukraineTotal": 244,
+      "ukraineDeaths": 53,
+      "ukraineMissing": 191,
+      "ukraineTotalCumulative": 125352,
+      "russiaDeaths": 96,
+      "russiaTotalCumulative": 85288
+    },
+    {
+      "date": "2025-03-10",
+      "isoDate": "2025-03-10",
+      "ukraineTotal": 203,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 162,
+      "ukraineTotalCumulative": 125555,
+      "russiaDeaths": 153,
+      "russiaTotalCumulative": 85441
+    },
+    {
+      "date": "2025-03-11",
+      "isoDate": "2025-03-11",
+      "ukraineTotal": 211,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 166,
+      "ukraineTotalCumulative": 125766,
+      "russiaDeaths": 183,
+      "russiaTotalCumulative": 85624
+    },
+    {
+      "date": "2025-03-12",
+      "isoDate": "2025-03-12",
+      "ukraineTotal": 239,
+      "ukraineDeaths": 75,
+      "ukraineMissing": 164,
+      "ukraineTotalCumulative": 126005,
+      "russiaDeaths": 374,
+      "russiaTotalCumulative": 85998
+    },
+    {
+      "date": "2025-03-13",
+      "isoDate": "2025-03-13",
+      "ukraineTotal": 179,
+      "ukraineDeaths": 56,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 126184,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 86068
+    },
+    {
+      "date": "2025-03-14",
+      "isoDate": "2025-03-14",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 127,
+      "ukraineTotalCumulative": 126344,
+      "russiaDeaths": 171,
+      "russiaTotalCumulative": 86239
+    },
+    {
+      "date": "2025-03-15",
+      "isoDate": "2025-03-15",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 121,
+      "ukraineTotalCumulative": 126499,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 86323
+    },
+    {
+      "date": "2025-03-16",
+      "isoDate": "2025-03-16",
+      "ukraineTotal": 134,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 89,
+      "ukraineTotalCumulative": 126633,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 86386
+    },
+    {
+      "date": "2025-03-17",
+      "isoDate": "2025-03-17",
+      "ukraineTotal": 147,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 126780,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 86490
+    },
+    {
+      "date": "2025-03-18",
+      "isoDate": "2025-03-18",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 121,
+      "ukraineTotalCumulative": 126942,
+      "russiaDeaths": 28,
+      "russiaTotalCumulative": 86518
+    },
+    {
+      "date": "2025-03-19",
+      "isoDate": "2025-03-19",
+      "ukraineTotal": 168,
+      "ukraineDeaths": 47,
+      "ukraineMissing": 121,
+      "ukraineTotalCumulative": 127110,
+      "russiaDeaths": 184,
+      "russiaTotalCumulative": 86702
+    },
+    {
+      "date": "2025-03-20",
+      "isoDate": "2025-03-20",
+      "ukraineTotal": 171,
+      "ukraineDeaths": 68,
+      "ukraineMissing": 103,
+      "ukraineTotalCumulative": 127281,
+      "russiaDeaths": 99,
+      "russiaTotalCumulative": 86801
+    },
+    {
+      "date": "2025-03-21",
+      "isoDate": "2025-03-21",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 117,
+      "ukraineTotalCumulative": 127443,
+      "russiaDeaths": 139,
+      "russiaTotalCumulative": 86940
+    },
+    {
+      "date": "2025-03-22",
+      "isoDate": "2025-03-22",
+      "ukraineTotal": 150,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 120,
+      "ukraineTotalCumulative": 127593,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 87050
+    },
+    {
+      "date": "2025-03-23",
+      "isoDate": "2025-03-23",
+      "ukraineTotal": 134,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 83,
+      "ukraineTotalCumulative": 127727,
+      "russiaDeaths": 83,
+      "russiaTotalCumulative": 87133
+    },
+    {
+      "date": "2025-03-24",
+      "isoDate": "2025-03-24",
+      "ukraineTotal": 142,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 106,
+      "ukraineTotalCumulative": 127869,
+      "russiaDeaths": 147,
+      "russiaTotalCumulative": 87280
+    },
+    {
+      "date": "2025-03-25",
+      "isoDate": "2025-03-25",
+      "ukraineTotal": 201,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 159,
+      "ukraineTotalCumulative": 128070,
+      "russiaDeaths": 178,
+      "russiaTotalCumulative": 87458
+    },
+    {
+      "date": "2025-03-26",
+      "isoDate": "2025-03-26",
+      "ukraineTotal": 185,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 143,
+      "ukraineTotalCumulative": 128255,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 87490
+    },
+    {
+      "date": "2025-03-27",
+      "isoDate": "2025-03-27",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 128407,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 87490
+    },
+    {
+      "date": "2025-03-28",
+      "isoDate": "2025-03-28",
+      "ukraineTotal": 171,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 127,
+      "ukraineTotalCumulative": 128578,
+      "russiaDeaths": 146,
+      "russiaTotalCumulative": 87636
+    },
+    {
+      "date": "2025-03-29",
+      "isoDate": "2025-03-29",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 25,
+      "ukraineMissing": 86,
+      "ukraineTotalCumulative": 128689,
+      "russiaDeaths": 89,
+      "russiaTotalCumulative": 87725
+    },
+    {
+      "date": "2025-03-30",
+      "isoDate": "2025-03-30",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 128848,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 87829
+    },
+    {
+      "date": "2025-03-31",
+      "isoDate": "2025-03-31",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 78,
+      "ukraineMissing": 87,
+      "ukraineTotalCumulative": 129013,
+      "russiaDeaths": 179,
+      "russiaTotalCumulative": 88008
+    },
+    {
+      "date": "2025-04-01",
+      "isoDate": "2025-04-01",
+      "ukraineTotal": 207,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 172,
+      "ukraineTotalCumulative": 129220,
+      "russiaDeaths": 114,
+      "russiaTotalCumulative": 88122
+    },
+    {
+      "date": "2025-04-02",
+      "isoDate": "2025-04-02",
+      "ukraineTotal": 137,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 129357,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 88122
+    },
+    {
+      "date": "2025-04-03",
+      "isoDate": "2025-04-03",
+      "ukraineTotal": 169,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 118,
+      "ukraineTotalCumulative": 129526,
+      "russiaDeaths": 52,
+      "russiaTotalCumulative": 88174
+    },
+    {
+      "date": "2025-04-04",
+      "isoDate": "2025-04-04",
+      "ukraineTotal": 147,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 117,
+      "ukraineTotalCumulative": 129673,
+      "russiaDeaths": 145,
+      "russiaTotalCumulative": 88319
+    },
+    {
+      "date": "2025-04-05",
+      "isoDate": "2025-04-05",
+      "ukraineTotal": 109,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 79,
+      "ukraineTotalCumulative": 129782,
+      "russiaDeaths": 34,
+      "russiaTotalCumulative": 88353
+    },
+    {
+      "date": "2025-04-06",
+      "isoDate": "2025-04-06",
+      "ukraineTotal": 158,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 113,
+      "ukraineTotalCumulative": 129940,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 88410
+    },
+    {
+      "date": "2025-04-07",
+      "isoDate": "2025-04-07",
+      "ukraineTotal": 181,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 130,
+      "ukraineTotalCumulative": 130121,
+      "russiaDeaths": 175,
+      "russiaTotalCumulative": 88585
+    },
+    {
+      "date": "2025-04-08",
+      "isoDate": "2025-04-08",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 50,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 130286,
+      "russiaDeaths": 176,
+      "russiaTotalCumulative": 88761
+    },
+    {
+      "date": "2025-04-09",
+      "isoDate": "2025-04-09",
+      "ukraineTotal": 141,
+      "ukraineDeaths": 31,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 130427,
+      "russiaDeaths": 131,
+      "russiaTotalCumulative": 88892
+    },
+    {
+      "date": "2025-04-10",
+      "isoDate": "2025-04-10",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 130592,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 88922
+    },
+    {
+      "date": "2025-04-11",
+      "isoDate": "2025-04-11",
+      "ukraineTotal": 137,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 130729,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 88944
+    },
+    {
+      "date": "2025-04-12",
+      "isoDate": "2025-04-12",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 130845,
+      "russiaDeaths": 48,
+      "russiaTotalCumulative": 88992
+    },
+    {
+      "date": "2025-04-13",
+      "isoDate": "2025-04-13",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 130977,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 89084
+    },
+    {
+      "date": "2025-04-14",
+      "isoDate": "2025-04-14",
+      "ukraineTotal": 157,
+      "ukraineDeaths": 55,
+      "ukraineMissing": 102,
+      "ukraineTotalCumulative": 131134,
+      "russiaDeaths": 121,
+      "russiaTotalCumulative": 89205
+    },
+    {
+      "date": "2025-04-15",
+      "isoDate": "2025-04-15",
+      "ukraineTotal": 119,
+      "ukraineDeaths": 21,
+      "ukraineMissing": 98,
+      "ukraineTotalCumulative": 131253,
+      "russiaDeaths": 183,
+      "russiaTotalCumulative": 89388
+    },
+    {
+      "date": "2025-04-16",
+      "isoDate": "2025-04-16",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 59,
+      "ukraineMissing": 100,
+      "ukraineTotalCumulative": 131412,
+      "russiaDeaths": 125,
+      "russiaTotalCumulative": 89513
+    },
+    {
+      "date": "2025-04-17",
+      "isoDate": "2025-04-17",
+      "ukraineTotal": 178,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 142,
+      "ukraineTotalCumulative": 131590,
+      "russiaDeaths": 9,
+      "russiaTotalCumulative": 89522
+    },
+    {
+      "date": "2025-04-18",
+      "isoDate": "2025-04-18",
+      "ukraineTotal": 121,
+      "ukraineDeaths": 25,
+      "ukraineMissing": 96,
+      "ukraineTotalCumulative": 131711,
+      "russiaDeaths": 139,
+      "russiaTotalCumulative": 89661
+    },
+    {
+      "date": "2025-04-19",
+      "isoDate": "2025-04-19",
+      "ukraineTotal": 123,
+      "ukraineDeaths": 26,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 131834,
+      "russiaDeaths": 79,
+      "russiaTotalCumulative": 89740
+    },
+    {
+      "date": "2025-04-20",
+      "isoDate": "2025-04-20",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 126,
+      "ukraineTotalCumulative": 131998,
+      "russiaDeaths": 22,
+      "russiaTotalCumulative": 89762
+    },
+    {
+      "date": "2025-04-21",
+      "isoDate": "2025-04-21",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 102,
+      "ukraineTotalCumulative": 132142,
+      "russiaDeaths": 160,
+      "russiaTotalCumulative": 89922
+    },
+    {
+      "date": "2025-04-22",
+      "isoDate": "2025-04-22",
+      "ukraineTotal": 142,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 99,
+      "ukraineTotalCumulative": 132284,
+      "russiaDeaths": 114,
+      "russiaTotalCumulative": 90036
+    },
+    {
+      "date": "2025-04-23",
+      "isoDate": "2025-04-23",
+      "ukraineTotal": 182,
+      "ukraineDeaths": 48,
+      "ukraineMissing": 134,
+      "ukraineTotalCumulative": 132466,
+      "russiaDeaths": 161,
+      "russiaTotalCumulative": 90197
+    },
+    {
+      "date": "2025-04-24",
+      "isoDate": "2025-04-24",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 108,
+      "ukraineTotalCumulative": 132620,
+      "russiaDeaths": 117,
+      "russiaTotalCumulative": 90314
+    },
+    {
+      "date": "2025-04-25",
+      "isoDate": "2025-04-25",
+      "ukraineTotal": 158,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 118,
+      "ukraineTotalCumulative": 132778,
+      "russiaDeaths": 148,
+      "russiaTotalCumulative": 90462
+    },
+    {
+      "date": "2025-04-26",
+      "isoDate": "2025-04-26",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 23,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 132894,
+      "russiaDeaths": 64,
+      "russiaTotalCumulative": 90526
+    },
+    {
+      "date": "2025-04-27",
+      "isoDate": "2025-04-27",
+      "ukraineTotal": 197,
+      "ukraineDeaths": 46,
+      "ukraineMissing": 151,
+      "ukraineTotalCumulative": 133091,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 90572
+    },
+    {
+      "date": "2025-04-28",
+      "isoDate": "2025-04-28",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 97,
+      "ukraineTotalCumulative": 133227,
+      "russiaDeaths": 100,
+      "russiaTotalCumulative": 90672
+    },
+    {
+      "date": "2025-04-29",
+      "isoDate": "2025-04-29",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 131,
+      "ukraineTotalCumulative": 133391,
+      "russiaDeaths": 78,
+      "russiaTotalCumulative": 90750
+    },
+    {
+      "date": "2025-04-30",
+      "isoDate": "2025-04-30",
+      "ukraineTotal": 204,
+      "ukraineDeaths": 79,
+      "ukraineMissing": 125,
+      "ukraineTotalCumulative": 133595,
+      "russiaDeaths": 142,
+      "russiaTotalCumulative": 90892
+    },
+    {
+      "date": "2025-05-01",
+      "isoDate": "2025-05-01",
+      "ukraineTotal": 175,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 132,
+      "ukraineTotalCumulative": 133770,
+      "russiaDeaths": 120,
+      "russiaTotalCumulative": 91012
+    },
+    {
+      "date": "2025-05-02",
+      "isoDate": "2025-05-02",
+      "ukraineTotal": 178,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 146,
+      "ukraineTotalCumulative": 133948,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 91071
+    },
+    {
+      "date": "2025-05-03",
+      "isoDate": "2025-05-03",
+      "ukraineTotal": 160,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 127,
+      "ukraineTotalCumulative": 134108,
+      "russiaDeaths": 62,
+      "russiaTotalCumulative": 91133
+    },
+    {
+      "date": "2025-05-04",
+      "isoDate": "2025-05-04",
+      "ukraineTotal": 185,
+      "ukraineDeaths": 51,
+      "ukraineMissing": 134,
+      "ukraineTotalCumulative": 134293,
+      "russiaDeaths": 45,
+      "russiaTotalCumulative": 91178
+    },
+    {
+      "date": "2025-05-05",
+      "isoDate": "2025-05-05",
+      "ukraineTotal": 185,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 150,
+      "ukraineTotalCumulative": 134478,
+      "russiaDeaths": 165,
+      "russiaTotalCumulative": 91343
+    },
+    {
+      "date": "2025-05-06",
+      "isoDate": "2025-05-06",
+      "ukraineTotal": 208,
+      "ukraineDeaths": 64,
+      "ukraineMissing": 144,
+      "ukraineTotalCumulative": 134686,
+      "russiaDeaths": 90,
+      "russiaTotalCumulative": 91433
+    },
+    {
+      "date": "2025-05-07",
+      "isoDate": "2025-05-07",
+      "ukraineTotal": 171,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 133,
+      "ukraineTotalCumulative": 134857,
+      "russiaDeaths": 98,
+      "russiaTotalCumulative": 91531
+    },
+    {
+      "date": "2025-05-08",
+      "isoDate": "2025-05-08",
+      "ukraineTotal": 170,
+      "ukraineDeaths": 44,
+      "ukraineMissing": 126,
+      "ukraineTotalCumulative": 135027,
+      "russiaDeaths": 113,
+      "russiaTotalCumulative": 91644
+    },
+    {
+      "date": "2025-05-09",
+      "isoDate": "2025-05-09",
+      "ukraineTotal": 135,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 99,
+      "ukraineTotalCumulative": 135162,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 91682
+    },
+    {
+      "date": "2025-05-10",
+      "isoDate": "2025-05-10",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 94,
+      "ukraineTotalCumulative": 135292,
+      "russiaDeaths": 6,
+      "russiaTotalCumulative": 91688
+    },
+    {
+      "date": "2025-05-11",
+      "isoDate": "2025-05-11",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 109,
+      "ukraineTotalCumulative": 135446,
+      "russiaDeaths": 4,
+      "russiaTotalCumulative": 91692
+    },
+    {
+      "date": "2025-05-12",
+      "isoDate": "2025-05-12",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 122,
+      "ukraineTotalCumulative": 135608,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 91789
+    },
+    {
+      "date": "2025-05-13",
+      "isoDate": "2025-05-13",
+      "ukraineTotal": 149,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 135757,
+      "russiaDeaths": 107,
+      "russiaTotalCumulative": 91896
+    },
+    {
+      "date": "2025-05-14",
+      "isoDate": "2025-05-14",
+      "ukraineTotal": 186,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 157,
+      "ukraineTotalCumulative": 135943,
+      "russiaDeaths": 114,
+      "russiaTotalCumulative": 92010
+    },
+    {
+      "date": "2025-05-15",
+      "isoDate": "2025-05-15",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 28,
+      "ukraineMissing": 116,
+      "ukraineTotalCumulative": 136087,
+      "russiaDeaths": 178,
+      "russiaTotalCumulative": 92188
+    },
+    {
+      "date": "2025-05-16",
+      "isoDate": "2025-05-16",
+      "ukraineTotal": 143,
+      "ukraineDeaths": 31,
+      "ukraineMissing": 112,
+      "ukraineTotalCumulative": 136230,
+      "russiaDeaths": 104,
+      "russiaTotalCumulative": 92292
+    },
+    {
+      "date": "2025-05-17",
+      "isoDate": "2025-05-17",
+      "ukraineTotal": 122,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 136352,
+      "russiaDeaths": 30,
+      "russiaTotalCumulative": 92322
+    },
+    {
+      "date": "2025-05-18",
+      "isoDate": "2025-05-18",
+      "ukraineTotal": 152,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 119,
+      "ukraineTotalCumulative": 136504,
+      "russiaDeaths": 16,
+      "russiaTotalCumulative": 92338
+    },
+    {
+      "date": "2025-05-19",
+      "isoDate": "2025-05-19",
+      "ukraineTotal": 167,
+      "ukraineDeaths": 57,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 136671,
+      "russiaDeaths": 132,
+      "russiaTotalCumulative": 92470
+    },
+    {
+      "date": "2025-05-20",
+      "isoDate": "2025-05-20",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 126,
+      "ukraineTotalCumulative": 136835,
+      "russiaDeaths": 128,
+      "russiaTotalCumulative": 92598
+    },
+    {
+      "date": "2025-05-21",
+      "isoDate": "2025-05-21",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 26,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 136945,
+      "russiaDeaths": 142,
+      "russiaTotalCumulative": 92740
+    },
+    {
+      "date": "2025-05-22",
+      "isoDate": "2025-05-22",
+      "ukraineTotal": 151,
+      "ukraineDeaths": 31,
+      "ukraineMissing": 120,
+      "ukraineTotalCumulative": 137096,
+      "russiaDeaths": 58,
+      "russiaTotalCumulative": 92798
+    },
+    {
+      "date": "2025-05-23",
+      "isoDate": "2025-05-23",
+      "ukraineTotal": 171,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 126,
+      "ukraineTotalCumulative": 137267,
+      "russiaDeaths": 224,
+      "russiaTotalCumulative": 93022
+    },
+    {
+      "date": "2025-05-24",
+      "isoDate": "2025-05-24",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 108,
+      "ukraineTotalCumulative": 137411,
+      "russiaDeaths": 33,
+      "russiaTotalCumulative": 93055
+    },
+    {
+      "date": "2025-05-25",
+      "isoDate": "2025-05-25",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 125,
+      "ukraineTotalCumulative": 137576,
+      "russiaDeaths": 32,
+      "russiaTotalCumulative": 93087
+    },
+    {
+      "date": "2025-05-26",
+      "isoDate": "2025-05-26",
+      "ukraineTotal": 155,
+      "ukraineDeaths": 26,
+      "ukraineMissing": 129,
+      "ukraineTotalCumulative": 137731,
+      "russiaDeaths": 126,
+      "russiaTotalCumulative": 93213
+    },
+    {
+      "date": "2025-05-27",
+      "isoDate": "2025-05-27",
+      "ukraineTotal": 141,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 111,
+      "ukraineTotalCumulative": 137872,
+      "russiaDeaths": 59,
+      "russiaTotalCumulative": 93272
+    },
+    {
+      "date": "2025-05-28",
+      "isoDate": "2025-05-28",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 129,
+      "ukraineTotalCumulative": 138036,
+      "russiaDeaths": 69,
+      "russiaTotalCumulative": 93341
+    },
+    {
+      "date": "2025-05-29",
+      "isoDate": "2025-05-29",
+      "ukraineTotal": 242,
+      "ukraineDeaths": 86,
+      "ukraineMissing": 156,
+      "ukraineTotalCumulative": 138278,
+      "russiaDeaths": 92,
+      "russiaTotalCumulative": 93433
+    },
+    {
+      "date": "2025-05-30",
+      "isoDate": "2025-05-30",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 138414,
+      "russiaDeaths": 95,
+      "russiaTotalCumulative": 93528
+    },
+    {
+      "date": "2025-05-31",
+      "isoDate": "2025-05-31",
+      "ukraineTotal": 154,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 114,
+      "ukraineTotalCumulative": 138568,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 93581
+    },
+    {
+      "date": "2025-06-01",
+      "isoDate": "2025-06-01",
+      "ukraineTotal": 126,
+      "ukraineDeaths": 26,
+      "ukraineMissing": 100,
+      "ukraineTotalCumulative": 138694,
+      "russiaDeaths": 87,
+      "russiaTotalCumulative": 93668
+    },
+    {
+      "date": "2025-06-02",
+      "isoDate": "2025-06-02",
+      "ukraineTotal": 179,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 141,
+      "ukraineTotalCumulative": 138873,
+      "russiaDeaths": 101,
+      "russiaTotalCumulative": 93769
+    },
+    {
+      "date": "2025-06-03",
+      "isoDate": "2025-06-03",
+      "ukraineTotal": 142,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 113,
+      "ukraineTotalCumulative": 139015,
+      "russiaDeaths": 110,
+      "russiaTotalCumulative": 93879
+    },
+    {
+      "date": "2025-06-04",
+      "isoDate": "2025-06-04",
+      "ukraineTotal": 119,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 82,
+      "ukraineTotalCumulative": 139134,
+      "russiaDeaths": 76,
+      "russiaTotalCumulative": 93955
+    },
+    {
+      "date": "2025-06-05",
+      "isoDate": "2025-06-05",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 52,
+      "ukraineMissing": 113,
+      "ukraineTotalCumulative": 139299,
+      "russiaDeaths": 86,
+      "russiaTotalCumulative": 94041
+    },
+    {
+      "date": "2025-06-06",
+      "isoDate": "2025-06-06",
+      "ukraineTotal": 136,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 106,
+      "ukraineTotalCumulative": 139435,
+      "russiaDeaths": 162,
+      "russiaTotalCumulative": 94203
+    },
+    {
+      "date": "2025-06-07",
+      "isoDate": "2025-06-07",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 28,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 139551,
+      "russiaDeaths": 38,
+      "russiaTotalCumulative": 94241
+    },
+    {
+      "date": "2025-06-08",
+      "isoDate": "2025-06-08",
+      "ukraineTotal": 198,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 158,
+      "ukraineTotalCumulative": 139749,
+      "russiaDeaths": 84,
+      "russiaTotalCumulative": 94325
+    },
+    {
+      "date": "2025-06-09",
+      "isoDate": "2025-06-09",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 41,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 139895,
+      "russiaDeaths": 142,
+      "russiaTotalCumulative": 94467
+    },
+    {
+      "date": "2025-06-10",
+      "isoDate": "2025-06-10",
+      "ukraineTotal": 181,
+      "ukraineDeaths": 40,
+      "ukraineMissing": 141,
+      "ukraineTotalCumulative": 140076,
+      "russiaDeaths": 112,
+      "russiaTotalCumulative": 94579
+    },
+    {
+      "date": "2025-06-11",
+      "isoDate": "2025-06-11",
+      "ukraineTotal": 158,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 122,
+      "ukraineTotalCumulative": 140234,
+      "russiaDeaths": 138,
+      "russiaTotalCumulative": 94717
+    },
+    {
+      "date": "2025-06-12",
+      "isoDate": "2025-06-12",
+      "ukraineTotal": 187,
+      "ukraineDeaths": 58,
+      "ukraineMissing": 129,
+      "ukraineTotalCumulative": 140421,
+      "russiaDeaths": 5,
+      "russiaTotalCumulative": 94722
+    },
+    {
+      "date": "2025-06-13",
+      "isoDate": "2025-06-13",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 31,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 140545,
+      "russiaDeaths": 28,
+      "russiaTotalCumulative": 94750
+    },
+    {
+      "date": "2025-06-14",
+      "isoDate": "2025-06-14",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 18,
+      "ukraineMissing": 141,
+      "ukraineTotalCumulative": 140704,
+      "russiaDeaths": 114,
+      "russiaTotalCumulative": 94864
+    },
+    {
+      "date": "2025-06-15",
+      "isoDate": "2025-06-15",
+      "ukraineTotal": 213,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 177,
+      "ukraineTotalCumulative": 140917,
+      "russiaDeaths": 93,
+      "russiaTotalCumulative": 94957
+    },
+    {
+      "date": "2025-06-16",
+      "isoDate": "2025-06-16",
+      "ukraineTotal": 170,
+      "ukraineDeaths": 45,
+      "ukraineMissing": 125,
+      "ukraineTotalCumulative": 141087,
+      "russiaDeaths": 189,
+      "russiaTotalCumulative": 95146
+    },
+    {
+      "date": "2025-06-17",
+      "isoDate": "2025-06-17",
+      "ukraineTotal": 169,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 130,
+      "ukraineTotalCumulative": 141256,
+      "russiaDeaths": 192,
+      "russiaTotalCumulative": 95338
+    },
+    {
+      "date": "2025-06-18",
+      "isoDate": "2025-06-18",
+      "ukraineTotal": 147,
+      "ukraineDeaths": 25,
+      "ukraineMissing": 122,
+      "ukraineTotalCumulative": 141403,
+      "russiaDeaths": 158,
+      "russiaTotalCumulative": 95496
+    },
+    {
+      "date": "2025-06-19",
+      "isoDate": "2025-06-19",
+      "ukraineTotal": 146,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 112,
+      "ukraineTotalCumulative": 141549,
+      "russiaDeaths": 169,
+      "russiaTotalCumulative": 95665
+    },
+    {
+      "date": "2025-06-20",
+      "isoDate": "2025-06-20",
+      "ukraineTotal": 167,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 134,
+      "ukraineTotalCumulative": 141716,
+      "russiaDeaths": 63,
+      "russiaTotalCumulative": 95728
+    },
+    {
+      "date": "2025-06-21",
+      "isoDate": "2025-06-21",
+      "ukraineTotal": 144,
+      "ukraineDeaths": 34,
+      "ukraineMissing": 110,
+      "ukraineTotalCumulative": 141860,
+      "russiaDeaths": 161,
+      "russiaTotalCumulative": 95889
+    },
+    {
+      "date": "2025-06-22",
+      "isoDate": "2025-06-22",
+      "ukraineTotal": 132,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 141992,
+      "russiaDeaths": 171,
+      "russiaTotalCumulative": 96060
+    },
+    {
+      "date": "2025-06-23",
+      "isoDate": "2025-06-23",
+      "ukraineTotal": 153,
+      "ukraineDeaths": 38,
+      "ukraineMissing": 115,
+      "ukraineTotalCumulative": 142145,
+      "russiaDeaths": 39,
+      "russiaTotalCumulative": 96099
+    },
+    {
+      "date": "2025-06-24",
+      "isoDate": "2025-06-24",
+      "ukraineTotal": 127,
+      "ukraineDeaths": 43,
+      "ukraineMissing": 84,
+      "ukraineTotalCumulative": 142272,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 96099
+    },
+    {
+      "date": "2025-06-25",
+      "isoDate": "2025-06-25",
+      "ukraineTotal": 153,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 142425,
+      "russiaDeaths": 168,
+      "russiaTotalCumulative": 96267
+    },
+    {
+      "date": "2025-06-26",
+      "isoDate": "2025-06-26",
+      "ukraineTotal": 148,
+      "ukraineDeaths": 42,
+      "ukraineMissing": 106,
+      "ukraineTotalCumulative": 142573,
+      "russiaDeaths": 186,
+      "russiaTotalCumulative": 96453
+    },
+    {
+      "date": "2025-06-27",
+      "isoDate": "2025-06-27",
+      "ukraineTotal": 164,
+      "ukraineDeaths": 26,
+      "ukraineMissing": 138,
+      "ukraineTotalCumulative": 142737,
+      "russiaDeaths": 297,
+      "russiaTotalCumulative": 96750
+    },
+    {
+      "date": "2025-06-28",
+      "isoDate": "2025-06-28",
+      "ukraineTotal": 172,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 137,
+      "ukraineTotalCumulative": 142909,
+      "russiaDeaths": 145,
+      "russiaTotalCumulative": 96895
+    },
+    {
+      "date": "2025-06-29",
+      "isoDate": "2025-06-29",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 28,
+      "ukraineMissing": 137,
+      "ukraineTotalCumulative": 143074,
+      "russiaDeaths": 111,
+      "russiaTotalCumulative": 97006
+    },
+    {
+      "date": "2025-06-30",
+      "isoDate": "2025-06-30",
+      "ukraineTotal": 134,
+      "ukraineDeaths": 27,
+      "ukraineMissing": 107,
+      "ukraineTotalCumulative": 143208,
+      "russiaDeaths": 112,
+      "russiaTotalCumulative": 97118
+    },
+    {
+      "date": "2025-07-01",
+      "isoDate": "2025-07-01",
+      "ukraineTotal": 165,
+      "ukraineDeaths": 26,
+      "ukraineMissing": 139,
+      "ukraineTotalCumulative": 143373,
+      "russiaDeaths": 125,
+      "russiaTotalCumulative": 97243
+    },
+    {
+      "date": "2025-07-02",
+      "isoDate": "2025-07-02",
+      "ukraineTotal": 173,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 136,
+      "ukraineTotalCumulative": 143546,
+      "russiaDeaths": 175,
+      "russiaTotalCumulative": 97418
+    },
+    {
+      "date": "2025-07-03",
+      "isoDate": "2025-07-03",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 143656,
+      "russiaDeaths": 81,
+      "russiaTotalCumulative": 97499
+    },
+    {
+      "date": "2025-07-04",
+      "isoDate": "2025-07-04",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 35,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 143786,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 97499
+    },
+    {
+      "date": "2025-07-05",
+      "isoDate": "2025-07-05",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 26,
+      "ukraineMissing": 98,
+      "ukraineTotalCumulative": 143910,
+      "russiaDeaths": 189,
+      "russiaTotalCumulative": 97688
+    },
+    {
+      "date": "2025-07-06",
+      "isoDate": "2025-07-06",
+      "ukraineTotal": 145,
+      "ukraineDeaths": 27,
+      "ukraineMissing": 118,
+      "ukraineTotalCumulative": 144055,
+      "russiaDeaths": 118,
+      "russiaTotalCumulative": 97806
+    },
+    {
+      "date": "2025-07-07",
+      "isoDate": "2025-07-07",
+      "ukraineTotal": 156,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 127,
+      "ukraineTotalCumulative": 144211,
+      "russiaDeaths": 90,
+      "russiaTotalCumulative": 97896
+    },
+    {
+      "date": "2025-07-08",
+      "isoDate": "2025-07-08",
+      "ukraineTotal": 151,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 122,
+      "ukraineTotalCumulative": 144362,
+      "russiaDeaths": 101,
+      "russiaTotalCumulative": 97997
+    },
+    {
+      "date": "2025-07-09",
+      "isoDate": "2025-07-09",
+      "ukraineTotal": 162,
+      "ukraineDeaths": 39,
+      "ukraineMissing": 123,
+      "ukraineTotalCumulative": 144524,
+      "russiaDeaths": 77,
+      "russiaTotalCumulative": 98074
+    },
+    {
+      "date": "2025-07-10",
+      "isoDate": "2025-07-10",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 33,
+      "ukraineMissing": 85,
+      "ukraineTotalCumulative": 144642,
+      "russiaDeaths": 70,
+      "russiaTotalCumulative": 98144
+    },
+    {
+      "date": "2025-07-11",
+      "isoDate": "2025-07-11",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 21,
+      "ukraineMissing": 95,
+      "ukraineTotalCumulative": 144758,
+      "russiaDeaths": 207,
+      "russiaTotalCumulative": 98351
+    },
+    {
+      "date": "2025-07-12",
+      "isoDate": "2025-07-12",
+      "ukraineTotal": 130,
+      "ukraineDeaths": 27,
+      "ukraineMissing": 103,
+      "ukraineTotalCumulative": 144888,
+      "russiaDeaths": 61,
+      "russiaTotalCumulative": 98412
+    },
+    {
+      "date": "2025-07-13",
+      "isoDate": "2025-07-13",
+      "ukraineTotal": 127,
+      "ukraineDeaths": 37,
+      "ukraineMissing": 90,
+      "ukraineTotalCumulative": 145015,
+      "russiaDeaths": 74,
+      "russiaTotalCumulative": 98486
+    },
+    {
+      "date": "2025-07-14",
+      "isoDate": "2025-07-14",
+      "ukraineTotal": 159,
+      "ukraineDeaths": 24,
+      "ukraineMissing": 135,
+      "ukraineTotalCumulative": 145174,
+      "russiaDeaths": 13,
+      "russiaTotalCumulative": 98499
+    },
+    {
+      "date": "2025-07-15",
+      "isoDate": "2025-07-15",
+      "ukraineTotal": 139,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 109,
+      "ukraineTotalCumulative": 145313,
+      "russiaDeaths": 89,
+      "russiaTotalCumulative": 98588
+    },
+    {
+      "date": "2025-07-16",
+      "isoDate": "2025-07-16",
+      "ukraineTotal": 125,
+      "ukraineDeaths": 21,
+      "ukraineMissing": 104,
+      "ukraineTotalCumulative": 145438,
+      "russiaDeaths": 171,
+      "russiaTotalCumulative": 98759
+    },
+    {
+      "date": "2025-07-17",
+      "isoDate": "2025-07-17",
+      "ukraineTotal": 133,
+      "ukraineDeaths": 27,
+      "ukraineMissing": 106,
+      "ukraineTotalCumulative": 145571,
+      "russiaDeaths": 148,
+      "russiaTotalCumulative": 98907
+    },
+    {
+      "date": "2025-07-18",
+      "isoDate": "2025-07-18",
+      "ukraineTotal": 116,
+      "ukraineDeaths": 31,
+      "ukraineMissing": 85,
+      "ukraineTotalCumulative": 145687,
+      "russiaDeaths": 192,
+      "russiaTotalCumulative": 99099
+    },
+    {
+      "date": "2025-07-19",
+      "isoDate": "2025-07-19",
+      "ukraineTotal": 118,
+      "ukraineDeaths": 30,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 145805,
+      "russiaDeaths": 447,
+      "russiaTotalCumulative": 99546
+    },
+    {
+      "date": "2025-07-20",
+      "isoDate": "2025-07-20",
+      "ukraineTotal": 113,
+      "ukraineDeaths": 32,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 145918,
+      "russiaDeaths": 185,
+      "russiaTotalCumulative": 99731
+    },
+    {
+      "date": "2025-07-21",
+      "isoDate": "2025-07-21",
+      "ukraineTotal": 105,
+      "ukraineDeaths": 20,
+      "ukraineMissing": 85,
+      "ukraineTotalCumulative": 146023,
+      "russiaDeaths": 197,
+      "russiaTotalCumulative": 99928
+    },
+    {
+      "date": "2025-07-22",
+      "isoDate": "2025-07-22",
+      "ukraineTotal": 98,
+      "ukraineDeaths": 22,
+      "ukraineMissing": 76,
+      "ukraineTotalCumulative": 146121,
+      "russiaDeaths": 46,
+      "russiaTotalCumulative": 99974
+    },
+    {
+      "date": "2025-07-23",
+      "isoDate": "2025-07-23",
+      "ukraineTotal": 110,
+      "ukraineDeaths": 29,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 146231,
+      "russiaDeaths": 139,
+      "russiaTotalCumulative": 100113
+    },
+    {
+      "date": "2025-07-24",
+      "isoDate": "2025-07-24",
+      "ukraineTotal": 111,
+      "ukraineDeaths": 18,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 146342,
+      "russiaDeaths": 238,
+      "russiaTotalCumulative": 100351
+    },
+    {
+      "date": "2025-07-25",
+      "isoDate": "2025-07-25",
+      "ukraineTotal": 92,
+      "ukraineDeaths": 20,
+      "ukraineMissing": 72,
+      "ukraineTotalCumulative": 146434,
+      "russiaDeaths": 164,
+      "russiaTotalCumulative": 100515
+    },
+    {
+      "date": "2025-07-26",
+      "isoDate": "2025-07-26",
+      "ukraineTotal": 102,
+      "ukraineDeaths": 11,
+      "ukraineMissing": 91,
+      "ukraineTotalCumulative": 146536,
+      "russiaDeaths": 57,
+      "russiaTotalCumulative": 100572
+    },
+    {
+      "date": "2025-07-27",
+      "isoDate": "2025-07-27",
+      "ukraineTotal": 124,
+      "ukraineDeaths": 36,
+      "ukraineMissing": 88,
+      "ukraineTotalCumulative": 146660,
+      "russiaDeaths": 97,
+      "russiaTotalCumulative": 100669
+    },
+    {
+      "date": "2025-07-28",
+      "isoDate": "2025-07-28",
+      "ukraineTotal": 103,
+      "ukraineDeaths": 22,
+      "ukraineMissing": 81,
+      "ukraineTotalCumulative": 146763,
+      "russiaDeaths": 342,
+      "russiaTotalCumulative": 101011
+    },
+    {
+      "date": "2025-07-29",
+      "isoDate": "2025-07-29",
+      "ukraineTotal": 96,
+      "ukraineDeaths": 18,
+      "ukraineMissing": 78,
+      "ukraineTotalCumulative": 146859,
+      "russiaDeaths": 264,
+      "russiaTotalCumulative": 101275
+    },
+    {
+      "date": "2025-07-30",
+      "isoDate": "2025-07-30",
+      "ukraineTotal": 112,
+      "ukraineDeaths": 19,
+      "ukraineMissing": 93,
+      "ukraineTotalCumulative": 146971,
+      "russiaDeaths": 53,
+      "russiaTotalCumulative": 101328
+    },
+    {
+      "date": "2025-07-31",
+      "isoDate": "2025-07-31",
+      "ukraineTotal": 125,
+      "ukraineDeaths": 20,
+      "ukraineMissing": 105,
+      "ukraineTotalCumulative": 147096,
+      "russiaDeaths": 358,
+      "russiaTotalCumulative": 101686
+    },
+    {
+      "date": "2025-08-01",
+      "isoDate": "2025-08-01",
+      "ukraineTotal": 78,
+      "ukraineDeaths": 14,
+      "ukraineMissing": 64,
+      "ukraineTotalCumulative": 147174,
+      "russiaDeaths": 183,
+      "russiaTotalCumulative": 101869
+    },
+    {
+      "date": "2025-08-02",
+      "isoDate": "2025-08-02",
+      "ukraineTotal": 89,
+      "ukraineDeaths": 14,
+      "ukraineMissing": 75,
+      "ukraineTotalCumulative": 147263,
+      "russiaDeaths": 35,
+      "russiaTotalCumulative": 101904
+    },
+    {
+      "date": "2025-08-03",
+      "isoDate": "2025-08-03",
+      "ukraineTotal": 86,
+      "ukraineDeaths": 6,
+      "ukraineMissing": 80,
+      "ukraineTotalCumulative": 147349,
+      "russiaDeaths": 150,
+      "russiaTotalCumulative": 102054
+    },
+    {
+      "date": "2025-08-04",
+      "isoDate": "2025-08-04",
+      "ukraineTotal": 87,
+      "ukraineDeaths": 16,
+      "ukraineMissing": 71,
+      "ukraineTotalCumulative": 147436,
+      "russiaDeaths": 50,
+      "russiaTotalCumulative": 102104
+    },
+    {
+      "date": "2025-08-05",
+      "isoDate": "2025-08-05",
+      "ukraineTotal": 93,
+      "ukraineDeaths": 8,
+      "ukraineMissing": 85,
+      "ukraineTotalCumulative": 147529,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 102104
+    },
+    {
+      "date": "2025-08-06",
+      "isoDate": "2025-08-06",
+      "ukraineTotal": 8,
+      "ukraineDeaths": 8,
+      "ukraineMissing": 0,
+      "ukraineTotalCumulative": 147537,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 102104
+    },
+    {
+      "date": "2025-08-07",
+      "isoDate": "2025-08-07",
+      "ukraineTotal": 13,
+      "ukraineDeaths": 13,
+      "ukraineMissing": 0,
+      "ukraineTotalCumulative": 147550,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 102104
+    },
+    {
+      "date": "2025-08-08",
+      "isoDate": "2025-08-08",
+      "ukraineTotal": 6,
+      "ukraineDeaths": 6,
+      "ukraineMissing": 0,
+      "ukraineTotalCumulative": 147556,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 102104
+    },
+    {
+      "date": "2025-08-09",
+      "isoDate": "2025-08-09",
+      "ukraineTotal": 2,
+      "ukraineDeaths": 2,
+      "ukraineMissing": 0,
+      "ukraineTotalCumulative": 147558,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 102104
+    },
+    {
+      "date": "2025-08-10",
+      "isoDate": "2025-08-10",
+      "ukraineTotal": 1,
+      "ukraineDeaths": 1,
+      "ukraineMissing": 0,
+      "ukraineTotalCumulative": 147559,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 102104
+    },
+    {
+      "date": "2025-08-11",
+      "isoDate": "2025-08-11",
+      "ukraineTotal": 3,
+      "ukraineDeaths": 3,
+      "ukraineMissing": 0,
+      "ukraineTotalCumulative": 147562,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 102104
+    },
+    {
+      "date": "2025-08-13",
+      "isoDate": "2025-08-13",
+      "ukraineTotal": 1,
+      "ukraineDeaths": 1,
+      "ukraineMissing": 0,
+      "ukraineTotalCumulative": 147563,
+      "russiaDeaths": 0,
+      "russiaTotalCumulative": 102104
+    }
+  ],
   "monthly": [
     {
       "date": "Feb 2022",
@@ -2263,5 +14936,5 @@ export const hardcodedChartData: HardcodedChartData = {
       "russiaTotalCumulative": 101686
     }
   ],
-  "lastUpdated": "2025-09-01T21:36:21.401Z"
+  "lastUpdated": "2025-09-01T23:10:49.198Z"
 };

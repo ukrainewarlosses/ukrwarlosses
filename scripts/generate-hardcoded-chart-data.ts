@@ -17,6 +17,14 @@ interface WeeklyData {
   };
 }
 
+interface DailyData {
+  [key: string]: {
+    deaths: number;
+    missing?: number;
+    total: number;
+  };
+}
+
 interface ChartData {
   date: string;
   isoDate: string;
@@ -44,6 +52,11 @@ async function loadLatestDataFiles() {
     .sort()
     .pop();
     
+  const ukraineDailyFile = ukraineFiles
+    .filter(f => f.startsWith('daily-raw_') && f.endsWith('.json'))
+    .sort()
+    .pop();
+    
   // Find latest Russia monthly data
   const russiaDir = path.join(dataDir, 'russia');
   const russiaFiles = await fs.readdir(russiaDir);
@@ -56,12 +69,19 @@ async function loadLatestDataFiles() {
     .filter(f => f.startsWith('weekly_') && f.endsWith('.json'))
     .sort()
     .pop();
+    
+  const russiaDailyFile = russiaFiles
+    .filter(f => f.startsWith('daily_') && f.endsWith('.json'))
+    .sort()
+    .pop();
 
   console.log('Loading data files:', {
     ukraineMonthly: ukraineMonthlyFile,
     ukraineWeekly: ukraineWeeklyFile,
+    ukraineDaily: ukraineDailyFile,
     russiaMonthly: russiaMonthlyFile,
-    russiaWeekly: russiaWeeklyFile
+    russiaWeekly: russiaWeeklyFile,
+    russiaDaily: russiaDailyFile
   });
 
   // Load the data
@@ -72,6 +92,10 @@ async function loadLatestDataFiles() {
   const ukraineWeeklyData: WeeklyData = ukraineWeeklyFile
     ? JSON.parse(await fs.readFile(path.join(ukraineDir, ukraineWeeklyFile), 'utf8'))
     : {};
+    
+  const ukraineDailyData: DailyData = ukraineDailyFile
+    ? JSON.parse(await fs.readFile(path.join(ukraineDir, ukraineDailyFile), 'utf8'))
+    : {};
 
   const russiaMonthlyData: MonthlyData = russiaMonthlyFile
     ? JSON.parse(await fs.readFile(path.join(russiaDir, russiaMonthlyFile), 'utf8'))
@@ -80,12 +104,18 @@ async function loadLatestDataFiles() {
   const russiaWeeklyData: WeeklyData = russiaWeeklyFile
     ? JSON.parse(await fs.readFile(path.join(russiaDir, russiaWeeklyFile), 'utf8'))
     : {};
+    
+  const russiaDailyData: DailyData = russiaDailyFile
+    ? JSON.parse(await fs.readFile(path.join(russiaDir, russiaDailyFile), 'utf8'))
+    : {};
 
   return {
     ukraineMonthly: ukraineMonthlyData,
     ukraineWeekly: ukraineWeeklyData,
+    ukraineDaily: ukraineDailyData,
     russiaMonthly: russiaMonthlyData,
-    russiaWeekly: russiaWeeklyData
+    russiaWeekly: russiaWeeklyData,
+    russiaDaily: russiaDailyData
   };
 }
 
@@ -235,6 +265,68 @@ function processWeeklyData(ukraineData: WeeklyData, russiaData: WeeklyData): Cha
   return finalData;
 }
 
+function processDailyData(ukraineDaily: DailyData, russiaDaily: DailyData): ChartData[] {
+  const dataMap: { [key: string]: ChartData } = {};
+  
+  // Process Ukraine daily data
+  Object.entries(ukraineDaily).forEach(([dateKey, item]) => {
+    dataMap[dateKey] = {
+      date: dateKey,
+      isoDate: dateKey,
+      ukraineTotal: item.total || 0,
+      ukraineDeaths: item.deaths || 0,
+      ukraineMissing: item.missing || 0,
+      ukraineTotalCumulative: 0,
+      russiaDeaths: 0,
+      russiaTotalCumulative: 0
+    };
+  });
+  
+  // Process Russia daily data
+  Object.entries(russiaDaily).forEach(([dateKey, item]) => {
+    if (!dataMap[dateKey]) {
+      dataMap[dateKey] = {
+        date: dateKey,
+        isoDate: dateKey,
+        ukraineTotal: 0,
+        ukraineDeaths: 0,
+        ukraineMissing: 0,
+        ukraineTotalCumulative: 0,
+        russiaDeaths: 0,
+        russiaTotalCumulative: 0
+      };
+    }
+    
+    dataMap[dateKey].russiaDeaths = item.deaths || item.total || 0;
+  });
+  
+  // Convert to array and sort
+  const processedData = Object.values(dataMap);
+  
+  // Filter out current day and future days
+  const now = new Date();
+  const today = now.toISOString().split('T')[0];
+  
+  const filtered = processedData.filter(p => p.date < today);
+  
+  const sortedData = filtered.sort((a, b) => a.date.localeCompare(b.date));
+  
+  // Calculate cumulative totals
+  let ukraineTotalCum = 0;
+  let russiaTotalCum = 0;
+  const finalData = sortedData.map(item => {
+    ukraineTotalCum += item.ukraineTotal;
+    russiaTotalCum += item.russiaDeaths;
+    return {
+      ...item,
+      ukraineTotalCumulative: ukraineTotalCum,
+      russiaTotalCumulative: russiaTotalCum
+    };
+  });
+  
+  return finalData;
+}
+
 async function generateHardcodedChartData() {
   try {
     console.log('🔄 Generating hardcoded chart data...');
@@ -243,10 +335,14 @@ async function generateHardcodedChartData() {
     
     const monthlyChartData = processMonthlyData(data.ukraineMonthly, data.russiaMonthly);
     const weeklyChartData = processWeeklyData(data.ukraineWeekly, data.russiaWeekly);
+    const dailyChartData = processDailyData(data.ukraineDaily, data.russiaDaily);
     
     console.log(`📊 Generated chart data:`, {
+      dailyDataPoints: dailyChartData.length,
       monthlyDataPoints: monthlyChartData.length,
       weeklyDataPoints: weeklyChartData.length,
+      dailyRange: dailyChartData.length > 0 ? 
+        `${dailyChartData[0]?.date} to ${dailyChartData[dailyChartData.length - 1]?.date}` : 'No data',
       monthlyRange: monthlyChartData.length > 0 ? 
         `${monthlyChartData[0]?.date} to ${monthlyChartData[monthlyChartData.length - 1]?.date}` : 'No data',
       weeklyRange: weeklyChartData.length > 0 ?
@@ -254,6 +350,7 @@ async function generateHardcodedChartData() {
     });
     
     const hardcodedData = {
+      daily: dailyChartData,
       monthly: monthlyChartData,
       weekly: weeklyChartData,
       lastUpdated: new Date().toISOString()
@@ -281,6 +378,7 @@ export interface ChartData {
 }
 
 export interface HardcodedChartData {
+  daily: ChartData[];
   monthly: ChartData[];
   weekly: ChartData[];
   lastUpdated: string;

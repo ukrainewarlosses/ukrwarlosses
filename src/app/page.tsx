@@ -6,8 +6,7 @@ import StatsCard from '@/components/StatsCard';
 import AdBanner from '@/components/AdBanner';
 import VideoCard from '@/components/VideoCard';
 import SourceCard from '@/components/SourceCard';
-import Chart from '@/components/Chart';
-import ChartMobileWrapper from '@/components/ChartMobileWrapper';
+import ChartEnhanced from '@/components/ChartEnhanced';
 import { YouTubeEmbed } from '@/types';
 import { hardcodedYouTubeData } from '@/data/hardcoded-youtube-data';
 import { hardcodedCasualtyData } from '@/data/hardcoded-casualty-totals';
@@ -174,15 +173,7 @@ export default function HomePage() {
             📈 Personnel Casualty Trends Over Time
           </h2>
           <div className="w-full overflow-x-auto">
-            <ChartMobileWrapper 
-              currentStats={{
-                ukraineTotal: data.ukraine.total_losses,
-                russiaTotal: data.russia.total_losses,
-                lastUpdated: data.lastUpdated
-              }}
-            >
-              <Chart />
-            </ChartMobileWrapper>
+            <ChartEnhanced />
           </div>
         </section>
 

@@ -417,7 +417,7 @@ export default function ChartEnhanced() {
             }
             
             // Remove duplicates and sort
-            const uniqueIndices = [...new Set(labelIndices)].sort((a, b) => a - b);
+            const uniqueIndices = Array.from(new Set(labelIndices)).sort((a, b) => a - b);
             
             return uniqueIndices.map((index) => {
               const d = data[index];

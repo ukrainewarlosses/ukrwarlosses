@@ -1,5 +1,7 @@
-# Cache files only (keep src/data for hardcoded imports)
+# Cache files and raw data (keep only hardcoded summaries)
 cache/
+src/data/ukraine/
+src/data/russia/
 
 # Development and build artifacts
 .next/

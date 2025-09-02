@@ -138,6 +138,18 @@ export default function ChartEnhanced() {
     const [touchStartX, setTouchStartX] = useState<number | null>(null);
     const [touchCurrentX, setTouchCurrentX] = useState<number | null>(null);
     const [isSelecting, setIsSelecting] = useState(false);
+    
+    // Touch tooltip and range selection states
+    const [touchTooltip, setTouchTooltip] = useState<{
+      x: number;
+      y: number;
+      data: ChartData;
+      visible: boolean;
+    } | null>(null);
+    const [rangeStartIndex, setRangeStartIndex] = useState<number | null>(null);
+    const [rangeEndIndex, setRangeEndIndex] = useState<number | null>(null);
+    const [isSettingRange, setIsSettingRange] = useState(false);
+    const [currentHoverIndex, setCurrentHoverIndex] = useState<number | null>(null);
 
     useEffect(() => {
       const updateWidth = () => {
@@ -176,7 +188,7 @@ export default function ChartEnhanced() {
       return Math.max(0, Math.min(xMax, index));
     };
 
-    // Touch event handlers
+    // Touch event handlers - like desktop hover with buttons
     const handleTouchStart = (e: React.TouchEvent<SVGSVGElement>) => {
       e.preventDefault(); // Prevent scrolling
       const touch = e.touches[0];
@@ -186,70 +198,97 @@ export default function ChartEnhanced() {
       const x = touch.clientX - rect.left;
       
       if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
-        setTouchStartX(x);
-        setTouchCurrentX(x);
-        setIsSelecting(true);
+        const touchIndex = xToIndex(x);
+        const touchedData = data[touchIndex];
+        
+        // Show tooltip with touched data
+        setTouchTooltip({
+          x: touch.clientX,
+          y: touch.clientY,
+          data: touchedData,
+          visible: true
+        });
+        
+        // Update hover index for preview line
+        setCurrentHoverIndex(touchIndex);
+        
+        // If in range setting mode, update end point
+        if (isSettingRange && rangeStartIndex !== null) {
+          setRangeEndIndex(touchIndex);
+        }
       }
     };
 
     const handleTouchMove = (e: React.TouchEvent<SVGSVGElement>) => {
       e.preventDefault(); // Prevent scrolling
-      if (!isSelecting || touchStartX === null) return;
       
       const touch = e.touches[0];
       const rect = svgRef.current?.getBoundingClientRect();
       if (!rect) return;
       
       const x = touch.clientX - rect.left;
-      const clampedX = Math.max(margin.left, Math.min(margin.left + innerWidth - X_PAD, x));
-      setTouchCurrentX(clampedX);
+      
+      if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
+        const touchIndex = xToIndex(x);
+        const touchedData = data[touchIndex];
+        
+        // Always update tooltip position and data
+        setTouchTooltip({
+          x: touch.clientX,
+          y: touch.clientY,
+          data: touchedData,
+          visible: true
+        });
+        
+        // Update hover index for preview line
+        setCurrentHoverIndex(touchIndex);
+        
+        // If in range setting mode, update end point
+        if (isSettingRange && rangeStartIndex !== null) {
+          setRangeEndIndex(touchIndex);
+        }
+      }
     };
 
     const handleTouchEnd = (e: React.TouchEvent<SVGSVGElement>) => {
       e.preventDefault();
       
-      if (isSelecting && touchStartX !== null && touchCurrentX !== null) {
-        const startIndex = xToIndex(touchStartX);
-        const endIndex = xToIndex(touchCurrentX);
-        
-        const start = Math.min(startIndex, endIndex);
-        const end = Math.max(startIndex, endIndex);
-        
-        const selectedData = data.slice(start, end + 1);
-        
-        const ukraineTotal = selectedData.reduce((sum: number, d: ChartData) => 
-          sum + (showUkraine ? d.ukraineTotal : 0), 0);
-        const russiaTotal = selectedData.reduce((sum: number, d: ChartData) => 
-          sum + (showRussia ? d.russiaDeaths : 0), 0);
-        
-        setSelectedRange({
-          start: data[start].date,
-          end: data[end].date,
-          data: selectedData,
-          ukraineTotal,
-          russiaTotal
-        });
-      }
+      // Hide tooltip after a delay
+      setTimeout(() => {
+        setTouchTooltip(null);
+      }, 1500);
       
-      // Reset selection state
-      setIsSelecting(false);
-      setTouchStartX(null);
-      setTouchCurrentX(null);
+      // Keep hover line visible - don't clear currentHoverIndex
+      // It will be cleared when user touches elsewhere or clicks "Set Range Start"
     };
 
-    // Calculate selection rectangle
+    // Get hover line (like desktop)
+    const getHoverLine = () => {
+      if (currentHoverIndex !== null && !isSettingRange) {
+        return {
+          x: xScale(currentHoverIndex),
+          y: margin.top,
+          height: innerHeight
+        };
+      }
+      return null;
+    };
+
+    // Get selection rectangle (range mode)
     const getSelectionRect = () => {
-      if (!isSelecting || touchStartX === null || touchCurrentX === null) return null;
-      
-      const x1 = Math.min(touchStartX, touchCurrentX);
-      const x2 = Math.max(touchStartX, touchCurrentX);
-      
-      return {
-        x: x1,
-        width: x2 - x1,
-        y: margin.top,
-        height: innerHeight
-      };
+      if (isSettingRange && rangeStartIndex !== null && rangeEndIndex !== null) {
+        const x1 = xScale(Math.min(rangeStartIndex, rangeEndIndex));
+        const x2 = xScale(Math.max(rangeStartIndex, rangeEndIndex));
+        const width = Math.max(x2 - x1, 2);
+        
+        return {
+          x: x1,
+          width: width,
+          y: margin.top,
+          height: innerHeight
+        };
+      }
+      return null;
     };
 
     const selectionRect = getSelectionRect();
@@ -283,7 +322,24 @@ export default function ChartEnhanced() {
             />
           ))}
 
-          {/* Selection area */}
+          {/* Hover line (like desktop) */}
+          {(() => {
+            const hoverLine = getHoverLine();
+            return hoverLine && (
+              <line
+                x1={hoverLine.x}
+                y1={hoverLine.y}
+                x2={hoverLine.x}
+                y2={hoverLine.y + hoverLine.height}
+                stroke="#d4a574"
+                strokeWidth="2"
+                strokeDasharray="4,2"
+                opacity="0.8"
+              />
+            );
+          })()}
+          
+          {/* Selection area (range mode) */}
           {selectionRect && (
             <rect
               x={selectionRect.x}
@@ -294,7 +350,7 @@ export default function ChartEnhanced() {
               fillOpacity="0.3"
               stroke="#d4a574"
               strokeWidth="2"
-              strokeDasharray="4,2"
+              strokeDasharray="6,3"
             />
           )}
 
@@ -333,6 +389,7 @@ export default function ChartEnhanced() {
               fill="none"
               stroke="#0057B7"
               strokeWidth="3"
+              strokeDasharray="6,4"
             />
           )}
 
@@ -345,6 +402,7 @@ export default function ChartEnhanced() {
               fill="none"
               stroke="#DA291C"
               strokeWidth="3"
+              strokeDasharray="6,4"
             />
           )}
 
@@ -405,9 +463,9 @@ export default function ChartEnhanced() {
 
           {/* X-axis labels */}
           {(() => {
-            // Generate up to 10 evenly spaced labels for mobile
-            const maxLabels = 10;
-            const step = Math.max(1, Math.floor(data.length / (maxLabels - 1)));
+            // Dynamic label count based on data size
+            const dataLength = data.length;
+            const maxLabels = dataLength <= 15 ? dataLength : dataLength <= 30 ? 8 : 10;
             const labelIndices = [];
             
             // Generate evenly spaced indices, avoiding first/last overlap issues
@@ -424,14 +482,35 @@ export default function ChartEnhanced() {
               let label = '';
               
               if (timePeriod === 'daily') {
-                // Convert YYYY-MM-DD to "MMM YYYY"
-                const date = new Date(d.date);
-                label = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                if (dataLength <= 30) {
+                  // Show full dates for small selections
+                  const date = new Date(d.date);
+                  label = date.toLocaleDateString('en-US', { 
+                    month: 'short', 
+                    day: 'numeric',
+                    year: dataLength <= 15 ? 'numeric' : undefined 
+                  });
+                } else {
+                  // Show month/year for larger selections
+                  const date = new Date(d.date);
+                  label = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                }
               } else if (timePeriod === 'weekly') {
-                // Convert YYYY-WNN to "MMM YYYY" (use first day of week)
-                const [year, week] = d.date.split('-W');
-                const date = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
-                label = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                if (dataLength <= 20) {
+                  // Show week start dates for small selections
+                  const [year, week] = d.date.split('-W');
+                  const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                  label = weekStart.toLocaleDateString('en-US', { 
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                  });
+                } else {
+                  // Show month/year for larger selections
+                  const [year, week] = d.date.split('-W');
+                  const date = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                  label = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                }
               } else {
                 // Monthly: "MMM YYYY" format already
                 label = d.date;
@@ -452,15 +531,163 @@ export default function ChartEnhanced() {
               );
             });
           })()}
+          
+          {/* Range indicators */}
+          {rangeStartIndex !== null && (
+            <circle
+              cx={xScale(rangeStartIndex)}
+              cy={margin.top + innerHeight / 2}
+              r="6"
+              fill="#d4a574"
+              stroke="#ffffff"
+              strokeWidth="2"
+            />
+          )}
+          {rangeEndIndex !== null && rangeStartIndex !== null && rangeEndIndex !== rangeStartIndex && (
+            <>
+              <circle
+                cx={xScale(rangeEndIndex)}
+                cy={margin.top + innerHeight / 2}
+                r="6"
+                fill="#d4a574"
+                stroke="#ffffff"
+                strokeWidth="2"
+              />
+              {/* Range connection line */}
+              <line
+                x1={xScale(Math.min(rangeStartIndex, rangeEndIndex))}
+                y1={margin.top + innerHeight / 2}
+                x2={xScale(Math.max(rangeStartIndex, rangeEndIndex))}
+                y2={margin.top + innerHeight / 2}
+                stroke="#d4a574"
+                strokeWidth="3"
+                opacity="0.7"
+              />
+            </>
+          )}
         </svg>
         
-        {/* Visual feedback when selecting */}
-        {isSelecting && (
-          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 
-                          bg-primary text-background px-3 py-1 rounded-full text-xs">
-            Selecting range...
+        {/* Touch tooltip */}
+        {touchTooltip && touchTooltip.visible && (
+          <div 
+            className="fixed z-50 bg-card-bg border border-border-color rounded-lg shadow-lg p-3 pointer-events-none"
+            style={{
+              left: Math.min(touchTooltip.x - 100, window.innerWidth - 220),
+              top: Math.max(touchTooltip.y - 120, 10),
+              maxWidth: '200px'
+            }}
+          >
+            <p className="text-text-primary font-medium text-xs mb-2">
+              {timePeriod === 'daily' ? 'Date' : timePeriod === 'weekly' ? 'Week' : 'Month'}: {touchTooltip.data.date}
+            </p>
+            
+            <div className="space-y-1 text-xs">
+              {showUkraine && (
+                <div>
+                  <p className="font-medium" style={{ color: '#0057B7' }}>Ukrainian Losses</p>
+                  <p className="text-text-muted">
+                    Period: {touchTooltip.data.ukraineTotal?.toLocaleString() || 0}
+                  </p>
+                  <p className="text-text-muted">
+                    Cumulative: {touchTooltip.data.ukraineTotalCumulative?.toLocaleString() || 0}
+                  </p>
+                </div>
+              )}
+              
+              {showRussia && (
+                <div>
+                  <p className="font-medium" style={{ color: '#DA291C' }}>Russian Losses</p>
+                  <p className="text-text-muted">
+                    Period: {touchTooltip.data.russiaDeaths?.toLocaleString() || 0}
+                  </p>
+                  <p className="text-text-muted">
+                    Cumulative: {touchTooltip.data.russiaTotalCumulative?.toLocaleString() || 0}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         )}
+        
+        {/* Range selection controls - proper workflow */}
+        <div className="mt-3 flex flex-col items-center gap-2">
+          {!isSettingRange ? (
+            <button
+              onClick={() => {
+                if (currentHoverIndex !== null) {
+                  // Fix the current hover position as start point
+                  setRangeStartIndex(currentHoverIndex);
+                  setRangeEndIndex(currentHoverIndex);
+                  setIsSettingRange(true);
+                  // Clear hover line since we're now in range mode
+                  setCurrentHoverIndex(null);
+                }
+              }}
+              disabled={currentHoverIndex === null}
+              className="px-3 py-1.5 bg-primary text-background rounded text-xs font-medium hover:bg-primary/80 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
+            >
+              Set Range Start
+            </button>
+          ) : (
+            <div className="flex flex-col items-center gap-2">
+              {/* Show current selection info */}
+              <div className="text-center">
+                <p className="text-xs text-text-muted mb-2">
+                  Range: {data[rangeStartIndex!]?.date} to {data[rangeEndIndex!]?.date}
+                </p>
+                <p className="text-xs text-primary font-medium">
+                  Move finger to adjust end point, then confirm below
+                </p>
+              </div>
+              
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    const start = Math.min(rangeStartIndex!, rangeEndIndex!);
+                    const end = Math.max(rangeStartIndex!, rangeEndIndex!);
+                    const selectedData = data.slice(start, end + 1);
+                    
+                    const ukraineTotal = selectedData.reduce((sum: number, d: ChartData) => 
+                      sum + (showUkraine ? d.ukraineTotal : 0), 0);
+                    const russiaTotal = selectedData.reduce((sum: number, d: ChartData) => 
+                      sum + (showRussia ? d.russiaDeaths : 0), 0);
+                    
+                    setSelectedRange({
+                      start: data[start].date,
+                      end: data[end].date,
+                      data: selectedData,
+                      ukraineTotal,
+                      russiaTotal
+                    });
+                    
+                    // Reset range selection mode
+                    setIsSettingRange(false);
+                    setRangeStartIndex(null);
+                    setRangeEndIndex(null);
+                    setCurrentHoverIndex(null);
+                  }}
+                  className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white rounded text-xs font-medium transition-colors"
+                >
+                  Set Range End
+                </button>
+                
+                <button
+                  onClick={() => {
+                    setIsSettingRange(false);
+                    setRangeStartIndex(null);
+                    setRangeEndIndex(null);
+                    setCurrentHoverIndex(null);
+                  }}
+                  className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+        
+
       </div>
     );
   };
@@ -469,43 +696,57 @@ export default function ChartEnhanced() {
   const DesktopChart = () => {
     const [refAreaLeft, setRefAreaLeft] = useState<string>('');
     const [refAreaRight, setRefAreaRight] = useState<string>('');
+    const [isSelectingDesktop, setIsSelectingDesktop] = useState<boolean>(false);
 
-    // Range selection handlers for desktop
-    const handleMouseDown = (e: any) => {
+    // Click-based range selection for desktop
+    const handleChartClick = (e: any) => {
       if (e && e.activeLabel) {
-        setRefAreaLeft(e.activeLabel);
-        setRefAreaRight('');
+        if (!isSelectingDesktop) {
+          // First click - start selection
+          setRefAreaLeft(e.activeLabel);
+          setRefAreaRight('');
+          setIsSelectingDesktop(true);
+        } else {
+          // Second click - end selection
+          const left = refAreaLeft < e.activeLabel ? refAreaLeft : e.activeLabel;
+          const right = refAreaLeft > e.activeLabel ? refAreaLeft : e.activeLabel;
+          
+          const filteredData = chartData.filter(
+            item => item.date >= left && item.date <= right
+          );
+          
+          const ukraineTotal = filteredData.reduce((sum: number, d: ChartData) => 
+            sum + (showUkraine ? d.ukraineTotal : 0), 0);
+          const russiaTotal = filteredData.reduce((sum: number, d: ChartData) => 
+            sum + (showRussia ? d.russiaDeaths : 0), 0);
+          
+          setSelectedRange({
+            start: left,
+            end: right,
+            data: filteredData,
+            ukraineTotal,
+            russiaTotal
+          });
+          
+          // Reset selection state
+          setRefAreaLeft('');
+          setRefAreaRight('');
+          setIsSelectingDesktop(false);
+        }
       }
     };
 
     const handleMouseMove = (e: any) => {
-      if (refAreaLeft && e && e.activeLabel) {
+      // Only show preview during selection mode
+      if (isSelectingDesktop && refAreaLeft && e && e.activeLabel) {
         setRefAreaRight(e.activeLabel);
       }
     };
 
-    const handleMouseUp = () => {
-      if (refAreaLeft && refAreaRight) {
-        const left = refAreaLeft < refAreaRight ? refAreaLeft : refAreaRight;
-        const right = refAreaLeft > refAreaRight ? refAreaLeft : refAreaRight;
-        
-        const filteredData = chartData.filter(
-          item => item.date >= left && item.date <= right
-        );
-        
-        const ukraineTotal = filteredData.reduce((sum, d) => sum + d.ukraineTotal, 0);
-        const russiaTotal = filteredData.reduce((sum, d) => sum + d.russiaDeaths, 0);
-        
-        setSelectedRange({
-          start: left,
-          end: right,
-          data: filteredData,
-          ukraineTotal,
-          russiaTotal
-        });
-      }
+    const cancelSelection = () => {
       setRefAreaLeft('');
       setRefAreaRight('');
+      setIsSelectingDesktop(false);
     };
 
     const CustomTooltip = ({ active, payload, label }: any) => {
@@ -553,20 +794,33 @@ export default function ChartEnhanced() {
     const displayData = selectedRange ? selectedRange.data : chartData;
 
     return (
-      <ResponsiveContainer width="100%" height={400}>
-        <LineChart 
-          data={displayData}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          margin={{ 
-            top: 20, 
-            right: 80, 
-            left: 60, 
-            bottom: 40 
-          }}
-        >
+      <div className="relative">
+        {/* Desktop selection status */}
+        {isSelectingDesktop && (
+          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10
+                          bg-primary text-background px-3 py-1 rounded-full text-xs font-medium">
+            Click on chart to set end point
+            <button 
+              onClick={cancelSelection}
+              className="ml-2 text-background/80 hover:text-background"
+            >
+              ✕
+            </button>
+          </div>
+        )}
+        
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart 
+            data={displayData}
+            onClick={handleChartClick}
+            onMouseMove={handleMouseMove}
+            margin={{ 
+              top: 20, 
+              right: 80, 
+              left: 60, 
+              bottom: 40 
+            }}
+          >
         <CartesianGrid strokeDasharray="3 3" stroke="#3d3d3d" />
         
         {/* X-Axis */}
@@ -574,21 +828,51 @@ export default function ChartEnhanced() {
           dataKey="date" 
           stroke="#a0aec0" 
           fontSize={12}
-          interval={Math.max(0, Math.floor(displayData.length / 12))}
+          interval={(() => {
+            // Dynamic interval based on data size and selection
+            const dataLength = displayData.length;
+            if (dataLength <= 15) return 0; // Show all labels for small selections
+            if (dataLength <= 30) return 1; // Show every 2nd label
+            if (dataLength <= 60) return Math.floor(dataLength / 15); // Show ~15 labels
+            return Math.floor(dataLength / 12); // Show ~12 labels for large selections
+          })()}
           domain={['dataMin', 'dataMax']}
           scale="point"
           tickFormatter={(value) => {
+            const dataLength = displayData.length;
+            
             if (timePeriod === 'daily') {
-              // Convert YYYY-MM-DD to "MMM YYYY"
-              const date = new Date(value);
-              return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+              if (dataLength <= 30) {
+                // Show full dates for small selections (30 days or less)
+                const date = new Date(value);
+                return date.toLocaleDateString('en-US', { 
+                  month: 'short', 
+                  day: 'numeric',
+                  year: dataLength <= 15 ? 'numeric' : undefined 
+                });
+              } else {
+                // Show month/year for larger selections
+                const date = new Date(value);
+                return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+              }
             } else if (timePeriod === 'weekly') {
-              // Convert YYYY-WNN to "MMM YYYY"
-              const [year, week] = value.split('-W');
-              const date = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
-              return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+              if (dataLength <= 20) {
+                // Show week start dates for small selections (20 weeks or less)
+                const [year, week] = value.split('-W');
+                const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                return weekStart.toLocaleDateString('en-US', { 
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric'
+                });
+              } else {
+                // Show month/year for larger selections
+                const [year, week] = value.split('-W');
+                const date = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+              }
             } else {
-              // Monthly: already "MMM YYYY" format
+              // Monthly: always show "MMM YYYY"
               return value;
             }
           }}
@@ -677,7 +961,7 @@ export default function ChartEnhanced() {
           />
         )}
         
-        {/* Cumulative Lines (Thicker, Always Visible) */}
+        {/* Cumulative Lines (Thicker, Dotted) */}
         {showUkraine && (
           <Line 
             yAxisId="cumulative"
@@ -685,6 +969,7 @@ export default function ChartEnhanced() {
             dataKey="ukraineTotalCumulative" 
             stroke="#0057B7" 
             strokeWidth={3}
+            strokeDasharray="6 4"
             name="Ukraine Cumulative"
             dot={false}
             activeDot={{ r: 6 }}
@@ -698,13 +983,15 @@ export default function ChartEnhanced() {
             dataKey="russiaTotalCumulative" 
             stroke="#DA291C" 
             strokeWidth={3}
+            strokeDasharray="6 4"
             name="Russia Cumulative"
             dot={false}
             activeDot={{ r: 6 }}
           />
         )}
         </LineChart>
-      </ResponsiveContainer>
+        </ResponsiveContainer>
+      </div>
     );
   };
 
@@ -784,7 +1071,7 @@ export default function ChartEnhanced() {
 
       {/* Instructions */}
       <p className="text-center text-text-muted text-xs mb-2">
-        {isMobile ? 'Touch and drag on chart or use ' : 'Click and drag on chart or use '}
+        {isMobile ? 'Use "Set Range Start" button, then tap twice on chart (start → end) or use ' : 'Click twice on chart (start → end) or use '}
         {timePeriod === 'daily' ? 'date' : timePeriod === 'weekly' ? 'week' : 'month'} 
         {' inputs below to select a range'}
       </p>
@@ -941,7 +1228,7 @@ export default function ChartEnhanced() {
               <span className="text-text-muted">Ukraine Period</span>
             </div>
             <div className="flex items-center gap-1">
-              <div className="w-3 h-1 bg-[#0057B7]"></div>
+              <div className="w-3 h-1 border-t-2 border-dashed border-[#0057B7]" style={{ background: 'transparent' }}></div>
               <span className="text-text-muted">Ukraine Cumulative</span>
             </div>
           </>
@@ -953,7 +1240,7 @@ export default function ChartEnhanced() {
               <span className="text-text-muted">Russia Period</span>
             </div>
             <div className="flex items-center gap-1">
-              <div className="w-3 h-1 bg-[#DA291C]"></div>
+              <div className="w-3 h-1 border-t-2 border-dashed border-[#DA291C]" style={{ background: 'transparent' }}></div>
               <span className="text-text-muted">Russia Cumulative</span>
             </div>
           </>

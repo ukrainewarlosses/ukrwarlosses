@@ -578,7 +578,17 @@ export default function ChartEnhanced() {
             }}
           >
             <p className="text-text-primary font-medium text-xs mb-2">
-              {timePeriod === 'daily' ? 'Date' : timePeriod === 'weekly' ? 'Week' : 'Month'}: {touchTooltip.data.date}
+              {timePeriod === 'daily' ? `Date: ${touchTooltip.data.date}` : 
+               timePeriod === 'weekly' ? (() => {
+                 const [year, week] = touchTooltip.data.date.split('-W');
+                 const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                 return `Week of ${weekStart.toLocaleDateString('en-US', { 
+                   month: 'long', 
+                   day: 'numeric', 
+                   year: 'numeric' 
+                 })}`;
+               })() : 
+               `Month: ${touchTooltip.data.date}`}
             </p>
             
             <div className="space-y-1 text-xs">
@@ -633,7 +643,25 @@ export default function ChartEnhanced() {
               {/* Show current selection info */}
               <div className="text-center">
                 <p className="text-xs text-text-muted mb-2">
-                  Range: {data[rangeStartIndex!]?.date} to {data[rangeEndIndex!]?.date}
+                  Range: {(() => {
+                    const startDate = data[rangeStartIndex!]?.date;
+                    const endDate = data[rangeEndIndex!]?.date;
+                    
+                    if (timePeriod === 'weekly') {
+                      const formatWeekDate = (dateStr: string) => {
+                        const [year, week] = dateStr.split('-W');
+                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                        return `Week of ${weekStart.toLocaleDateString('en-US', { 
+                          month: 'long', 
+                          day: 'numeric', 
+                          year: 'numeric' 
+                        })}`;
+                      };
+                      return `${formatWeekDate(startDate)} to ${formatWeekDate(endDate)}`;
+                    } else {
+                      return `${startDate} to ${endDate}`;
+                    }
+                  })()}
                 </p>
                 <p className="text-xs text-primary font-medium">
                   Move finger to adjust end point, then confirm below
@@ -755,9 +783,19 @@ export default function ChartEnhanced() {
         
         return (
           <div className="bg-card-bg border border-border-color rounded-lg shadow-lg p-4">
-            <p className="text-text-primary font-medium mb-3">
-              {timePeriod === 'daily' ? 'Date' : timePeriod === 'weekly' ? 'Week' : 'Month'}: {label}
-            </p>
+                      <p className="text-text-primary font-medium mb-3">
+            {timePeriod === 'daily' ? `Date: ${label}` : 
+             timePeriod === 'weekly' ? (() => {
+               const [year, week] = label.split('-W');
+               const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+               return `Week of ${weekStart.toLocaleDateString('en-US', { 
+                 month: 'long', 
+                 day: 'numeric', 
+                 year: 'numeric' 
+               })}`;
+             })() : 
+             `Month: ${label}`}
+          </p>
             
             <div className="space-y-2">
               <div>
@@ -1086,7 +1124,21 @@ export default function ChartEnhanced() {
         <div className="mt-4 p-3 bg-card-bg rounded-lg border border-border-color">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 gap-3">
             <div>
-              <p className="text-primary font-medium text-sm mb-2">Selected Range Analysis</p>
+              <p className="text-primary font-medium text-sm mb-1">Selected Range Analysis</p>
+              <p className="text-text-muted text-xs mb-2">
+                {timePeriod === 'weekly' ? (() => {
+                  const formatWeekDate = (dateStr: string) => {
+                    const [year, week] = dateStr.split('-W');
+                    const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                    return `Week of ${weekStart.toLocaleDateString('en-US', { 
+                      month: 'long', 
+                      day: 'numeric', 
+                      year: 'numeric' 
+                    })}`;
+                  };
+                  return `${formatWeekDate(selectedRange.start)} to ${formatWeekDate(selectedRange.end)}`;
+                })() : `${selectedRange.start} to ${selectedRange.end}`}
+              </p>
               
               {/* Manual Period Input */}
               {timePeriod === 'daily' && (
@@ -1120,25 +1172,49 @@ export default function ChartEnhanced() {
                 <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
                   <div className="flex items-center gap-2">
                     <label className="text-text-muted text-xs">From:</label>
-                    <input
-                      type="week"
+                    <select
                       value={selectedRange.start}
-                      min={chartData[0]?.date || "2022-W09"}
-                      max={chartData[chartData.length - 1]?.date || "2025-W52"}
                       onChange={(e) => handleManualDateChange(e.target.value, selectedRange.end)}
                       className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
-                    />
+                    >
+                      {chartData.map((item) => {
+                        const [year, week] = item.date.split('-W');
+                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                        const readableDate = `Week of ${weekStart.toLocaleDateString('en-US', { 
+                          month: 'long', 
+                          day: 'numeric', 
+                          year: 'numeric' 
+                        })}`;
+                        return (
+                          <option key={item.date} value={item.date}>
+                            {readableDate}
+                          </option>
+                        );
+                      })}
+                    </select>
                   </div>
                   <div className="flex items-center gap-2">
                     <label className="text-text-muted text-xs">To:</label>
-                    <input
-                      type="week"
+                    <select
                       value={selectedRange.end}
-                      min={chartData[0]?.date || "2022-W09"}
-                      max={chartData[chartData.length - 1]?.date || "2025-W52"}
                       onChange={(e) => handleManualDateChange(selectedRange.start, e.target.value)}
                       className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
-                    />
+                    >
+                      {chartData.map((item) => {
+                        const [year, week] = item.date.split('-W');
+                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                        const readableDate = `Week of ${weekStart.toLocaleDateString('en-US', { 
+                          month: 'long', 
+                          day: 'numeric', 
+                          year: 'numeric' 
+                        })}`;
+                        return (
+                          <option key={item.date} value={item.date}>
+                            {readableDate}
+                          </option>
+                        );
+                      })}
+                    </select>
                   </div>
                 </div>
               )}

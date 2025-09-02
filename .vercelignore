@@ -1,5 +1,4 @@
-# Data files - these should be loaded from Vercel Blob instead
-src/data/
+# Cache files only (keep src/data for hardcoded imports)
 cache/
 
 # Development and build artifacts

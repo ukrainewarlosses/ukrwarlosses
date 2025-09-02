@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { 
   LineChart, Line, XAxis, YAxis, CartesianGrid, 
   Tooltip, Legend, ResponsiveContainer, ReferenceArea 
@@ -164,86 +164,90 @@ export default function ChartEnhanced() {
     const yMaxPeriod = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotal, d.russiaDeaths)));
     const yMaxCum = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotalCumulative, d.russiaTotalCumulative)));
 
-    // Add aggressive right-side padding to prevent clipping
-    const X_PAD = 20; // More pixels to ensure no clipping
+    // Reduce padding now that we have right Y-axis
+    const X_PAD = 8; // Minimal padding for right Y-axis labels
     const xScale = (index: number) => margin.left + (index / xMax) * (innerWidth - X_PAD);
     const yScalePeriod = (value: number) => margin.top + innerHeight - (value / yMaxPeriod) * innerHeight;
     const yScaleCum = (value: number) => margin.top + innerHeight - (value / yMaxCum) * innerHeight;
 
-    // Touch handlers for range selection
-    const handleTouchStart = (e: TouchEvent) => {
-      e.preventDefault(); // Prevent scrolling
+    // Stabilized touch handlers with useCallback
+    const handleTouchStart = useCallback((e: React.TouchEvent) => {
+      e.stopPropagation();
       const touch = e.touches[0];
-      const rect = (e.target as Element).getBoundingClientRect();
+      const rect = e.currentTarget.getBoundingClientRect();
       const x = touch.clientX - rect.left;
       
-      // Only start selection if touch is within the chart area (between left and right Y-axes)
+      console.log('Touch start at x:', x, 'chart area:', margin.left, 'to', margin.left + innerWidth - X_PAD);
+      
+      // Only start selection if touch is within the chart area
       if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
         const index = Math.round(((x - margin.left) / (innerWidth - X_PAD)) * xMax);
-        setDragStart(Math.max(0, Math.min(xMax, index)));
-        setDragEnd(null);
+        console.log('Starting drag at index:', index, 'of', xMax);
+        setDragStart(index);
+        setDragEnd(index); // Set initial end to same as start
         setIsDragging(true);
       }
-    };
+    }, [margin.left, innerWidth, X_PAD, xMax]);
 
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!isDragging || dragStart === null) return;
-      e.preventDefault(); // Prevent scrolling
+    const handleTouchMove = useCallback((e: React.TouchEvent) => {
+      e.stopPropagation();
+      if (!isDragging) return;
       
       const touch = e.touches[0];
-      const rect = (e.target as Element).getBoundingClientRect();
+      const rect = e.currentTarget.getBoundingClientRect();
       const x = touch.clientX - rect.left;
       
       if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
         const index = Math.round(((x - margin.left) / (innerWidth - X_PAD)) * xMax);
-        setDragEnd(Math.max(0, Math.min(xMax, index)));
+        const clampedIndex = Math.max(0, Math.min(xMax, index));
+        console.log('Moving to index:', clampedIndex);
+        setDragEnd(clampedIndex);
       }
-    };
+    }, [isDragging, margin.left, innerWidth, X_PAD, xMax]);
 
-    const handleTouchEnd = () => {
-      if (dragStart !== null && dragEnd !== null && dragStart !== dragEnd) {
+    const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+      e.stopPropagation();
+      console.log('Touch end - dragStart:', dragStart, 'dragEnd:', dragEnd, 'isDragging:', isDragging);
+      
+      if (isDragging && dragStart !== null && dragEnd !== null) {
         const start = Math.min(dragStart, dragEnd);
         const end = Math.max(dragStart, dragEnd);
-        const selectedData = data.slice(start, end + 1);
         
-        const ukraineTotal = selectedData.reduce((sum: number, d: ChartData) => sum + (showUkraine ? d.ukraineTotal : 0), 0);
-        const russiaTotal = selectedData.reduce((sum: number, d: ChartData) => sum + (showRussia ? d.russiaDeaths : 0), 0);
-        
-        setSelectedRange({
-          start: data[start].date,
-          end: data[end].date,
-          data: selectedData,
-          ukraineTotal,
-          russiaTotal
-        });
+        // Allow single point selection or range selection
+        if (start <= end) {
+          const selectedData = data.slice(start, end + 1);
+          
+          console.log('Selected data:', selectedData.length, 'points from', data[start]?.date, 'to', data[end]?.date);
+          
+          const ukraineTotal = selectedData.reduce((sum: number, d: ChartData) => sum + (showUkraine ? d.ukraineTotal : 0), 0);
+          const russiaTotal = selectedData.reduce((sum: number, d: ChartData) => sum + (showRussia ? d.russiaDeaths : 0), 0);
+          
+          setSelectedRange({
+            start: data[start].date,
+            end: data[end].date,
+            data: selectedData,
+            ukraineTotal,
+            russiaTotal
+          });
+        }
       }
+      
+      // Always reset drag state
       setIsDragging(false);
       setDragStart(null);
       setDragEnd(null);
-    };
-
-    // Add event listeners with passive: false to allow preventDefault
-    useEffect(() => {
-      const svg = wrapperRef.current?.querySelector('svg');
-      if (!svg) return;
-
-      svg.addEventListener('touchstart', handleTouchStart, { passive: false });
-      svg.addEventListener('touchmove', handleTouchMove, { passive: false });
-      svg.addEventListener('touchend', handleTouchEnd, { passive: false });
-
-      return () => {
-        svg.removeEventListener('touchstart', handleTouchStart);
-        svg.removeEventListener('touchmove', handleTouchMove);
-        svg.removeEventListener('touchend', handleTouchEnd);
-      };
-    }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
+    }, [isDragging, dragStart, dragEnd, data, showUkraine, showRussia]);
 
     return (
       <div className="w-full" ref={wrapperRef}>
         <svg 
           width={width} 
           height={height}
-          className="touch-none w-full"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          className="w-full"
+          style={{ touchAction: 'none' }}
         >
           {/* Grid lines */}
           {[0, 1, 2, 3, 4, 5].map(i => (

@@ -131,15 +131,18 @@ export default function ChartEnhanced() {
 
   // Mobile-specific SVG rendering
   const MobileChart = () => {
-    // Measure the actual container width to prevent cutoff
-    const wrapperRef = useRef<HTMLDivElement | null>(null);
+    const svgRef = useRef<SVGSVGElement>(null);
     const [containerWidth, setContainerWidth] = useState<number>(0);
+    
+    // Track touch position instead of index for smoother interaction
+    const [touchStartX, setTouchStartX] = useState<number | null>(null);
+    const [touchCurrentX, setTouchCurrentX] = useState<number | null>(null);
+    const [isSelecting, setIsSelecting] = useState(false);
 
     useEffect(() => {
       const updateWidth = () => {
-        // Be very conservative with width to ensure no clipping
         const viewportWidth = window.innerWidth;
-        const safeWidth = Math.max(viewportWidth - 64, 280); // Even more conservative
+        const safeWidth = Math.max(viewportWidth - 64, 280);
         setContainerWidth(safeWidth);
       };
       updateWidth();
@@ -147,107 +150,125 @@ export default function ChartEnhanced() {
       return () => window.removeEventListener('resize', updateWidth);
     }, []);
 
-    const width = containerWidth; // Use very conservative width
-    const height = 350; // Slightly shorter for mobile
-    // Shift plot left and provide extra space on the right edge to prevent clipping
-    const margin = { top: 20, right: 32, bottom: 50, left: 18 } as const;
+    const width = containerWidth;
+    const height = 350;
+    const margin = { top: 20, right: 40, bottom: 55, left: 30 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
-    // Get data to display
     const data = selectedRange ? selectedRange.data : chartData;
     if (!data || data.length === 0) return null;
 
-    // Calculate scales
     const xMin = 0;
     const xMax = data.length - 1;
     const yMaxPeriod = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotal, d.russiaDeaths)));
     const yMaxCum = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotalCumulative, d.russiaTotalCumulative)));
 
-    // Reduce padding now that we have right Y-axis
-    const X_PAD = 8; // Minimal padding for right Y-axis labels
+    const X_PAD = 8;
     const xScale = (index: number) => margin.left + (index / xMax) * (innerWidth - X_PAD);
     const yScalePeriod = (value: number) => margin.top + innerHeight - (value / yMaxPeriod) * innerHeight;
     const yScaleCum = (value: number) => margin.top + innerHeight - (value / yMaxCum) * innerHeight;
 
-    // Stabilized touch handlers with useCallback
-    const handleTouchStart = useCallback((e: React.TouchEvent) => {
-      e.stopPropagation();
-      const touch = e.touches[0];
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = touch.clientX - rect.left;
-      
-      console.log('Touch start at x:', x, 'chart area:', margin.left, 'to', margin.left + innerWidth - X_PAD);
-      
-      // Only start selection if touch is within the chart area
-      if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
-        const index = Math.round(((x - margin.left) / (innerWidth - X_PAD)) * xMax);
-        console.log('Starting drag at index:', index, 'of', xMax);
-        setDragStart(index);
-        setDragEnd(index); // Set initial end to same as start
-        setIsDragging(true);
-      }
-    }, [margin.left, innerWidth, X_PAD, xMax]);
+    // Convert X position to data index
+    const xToIndex = (x: number) => {
+      const relativeX = x - margin.left;
+      const index = Math.round((relativeX / (innerWidth - X_PAD)) * xMax);
+      return Math.max(0, Math.min(xMax, index));
+    };
 
-    const handleTouchMove = useCallback((e: React.TouchEvent) => {
-      e.stopPropagation();
-      if (!isDragging) return;
-      
+    // Touch event handlers
+    const handleTouchStart = (e: React.TouchEvent<SVGSVGElement>) => {
+      e.preventDefault(); // Prevent scrolling
       const touch = e.touches[0];
-      const rect = e.currentTarget.getBoundingClientRect();
+      const rect = svgRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      
       const x = touch.clientX - rect.left;
       
       if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
-        const index = Math.round(((x - margin.left) / (innerWidth - X_PAD)) * xMax);
-        const clampedIndex = Math.max(0, Math.min(xMax, index));
-        console.log('Moving to index:', clampedIndex);
-        setDragEnd(clampedIndex);
+        setTouchStartX(x);
+        setTouchCurrentX(x);
+        setIsSelecting(true);
       }
-    }, [isDragging, margin.left, innerWidth, X_PAD, xMax]);
+    };
 
-    const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-      e.stopPropagation();
-      console.log('Touch end - dragStart:', dragStart, 'dragEnd:', dragEnd, 'isDragging:', isDragging);
+    const handleTouchMove = (e: React.TouchEvent<SVGSVGElement>) => {
+      e.preventDefault(); // Prevent scrolling
+      if (!isSelecting || touchStartX === null) return;
       
-      if (isDragging && dragStart !== null && dragEnd !== null) {
-        const start = Math.min(dragStart, dragEnd);
-        const end = Math.max(dragStart, dragEnd);
+      const touch = e.touches[0];
+      const rect = svgRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      
+      const x = touch.clientX - rect.left;
+      const clampedX = Math.max(margin.left, Math.min(margin.left + innerWidth - X_PAD, x));
+      setTouchCurrentX(clampedX);
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent<SVGSVGElement>) => {
+      e.preventDefault();
+      
+      if (isSelecting && touchStartX !== null && touchCurrentX !== null) {
+        const startIndex = xToIndex(touchStartX);
+        const endIndex = xToIndex(touchCurrentX);
         
-        // Allow single point selection or range selection
-        if (start <= end) {
-          const selectedData = data.slice(start, end + 1);
-          
-          console.log('Selected data:', selectedData.length, 'points from', data[start]?.date, 'to', data[end]?.date);
-          
-          const ukraineTotal = selectedData.reduce((sum: number, d: ChartData) => sum + (showUkraine ? d.ukraineTotal : 0), 0);
-          const russiaTotal = selectedData.reduce((sum: number, d: ChartData) => sum + (showRussia ? d.russiaDeaths : 0), 0);
-          
-          setSelectedRange({
-            start: data[start].date,
-            end: data[end].date,
-            data: selectedData,
-            ukraineTotal,
-            russiaTotal
-          });
-        }
+        const start = Math.min(startIndex, endIndex);
+        const end = Math.max(startIndex, endIndex);
+        
+        const selectedData = data.slice(start, end + 1);
+        
+        const ukraineTotal = selectedData.reduce((sum: number, d: ChartData) => 
+          sum + (showUkraine ? d.ukraineTotal : 0), 0);
+        const russiaTotal = selectedData.reduce((sum: number, d: ChartData) => 
+          sum + (showRussia ? d.russiaDeaths : 0), 0);
+        
+        setSelectedRange({
+          start: data[start].date,
+          end: data[end].date,
+          data: selectedData,
+          ukraineTotal,
+          russiaTotal
+        });
       }
       
-      // Always reset drag state
-      setIsDragging(false);
-      setDragStart(null);
-      setDragEnd(null);
-    }, [isDragging, dragStart, dragEnd, data, showUkraine, showRussia]);
+      // Reset selection state
+      setIsSelecting(false);
+      setTouchStartX(null);
+      setTouchCurrentX(null);
+    };
+
+    // Calculate selection rectangle
+    const getSelectionRect = () => {
+      if (!isSelecting || touchStartX === null || touchCurrentX === null) return null;
+      
+      const x1 = Math.min(touchStartX, touchCurrentX);
+      const x2 = Math.max(touchStartX, touchCurrentX);
+      
+      return {
+        x: x1,
+        width: x2 - x1,
+        y: margin.top,
+        height: innerHeight
+      };
+    };
+
+    const selectionRect = getSelectionRect();
 
     return (
-      <div className="w-full" ref={wrapperRef}>
+      <div className="w-full relative">
         <svg 
+          ref={svgRef}
           width={width} 
           height={height}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="w-full"
-          style={{ touchAction: 'none' }}
+          onTouchCancel={handleTouchEnd}
+          style={{ 
+            touchAction: 'none',
+            userSelect: 'none',
+            WebkitUserSelect: 'none'
+          }}
         >
           {/* Grid lines */}
           {[0, 1, 2, 3, 4, 5].map(i => (
@@ -263,12 +284,12 @@ export default function ChartEnhanced() {
           ))}
 
           {/* Selection area */}
-          {isDragging && dragStart !== null && dragEnd !== null && (
+          {selectionRect && (
             <rect
-              x={Math.min(xScale(dragStart), xScale(dragEnd))}
-              y={margin.top}
-              width={Math.abs(xScale(dragEnd) - xScale(dragStart))}
-              height={innerHeight}
+              x={selectionRect.x}
+              y={selectionRect.y}
+              width={selectionRect.width}
+              height={selectionRect.height}
               fill="#d4a574"
               fillOpacity="0.3"
               stroke="#d4a574"
@@ -278,9 +299,11 @@ export default function ChartEnhanced() {
           )}
 
           {/* Ukraine Period Line */}
-          {showUkraine && (
+          {showUkraine && data.length > 1 && (
             <path
-              d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScalePeriod(d.ukraineTotal)}`).join(' L ')}`}
+              d={`M ${data.map((d: ChartData, i: number) => 
+                `${xScale(i)},${yScalePeriod(d.ukraineTotal)}`
+              ).join(' L ')}`}
               fill="none"
               stroke="#0057B7"
               strokeWidth="2"
@@ -289,9 +312,11 @@ export default function ChartEnhanced() {
           )}
 
           {/* Russia Period Line */}
-          {showRussia && (
+          {showRussia && data.length > 1 && (
             <path
-              d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScalePeriod(d.russiaDeaths)}`).join(' L ')}`}
+              d={`M ${data.map((d: ChartData, i: number) => 
+                `${xScale(i)},${yScalePeriod(d.russiaDeaths)}`
+              ).join(' L ')}`}
               fill="none"
               stroke="#DA291C"
               strokeWidth="2"
@@ -300,9 +325,11 @@ export default function ChartEnhanced() {
           )}
 
           {/* Ukraine Cumulative Line */}
-          {showUkraine && (
+          {showUkraine && data.length > 1 && (
             <path
-              d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScaleCum(d.ukraineTotalCumulative)}`).join(' L ')}`}
+              d={`M ${data.map((d: ChartData, i: number) => 
+                `${xScale(i)},${yScaleCum(d.ukraineTotalCumulative)}`
+              ).join(' L ')}`}
               fill="none"
               stroke="#0057B7"
               strokeWidth="3"
@@ -310,9 +337,11 @@ export default function ChartEnhanced() {
           )}
 
           {/* Russia Cumulative Line */}
-          {showRussia && (
+          {showRussia && data.length > 1 && (
             <path
-              d={`M ${data.map((d: ChartData, i: number) => `${xScale(i)},${yScaleCum(d.russiaTotalCumulative)}`).join(' L ')}`}
+              d={`M ${data.map((d: ChartData, i: number) => 
+                `${xScale(i)},${yScaleCum(d.russiaTotalCumulative)}`
+              ).join(' L ')}`}
               fill="none"
               stroke="#DA291C"
               strokeWidth="3"
@@ -328,7 +357,7 @@ export default function ChartEnhanced() {
             stroke="#a0aec0"
           />
 
-          {/* Y-axis left */}
+          {/* Y-axes */}
           <line
             x1={margin.left}
             y1={margin.top}
@@ -336,8 +365,8 @@ export default function ChartEnhanced() {
             y2={margin.top + innerHeight}
             stroke="#a0aec0"
           />
-
-          {/* Y-axis right */}
+          
+          {/* Right Y-axis */}
           <line
             x1={margin.left + innerWidth - X_PAD}
             y1={margin.top}
@@ -347,10 +376,10 @@ export default function ChartEnhanced() {
           />
 
           {/* Left Y-axis labels (Period) */}
-          {[0, 2, 4].map(i => (
+          {[0, 1, 2, 3, 4].map(i => (
             <text
               key={i}
-              x={margin.left - 2}
+              x={margin.left - 5}
               y={margin.top + (innerHeight / 4) * i + 4}
               textAnchor="end"
               fill="#a0aec0"
@@ -361,7 +390,7 @@ export default function ChartEnhanced() {
           ))}
 
           {/* Right Y-axis labels (Cumulative) */}
-          {[0, 2, 4].map(i => (
+          {[0, 1, 2, 3, 4].map(i => (
             <text
               key={`cum-${i}`}
               x={margin.left + innerWidth - X_PAD + 2}
@@ -374,21 +403,64 @@ export default function ChartEnhanced() {
             </text>
           ))}
 
-          {/* X-axis labels - show fewer on mobile */}
-          {data.filter((_: ChartData, i: number) => i % Math.ceil(data.length / 4) === 0).map((d: ChartData, i: number) => (
-            <text
-              key={i}
-              x={xScale(i * Math.ceil(data.length / 4))}
-              y={margin.top + innerHeight + 20}
-              textAnchor="middle"
-              fill="#a0aec0"
-              fontSize="10"
-              transform={`rotate(-45 ${xScale(i * Math.ceil(data.length / 4))} ${margin.top + innerHeight + 20})`}
-            >
-              {d.date.split('-').slice(1).join('/')}
-            </text>
-          ))}
+          {/* X-axis labels */}
+          {(() => {
+            // Generate up to 10 evenly spaced labels for mobile
+            const maxLabels = 10;
+            const step = Math.max(1, Math.floor(data.length / (maxLabels - 1)));
+            const labelIndices = [];
+            
+            // Generate evenly spaced indices, avoiding first/last overlap issues
+            for (let i = 0; i < maxLabels && i < data.length; i++) {
+              const index = Math.round((i * (data.length - 1)) / (maxLabels - 1));
+              labelIndices.push(index);
+            }
+            
+            // Remove duplicates and sort
+            const uniqueIndices = [...new Set(labelIndices)].sort((a, b) => a - b);
+            
+            return uniqueIndices.map((index) => {
+              const d = data[index];
+              let label = '';
+              
+              if (timePeriod === 'daily') {
+                // Convert YYYY-MM-DD to "MMM YYYY"
+                const date = new Date(d.date);
+                label = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+              } else if (timePeriod === 'weekly') {
+                // Convert YYYY-WNN to "MMM YYYY" (use first day of week)
+                const [year, week] = d.date.split('-W');
+                const date = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                label = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+              } else {
+                // Monthly: "MMM YYYY" format already
+                label = d.date;
+              }
+              
+              return (
+                <text
+                  key={index}
+                  x={xScale(index)}
+                  y={margin.top + innerHeight + 25}
+                  textAnchor="middle"
+                  fill="#a0aec0"
+                  fontSize="8"
+                  transform={`rotate(-45 ${xScale(index)} ${margin.top + innerHeight + 25})`}
+                >
+                  {label}
+                </text>
+              );
+            });
+          })()}
         </svg>
+        
+        {/* Visual feedback when selecting */}
+        {isSelecting && (
+          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 
+                          bg-primary text-background px-3 py-1 rounded-full text-xs">
+            Selecting range...
+          </div>
+        )}
       </div>
     );
   };
@@ -502,10 +574,24 @@ export default function ChartEnhanced() {
           dataKey="date" 
           stroke="#a0aec0" 
           fontSize={12}
-          interval={timePeriod === 'daily' ? Math.floor(displayData.length / 10) : 
-                   timePeriod === 'weekly' ? 5 : 2}
+          interval={Math.max(0, Math.floor(displayData.length / 12))}
           domain={['dataMin', 'dataMax']}
           scale="point"
+          tickFormatter={(value) => {
+            if (timePeriod === 'daily') {
+              // Convert YYYY-MM-DD to "MMM YYYY"
+              const date = new Date(value);
+              return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            } else if (timePeriod === 'weekly') {
+              // Convert YYYY-WNN to "MMM YYYY"
+              const [year, week] = value.split('-W');
+              const date = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+              return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            } else {
+              // Monthly: already "MMM YYYY" format
+              return value;
+            }
+          }}
         />
         
         {/* Left Y-Axis for Period Data */}

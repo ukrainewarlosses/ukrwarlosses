@@ -131,9 +131,10 @@ export default function ChartEnhanced() {
 
   // Mobile-specific SVG rendering
   const MobileChart = () => {
-    const width = window.innerWidth - 32; // Account for padding
-    const height = 400;
-    const margin = { top: 20, right: 20, bottom: 60, left: 45 };
+    const containerWidth = window.innerWidth - 24; // Account for container padding
+    const width = Math.min(containerWidth, 400); // Max width to prevent overflow
+    const height = 350; // Slightly shorter for mobile
+    const margin = { top: 20, right: 15, bottom: 50, left: 35 }; // Reduced margins
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
@@ -153,31 +154,42 @@ export default function ChartEnhanced() {
 
     // Touch handlers for range selection
     const handleTouchStart = (e: React.TouchEvent) => {
+      e.preventDefault(); // Prevent scrolling
       const touch = e.touches[0];
       const rect = e.currentTarget.getBoundingClientRect();
       const x = touch.clientX - rect.left;
-      const index = Math.round(((x - margin.left) / innerWidth) * xMax);
-      setDragStart(Math.max(0, Math.min(xMax, index)));
-      setIsDragging(true);
+      
+      // Only start selection if touch is within the chart area
+      if (x >= margin.left && x <= margin.left + innerWidth) {
+        const index = Math.round(((x - margin.left) / innerWidth) * xMax);
+        setDragStart(Math.max(0, Math.min(xMax, index)));
+        setDragEnd(null);
+        setIsDragging(true);
+      }
     };
 
     const handleTouchMove = (e: React.TouchEvent) => {
       if (!isDragging || dragStart === null) return;
+      e.preventDefault(); // Prevent scrolling
+      
       const touch = e.touches[0];
       const rect = e.currentTarget.getBoundingClientRect();
       const x = touch.clientX - rect.left;
-      const index = Math.round(((x - margin.left) / innerWidth) * xMax);
-      setDragEnd(Math.max(0, Math.min(xMax, index)));
+      
+      if (x >= margin.left && x <= margin.left + innerWidth) {
+        const index = Math.round(((x - margin.left) / innerWidth) * xMax);
+        setDragEnd(Math.max(0, Math.min(xMax, index)));
+      }
     };
 
     const handleTouchEnd = () => {
-      if (dragStart !== null && dragEnd !== null) {
+      if (dragStart !== null && dragEnd !== null && dragStart !== dragEnd) {
         const start = Math.min(dragStart, dragEnd);
         const end = Math.max(dragStart, dragEnd);
         const selectedData = data.slice(start, end + 1);
         
-        const ukraineTotal = selectedData.reduce((sum: number, d: ChartData) => sum + d.ukraineTotal, 0);
-        const russiaTotal = selectedData.reduce((sum: number, d: ChartData) => sum + d.russiaDeaths, 0);
+        const ukraineTotal = selectedData.reduce((sum: number, d: ChartData) => sum + (showUkraine ? d.ukraineTotal : 0), 0);
+        const russiaTotal = selectedData.reduce((sum: number, d: ChartData) => sum + (showRussia ? d.russiaDeaths : 0), 0);
         
         setSelectedRange({
           start: data[start].date,
@@ -193,7 +205,7 @@ export default function ChartEnhanced() {
     };
 
     return (
-      <div className="w-full overflow-x-auto">
+      <div className="w-full flex justify-center">
         <svg 
           width={width} 
           height={height}
@@ -218,14 +230,15 @@ export default function ChartEnhanced() {
           {/* Selection area */}
           {isDragging && dragStart !== null && dragEnd !== null && (
             <rect
-              x={xScale(Math.min(dragStart, dragEnd))}
+              x={Math.min(xScale(dragStart), xScale(dragEnd))}
               y={margin.top}
-              width={xScale(Math.abs(dragEnd - dragStart))}
+              width={Math.abs(xScale(dragEnd) - xScale(dragStart))}
               height={innerHeight}
               fill="#d4a574"
-              fillOpacity="0.2"
+              fillOpacity="0.3"
               stroke="#d4a574"
               strokeWidth="2"
+              strokeDasharray="4,2"
             />
           )}
 
@@ -290,16 +303,16 @@ export default function ChartEnhanced() {
           />
 
           {/* Y-axis labels */}
-          {[0, 1, 2, 3, 4, 5].map(i => (
+          {[0, 2, 4].map(i => (
             <text
               key={i}
-              x={margin.left - 5}
-              y={margin.top + (innerHeight / 5) * i + 4}
+              x={margin.left - 3}
+              y={margin.top + (innerHeight / 4) * i + 4}
               textAnchor="end"
               fill="#a0aec0"
-              fontSize="10"
+              fontSize="9"
             >
-              {Math.round((yMaxPeriod / 5) * (5 - i) / 1000)}k
+              {Math.round((yMaxPeriod / 4) * (4 - i) / 1000)}k
             </text>
           ))}
 

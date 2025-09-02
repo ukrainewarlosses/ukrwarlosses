@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { 
   LineChart, Line, XAxis, YAxis, CartesianGrid, 
   Tooltip, Legend, ResponsiveContainer, ReferenceArea 
@@ -131,10 +131,26 @@ export default function ChartEnhanced() {
 
   // Mobile-specific SVG rendering
   const MobileChart = () => {
-    const containerWidth = window.innerWidth - 24; // Account for container padding
-    const width = Math.min(containerWidth, 400); // Max width to prevent overflow
+    // Measure the actual container width to prevent cutoff
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
+    const [containerWidth, setContainerWidth] = useState<number>(0);
+
+    useEffect(() => {
+      const updateWidth = () => {
+        // Be very conservative with width to ensure no clipping
+        const viewportWidth = window.innerWidth;
+        const safeWidth = Math.max(viewportWidth - 64, 280); // Even more conservative
+        setContainerWidth(safeWidth);
+      };
+      updateWidth();
+      window.addEventListener('resize', updateWidth);
+      return () => window.removeEventListener('resize', updateWidth);
+    }, []);
+
+    const width = containerWidth; // Use very conservative width
     const height = 350; // Slightly shorter for mobile
-    const margin = { top: 20, right: 15, bottom: 50, left: 35 }; // Reduced margins
+    // Shift plot left and provide extra space on the right edge to prevent clipping
+    const margin = { top: 20, right: 32, bottom: 50, left: 18 } as const;
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
@@ -148,36 +164,38 @@ export default function ChartEnhanced() {
     const yMaxPeriod = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotal, d.russiaDeaths)));
     const yMaxCum = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotalCumulative, d.russiaTotalCumulative)));
 
-    const xScale = (index: number) => margin.left + (index / xMax) * innerWidth;
+    // Add aggressive right-side padding to prevent clipping
+    const X_PAD = 20; // More pixels to ensure no clipping
+    const xScale = (index: number) => margin.left + (index / xMax) * (innerWidth - X_PAD);
     const yScalePeriod = (value: number) => margin.top + innerHeight - (value / yMaxPeriod) * innerHeight;
     const yScaleCum = (value: number) => margin.top + innerHeight - (value / yMaxCum) * innerHeight;
 
     // Touch handlers for range selection
-    const handleTouchStart = (e: React.TouchEvent) => {
+    const handleTouchStart = (e: TouchEvent) => {
       e.preventDefault(); // Prevent scrolling
       const touch = e.touches[0];
-      const rect = e.currentTarget.getBoundingClientRect();
+      const rect = (e.target as Element).getBoundingClientRect();
       const x = touch.clientX - rect.left;
       
-      // Only start selection if touch is within the chart area
-      if (x >= margin.left && x <= margin.left + innerWidth) {
-        const index = Math.round(((x - margin.left) / innerWidth) * xMax);
+      // Only start selection if touch is within the chart area (between left and right Y-axes)
+      if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
+        const index = Math.round(((x - margin.left) / (innerWidth - X_PAD)) * xMax);
         setDragStart(Math.max(0, Math.min(xMax, index)));
         setDragEnd(null);
         setIsDragging(true);
       }
     };
 
-    const handleTouchMove = (e: React.TouchEvent) => {
+    const handleTouchMove = (e: TouchEvent) => {
       if (!isDragging || dragStart === null) return;
       e.preventDefault(); // Prevent scrolling
       
       const touch = e.touches[0];
-      const rect = e.currentTarget.getBoundingClientRect();
+      const rect = (e.target as Element).getBoundingClientRect();
       const x = touch.clientX - rect.left;
       
-      if (x >= margin.left && x <= margin.left + innerWidth) {
-        const index = Math.round(((x - margin.left) / innerWidth) * xMax);
+      if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
+        const index = Math.round(((x - margin.left) / (innerWidth - X_PAD)) * xMax);
         setDragEnd(Math.max(0, Math.min(xMax, index)));
       }
     };
@@ -204,15 +222,28 @@ export default function ChartEnhanced() {
       setDragEnd(null);
     };
 
+    // Add event listeners with passive: false to allow preventDefault
+    useEffect(() => {
+      const svg = wrapperRef.current?.querySelector('svg');
+      if (!svg) return;
+
+      svg.addEventListener('touchstart', handleTouchStart, { passive: false });
+      svg.addEventListener('touchmove', handleTouchMove, { passive: false });
+      svg.addEventListener('touchend', handleTouchEnd, { passive: false });
+
+      return () => {
+        svg.removeEventListener('touchstart', handleTouchStart);
+        svg.removeEventListener('touchmove', handleTouchMove);
+        svg.removeEventListener('touchend', handleTouchEnd);
+      };
+    }, [handleTouchStart, handleTouchMove, handleTouchEnd]);
+
     return (
-      <div className="w-full flex justify-center">
+      <div className="w-full" ref={wrapperRef}>
         <svg 
           width={width} 
           height={height}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          className="touch-none"
+          className="touch-none w-full"
         >
           {/* Grid lines */}
           {[0, 1, 2, 3, 4, 5].map(i => (
@@ -220,7 +251,7 @@ export default function ChartEnhanced() {
               key={i}
               x1={margin.left}
               y1={margin.top + (innerHeight / 5) * i}
-              x2={margin.left + innerWidth}
+              x2={margin.left + innerWidth - X_PAD}
               y2={margin.top + (innerHeight / 5) * i}
               stroke="#3d3d3d"
               strokeWidth="1"
@@ -288,7 +319,7 @@ export default function ChartEnhanced() {
           <line
             x1={margin.left}
             y1={margin.top + innerHeight}
-            x2={margin.left + innerWidth}
+            x2={margin.left + innerWidth - X_PAD}
             y2={margin.top + innerHeight}
             stroke="#a0aec0"
           />
@@ -302,17 +333,40 @@ export default function ChartEnhanced() {
             stroke="#a0aec0"
           />
 
-          {/* Y-axis labels */}
+          {/* Y-axis right */}
+          <line
+            x1={margin.left + innerWidth - X_PAD}
+            y1={margin.top}
+            x2={margin.left + innerWidth - X_PAD}
+            y2={margin.top + innerHeight}
+            stroke="#a0aec0"
+          />
+
+          {/* Left Y-axis labels (Period) */}
           {[0, 2, 4].map(i => (
             <text
               key={i}
-              x={margin.left - 3}
+              x={margin.left - 2}
               y={margin.top + (innerHeight / 4) * i + 4}
               textAnchor="end"
               fill="#a0aec0"
-              fontSize="9"
+              fontSize="8"
             >
               {Math.round((yMaxPeriod / 4) * (4 - i) / 1000)}k
+            </text>
+          ))}
+
+          {/* Right Y-axis labels (Cumulative) */}
+          {[0, 2, 4].map(i => (
+            <text
+              key={`cum-${i}`}
+              x={margin.left + innerWidth - X_PAD + 2}
+              y={margin.top + (innerHeight / 4) * i + 4}
+              textAnchor="start"
+              fill="#a0aec0"
+              fontSize="8"
+            >
+              {Math.round((yMaxCum / 4) * (4 - i) / 1000)}k
             </text>
           ))}
 

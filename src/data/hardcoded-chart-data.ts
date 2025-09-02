@@ -1,5 +1,5 @@
 // Auto-generated hardcoded chart data
-// Last updated: 2025-09-01T23:10:49.200Z
+// Last updated: 2025-09-02T00:26:10.367Z
 
 export interface ChartData {
   date: string;
@@ -14936,5 +14936,5 @@ export const hardcodedChartData: HardcodedChartData = {
       "russiaTotalCumulative": 101686
     }
   ],
-  "lastUpdated": "2025-09-01T23:10:49.198Z"
+  "lastUpdated": "2025-09-02T00:26:10.365Z"
 };

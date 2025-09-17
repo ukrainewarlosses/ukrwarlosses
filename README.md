@@ -16,7 +16,7 @@ A high-performance, database-free NextJS 14 static website that provides real-ti
 - **Responsive Design**: Mobile-first design that works on all devices
 - **SEO Optimized**: Complete meta tags, structured data, sitemap, and PWA manifest
 - **Google AdSense**: Integrated monetization with proper ad placements
-- **Performance Optimized**: Static generation with smart caching, CSV parsing, and optimization
+- **Performance Optimized**: Static generation with smart caching,CSV parsing, and optimization
 
 ## Tech Stack
 

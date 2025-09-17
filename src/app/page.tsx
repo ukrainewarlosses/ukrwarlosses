@@ -233,15 +233,15 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <SourceCard
-              title="Zona Media"
-              description="Russian personnel casualty tracking based on probate registry data and open sources"
-              url="https://en.zona.media/article/2025/08/01/casualties_eng-trl"
+              title="SVO RF GD"
+              description="Russian personnel casualty tracking from verified open sources and official records"
+              url="https://svo.rf.gd"
               country="russia"
             />
             <SourceCard
-              title="UA Losses"
-              description="Ukrainian military personnel casualties from official and verified sources"
-              url="https://ualosses.org/en/soldiers/"
+              title="Lost Armour"
+              description="Ukrainian military personnel casualties from comprehensive database and verified sources"
+              url="https://lostarmour.info"
               country="ukraine"
             />
           </div>

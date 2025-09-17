@@ -34,7 +34,7 @@ export interface StatsCardProps {
   title: string;
   breakdown?: {
     dead?: number;
-    missing?: number;
+    missing?: number | string;
     prisoners?: number;
   };
 }

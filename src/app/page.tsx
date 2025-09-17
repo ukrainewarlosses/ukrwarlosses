@@ -9,7 +9,7 @@ import SourceCard from '@/components/SourceCard';
 import ChartEnhanced from '@/components/ChartEnhanced';
 import { YouTubeEmbed } from '@/types';
 import { hardcodedYouTubeData } from '@/data/hardcoded-youtube-data';
-import { hardcodedCasualtyData } from '@/data/hardcoded-casualty-totals';
+import { hardcodedChartData } from '@/data/hardcoded-chart-data';
 
 export const metadata: Metadata = {
   title: 'Ukraine-Russia War Personnel Losses Tracker | Real-Time Casualty Data & Statistics',
@@ -81,8 +81,16 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
-  // Use hardcoded casualty data - no API calls or blob fetching
-  const data = hardcodedCasualtyData;
+  // Derive overview totals from the same source as the chart (hardcodedChartData)
+  const daily = hardcodedChartData.daily;
+  const ukraineKilled = daily.reduce((sum, d) => sum + d.ukraineDeaths, 0);
+  const ukraineMissing = daily.reduce((sum, d) => sum + d.ukraineMissing, 0);
+  const ukraineTotal = ukraineKilled + ukraineMissing;
+  const russiaKilled = daily.reduce((sum, d) => sum + d.russiaDeaths, 0);
+  const russiaMissing = 0; // Russian missing are counted as dead
+  const russiaTotal = russiaKilled + russiaMissing;
+  const ratioTotalVsTotal = ukraineTotal > 0 ? russiaTotal / ukraineTotal : 0;
+  const ratioKilledOnly = ukraineKilled > 0 ? russiaKilled / ukraineKilled : 0;
 
   // Structured data for the main page
   const structuredData = {
@@ -94,7 +102,7 @@ export default function HomePage() {
     mainEntity: {
       '@type': 'Dataset',
       name: 'Ukraine-Russia War Personnel Casualties',
-      description: `Current casualty data: Ukraine ${data.ukraine.total_losses.toLocaleString()} losses, Russia ${data.russia.total_losses.toLocaleString()} losses`,
+      description: `Current casualty data: Ukraine ${ukraineTotal.toLocaleString()} losses, Russia ${russiaTotal.toLocaleString()} losses`,
       temporalCoverage: '2022-02-24/2025-12-31',
       spatialCoverage: {
         '@type': 'Place',
@@ -139,28 +147,50 @@ export default function HomePage() {
       <div className="container">
         <Hero />
 
-        {/* Personnel Losses Overview */}
+        {/* Killed and Missing Personnel Overview */}
         <section id="overview" className="py-8">
           <h2 className="text-2xl font-bold text-text-primary mb-6">
-            Personnel Losses Overview
+            Killed and Missing Personnel Overview
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
             <StatsCard
               country="russia"
-              casualties={data.russia.total_losses}
+              casualties={russiaTotal}
               title="Russian Forces"
+              breakdown={{
+                dead: russiaKilled,
+                missing: 'counted as dead'
+              }}
             />
             <StatsCard
               country="ukraine"
-              casualties={data.ukraine.total_losses}
+              casualties={ukraineTotal}
               title="Ukrainian Forces"
               breakdown={{
-                dead: data.ukraine.dead,
-                missing: data.ukraine.missing,
-                prisoners: data.ukraine.prisoners
+                dead: ukraineKilled,
+                missing: ukraineMissing
               }}
             />
+          </div>
+
+          {/* Ratios */}
+          <div className="bg-card-bg border border-border-color rounded-lg p-4 mt-4">
+            <p className="text-text-muted text-sm mb-2">Loss Ratios (Russian : Ukrainian)</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              <div className="bg-background rounded p-3 border border-border-color">
+                <div className="flex justify-between items-baseline">
+                  <span className="text-text-light">Death Ratio</span>
+                  <span className="text-primary font-bold">{ratioKilledOnly.toFixed(2)}:1</span>
+                </div>
+              </div>
+              <div className="bg-background rounded p-3 border border-border-color">
+                <div className="flex justify-between items-baseline">
+                  <span className="text-text-light">Death Ratio</span>
+                  <span className="text-primary font-bold">{ratioTotalVsTotal.toFixed(2)}:1</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

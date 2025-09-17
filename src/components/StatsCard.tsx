@@ -46,7 +46,8 @@ export default function StatsCard({ country, casualties, title, breakdown }: Sta
   return (
     <div
       ref={cardRef}
-      className="bg-card-bg border border-border-color rounded-lg p-6 transition-all duration-200 hover:border-primary hover:shadow-lg hover:shadow-primary/10"
+      className="border border-border-color rounded-lg p-6 transition-all duration-200 hover:border-primary hover:shadow-lg hover:shadow-primary/10"
+      style={{ backgroundColor: '#1b1b1b' }}
     >
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-2 text-base font-semibold text-text-muted">
@@ -77,9 +78,11 @@ export default function StatsCard({ country, casualties, title, breakdown }: Sta
                 <div className="text-text-light">Dead</div>
               </div>
             )}
-            {breakdown.missing && (
+            {typeof breakdown.missing !== 'undefined' && (
               <div className="text-center">
-                <div className="text-orange-400 font-semibold">{breakdown.missing.toLocaleString()}</div>
+                <div className="text-orange-400 font-semibold">
+                  {typeof breakdown.missing === 'string' ? breakdown.missing : breakdown.missing.toLocaleString()}
+                </div>
                 <div className="text-text-light">Missing</div>
               </div>
             )}

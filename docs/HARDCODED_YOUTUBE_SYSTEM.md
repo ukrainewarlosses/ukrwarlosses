@@ -28,7 +28,7 @@ The YouTube video system has been refactored to use hardcoded data instead of AP
 
 ### Modified Components
 - `src/app/page.tsx` - Now imports and uses hardcoded YouTube data
-- `src/lib/blobDataLoader.ts` - YouTube loading removed from server-side data loading
+- `src/lib/dataLoader.ts` - YouTube loading removed from server-side data loading
 
 ## Data Structure
 

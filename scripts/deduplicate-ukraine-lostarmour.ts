@@ -17,7 +17,7 @@ interface UkraineLostArmourRecord {
   age?: string;
   conscription?: string;
   sources?: string;
-  recordType: 'death' | 'missing';
+  recordType?: 'death' | 'missing';
   estimatedDeathDate?: string;
 }
 
@@ -97,9 +97,9 @@ async function deduplicateUkraineLostArmour() {
     console.log(`   Duplicates removed: ${duplicatesRemoved.toLocaleString()}`);
     console.log(`   Deduplication rate: ${(duplicatesRemoved / records.length * 100).toFixed(1)}%`);
     
-    // Analyze by record type
-    const deathRecords = finalUniqueRecords.filter(r => r.recordType === 'death');
-    const missingRecords = finalUniqueRecords.filter(r => r.recordType === 'missing');
+    // Analyze by record type (infer from dates if recordType not present)
+    const deathRecords = finalUniqueRecords.filter(r => r.recordType === 'death' || (r.deathDate && r.deathDate !== ''));
+    const missingRecords = finalUniqueRecords.filter(r => r.recordType === 'missing' || (r.missingDate && r.missingDate !== '' && (!r.deathDate || r.deathDate === '')));
     
     console.log(`\n📊 By record type:`);
     console.log(`   Deaths: ${deathRecords.length.toLocaleString()}`);

@@ -10,6 +10,7 @@ import ChartEnhanced from '@/components/ChartEnhanced';
 import { YouTubeEmbed } from '@/types';
 import { hardcodedYouTubeData } from '@/data/hardcoded-youtube-data';
 import { hardcodedChartData } from '@/data/hardcoded-chart-data';
+import { hardcodedCasualtyData } from '@/data/hardcoded-casualty-totals';
 
 export const metadata: Metadata = {
   title: 'Ukraine-Russia War Personnel Losses Tracker | Real-Time Casualty Data & Statistics',
@@ -81,14 +82,13 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
-  // Derive overview totals from the same source as the chart (hardcodedChartData)
-  const daily = hardcodedChartData.daily;
-  const ukraineKilled = daily.reduce((sum, d) => sum + d.ukraineDeaths, 0);
-  const ukraineMissing = daily.reduce((sum, d) => sum + d.ukraineMissing, 0);
-  const ukraineTotal = ukraineKilled + ukraineMissing;
-  const russiaKilled = daily.reduce((sum, d) => sum + d.russiaDeaths, 0);
+  // Use hardcoded casualty totals (most accurate source)
+  const ukraineTotal = hardcodedCasualtyData.ukraine.total_losses;
+  const ukraineKilled = hardcodedCasualtyData.ukraine.dead || 0;
+  const ukraineMissing = hardcodedCasualtyData.ukraine.missing || 0;
+  const russiaTotal = hardcodedCasualtyData.russia.total_losses;
+  const russiaKilled = russiaTotal; // Russian missing are counted as dead
   const russiaMissing = 0; // Russian missing are counted as dead
-  const russiaTotal = russiaKilled + russiaMissing;
   const ratioTotalVsTotal = ukraineTotal > 0 ? russiaTotal / ukraineTotal : 0;
   const ratioKilledOnly = ukraineKilled > 0 ? russiaKilled / ukraineKilled : 0;
 

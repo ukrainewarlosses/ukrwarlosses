@@ -11,6 +11,7 @@ export interface LostArmourUkraineRecord {
   sex: string;
   date_of_birth: string | null;
   date_of_death: string | null;
+  date_of_miss?: string | null; // For missing persons
   date_of_conscription: string | null;
   date_of_funeral: string | null;
   is_died_from_wounds: string;
@@ -19,7 +20,9 @@ export interface LostArmourUkraineRecord {
   death_at: string | null;
   region_of_live: string | null;
   region_of_death: string | null;
+  region_of_miss?: string | null; // For missing persons
   region_of_funeral: string | null;
+  recordType?: 'death' | 'missing'; // Added to distinguish between deaths and missing
 }
 
 export interface LostArmourApiResponse {
@@ -93,22 +96,25 @@ async function fetchWithRetry(url: string, maxRetries: number): Promise<LostArmo
   throw lastError || new Error('Max retries exceeded');
 }
 
-async function scrapeLetterPages(letter: string, config: LostArmourScraperConfig): Promise<LostArmourUkraineRecord[]> {
+async function scrapeLetterPages(letter: string, config: LostArmourScraperConfig, recordType: 'death' | 'missing' = 'death'): Promise<LostArmourUkraineRecord[]> {
   const allRecords: LostArmourUkraineRecord[] = [];
   let currentPage = 1;
   let hasMorePages = true;
   
-  console.log(`🔤 Scraping letter "${letter}"...`);
+  const endpoint = recordType === 'death' ? 'ukr200' : 'ukr-mia';
+  console.log(`🔤 Scraping letter "${letter}" (${recordType})...`);
   
   while (hasMorePages) {
     try {
       const encodedLetter = encodeURIComponent(letter);
-      const url = `https://lostarmour.info/panel/next/api/public/ukr200/search?letter=${encodedLetter}&page=${currentPage}`;
+      const url = `https://lostarmour.info/panel/next/api/public/${endpoint}/search?letter=${encodedLetter}&page=${currentPage}`;
       
       const response = await fetchWithRetry(url, config.maxRetries || 3);
       
       if (response.items && response.items.length > 0) {
-        allRecords.push(...response.items);
+        // Add recordType to each item
+        const itemsWithType = response.items.map(item => ({ ...item, recordType }));
+        allRecords.push(...itemsWithType);
         console.log(`  📄 Page ${currentPage}: ${response.items.length} records (total so far: ${allRecords.length})`);
         
         // Check if there are more pages
@@ -147,20 +153,26 @@ export class LostArmourUkraineScraper {
   
   async scrapeAllLetters(): Promise<LostArmourUkraineRecord[]> {
     console.log('🚀 Starting Lost Armour Ukraine scraping...');
-    console.log(`📋 Will scrape ${UKRAINIAN_LETTERS.length} letters with ${this.config.delayBetweenRequests}ms delay`);
+    console.log(`📋 Will scrape ${UKRAINIAN_LETTERS.length} letters from BOTH deaths (ukr200) and missing (ukr_mia) endpoints`);
+    console.log(`⏱️  Delay between requests: ${this.config.delayBetweenRequests}ms`);
     
     const allRecords: LostArmourUkraineRecord[] = [];
+    
+    // PHASE 1: Scrape deaths (ukr200)
+    console.log('\n═══════════════════════════════════════════');
+    console.log('PHASE 1: Scraping DEATHS from ukr200');
+    console.log('═══════════════════════════════════════════\n');
     let letterCount = 0;
     
     for (const letter of UKRAINIAN_LETTERS) {
       letterCount++;
-      console.log(`\n[${letterCount}/${UKRAINIAN_LETTERS.length}] Processing letter: ${letter}`);
+      console.log(`\n[DEATHS ${letterCount}/${UKRAINIAN_LETTERS.length}] Processing letter: ${letter}`);
       
       try {
-        const letterRecords = await scrapeLetterPages(letter, this.config);
+        const letterRecords = await scrapeLetterPages(letter, this.config, 'death');
         allRecords.push(...letterRecords);
         
-        console.log(`✅ Letter "${letter}" completed: ${letterRecords.length} records`);
+        console.log(`✅ Letter "${letter}" (deaths) completed: ${letterRecords.length} records`);
         console.log(`📊 Running total: ${allRecords.length} records`);
         
         // Add delay between letters
@@ -169,13 +181,49 @@ export class LostArmourUkraineScraper {
         }
         
       } catch (error) {
-        console.error(`❌ Failed to scrape letter "${letter}":`, error);
+        console.error(`❌ Failed to scrape letter "${letter}" (deaths):`, error);
         // Continue with next letter instead of stopping
       }
     }
     
+    const deathCount = allRecords.length;
+    console.log(`\n✅ PHASE 1 Complete: ${deathCount} death records collected`);
+    
+    // PHASE 2: Scrape missing (ukr_mia)
+    console.log('\n═══════════════════════════════════════════');
+    console.log('PHASE 2: Scraping MISSING from ukr_mia');
+    console.log('═══════════════════════════════════════════\n');
+    letterCount = 0;
+    
+    for (const letter of UKRAINIAN_LETTERS) {
+      letterCount++;
+      console.log(`\n[MISSING ${letterCount}/${UKRAINIAN_LETTERS.length}] Processing letter: ${letter}`);
+      
+      try {
+        const letterRecords = await scrapeLetterPages(letter, this.config, 'missing');
+        allRecords.push(...letterRecords);
+        
+        console.log(`✅ Letter "${letter}" (missing) completed: ${letterRecords.length} records`);
+        console.log(`📊 Running total: ${allRecords.length} records`);
+        
+        // Add delay between letters
+        if (letterCount < UKRAINIAN_LETTERS.length && this.config.delayBetweenRequests) {
+          await sleep(this.config.delayBetweenRequests);
+        }
+        
+      } catch (error) {
+        console.error(`❌ Failed to scrape letter "${letter}" (missing):`, error);
+        // Continue with next letter instead of stopping
+      }
+    }
+    
+    const missingCount = allRecords.length - deathCount;
+    console.log(`\n✅ PHASE 2 Complete: ${missingCount} missing records collected`);
+    
     console.log(`\n🎉 Lost Armour scraping completed!`);
     console.log(`📊 Total records collected: ${allRecords.length}`);
+    console.log(`   - Deaths: ${deathCount}`);
+    console.log(`   - Missing: ${missingCount}`);
     
     return allRecords;
   }
@@ -213,21 +261,37 @@ export class LostArmourUkraineScraper {
   
   // Convert Lost Armour format to our existing format for compatibility
   convertToStandardFormat(records: LostArmourUkraineRecord[]): any[] {
-    return records.map(record => ({
-      name: record.fullname || '',
-      birthDate: this.normalizeDate(record.date_of_birth) || '',
-      deathDate: this.normalizeDate(record.date_of_death || record.death_at) || '',
-      missingDate: '', // Lost Armour doesn't distinguish missing vs dead - all are deaths
-      location: this.combineLocation(record.region_of_live, record.region_of_death),
-      rawText: this.buildRawText(record),
-      pageSource: 'lostarmour.info',
-      detailUrl: '', // Lost Armour doesn't provide individual URLs
-      // Additional fields from Lost Armour
-      rank: record.rank || '',
-      age: record.age || '',
-      conscription: record.conscription || '',
-      sources: record.sources ? decodeURIComponent(record.sources) : ''
-    }));
+    return records.map(record => {
+      // Handle different date fields for deaths vs missing
+      const deathDateValue = this.normalizeDate(record.date_of_death || record.death_at) || '';
+      const missingDateValue = this.normalizeDate(record.date_of_miss) || '';
+      
+      // Handle different region fields for deaths vs missing
+      const regionDeath = record.region_of_death || '';
+      const regionMiss = record.region_of_miss || '';
+      const regionLive = record.region_of_live || '';
+      
+      const location = record.recordType === 'missing' 
+        ? this.combineLocation(regionLive, regionMiss)
+        : this.combineLocation(regionLive, regionDeath);
+      
+      return {
+        name: record.fullname || '',
+        birthDate: this.normalizeDate(record.date_of_birth) || '',
+        deathDate: record.recordType === 'death' ? deathDateValue : '',
+        missingDate: record.recordType === 'missing' ? missingDateValue : '',
+        location,
+        rawText: this.buildRawText(record),
+        pageSource: 'lostarmour.info',
+        detailUrl: '', // Lost Armour doesn't provide individual URLs
+        // Additional fields from Lost Armour
+        rank: record.rank || '',
+        age: record.age || '',
+        conscription: record.conscription || '',
+        sources: record.sources ? decodeURIComponent(record.sources) : '',
+        recordType: record.recordType || 'death'
+      };
+    });
   }
   
   private normalizeDate(dateStr: string | null): string {

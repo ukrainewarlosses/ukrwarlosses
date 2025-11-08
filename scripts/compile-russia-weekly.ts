@@ -38,9 +38,12 @@ async function main() {
     }
     
     const warStart = new Date('2022-02-24T00:00:00Z'); // Russia invasion start
-    // Stop at current month minus one (e.g., if current month is August, stop at July)
+    // Cutoff: Last day of previous month (consistent with Ukraine)
     const now = new Date();
-    const cutoffMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1); // Previous month
+    const firstDayOfCurrentMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const lastDayOfPreviousMonth = new Date(firstDayOfCurrentMonth.getTime() - 1);
+    const cutoffDate = lastDayOfPreviousMonth;
+    const cutoffMonth = new Date(lastDayOfPreviousMonth.getFullYear(), lastDayOfPreviousMonth.getMonth(), 1);
     
     const weeklyData: Record<string, RussiaWeeklyData> = {};
 
@@ -87,9 +90,8 @@ async function main() {
       
       if (!eventDate || isNaN(eventDate.getTime()) || eventDate < warStart) continue;
       
-      // Skip if the date is in current month or future months
-      const recordMonth = new Date(eventDate.getFullYear(), eventDate.getMonth(), 1);
-      if (recordMonth > cutoffMonth) continue;
+      // Skip future dates beyond cutoff (last day of previous month)
+      if (eventDate > cutoffDate) continue;
       
       const weekKey = getWeekKey(eventDate);
       

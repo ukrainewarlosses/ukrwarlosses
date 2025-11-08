@@ -1,0 +1,227 @@
+{
+  "2022-02": {
+    "deaths": 889,
+    "missing": 1114,
+    "total": 2003
+  },
+  "2022-03": {
+    "deaths": 3295,
+    "missing": 1065,
+    "total": 4360
+  },
+  "2022-04": {
+    "deaths": 1902,
+    "missing": 659,
+    "total": 2561
+  },
+  "2022-05": {
+    "deaths": 2136,
+    "missing": 802,
+    "total": 2938
+  },
+  "2022-06": {
+    "deaths": 1380,
+    "missing": 505,
+    "total": 1885
+  },
+  "2022-07": {
+    "deaths": 1441,
+    "missing": 309,
+    "total": 1750
+  },
+  "2022-08": {
+    "deaths": 1647,
+    "missing": 369,
+    "total": 2016
+  },
+  "2022-09": {
+    "deaths": 2017,
+    "missing": 376,
+    "total": 2393
+  },
+  "2022-10": {
+    "deaths": 1952,
+    "missing": 532,
+    "total": 2484
+  },
+  "2022-11": {
+    "deaths": 1501,
+    "missing": 713,
+    "total": 2214
+  },
+  "2022-12": {
+    "deaths": 1790,
+    "missing": 876,
+    "total": 2666
+  },
+  "2023-01": {
+    "deaths": 2065,
+    "missing": 979,
+    "total": 3044
+  },
+  "2023-02": {
+    "deaths": 1888,
+    "missing": 926,
+    "total": 2814
+  },
+  "2023-03": {
+    "deaths": 2132,
+    "missing": 980,
+    "total": 3112
+  },
+  "2023-04": {
+    "deaths": 1516,
+    "missing": 818,
+    "total": 2334
+  },
+  "2023-05": {
+    "deaths": 1527,
+    "missing": 576,
+    "total": 2103
+  },
+  "2023-06": {
+    "deaths": 2148,
+    "missing": 606,
+    "total": 2754
+  },
+  "2023-07": {
+    "deaths": 2270,
+    "missing": 760,
+    "total": 3030
+  },
+  "2023-08": {
+    "deaths": 2168,
+    "missing": 583,
+    "total": 2751
+  },
+  "2023-09": {
+    "deaths": 1736,
+    "missing": 577,
+    "total": 2313
+  },
+  "2023-10": {
+    "deaths": 2367,
+    "missing": 1204,
+    "total": 3571
+  },
+  "2023-11": {
+    "deaths": 1867,
+    "missing": 1089,
+    "total": 2956
+  },
+  "2023-12": {
+    "deaths": 1960,
+    "missing": 1331,
+    "total": 3291
+  },
+  "2024-01": {
+    "deaths": 1899,
+    "missing": 1029,
+    "total": 2928
+  },
+  "2024-02": {
+    "deaths": 1907,
+    "missing": 1298,
+    "total": 3205
+  },
+  "2024-03": {
+    "deaths": 1710,
+    "missing": 1120,
+    "total": 2830
+  },
+  "2024-04": {
+    "deaths": 1588,
+    "missing": 1509,
+    "total": 3097
+  },
+  "2024-05": {
+    "deaths": 1914,
+    "missing": 2174,
+    "total": 4088
+  },
+  "2024-06": {
+    "deaths": 1710,
+    "missing": 2255,
+    "total": 3965
+  },
+  "2024-07": {
+    "deaths": 1894,
+    "missing": 2845,
+    "total": 4739
+  },
+  "2024-08": {
+    "deaths": 2065,
+    "missing": 2689,
+    "total": 4754
+  },
+  "2024-09": {
+    "deaths": 2036,
+    "missing": 3310,
+    "total": 5346
+  },
+  "2024-10": {
+    "deaths": 1919,
+    "missing": 2964,
+    "total": 4883
+  },
+  "2024-11": {
+    "deaths": 1735,
+    "missing": 3173,
+    "total": 4908
+  },
+  "2024-12": {
+    "deaths": 1664,
+    "missing": 3489,
+    "total": 5153
+  },
+  "2025-01": {
+    "deaths": 1623,
+    "missing": 3109,
+    "total": 4732
+  },
+  "2025-02": {
+    "deaths": 1346,
+    "missing": 2597,
+    "total": 3943
+  },
+  "2025-03": {
+    "deaths": 1334,
+    "missing": 3839,
+    "total": 5173
+  },
+  "2025-04": {
+    "deaths": 1232,
+    "missing": 3247,
+    "total": 4479
+  },
+  "2025-05": {
+    "deaths": 1262,
+    "missing": 3679,
+    "total": 4941
+  },
+  "2025-06": {
+    "deaths": 1245,
+    "missing": 3531,
+    "total": 4776
+  },
+  "2025-07": {
+    "deaths": 1195,
+    "missing": 3214,
+    "total": 4409
+  },
+  "2025-08": {
+    "deaths": 1032,
+    "missing": 3024,
+    "total": 4056
+  },
+  "2025-09": {
+    "deaths": 891,
+    "missing": 3283,
+    "total": 4174
+  },
+  "2025-10": {
+    "deaths": 517,
+    "missing": 2115,
+    "total": 2632
+  }
+}

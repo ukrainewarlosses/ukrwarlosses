@@ -52,10 +52,16 @@ async function loadLatestDataFiles() {
     .sort()
     .pop();
     
-  const ukraineDailyFile = ukraineFiles
+  // Use deduplicated daily if available, otherwise fall back to raw
+  const dedupDaily = ukraineFiles
+    .filter(f => f.startsWith('daily-deduplicated_') && f.endsWith('.json'))
+    .sort()
+    .pop();
+  const rawDaily = ukraineFiles
     .filter(f => f.startsWith('daily-raw_') && f.endsWith('.json'))
     .sort()
     .pop();
+  const ukraineDailyFile = dedupDaily || rawDaily;
     
   // Find latest Russia monthly data
   const russiaDir = path.join(dataDir, 'russia');

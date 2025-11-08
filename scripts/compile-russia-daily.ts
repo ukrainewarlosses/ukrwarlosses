@@ -29,9 +29,11 @@ async function main() {
     }
     
     const warStart = new Date('2022-02-24T00:00:00Z'); // Russia invasion start
-    // Stop at current date minus one (e.g., if current date is August 21, stop at August 20)
+    // Cutoff: Last day of previous month (consistent with Ukraine and monthly/weekly)
     const now = new Date();
-    const cutoffDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1); // Previous day
+    const firstDayOfCurrentMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const lastDayOfPreviousMonth = new Date(firstDayOfCurrentMonth.getTime() - 1);
+    const cutoffDate = lastDayOfPreviousMonth;
     
     const dailyData: Record<string, RussiaDailyData> = {};
 

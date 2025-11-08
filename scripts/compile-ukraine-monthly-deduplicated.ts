@@ -17,7 +17,7 @@ interface UkraineLostArmourRecord {
   age?: string;
   conscription?: string;
   sources?: string;
-  recordType: 'death' | 'missing';
+  recordType?: 'death' | 'missing';
   estimatedDeathDate?: string;
 }
 
@@ -49,17 +49,20 @@ async function compileUkrainianMonthlyDeduplicated() {
     
     console.log(`📊 Deduplicated records loaded: ${records.length.toLocaleString()}`);
     
-    // Analyze by record type
-    const deathRecords = records.filter(r => r.recordType === 'death');
-    const missingRecords = records.filter(r => r.recordType === 'missing');
+    // Analyze by record type (infer from dates if recordType not present)
+    const deathRecords = records.filter(r => r.recordType === 'death' || (r.deathDate && r.deathDate !== ''));
+    const missingRecords = records.filter(r => r.recordType === 'missing' || (r.missingDate && r.missingDate !== '' && (!r.deathDate || r.deathDate === '')));
     
     console.log(`   Deaths: ${deathRecords.length.toLocaleString()}`);
     console.log(`   Missing: ${missingRecords.length.toLocaleString()}`);
     
     // Define war start and cutoff
     const warStart = new Date('2022-02-01T00:00:00Z');
+    // Cutoff: Last day of previous month
     const now = new Date();
-    const cutoffMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+    const firstDayOfCurrentMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const lastDayOfPreviousMonth = new Date(firstDayOfCurrentMonth.getTime() - 1);
+    const cutoffMonth = new Date(lastDayOfPreviousMonth.getFullYear(), lastDayOfPreviousMonth.getMonth(), 1);
     
     console.log(`📅 Date range: ${warStart.toISOString().split('T')[0]} to ${cutoffMonth.toISOString().split('T')[0]}`);
     
@@ -74,10 +77,11 @@ async function compileUkrainianMonthlyDeduplicated() {
       let eventDateStr: string;
       let isDeathRecord = false;
       
-      if (record.recordType === 'death' && record.deathDate) {
+      // Infer record type from dates if recordType not present
+      if ((record.recordType === 'death' || !record.recordType) && record.deathDate && record.deathDate !== '') {
         eventDateStr = record.deathDate;
         isDeathRecord = true;
-      } else if (record.recordType === 'missing' && record.missingDate) {
+      } else if ((record.recordType === 'missing' || !record.recordType) && record.missingDate && record.missingDate !== '') {
         eventDateStr = record.missingDate;
         isDeathRecord = false;
       } else {
@@ -86,7 +90,9 @@ async function compileUkrainianMonthlyDeduplicated() {
         continue;
       }
       
-      const eventDate = new Date(eventDateStr);
+      // Clean up malformed dates (e.g., "2022)-12-(09" -> "2022-12-09")
+      const cleanedDateStr = eventDateStr.replace(/\)/g, '').replace(/\(/g, '-').replace(/--+/g, '-');
+      const eventDate = new Date(cleanedDateStr);
       
       // Skip invalid dates or dates before war start
       if (isNaN(eventDate.getTime()) || eventDate < warStart) {
@@ -94,9 +100,8 @@ async function compileUkrainianMonthlyDeduplicated() {
         continue;
       }
       
-      // Skip future dates beyond cutoff
-      const recordMonth = new Date(eventDate.getFullYear(), eventDate.getMonth(), 1);
-      if (recordMonth > cutoffMonth) {
+      // Skip future dates beyond cutoff (last day of previous month)
+      if (eventDate > lastDayOfPreviousMonth) {
         skippedCount++;
         continue;
       }

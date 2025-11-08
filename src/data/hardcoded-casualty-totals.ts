@@ -1,6 +1,5 @@
-// Hardcoded casualty totals data
-// This will be updated by the cron job when new data is scraped
-// Last updated: 2025-09-01T21:40:02.435Z
+// Auto-generated hardcoded casualty totals data
+// Last updated: 2025-11-08T17:36:20.267Z
 
 export interface CasualtyData {
   country: 'russia' | 'ukraine';
@@ -21,18 +20,18 @@ export interface HardcodedCasualtyData {
 export const hardcodedCasualtyData: HardcodedCasualtyData = {
   "ukraine": {
     "country": "ukraine",
-    "total_losses": 158892,
-    "dead": 79446,
-    "missing": 74679,
-    "prisoners": 4766,
-    "last_updated": "2025-09-01T21:40:02.434Z",
-    "source_url": "https://ualosses.org/en/soldiers/"
+    "total_losses": 154563,
+    "dead": 77321,
+    "missing": 77242,
+    "prisoners": 0,
+    "last_updated": "2025-11-08T17:36:20.265Z",
+    "source_url": "https://lostarmour.info/ukr200"
   },
   "russia": {
     "country": "russia",
-    "total_losses": 121507,
-    "last_updated": "2025-09-01T21:40:02.435Z",
-    "source_url": "https://en.zona.media/article/2025/08/01/casualties_eng-trl"
+    "total_losses": 122670,
+    "last_updated": "2025-11-08T17:36:20.266Z",
+    "source_url": "https://svo.rf.gd"
   },
-  "lastUpdated": "2025-09-01T21:40:02.435Z"
+  "lastUpdated": "2025-11-08T17:36:20.266Z"
 };

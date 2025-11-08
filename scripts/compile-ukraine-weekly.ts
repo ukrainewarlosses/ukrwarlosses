@@ -15,7 +15,7 @@ interface UkraineLostArmourRecord {
   age?: string;
   conscription?: string;
   sources?: string;
-  recordType: 'death' | 'missing';
+  recordType?: 'death' | 'missing';
   estimatedDeathDate?: string;
 }
 
@@ -53,9 +53,9 @@ async function main() {
   
   console.log(`📊 Raw records loaded: ${records.length.toLocaleString()}`);
   
-  // Analyze by record type
-  const deathRecords = records.filter(r => r.recordType === 'death');
-  const missingRecords = records.filter(r => r.recordType === 'missing');
+  // Analyze by record type (infer from dates if recordType not present)
+  const deathRecords = records.filter(r => r.recordType === 'death' || (r.deathDate && r.deathDate !== ''));
+  const missingRecords = records.filter(r => r.recordType === 'missing' || (r.missingDate && r.missingDate !== '' && (!r.deathDate || r.deathDate === '')));
   
   console.log(`   Deaths: ${deathRecords.length.toLocaleString()}`);
   console.log(`   Missing: ${missingRecords.length.toLocaleString()}`);
@@ -75,10 +75,11 @@ async function main() {
     let eventDateStr: string;
     let isDeathRecord = false;
     
-    if (record.recordType === 'death' && record.deathDate) {
+    // Infer record type from dates if recordType not present
+    if ((record.recordType === 'death' || !record.recordType) && record.deathDate && record.deathDate !== '') {
       eventDateStr = record.deathDate;
       isDeathRecord = true;
-    } else if (record.recordType === 'missing' && record.missingDate) {
+    } else if ((record.recordType === 'missing' || !record.recordType) && record.missingDate && record.missingDate !== '') {
       eventDateStr = record.missingDate;
       isDeathRecord = false;
     } else {

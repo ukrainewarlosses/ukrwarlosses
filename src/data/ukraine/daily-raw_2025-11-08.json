@@ -1,0 +1,6757 @@
+{
+  "2022-02-23": {
+    "deaths": 230,
+    "missing": 894,
+    "total": 1124
+  },
+  "2022-02-24": {
+    "deaths": 113,
+    "missing": 32,
+    "total": 145
+  },
+  "2022-02-25": {
+    "deaths": 220,
+    "missing": 33,
+    "total": 253
+  },
+  "2022-02-26": {
+    "deaths": 119,
+    "missing": 23,
+    "total": 142
+  },
+  "2022-02-27": {
+    "deaths": 81,
+    "missing": 46,
+    "total": 127
+  },
+  "2022-02-28": {
+    "deaths": 126,
+    "missing": 86,
+    "total": 212
+  },
+  "2022-03-01": {
+    "deaths": 103,
+    "missing": 133,
+    "total": 236
+  },
+  "2022-03-02": {
+    "deaths": 130,
+    "missing": 67,
+    "total": 197
+  },
+  "2022-03-03": {
+    "deaths": 78,
+    "missing": 19,
+    "total": 97
+  },
+  "2022-03-04": {
+    "deaths": 96,
+    "missing": 31,
+    "total": 127
+  },
+  "2022-03-05": {
+    "deaths": 88,
+    "missing": 26,
+    "total": 114
+  },
+  "2022-03-06": {
+    "deaths": 158,
+    "missing": 18,
+    "total": 176
+  },
+  "2022-03-07": {
+    "deaths": 84,
+    "missing": 20,
+    "total": 104
+  },
+  "2022-03-08": {
+    "deaths": 113,
+    "missing": 39,
+    "total": 152
+  },
+  "2022-03-09": {
+    "deaths": 67,
+    "missing": 36,
+    "total": 103
+  },
+  "2022-03-10": {
+    "deaths": 119,
+    "missing": 26,
+    "total": 145
+  },
+  "2022-03-11": {
+    "deaths": 116,
+    "missing": 28,
+    "total": 144
+  },
+  "2022-03-12": {
+    "deaths": 181,
+    "missing": 21,
+    "total": 202
+  },
+  "2022-03-13": {
+    "deaths": 157,
+    "missing": 20,
+    "total": 177
+  },
+  "2022-03-14": {
+    "deaths": 87,
+    "missing": 67,
+    "total": 154
+  },
+  "2022-03-15": {
+    "deaths": 99,
+    "missing": 34,
+    "total": 133
+  },
+  "2022-03-16": {
+    "deaths": 61,
+    "missing": 26,
+    "total": 87
+  },
+  "2022-03-17": {
+    "deaths": 286,
+    "missing": 23,
+    "total": 309
+  },
+  "2022-03-18": {
+    "deaths": 71,
+    "missing": 19,
+    "total": 90
+  },
+  "2022-03-19": {
+    "deaths": 120,
+    "missing": 47,
+    "total": 167
+  },
+  "2022-03-20": {
+    "deaths": 97,
+    "missing": 28,
+    "total": 125
+  },
+  "2022-03-21": {
+    "deaths": 92,
+    "missing": 35,
+    "total": 127
+  },
+  "2022-03-22": {
+    "deaths": 75,
+    "missing": 21,
+    "total": 96
+  },
+  "2022-03-23": {
+    "deaths": 91,
+    "missing": 37,
+    "total": 128
+  },
+  "2022-03-24": {
+    "deaths": 103,
+    "missing": 23,
+    "total": 126
+  },
+  "2022-03-25": {
+    "deaths": 93,
+    "missing": 37,
+    "total": 130
+  },
+  "2022-03-26": {
+    "deaths": 67,
+    "missing": 16,
+    "total": 83
+  },
+  "2022-03-27": {
+    "deaths": 70,
+    "missing": 24,
+    "total": 94
+  },
+  "2022-03-28": {
+    "deaths": 102,
+    "missing": 45,
+    "total": 147
+  },
+  "2022-03-29": {
+    "deaths": 58,
+    "missing": 20,
+    "total": 78
+  },
+  "2022-03-30": {
+    "deaths": 113,
+    "missing": 21,
+    "total": 134
+  },
+  "2022-03-31": {
+    "deaths": 120,
+    "missing": 58,
+    "total": 178
+  },
+  "2022-04-01": {
+    "deaths": 45,
+    "missing": 19,
+    "total": 64
+  },
+  "2022-04-02": {
+    "deaths": 40,
+    "missing": 22,
+    "total": 62
+  },
+  "2022-04-03": {
+    "deaths": 57,
+    "missing": 21,
+    "total": 78
+  },
+  "2022-04-04": {
+    "deaths": 78,
+    "missing": 22,
+    "total": 100
+  },
+  "2022-04-05": {
+    "deaths": 56,
+    "missing": 23,
+    "total": 79
+  },
+  "2022-04-06": {
+    "deaths": 68,
+    "missing": 31,
+    "total": 99
+  },
+  "2022-04-07": {
+    "deaths": 31,
+    "missing": 9,
+    "total": 40
+  },
+  "2022-04-08": {
+    "deaths": 56,
+    "missing": 16,
+    "total": 72
+  },
+  "2022-04-09": {
+    "deaths": 58,
+    "missing": 33,
+    "total": 91
+  },
+  "2022-04-10": {
+    "deaths": 46,
+    "missing": 15,
+    "total": 61
+  },
+  "2022-04-11": {
+    "deaths": 66,
+    "missing": 35,
+    "total": 101
+  },
+  "2022-04-12": {
+    "deaths": 48,
+    "missing": 20,
+    "total": 68
+  },
+  "2022-04-13": {
+    "deaths": 40,
+    "missing": 19,
+    "total": 59
+  },
+  "2022-04-14": {
+    "deaths": 94,
+    "missing": 30,
+    "total": 124
+  },
+  "2022-04-15": {
+    "deaths": 80,
+    "missing": 24,
+    "total": 104
+  },
+  "2022-04-16": {
+    "deaths": 110,
+    "missing": 27,
+    "total": 137
+  },
+  "2022-04-17": {
+    "deaths": 53,
+    "missing": 22,
+    "total": 75
+  },
+  "2022-04-18": {
+    "deaths": 91,
+    "missing": 17,
+    "total": 108
+  },
+  "2022-04-19": {
+    "deaths": 80,
+    "missing": 26,
+    "total": 106
+  },
+  "2022-04-20": {
+    "deaths": 64,
+    "missing": 28,
+    "total": 92
+  },
+  "2022-04-21": {
+    "deaths": 98,
+    "missing": 21,
+    "total": 119
+  },
+  "2022-04-22": {
+    "deaths": 77,
+    "missing": 16,
+    "total": 93
+  },
+  "2022-04-23": {
+    "deaths": 51,
+    "missing": 33,
+    "total": 84
+  },
+  "2022-04-24": {
+    "deaths": 72,
+    "missing": 17,
+    "total": 89
+  },
+  "2022-04-25": {
+    "deaths": 51,
+    "missing": 18,
+    "total": 69
+  },
+  "2022-04-26": {
+    "deaths": 57,
+    "missing": 9,
+    "total": 66
+  },
+  "2022-04-27": {
+    "deaths": 77,
+    "missing": 18,
+    "total": 95
+  },
+  "2022-04-28": {
+    "deaths": 60,
+    "missing": 18,
+    "total": 78
+  },
+  "2022-04-29": {
+    "deaths": 58,
+    "missing": 17,
+    "total": 75
+  },
+  "2022-04-30": {
+    "deaths": 40,
+    "missing": 33,
+    "total": 73
+  },
+  "2022-05-01": {
+    "deaths": 67,
+    "missing": 12,
+    "total": 79
+  },
+  "2022-05-02": {
+    "deaths": 44,
+    "missing": 23,
+    "total": 67
+  },
+  "2022-05-03": {
+    "deaths": 49,
+    "missing": 18,
+    "total": 67
+  },
+  "2022-05-04": {
+    "deaths": 80,
+    "missing": 36,
+    "total": 116
+  },
+  "2022-05-05": {
+    "deaths": 59,
+    "missing": 15,
+    "total": 74
+  },
+  "2022-05-06": {
+    "deaths": 94,
+    "missing": 41,
+    "total": 135
+  },
+  "2022-05-07": {
+    "deaths": 131,
+    "missing": 25,
+    "total": 156
+  },
+  "2022-05-08": {
+    "deaths": 61,
+    "missing": 17,
+    "total": 78
+  },
+  "2022-05-09": {
+    "deaths": 56,
+    "missing": 25,
+    "total": 81
+  },
+  "2022-05-10": {
+    "deaths": 79,
+    "missing": 13,
+    "total": 92
+  },
+  "2022-05-11": {
+    "deaths": 72,
+    "missing": 10,
+    "total": 82
+  },
+  "2022-05-12": {
+    "deaths": 49,
+    "missing": 12,
+    "total": 61
+  },
+  "2022-05-13": {
+    "deaths": 76,
+    "missing": 21,
+    "total": 97
+  },
+  "2022-05-14": {
+    "deaths": 72,
+    "missing": 32,
+    "total": 104
+  },
+  "2022-05-15": {
+    "deaths": 62,
+    "missing": 35,
+    "total": 97
+  },
+  "2022-05-16": {
+    "deaths": 164,
+    "missing": 45,
+    "total": 209
+  },
+  "2022-05-17": {
+    "deaths": 61,
+    "missing": 27,
+    "total": 88
+  },
+  "2022-05-18": {
+    "deaths": 50,
+    "missing": 34,
+    "total": 84
+  },
+  "2022-05-19": {
+    "deaths": 53,
+    "missing": 60,
+    "total": 113
+  },
+  "2022-05-20": {
+    "deaths": 51,
+    "missing": 19,
+    "total": 70
+  },
+  "2022-05-21": {
+    "deaths": 73,
+    "missing": 28,
+    "total": 101
+  },
+  "2022-05-22": {
+    "deaths": 75,
+    "missing": 43,
+    "total": 118
+  },
+  "2022-05-23": {
+    "deaths": 74,
+    "missing": 41,
+    "total": 115
+  },
+  "2022-05-24": {
+    "deaths": 66,
+    "missing": 36,
+    "total": 102
+  },
+  "2022-05-25": {
+    "deaths": 51,
+    "missing": 20,
+    "total": 71
+  },
+  "2022-05-26": {
+    "deaths": 99,
+    "missing": 11,
+    "total": 110
+  },
+  "2022-05-27": {
+    "deaths": 42,
+    "missing": 24,
+    "total": 66
+  },
+  "2022-05-28": {
+    "deaths": 57,
+    "missing": 9,
+    "total": 66
+  },
+  "2022-05-29": {
+    "deaths": 53,
+    "missing": 15,
+    "total": 68
+  },
+  "2022-05-30": {
+    "deaths": 65,
+    "missing": 17,
+    "total": 82
+  },
+  "2022-05-31": {
+    "deaths": 51,
+    "missing": 38,
+    "total": 89
+  },
+  "2022-06-01": {
+    "deaths": 40,
+    "missing": 7,
+    "total": 47
+  },
+  "2022-06-02": {
+    "deaths": 32,
+    "missing": 16,
+    "total": 48
+  },
+  "2022-06-03": {
+    "deaths": 31,
+    "missing": 10,
+    "total": 41
+  },
+  "2022-06-04": {
+    "deaths": 67,
+    "missing": 9,
+    "total": 76
+  },
+  "2022-06-05": {
+    "deaths": 51,
+    "missing": 29,
+    "total": 80
+  },
+  "2022-06-06": {
+    "deaths": 38,
+    "missing": 13,
+    "total": 51
+  },
+  "2022-06-07": {
+    "deaths": 29,
+    "missing": 22,
+    "total": 51
+  },
+  "2022-06-08": {
+    "deaths": 45,
+    "missing": 20,
+    "total": 65
+  },
+  "2022-06-09": {
+    "deaths": 55,
+    "missing": 9,
+    "total": 64
+  },
+  "2022-06-10": {
+    "deaths": 51,
+    "missing": 10,
+    "total": 61
+  },
+  "2022-06-11": {
+    "deaths": 40,
+    "missing": 12,
+    "total": 52
+  },
+  "2022-06-12": {
+    "deaths": 29,
+    "missing": 9,
+    "total": 38
+  },
+  "2022-06-13": {
+    "deaths": 27,
+    "missing": 5,
+    "total": 32
+  },
+  "2022-06-14": {
+    "deaths": 43,
+    "missing": 13,
+    "total": 56
+  },
+  "2022-06-15": {
+    "deaths": 41,
+    "missing": 21,
+    "total": 62
+  },
+  "2022-06-16": {
+    "deaths": 48,
+    "missing": 7,
+    "total": 55
+  },
+  "2022-06-17": {
+    "deaths": 63,
+    "missing": 12,
+    "total": 75
+  },
+  "2022-06-18": {
+    "deaths": 55,
+    "missing": 12,
+    "total": 67
+  },
+  "2022-06-19": {
+    "deaths": 70,
+    "missing": 16,
+    "total": 86
+  },
+  "2022-06-20": {
+    "deaths": 53,
+    "missing": 16,
+    "total": 69
+  },
+  "2022-06-21": {
+    "deaths": 45,
+    "missing": 24,
+    "total": 69
+  },
+  "2022-06-22": {
+    "deaths": 46,
+    "missing": 23,
+    "total": 69
+  },
+  "2022-06-23": {
+    "deaths": 33,
+    "missing": 8,
+    "total": 41
+  },
+  "2022-06-24": {
+    "deaths": 32,
+    "missing": 27,
+    "total": 59
+  },
+  "2022-06-25": {
+    "deaths": 72,
+    "missing": 19,
+    "total": 91
+  },
+  "2022-06-26": {
+    "deaths": 51,
+    "missing": 18,
+    "total": 69
+  },
+  "2022-06-27": {
+    "deaths": 50,
+    "missing": 16,
+    "total": 66
+  },
+  "2022-06-28": {
+    "deaths": 47,
+    "missing": 14,
+    "total": 61
+  },
+  "2022-06-29": {
+    "deaths": 58,
+    "missing": 67,
+    "total": 125
+  },
+  "2022-06-30": {
+    "deaths": 38,
+    "missing": 21,
+    "total": 59
+  },
+  "2022-07-01": {
+    "deaths": 41,
+    "missing": 4,
+    "total": 45
+  },
+  "2022-07-02": {
+    "deaths": 34,
+    "missing": 10,
+    "total": 44
+  },
+  "2022-07-03": {
+    "deaths": 39,
+    "missing": 20,
+    "total": 59
+  },
+  "2022-07-04": {
+    "deaths": 34,
+    "missing": 6,
+    "total": 40
+  },
+  "2022-07-05": {
+    "deaths": 48,
+    "missing": 2,
+    "total": 50
+  },
+  "2022-07-06": {
+    "deaths": 59,
+    "missing": 19,
+    "total": 78
+  },
+  "2022-07-07": {
+    "deaths": 39,
+    "missing": 8,
+    "total": 47
+  },
+  "2022-07-08": {
+    "deaths": 64,
+    "missing": 8,
+    "total": 72
+  },
+  "2022-07-09": {
+    "deaths": 21,
+    "missing": 8,
+    "total": 29
+  },
+  "2022-07-10": {
+    "deaths": 16,
+    "missing": 5,
+    "total": 21
+  },
+  "2022-07-11": {
+    "deaths": 44,
+    "missing": 9,
+    "total": 53
+  },
+  "2022-07-12": {
+    "deaths": 71,
+    "missing": 7,
+    "total": 78
+  },
+  "2022-07-13": {
+    "deaths": 36,
+    "missing": 4,
+    "total": 40
+  },
+  "2022-07-14": {
+    "deaths": 44,
+    "missing": 7,
+    "total": 51
+  },
+  "2022-07-15": {
+    "deaths": 27,
+    "missing": 12,
+    "total": 39
+  },
+  "2022-07-16": {
+    "deaths": 68,
+    "missing": 5,
+    "total": 73
+  },
+  "2022-07-17": {
+    "deaths": 44,
+    "missing": 13,
+    "total": 57
+  },
+  "2022-07-18": {
+    "deaths": 47,
+    "missing": 10,
+    "total": 57
+  },
+  "2022-07-19": {
+    "deaths": 37,
+    "missing": 15,
+    "total": 52
+  },
+  "2022-07-20": {
+    "deaths": 46,
+    "missing": 4,
+    "total": 50
+  },
+  "2022-07-21": {
+    "deaths": 55,
+    "missing": 4,
+    "total": 59
+  },
+  "2022-07-22": {
+    "deaths": 37,
+    "missing": 2,
+    "total": 39
+  },
+  "2022-07-23": {
+    "deaths": 46,
+    "missing": 7,
+    "total": 53
+  },
+  "2022-07-24": {
+    "deaths": 68,
+    "missing": 10,
+    "total": 78
+  },
+  "2022-07-25": {
+    "deaths": 52,
+    "missing": 11,
+    "total": 63
+  },
+  "2022-07-26": {
+    "deaths": 51,
+    "missing": 9,
+    "total": 60
+  },
+  "2022-07-27": {
+    "deaths": 74,
+    "missing": 3,
+    "total": 77
+  },
+  "2022-07-28": {
+    "deaths": 87,
+    "missing": 13,
+    "total": 100
+  },
+  "2022-07-29": {
+    "deaths": 38,
+    "missing": 16,
+    "total": 54
+  },
+  "2022-07-30": {
+    "deaths": 39,
+    "missing": 22,
+    "total": 61
+  },
+  "2022-07-31": {
+    "deaths": 35,
+    "missing": 36,
+    "total": 71
+  },
+  "2022-08-01": {
+    "deaths": 33,
+    "missing": 18,
+    "total": 51
+  },
+  "2022-08-02": {
+    "deaths": 23,
+    "missing": 19,
+    "total": 42
+  },
+  "2022-08-03": {
+    "deaths": 41,
+    "missing": 10,
+    "total": 51
+  },
+  "2022-08-04": {
+    "deaths": 40,
+    "missing": 4,
+    "total": 44
+  },
+  "2022-08-05": {
+    "deaths": 57,
+    "missing": 29,
+    "total": 86
+  },
+  "2022-08-06": {
+    "deaths": 47,
+    "missing": 6,
+    "total": 53
+  },
+  "2022-08-07": {
+    "deaths": 47,
+    "missing": 11,
+    "total": 58
+  },
+  "2022-08-08": {
+    "deaths": 50,
+    "missing": 23,
+    "total": 73
+  },
+  "2022-08-09": {
+    "deaths": 55,
+    "missing": 20,
+    "total": 75
+  },
+  "2022-08-10": {
+    "deaths": 42,
+    "missing": 6,
+    "total": 48
+  },
+  "2022-08-11": {
+    "deaths": 44,
+    "missing": 14,
+    "total": 58
+  },
+  "2022-08-12": {
+    "deaths": 62,
+    "missing": 11,
+    "total": 73
+  },
+  "2022-08-13": {
+    "deaths": 56,
+    "missing": 23,
+    "total": 79
+  },
+  "2022-08-14": {
+    "deaths": 36,
+    "missing": 21,
+    "total": 57
+  },
+  "2022-08-15": {
+    "deaths": 66,
+    "missing": 9,
+    "total": 75
+  },
+  "2022-08-16": {
+    "deaths": 45,
+    "missing": 8,
+    "total": 53
+  },
+  "2022-08-17": {
+    "deaths": 74,
+    "missing": 10,
+    "total": 84
+  },
+  "2022-08-18": {
+    "deaths": 62,
+    "missing": 8,
+    "total": 70
+  },
+  "2022-08-19": {
+    "deaths": 35,
+    "missing": 12,
+    "total": 47
+  },
+  "2022-08-20": {
+    "deaths": 37,
+    "missing": 6,
+    "total": 43
+  },
+  "2022-08-21": {
+    "deaths": 46,
+    "missing": 9,
+    "total": 55
+  },
+  "2022-08-22": {
+    "deaths": 48,
+    "missing": 8,
+    "total": 56
+  },
+  "2022-08-23": {
+    "deaths": 62,
+    "missing": 9,
+    "total": 71
+  },
+  "2022-08-24": {
+    "deaths": 40,
+    "missing": 4,
+    "total": 44
+  },
+  "2022-08-25": {
+    "deaths": 36,
+    "missing": 8,
+    "total": 44
+  },
+  "2022-08-26": {
+    "deaths": 44,
+    "missing": 11,
+    "total": 55
+  },
+  "2022-08-27": {
+    "deaths": 47,
+    "missing": 6,
+    "total": 53
+  },
+  "2022-08-28": {
+    "deaths": 134,
+    "missing": 5,
+    "total": 139
+  },
+  "2022-08-29": {
+    "deaths": 90,
+    "missing": 6,
+    "total": 96
+  },
+  "2022-08-30": {
+    "deaths": 88,
+    "missing": 11,
+    "total": 99
+  },
+  "2022-08-31": {
+    "deaths": 60,
+    "missing": 24,
+    "total": 84
+  },
+  "2022-09-01": {
+    "deaths": 55,
+    "missing": 5,
+    "total": 60
+  },
+  "2022-09-02": {
+    "deaths": 66,
+    "missing": 10,
+    "total": 76
+  },
+  "2022-09-03": {
+    "deaths": 57,
+    "missing": 16,
+    "total": 73
+  },
+  "2022-09-04": {
+    "deaths": 80,
+    "missing": 26,
+    "total": 106
+  },
+  "2022-09-05": {
+    "deaths": 83,
+    "missing": 10,
+    "total": 93
+  },
+  "2022-09-06": {
+    "deaths": 109,
+    "missing": 24,
+    "total": 133
+  },
+  "2022-09-07": {
+    "deaths": 81,
+    "missing": 5,
+    "total": 86
+  },
+  "2022-09-08": {
+    "deaths": 63,
+    "missing": 3,
+    "total": 66
+  },
+  "2022-09-09": {
+    "deaths": 101,
+    "missing": 12,
+    "total": 113
+  },
+  "2022-09-10": {
+    "deaths": 76,
+    "missing": 9,
+    "total": 85
+  },
+  "2022-09-11": {
+    "deaths": 75,
+    "missing": 9,
+    "total": 84
+  },
+  "2022-09-12": {
+    "deaths": 79,
+    "missing": 13,
+    "total": 92
+  },
+  "2022-09-13": {
+    "deaths": 55,
+    "missing": 10,
+    "total": 65
+  },
+  "2022-09-14": {
+    "deaths": 69,
+    "missing": 14,
+    "total": 83
+  },
+  "2022-09-15": {
+    "deaths": 69,
+    "missing": 13,
+    "total": 82
+  },
+  "2022-09-16": {
+    "deaths": 63,
+    "missing": 15,
+    "total": 78
+  },
+  "2022-09-17": {
+    "deaths": 28,
+    "missing": 10,
+    "total": 38
+  },
+  "2022-09-18": {
+    "deaths": 45,
+    "missing": 21,
+    "total": 66
+  },
+  "2022-09-19": {
+    "deaths": 56,
+    "missing": 9,
+    "total": 65
+  },
+  "2022-09-20": {
+    "deaths": 60,
+    "missing": 12,
+    "total": 72
+  },
+  "2022-09-21": {
+    "deaths": 59,
+    "missing": 5,
+    "total": 64
+  },
+  "2022-09-22": {
+    "deaths": 54,
+    "missing": 8,
+    "total": 62
+  },
+  "2022-09-23": {
+    "deaths": 53,
+    "missing": 11,
+    "total": 64
+  },
+  "2022-09-24": {
+    "deaths": 69,
+    "missing": 11,
+    "total": 80
+  },
+  "2022-09-25": {
+    "deaths": 56,
+    "missing": 9,
+    "total": 65
+  },
+  "2022-09-26": {
+    "deaths": 57,
+    "missing": 8,
+    "total": 65
+  },
+  "2022-09-27": {
+    "deaths": 61,
+    "missing": 15,
+    "total": 76
+  },
+  "2022-09-28": {
+    "deaths": 56,
+    "missing": 13,
+    "total": 69
+  },
+  "2022-09-29": {
+    "deaths": 73,
+    "missing": 17,
+    "total": 90
+  },
+  "2022-09-30": {
+    "deaths": 109,
+    "missing": 33,
+    "total": 142
+  },
+  "2022-10-01": {
+    "deaths": 62,
+    "missing": 4,
+    "total": 66
+  },
+  "2022-10-02": {
+    "deaths": 59,
+    "missing": 9,
+    "total": 68
+  },
+  "2022-10-03": {
+    "deaths": 62,
+    "missing": 5,
+    "total": 67
+  },
+  "2022-10-04": {
+    "deaths": 78,
+    "missing": 15,
+    "total": 93
+  },
+  "2022-10-05": {
+    "deaths": 84,
+    "missing": 7,
+    "total": 91
+  },
+  "2022-10-06": {
+    "deaths": 98,
+    "missing": 19,
+    "total": 117
+  },
+  "2022-10-07": {
+    "deaths": 60,
+    "missing": 16,
+    "total": 76
+  },
+  "2022-10-08": {
+    "deaths": 60,
+    "missing": 12,
+    "total": 72
+  },
+  "2022-10-09": {
+    "deaths": 53,
+    "missing": 11,
+    "total": 64
+  },
+  "2022-10-10": {
+    "deaths": 25,
+    "missing": 6,
+    "total": 31
+  },
+  "2022-10-11": {
+    "deaths": 50,
+    "missing": 23,
+    "total": 73
+  },
+  "2022-10-12": {
+    "deaths": 72,
+    "missing": 13,
+    "total": 85
+  },
+  "2022-10-13": {
+    "deaths": 48,
+    "missing": 10,
+    "total": 58
+  },
+  "2022-10-14": {
+    "deaths": 82,
+    "missing": 13,
+    "total": 95
+  },
+  "2022-10-15": {
+    "deaths": 53,
+    "missing": 18,
+    "total": 71
+  },
+  "2022-10-16": {
+    "deaths": 61,
+    "missing": 14,
+    "total": 75
+  },
+  "2022-10-17": {
+    "deaths": 41,
+    "missing": 21,
+    "total": 62
+  },
+  "2022-10-18": {
+    "deaths": 111,
+    "missing": 16,
+    "total": 127
+  },
+  "2022-10-19": {
+    "deaths": 31,
+    "missing": 35,
+    "total": 66
+  },
+  "2022-10-20": {
+    "deaths": 63,
+    "missing": 16,
+    "total": 79
+  },
+  "2022-10-21": {
+    "deaths": 90,
+    "missing": 27,
+    "total": 117
+  },
+  "2022-10-22": {
+    "deaths": 52,
+    "missing": 17,
+    "total": 69
+  },
+  "2022-10-23": {
+    "deaths": 53,
+    "missing": 11,
+    "total": 64
+  },
+  "2022-10-24": {
+    "deaths": 59,
+    "missing": 14,
+    "total": 73
+  },
+  "2022-10-25": {
+    "deaths": 45,
+    "missing": 18,
+    "total": 63
+  },
+  "2022-10-26": {
+    "deaths": 46,
+    "missing": 16,
+    "total": 62
+  },
+  "2022-10-27": {
+    "deaths": 57,
+    "missing": 32,
+    "total": 89
+  },
+  "2022-10-28": {
+    "deaths": 110,
+    "missing": 43,
+    "total": 153
+  },
+  "2022-10-29": {
+    "deaths": 62,
+    "missing": 17,
+    "total": 79
+  },
+  "2022-10-30": {
+    "deaths": 49,
+    "missing": 22,
+    "total": 71
+  },
+  "2022-10-31": {
+    "deaths": 76,
+    "missing": 32,
+    "total": 108
+  },
+  "2022-11-01": {
+    "deaths": 62,
+    "missing": 24,
+    "total": 86
+  },
+  "2022-11-02": {
+    "deaths": 85,
+    "missing": 27,
+    "total": 112
+  },
+  "2022-11-03": {
+    "deaths": 54,
+    "missing": 30,
+    "total": 84
+  },
+  "2022-11-04": {
+    "deaths": 31,
+    "missing": 14,
+    "total": 45
+  },
+  "2022-11-05": {
+    "deaths": 47,
+    "missing": 17,
+    "total": 64
+  },
+  "2022-11-06": {
+    "deaths": 63,
+    "missing": 23,
+    "total": 86
+  },
+  "2022-11-07": {
+    "deaths": 80,
+    "missing": 20,
+    "total": 100
+  },
+  "2022-11-08": {
+    "deaths": 65,
+    "missing": 19,
+    "total": 84
+  },
+  "2022-11-09": {
+    "deaths": 62,
+    "missing": 26,
+    "total": 88
+  },
+  "2022-11-10": {
+    "deaths": 72,
+    "missing": 22,
+    "total": 94
+  },
+  "2022-11-11": {
+    "deaths": 63,
+    "missing": 26,
+    "total": 89
+  },
+  "2022-11-12": {
+    "deaths": 45,
+    "missing": 27,
+    "total": 72
+  },
+  "2022-11-13": {
+    "deaths": 38,
+    "missing": 26,
+    "total": 64
+  },
+  "2022-11-14": {
+    "deaths": 57,
+    "missing": 24,
+    "total": 81
+  },
+  "2022-11-15": {
+    "deaths": 37,
+    "missing": 10,
+    "total": 47
+  },
+  "2022-11-16": {
+    "deaths": 55,
+    "missing": 20,
+    "total": 75
+  },
+  "2022-11-17": {
+    "deaths": 32,
+    "missing": 18,
+    "total": 50
+  },
+  "2022-11-18": {
+    "deaths": 39,
+    "missing": 12,
+    "total": 51
+  },
+  "2022-11-19": {
+    "deaths": 25,
+    "missing": 10,
+    "total": 35
+  },
+  "2022-11-20": {
+    "deaths": 30,
+    "missing": 24,
+    "total": 54
+  },
+  "2022-11-21": {
+    "deaths": 45,
+    "missing": 15,
+    "total": 60
+  },
+  "2022-11-22": {
+    "deaths": 34,
+    "missing": 21,
+    "total": 55
+  },
+  "2022-11-23": {
+    "deaths": 54,
+    "missing": 38,
+    "total": 92
+  },
+  "2022-11-24": {
+    "deaths": 38,
+    "missing": 18,
+    "total": 56
+  },
+  "2022-11-25": {
+    "deaths": 28,
+    "missing": 40,
+    "total": 68
+  },
+  "2022-11-26": {
+    "deaths": 37,
+    "missing": 32,
+    "total": 69
+  },
+  "2022-11-27": {
+    "deaths": 64,
+    "missing": 30,
+    "total": 94
+  },
+  "2022-11-28": {
+    "deaths": 49,
+    "missing": 29,
+    "total": 78
+  },
+  "2022-11-29": {
+    "deaths": 45,
+    "missing": 28,
+    "total": 73
+  },
+  "2022-11-30": {
+    "deaths": 65,
+    "missing": 43,
+    "total": 108
+  },
+  "2022-12-01": {
+    "deaths": 55,
+    "missing": 36,
+    "total": 91
+  },
+  "2022-12-02": {
+    "deaths": 53,
+    "missing": 32,
+    "total": 85
+  },
+  "2022-12-03": {
+    "deaths": 50,
+    "missing": 25,
+    "total": 75
+  },
+  "2022-12-04": {
+    "deaths": 47,
+    "missing": 21,
+    "total": 68
+  },
+  "2022-12-05": {
+    "deaths": 58,
+    "missing": 26,
+    "total": 84
+  },
+  "2022-12-06": {
+    "deaths": 57,
+    "missing": 19,
+    "total": 76
+  },
+  "2022-12-07": {
+    "deaths": 35,
+    "missing": 9,
+    "total": 44
+  },
+  "2022-12-08": {
+    "deaths": 34,
+    "missing": 16,
+    "total": 50
+  },
+  "2022-12-09": {
+    "deaths": 46,
+    "missing": 27,
+    "total": 73
+  },
+  "2022-12-10": {
+    "deaths": 53,
+    "missing": 14,
+    "total": 67
+  },
+  "2022-12-11": {
+    "deaths": 45,
+    "missing": 16,
+    "total": 61
+  },
+  "2022-12-12": {
+    "deaths": 45,
+    "missing": 38,
+    "total": 83
+  },
+  "2022-12-13": {
+    "deaths": 64,
+    "missing": 30,
+    "total": 94
+  },
+  "2022-12-14": {
+    "deaths": 68,
+    "missing": 30,
+    "total": 98
+  },
+  "2022-12-15": {
+    "deaths": 40,
+    "missing": 24,
+    "total": 64
+  },
+  "2022-12-16": {
+    "deaths": 41,
+    "missing": 43,
+    "total": 84
+  },
+  "2022-12-17": {
+    "deaths": 73,
+    "missing": 26,
+    "total": 99
+  },
+  "2022-12-18": {
+    "deaths": 71,
+    "missing": 15,
+    "total": 86
+  },
+  "2022-12-19": {
+    "deaths": 79,
+    "missing": 19,
+    "total": 98
+  },
+  "2022-12-20": {
+    "deaths": 62,
+    "missing": 15,
+    "total": 77
+  },
+  "2022-12-21": {
+    "deaths": 46,
+    "missing": 23,
+    "total": 69
+  },
+  "2022-12-22": {
+    "deaths": 46,
+    "missing": 30,
+    "total": 76
+  },
+  "2022-12-23": {
+    "deaths": 59,
+    "missing": 21,
+    "total": 80
+  },
+  "2022-12-24": {
+    "deaths": 50,
+    "missing": 36,
+    "total": 86
+  },
+  "2022-12-25": {
+    "deaths": 47,
+    "missing": 37,
+    "total": 84
+  },
+  "2022-12-26": {
+    "deaths": 57,
+    "missing": 56,
+    "total": 113
+  },
+  "2022-12-27": {
+    "deaths": 74,
+    "missing": 34,
+    "total": 108
+  },
+  "2022-12-28": {
+    "deaths": 95,
+    "missing": 61,
+    "total": 156
+  },
+  "2022-12-29": {
+    "deaths": 110,
+    "missing": 34,
+    "total": 144
+  },
+  "2022-12-30": {
+    "deaths": 70,
+    "missing": 27,
+    "total": 97
+  },
+  "2022-12-31": {
+    "deaths": 60,
+    "missing": 36,
+    "total": 96
+  },
+  "2023-01-01": {
+    "deaths": 50,
+    "missing": 34,
+    "total": 84
+  },
+  "2023-01-02": {
+    "deaths": 85,
+    "missing": 17,
+    "total": 102
+  },
+  "2023-01-03": {
+    "deaths": 61,
+    "missing": 20,
+    "total": 81
+  },
+  "2023-01-04": {
+    "deaths": 72,
+    "missing": 14,
+    "total": 86
+  },
+  "2023-01-05": {
+    "deaths": 44,
+    "missing": 25,
+    "total": 69
+  },
+  "2023-01-06": {
+    "deaths": 52,
+    "missing": 24,
+    "total": 76
+  },
+  "2023-01-07": {
+    "deaths": 61,
+    "missing": 37,
+    "total": 98
+  },
+  "2023-01-08": {
+    "deaths": 99,
+    "missing": 23,
+    "total": 122
+  },
+  "2023-01-09": {
+    "deaths": 35,
+    "missing": 28,
+    "total": 63
+  },
+  "2023-01-10": {
+    "deaths": 61,
+    "missing": 15,
+    "total": 76
+  },
+  "2023-01-11": {
+    "deaths": 52,
+    "missing": 32,
+    "total": 84
+  },
+  "2023-01-12": {
+    "deaths": 66,
+    "missing": 48,
+    "total": 114
+  },
+  "2023-01-13": {
+    "deaths": 61,
+    "missing": 47,
+    "total": 108
+  },
+  "2023-01-14": {
+    "deaths": 51,
+    "missing": 41,
+    "total": 92
+  },
+  "2023-01-15": {
+    "deaths": 80,
+    "missing": 44,
+    "total": 124
+  },
+  "2023-01-16": {
+    "deaths": 76,
+    "missing": 45,
+    "total": 121
+  },
+  "2023-01-17": {
+    "deaths": 77,
+    "missing": 21,
+    "total": 98
+  },
+  "2023-01-18": {
+    "deaths": 67,
+    "missing": 47,
+    "total": 114
+  },
+  "2023-01-19": {
+    "deaths": 75,
+    "missing": 37,
+    "total": 112
+  },
+  "2023-01-20": {
+    "deaths": 59,
+    "missing": 44,
+    "total": 103
+  },
+  "2023-01-21": {
+    "deaths": 58,
+    "missing": 36,
+    "total": 94
+  },
+  "2023-01-22": {
+    "deaths": 99,
+    "missing": 36,
+    "total": 135
+  },
+  "2023-01-23": {
+    "deaths": 100,
+    "missing": 62,
+    "total": 162
+  },
+  "2023-01-24": {
+    "deaths": 74,
+    "missing": 21,
+    "total": 95
+  },
+  "2023-01-25": {
+    "deaths": 70,
+    "missing": 19,
+    "total": 89
+  },
+  "2023-01-26": {
+    "deaths": 98,
+    "missing": 27,
+    "total": 125
+  },
+  "2023-01-27": {
+    "deaths": 53,
+    "missing": 20,
+    "total": 73
+  },
+  "2023-01-28": {
+    "deaths": 49,
+    "missing": 25,
+    "total": 74
+  },
+  "2023-01-29": {
+    "deaths": 46,
+    "missing": 29,
+    "total": 75
+  },
+  "2023-01-30": {
+    "deaths": 73,
+    "missing": 21,
+    "total": 94
+  },
+  "2023-01-31": {
+    "deaths": 61,
+    "missing": 40,
+    "total": 101
+  },
+  "2023-02-01": {
+    "deaths": 73,
+    "missing": 60,
+    "total": 133
+  },
+  "2023-02-02": {
+    "deaths": 58,
+    "missing": 51,
+    "total": 109
+  },
+  "2023-02-03": {
+    "deaths": 57,
+    "missing": 54,
+    "total": 111
+  },
+  "2023-02-04": {
+    "deaths": 81,
+    "missing": 25,
+    "total": 106
+  },
+  "2023-02-05": {
+    "deaths": 86,
+    "missing": 20,
+    "total": 106
+  },
+  "2023-02-06": {
+    "deaths": 77,
+    "missing": 41,
+    "total": 118
+  },
+  "2023-02-07": {
+    "deaths": 49,
+    "missing": 35,
+    "total": 84
+  },
+  "2023-02-08": {
+    "deaths": 88,
+    "missing": 19,
+    "total": 107
+  },
+  "2023-02-09": {
+    "deaths": 86,
+    "missing": 35,
+    "total": 121
+  },
+  "2023-02-10": {
+    "deaths": 79,
+    "missing": 26,
+    "total": 105
+  },
+  "2023-02-11": {
+    "deaths": 38,
+    "missing": 17,
+    "total": 55
+  },
+  "2023-02-12": {
+    "deaths": 70,
+    "missing": 38,
+    "total": 108
+  },
+  "2023-02-13": {
+    "deaths": 61,
+    "missing": 30,
+    "total": 91
+  },
+  "2023-02-14": {
+    "deaths": 65,
+    "missing": 22,
+    "total": 87
+  },
+  "2023-02-15": {
+    "deaths": 82,
+    "missing": 22,
+    "total": 104
+  },
+  "2023-02-16": {
+    "deaths": 78,
+    "missing": 36,
+    "total": 114
+  },
+  "2023-02-17": {
+    "deaths": 57,
+    "missing": 34,
+    "total": 91
+  },
+  "2023-02-18": {
+    "deaths": 77,
+    "missing": 28,
+    "total": 105
+  },
+  "2023-02-19": {
+    "deaths": 72,
+    "missing": 42,
+    "total": 114
+  },
+  "2023-02-20": {
+    "deaths": 76,
+    "missing": 21,
+    "total": 97
+  },
+  "2023-02-21": {
+    "deaths": 60,
+    "missing": 41,
+    "total": 101
+  },
+  "2023-02-22": {
+    "deaths": 76,
+    "missing": 34,
+    "total": 110
+  },
+  "2023-02-23": {
+    "deaths": 73,
+    "missing": 36,
+    "total": 109
+  },
+  "2023-02-24": {
+    "deaths": 57,
+    "missing": 23,
+    "total": 80
+  },
+  "2023-02-25": {
+    "deaths": 39,
+    "missing": 14,
+    "total": 53
+  },
+  "2023-02-26": {
+    "deaths": 47,
+    "missing": 38,
+    "total": 85
+  },
+  "2023-02-27": {
+    "deaths": 63,
+    "missing": 47,
+    "total": 110
+  },
+  "2023-02-28": {
+    "deaths": 63,
+    "missing": 37,
+    "total": 100
+  },
+  "2023-03-01": {
+    "deaths": 93,
+    "missing": 49,
+    "total": 142
+  },
+  "2023-03-02": {
+    "deaths": 88,
+    "missing": 60,
+    "total": 148
+  },
+  "2023-03-03": {
+    "deaths": 67,
+    "missing": 31,
+    "total": 98
+  },
+  "2023-03-04": {
+    "deaths": 62,
+    "missing": 29,
+    "total": 91
+  },
+  "2023-03-05": {
+    "deaths": 58,
+    "missing": 26,
+    "total": 84
+  },
+  "2023-03-06": {
+    "deaths": 61,
+    "missing": 23,
+    "total": 84
+  },
+  "2023-03-07": {
+    "deaths": 62,
+    "missing": 42,
+    "total": 104
+  },
+  "2023-03-08": {
+    "deaths": 54,
+    "missing": 34,
+    "total": 88
+  },
+  "2023-03-09": {
+    "deaths": 93,
+    "missing": 71,
+    "total": 164
+  },
+  "2023-03-10": {
+    "deaths": 82,
+    "missing": 31,
+    "total": 113
+  },
+  "2023-03-11": {
+    "deaths": 57,
+    "missing": 30,
+    "total": 87
+  },
+  "2023-03-12": {
+    "deaths": 81,
+    "missing": 45,
+    "total": 126
+  },
+  "2023-03-13": {
+    "deaths": 62,
+    "missing": 24,
+    "total": 86
+  },
+  "2023-03-14": {
+    "deaths": 83,
+    "missing": 22,
+    "total": 105
+  },
+  "2023-03-15": {
+    "deaths": 43,
+    "missing": 24,
+    "total": 67
+  },
+  "2023-03-16": {
+    "deaths": 84,
+    "missing": 29,
+    "total": 113
+  },
+  "2023-03-17": {
+    "deaths": 67,
+    "missing": 36,
+    "total": 103
+  },
+  "2023-03-18": {
+    "deaths": 58,
+    "missing": 15,
+    "total": 73
+  },
+  "2023-03-19": {
+    "deaths": 83,
+    "missing": 29,
+    "total": 112
+  },
+  "2023-03-20": {
+    "deaths": 92,
+    "missing": 38,
+    "total": 130
+  },
+  "2023-03-21": {
+    "deaths": 86,
+    "missing": 45,
+    "total": 131
+  },
+  "2023-03-22": {
+    "deaths": 73,
+    "missing": 41,
+    "total": 114
+  },
+  "2023-03-23": {
+    "deaths": 78,
+    "missing": 26,
+    "total": 104
+  },
+  "2023-03-24": {
+    "deaths": 55,
+    "missing": 20,
+    "total": 75
+  },
+  "2023-03-25": {
+    "deaths": 57,
+    "missing": 22,
+    "total": 79
+  },
+  "2023-03-26": {
+    "deaths": 67,
+    "missing": 13,
+    "total": 80
+  },
+  "2023-03-27": {
+    "deaths": 40,
+    "missing": 19,
+    "total": 59
+  },
+  "2023-03-28": {
+    "deaths": 58,
+    "missing": 27,
+    "total": 85
+  },
+  "2023-03-29": {
+    "deaths": 58,
+    "missing": 27,
+    "total": 85
+  },
+  "2023-03-30": {
+    "deaths": 61,
+    "missing": 18,
+    "total": 79
+  },
+  "2023-03-31": {
+    "deaths": 69,
+    "missing": 34,
+    "total": 103
+  },
+  "2023-04-01": {
+    "deaths": 88,
+    "missing": 33,
+    "total": 121
+  },
+  "2023-04-02": {
+    "deaths": 41,
+    "missing": 33,
+    "total": 74
+  },
+  "2023-04-03": {
+    "deaths": 44,
+    "missing": 36,
+    "total": 80
+  },
+  "2023-04-04": {
+    "deaths": 38,
+    "missing": 30,
+    "total": 68
+  },
+  "2023-04-05": {
+    "deaths": 44,
+    "missing": 29,
+    "total": 73
+  },
+  "2023-04-06": {
+    "deaths": 50,
+    "missing": 33,
+    "total": 83
+  },
+  "2023-04-07": {
+    "deaths": 49,
+    "missing": 22,
+    "total": 71
+  },
+  "2023-04-08": {
+    "deaths": 62,
+    "missing": 28,
+    "total": 90
+  },
+  "2023-04-09": {
+    "deaths": 47,
+    "missing": 27,
+    "total": 74
+  },
+  "2023-04-10": {
+    "deaths": 36,
+    "missing": 31,
+    "total": 67
+  },
+  "2023-04-11": {
+    "deaths": 52,
+    "missing": 24,
+    "total": 76
+  },
+  "2023-04-12": {
+    "deaths": 34,
+    "missing": 16,
+    "total": 50
+  },
+  "2023-04-13": {
+    "deaths": 44,
+    "missing": 29,
+    "total": 73
+  },
+  "2023-04-14": {
+    "deaths": 52,
+    "missing": 26,
+    "total": 78
+  },
+  "2023-04-15": {
+    "deaths": 66,
+    "missing": 72,
+    "total": 138
+  },
+  "2023-04-16": {
+    "deaths": 74,
+    "missing": 35,
+    "total": 109
+  },
+  "2023-04-17": {
+    "deaths": 70,
+    "missing": 36,
+    "total": 106
+  },
+  "2023-04-18": {
+    "deaths": 45,
+    "missing": 45,
+    "total": 90
+  },
+  "2023-04-19": {
+    "deaths": 45,
+    "missing": 29,
+    "total": 74
+  },
+  "2023-04-20": {
+    "deaths": 46,
+    "missing": 22,
+    "total": 68
+  },
+  "2023-04-21": {
+    "deaths": 36,
+    "missing": 20,
+    "total": 56
+  },
+  "2023-04-22": {
+    "deaths": 90,
+    "missing": 39,
+    "total": 129
+  },
+  "2023-04-23": {
+    "deaths": 46,
+    "missing": 19,
+    "total": 65
+  },
+  "2023-04-24": {
+    "deaths": 31,
+    "missing": 21,
+    "total": 52
+  },
+  "2023-04-25": {
+    "deaths": 48,
+    "missing": 16,
+    "total": 64
+  },
+  "2023-04-26": {
+    "deaths": 55,
+    "missing": 15,
+    "total": 70
+  },
+  "2023-04-27": {
+    "deaths": 57,
+    "missing": 7,
+    "total": 64
+  },
+  "2023-04-28": {
+    "deaths": 39,
+    "missing": 8,
+    "total": 47
+  },
+  "2023-04-29": {
+    "deaths": 36,
+    "missing": 22,
+    "total": 58
+  },
+  "2023-04-30": {
+    "deaths": 51,
+    "missing": 15,
+    "total": 66
+  },
+  "2023-05-01": {
+    "deaths": 33,
+    "missing": 9,
+    "total": 42
+  },
+  "2023-05-02": {
+    "deaths": 57,
+    "missing": 16,
+    "total": 73
+  },
+  "2023-05-03": {
+    "deaths": 49,
+    "missing": 19,
+    "total": 68
+  },
+  "2023-05-04": {
+    "deaths": 65,
+    "missing": 21,
+    "total": 86
+  },
+  "2023-05-05": {
+    "deaths": 77,
+    "missing": 21,
+    "total": 98
+  },
+  "2023-05-06": {
+    "deaths": 55,
+    "missing": 11,
+    "total": 66
+  },
+  "2023-05-07": {
+    "deaths": 57,
+    "missing": 6,
+    "total": 63
+  },
+  "2023-05-08": {
+    "deaths": 54,
+    "missing": 14,
+    "total": 68
+  },
+  "2023-05-09": {
+    "deaths": 41,
+    "missing": 18,
+    "total": 59
+  },
+  "2023-05-10": {
+    "deaths": 86,
+    "missing": 37,
+    "total": 123
+  },
+  "2023-05-11": {
+    "deaths": 62,
+    "missing": 27,
+    "total": 89
+  },
+  "2023-05-12": {
+    "deaths": 59,
+    "missing": 39,
+    "total": 98
+  },
+  "2023-05-13": {
+    "deaths": 50,
+    "missing": 32,
+    "total": 82
+  },
+  "2023-05-14": {
+    "deaths": 51,
+    "missing": 31,
+    "total": 82
+  },
+  "2023-05-15": {
+    "deaths": 67,
+    "missing": 25,
+    "total": 92
+  },
+  "2023-05-16": {
+    "deaths": 65,
+    "missing": 25,
+    "total": 90
+  },
+  "2023-05-17": {
+    "deaths": 39,
+    "missing": 22,
+    "total": 61
+  },
+  "2023-05-18": {
+    "deaths": 59,
+    "missing": 28,
+    "total": 87
+  },
+  "2023-05-19": {
+    "deaths": 53,
+    "missing": 45,
+    "total": 98
+  },
+  "2023-05-20": {
+    "deaths": 60,
+    "missing": 29,
+    "total": 89
+  },
+  "2023-05-21": {
+    "deaths": 39,
+    "missing": 11,
+    "total": 50
+  },
+  "2023-05-22": {
+    "deaths": 40,
+    "missing": 10,
+    "total": 50
+  },
+  "2023-05-23": {
+    "deaths": 35,
+    "missing": 12,
+    "total": 47
+  },
+  "2023-05-24": {
+    "deaths": 39,
+    "missing": 8,
+    "total": 47
+  },
+  "2023-05-25": {
+    "deaths": 51,
+    "missing": 10,
+    "total": 61
+  },
+  "2023-05-26": {
+    "deaths": 14,
+    "missing": 6,
+    "total": 20
+  },
+  "2023-05-27": {
+    "deaths": 36,
+    "missing": 8,
+    "total": 44
+  },
+  "2023-05-28": {
+    "deaths": 30,
+    "missing": 4,
+    "total": 34
+  },
+  "2023-05-29": {
+    "deaths": 29,
+    "missing": 5,
+    "total": 34
+  },
+  "2023-05-30": {
+    "deaths": 43,
+    "missing": 6,
+    "total": 49
+  },
+  "2023-05-31": {
+    "deaths": 32,
+    "missing": 21,
+    "total": 53
+  },
+  "2023-06-01": {
+    "deaths": 59,
+    "missing": 8,
+    "total": 67
+  },
+  "2023-06-02": {
+    "deaths": 34,
+    "missing": 4,
+    "total": 38
+  },
+  "2023-06-03": {
+    "deaths": 69,
+    "missing": 21,
+    "total": 90
+  },
+  "2023-06-04": {
+    "deaths": 101,
+    "missing": 25,
+    "total": 126
+  },
+  "2023-06-05": {
+    "deaths": 62,
+    "missing": 28,
+    "total": 90
+  },
+  "2023-06-06": {
+    "deaths": 99,
+    "missing": 34,
+    "total": 133
+  },
+  "2023-06-07": {
+    "deaths": 108,
+    "missing": 24,
+    "total": 132
+  },
+  "2023-06-08": {
+    "deaths": 79,
+    "missing": 19,
+    "total": 98
+  },
+  "2023-06-09": {
+    "deaths": 92,
+    "missing": 14,
+    "total": 106
+  },
+  "2023-06-10": {
+    "deaths": 50,
+    "missing": 4,
+    "total": 54
+  },
+  "2023-06-11": {
+    "deaths": 68,
+    "missing": 8,
+    "total": 76
+  },
+  "2023-06-12": {
+    "deaths": 130,
+    "missing": 18,
+    "total": 148
+  },
+  "2023-06-13": {
+    "deaths": 68,
+    "missing": 15,
+    "total": 83
+  },
+  "2023-06-14": {
+    "deaths": 70,
+    "missing": 18,
+    "total": 88
+  },
+  "2023-06-15": {
+    "deaths": 61,
+    "missing": 10,
+    "total": 71
+  },
+  "2023-06-16": {
+    "deaths": 65,
+    "missing": 9,
+    "total": 74
+  },
+  "2023-06-17": {
+    "deaths": 39,
+    "missing": 8,
+    "total": 47
+  },
+  "2023-06-18": {
+    "deaths": 97,
+    "missing": 61,
+    "total": 158
+  },
+  "2023-06-19": {
+    "deaths": 68,
+    "missing": 7,
+    "total": 75
+  },
+  "2023-06-20": {
+    "deaths": 80,
+    "missing": 22,
+    "total": 102
+  },
+  "2023-06-21": {
+    "deaths": 52,
+    "missing": 9,
+    "total": 61
+  },
+  "2023-06-22": {
+    "deaths": 81,
+    "missing": 25,
+    "total": 106
+  },
+  "2023-06-23": {
+    "deaths": 75,
+    "missing": 41,
+    "total": 116
+  },
+  "2023-06-24": {
+    "deaths": 66,
+    "missing": 25,
+    "total": 91
+  },
+  "2023-06-25": {
+    "deaths": 79,
+    "missing": 17,
+    "total": 96
+  },
+  "2023-06-26": {
+    "deaths": 37,
+    "missing": 16,
+    "total": 53
+  },
+  "2023-06-27": {
+    "deaths": 57,
+    "missing": 26,
+    "total": 83
+  },
+  "2023-06-28": {
+    "deaths": 56,
+    "missing": 19,
+    "total": 75
+  },
+  "2023-06-29": {
+    "deaths": 82,
+    "missing": 28,
+    "total": 110
+  },
+  "2023-06-30": {
+    "deaths": 64,
+    "missing": 43,
+    "total": 107
+  },
+  "2023-07-01": {
+    "deaths": 56,
+    "missing": 22,
+    "total": 78
+  },
+  "2023-07-02": {
+    "deaths": 98,
+    "missing": 18,
+    "total": 116
+  },
+  "2023-07-03": {
+    "deaths": 81,
+    "missing": 24,
+    "total": 105
+  },
+  "2023-07-04": {
+    "deaths": 70,
+    "missing": 15,
+    "total": 85
+  },
+  "2023-07-05": {
+    "deaths": 73,
+    "missing": 15,
+    "total": 88
+  },
+  "2023-07-06": {
+    "deaths": 83,
+    "missing": 32,
+    "total": 115
+  },
+  "2023-07-07": {
+    "deaths": 66,
+    "missing": 6,
+    "total": 72
+  },
+  "2023-07-08": {
+    "deaths": 55,
+    "missing": 15,
+    "total": 70
+  },
+  "2023-07-09": {
+    "deaths": 61,
+    "missing": 30,
+    "total": 91
+  },
+  "2023-07-10": {
+    "deaths": 57,
+    "missing": 13,
+    "total": 70
+  },
+  "2023-07-11": {
+    "deaths": 83,
+    "missing": 8,
+    "total": 91
+  },
+  "2023-07-12": {
+    "deaths": 57,
+    "missing": 31,
+    "total": 88
+  },
+  "2023-07-13": {
+    "deaths": 61,
+    "missing": 20,
+    "total": 81
+  },
+  "2023-07-14": {
+    "deaths": 82,
+    "missing": 22,
+    "total": 104
+  },
+  "2023-07-15": {
+    "deaths": 80,
+    "missing": 21,
+    "total": 101
+  },
+  "2023-07-16": {
+    "deaths": 93,
+    "missing": 20,
+    "total": 113
+  },
+  "2023-07-17": {
+    "deaths": 72,
+    "missing": 45,
+    "total": 117
+  },
+  "2023-07-18": {
+    "deaths": 93,
+    "missing": 38,
+    "total": 131
+  },
+  "2023-07-19": {
+    "deaths": 73,
+    "missing": 60,
+    "total": 133
+  },
+  "2023-07-20": {
+    "deaths": 77,
+    "missing": 43,
+    "total": 120
+  },
+  "2023-07-21": {
+    "deaths": 86,
+    "missing": 22,
+    "total": 108
+  },
+  "2023-07-22": {
+    "deaths": 69,
+    "missing": 30,
+    "total": 99
+  },
+  "2023-07-23": {
+    "deaths": 65,
+    "missing": 21,
+    "total": 86
+  },
+  "2023-07-24": {
+    "deaths": 64,
+    "missing": 39,
+    "total": 103
+  },
+  "2023-07-25": {
+    "deaths": 105,
+    "missing": 45,
+    "total": 150
+  },
+  "2023-07-26": {
+    "deaths": 94,
+    "missing": 31,
+    "total": 125
+  },
+  "2023-07-27": {
+    "deaths": 54,
+    "missing": 9,
+    "total": 63
+  },
+  "2023-07-28": {
+    "deaths": 53,
+    "missing": 15,
+    "total": 68
+  },
+  "2023-07-29": {
+    "deaths": 71,
+    "missing": 21,
+    "total": 92
+  },
+  "2023-07-30": {
+    "deaths": 65,
+    "missing": 15,
+    "total": 80
+  },
+  "2023-07-31": {
+    "deaths": 73,
+    "missing": 14,
+    "total": 87
+  },
+  "2023-08-01": {
+    "deaths": 68,
+    "missing": 14,
+    "total": 82
+  },
+  "2023-08-02": {
+    "deaths": 67,
+    "missing": 15,
+    "total": 82
+  },
+  "2023-08-03": {
+    "deaths": 57,
+    "missing": 33,
+    "total": 90
+  },
+  "2023-08-04": {
+    "deaths": 42,
+    "missing": 30,
+    "total": 72
+  },
+  "2023-08-05": {
+    "deaths": 79,
+    "missing": 10,
+    "total": 89
+  },
+  "2023-08-06": {
+    "deaths": 82,
+    "missing": 19,
+    "total": 101
+  },
+  "2023-08-07": {
+    "deaths": 60,
+    "missing": 19,
+    "total": 79
+  },
+  "2023-08-08": {
+    "deaths": 75,
+    "missing": 16,
+    "total": 91
+  },
+  "2023-08-09": {
+    "deaths": 75,
+    "missing": 8,
+    "total": 83
+  },
+  "2023-08-10": {
+    "deaths": 68,
+    "missing": 15,
+    "total": 83
+  },
+  "2023-08-11": {
+    "deaths": 66,
+    "missing": 20,
+    "total": 86
+  },
+  "2023-08-12": {
+    "deaths": 91,
+    "missing": 13,
+    "total": 104
+  },
+  "2023-08-13": {
+    "deaths": 68,
+    "missing": 7,
+    "total": 75
+  },
+  "2023-08-14": {
+    "deaths": 73,
+    "missing": 14,
+    "total": 87
+  },
+  "2023-08-15": {
+    "deaths": 69,
+    "missing": 16,
+    "total": 85
+  },
+  "2023-08-16": {
+    "deaths": 73,
+    "missing": 45,
+    "total": 118
+  },
+  "2023-08-17": {
+    "deaths": 78,
+    "missing": 32,
+    "total": 110
+  },
+  "2023-08-18": {
+    "deaths": 85,
+    "missing": 40,
+    "total": 125
+  },
+  "2023-08-19": {
+    "deaths": 60,
+    "missing": 16,
+    "total": 76
+  },
+  "2023-08-20": {
+    "deaths": 69,
+    "missing": 15,
+    "total": 84
+  },
+  "2023-08-21": {
+    "deaths": 66,
+    "missing": 15,
+    "total": 81
+  },
+  "2023-08-22": {
+    "deaths": 91,
+    "missing": 9,
+    "total": 100
+  },
+  "2023-08-23": {
+    "deaths": 81,
+    "missing": 28,
+    "total": 109
+  },
+  "2023-08-24": {
+    "deaths": 71,
+    "missing": 6,
+    "total": 77
+  },
+  "2023-08-25": {
+    "deaths": 50,
+    "missing": 12,
+    "total": 62
+  },
+  "2023-08-26": {
+    "deaths": 66,
+    "missing": 10,
+    "total": 76
+  },
+  "2023-08-27": {
+    "deaths": 61,
+    "missing": 17,
+    "total": 78
+  },
+  "2023-08-28": {
+    "deaths": 83,
+    "missing": 25,
+    "total": 108
+  },
+  "2023-08-29": {
+    "deaths": 59,
+    "missing": 34,
+    "total": 93
+  },
+  "2023-08-30": {
+    "deaths": 77,
+    "missing": 12,
+    "total": 89
+  },
+  "2023-08-31": {
+    "deaths": 58,
+    "missing": 18,
+    "total": 76
+  },
+  "2023-09-01": {
+    "deaths": 47,
+    "missing": 18,
+    "total": 65
+  },
+  "2023-09-02": {
+    "deaths": 69,
+    "missing": 20,
+    "total": 89
+  },
+  "2023-09-03": {
+    "deaths": 43,
+    "missing": 23,
+    "total": 66
+  },
+  "2023-09-04": {
+    "deaths": 61,
+    "missing": 21,
+    "total": 82
+  },
+  "2023-09-05": {
+    "deaths": 86,
+    "missing": 23,
+    "total": 109
+  },
+  "2023-09-06": {
+    "deaths": 71,
+    "missing": 16,
+    "total": 87
+  },
+  "2023-09-07": {
+    "deaths": 59,
+    "missing": 14,
+    "total": 73
+  },
+  "2023-09-08": {
+    "deaths": 54,
+    "missing": 11,
+    "total": 65
+  },
+  "2023-09-09": {
+    "deaths": 60,
+    "missing": 10,
+    "total": 70
+  },
+  "2023-09-10": {
+    "deaths": 48,
+    "missing": 17,
+    "total": 65
+  },
+  "2023-09-11": {
+    "deaths": 84,
+    "missing": 26,
+    "total": 110
+  },
+  "2023-09-12": {
+    "deaths": 53,
+    "missing": 21,
+    "total": 74
+  },
+  "2023-09-13": {
+    "deaths": 50,
+    "missing": 17,
+    "total": 67
+  },
+  "2023-09-14": {
+    "deaths": 42,
+    "missing": 10,
+    "total": 52
+  },
+  "2023-09-15": {
+    "deaths": 66,
+    "missing": 10,
+    "total": 76
+  },
+  "2023-09-16": {
+    "deaths": 43,
+    "missing": 29,
+    "total": 72
+  },
+  "2023-09-17": {
+    "deaths": 58,
+    "missing": 22,
+    "total": 80
+  },
+  "2023-09-18": {
+    "deaths": 75,
+    "missing": 22,
+    "total": 97
+  },
+  "2023-09-19": {
+    "deaths": 61,
+    "missing": 13,
+    "total": 74
+  },
+  "2023-09-20": {
+    "deaths": 46,
+    "missing": 14,
+    "total": 60
+  },
+  "2023-09-21": {
+    "deaths": 72,
+    "missing": 35,
+    "total": 107
+  },
+  "2023-09-22": {
+    "deaths": 43,
+    "missing": 24,
+    "total": 67
+  },
+  "2023-09-23": {
+    "deaths": 49,
+    "missing": 21,
+    "total": 70
+  },
+  "2023-09-24": {
+    "deaths": 53,
+    "missing": 10,
+    "total": 63
+  },
+  "2023-09-25": {
+    "deaths": 43,
+    "missing": 20,
+    "total": 63
+  },
+  "2023-09-26": {
+    "deaths": 41,
+    "missing": 16,
+    "total": 57
+  },
+  "2023-09-27": {
+    "deaths": 70,
+    "missing": 15,
+    "total": 85
+  },
+  "2023-09-28": {
+    "deaths": 67,
+    "missing": 34,
+    "total": 101
+  },
+  "2023-09-29": {
+    "deaths": 67,
+    "missing": 25,
+    "total": 92
+  },
+  "2023-09-30": {
+    "deaths": 55,
+    "missing": 20,
+    "total": 75
+  },
+  "2023-10-01": {
+    "deaths": 46,
+    "missing": 14,
+    "total": 60
+  },
+  "2023-10-02": {
+    "deaths": 41,
+    "missing": 25,
+    "total": 66
+  },
+  "2023-10-03": {
+    "deaths": 79,
+    "missing": 20,
+    "total": 99
+  },
+  "2023-10-04": {
+    "deaths": 59,
+    "missing": 23,
+    "total": 82
+  },
+  "2023-10-05": {
+    "deaths": 71,
+    "missing": 27,
+    "total": 98
+  },
+  "2023-10-06": {
+    "deaths": 55,
+    "missing": 54,
+    "total": 109
+  },
+  "2023-10-07": {
+    "deaths": 31,
+    "missing": 34,
+    "total": 65
+  },
+  "2023-10-08": {
+    "deaths": 88,
+    "missing": 24,
+    "total": 112
+  },
+  "2023-10-09": {
+    "deaths": 114,
+    "missing": 82,
+    "total": 196
+  },
+  "2023-10-10": {
+    "deaths": 100,
+    "missing": 47,
+    "total": 147
+  },
+  "2023-10-11": {
+    "deaths": 102,
+    "missing": 43,
+    "total": 145
+  },
+  "2023-10-12": {
+    "deaths": 94,
+    "missing": 58,
+    "total": 152
+  },
+  "2023-10-13": {
+    "deaths": 95,
+    "missing": 44,
+    "total": 139
+  },
+  "2023-10-14": {
+    "deaths": 96,
+    "missing": 31,
+    "total": 127
+  },
+  "2023-10-15": {
+    "deaths": 80,
+    "missing": 32,
+    "total": 112
+  },
+  "2023-10-16": {
+    "deaths": 66,
+    "missing": 39,
+    "total": 105
+  },
+  "2023-10-17": {
+    "deaths": 94,
+    "missing": 48,
+    "total": 142
+  },
+  "2023-10-18": {
+    "deaths": 84,
+    "missing": 52,
+    "total": 136
+  },
+  "2023-10-19": {
+    "deaths": 96,
+    "missing": 61,
+    "total": 157
+  },
+  "2023-10-20": {
+    "deaths": 80,
+    "missing": 28,
+    "total": 108
+  },
+  "2023-10-21": {
+    "deaths": 76,
+    "missing": 48,
+    "total": 124
+  },
+  "2023-10-22": {
+    "deaths": 90,
+    "missing": 35,
+    "total": 125
+  },
+  "2023-10-23": {
+    "deaths": 102,
+    "missing": 63,
+    "total": 165
+  },
+  "2023-10-24": {
+    "deaths": 74,
+    "missing": 33,
+    "total": 107
+  },
+  "2023-10-25": {
+    "deaths": 41,
+    "missing": 17,
+    "total": 58
+  },
+  "2023-10-26": {
+    "deaths": 66,
+    "missing": 36,
+    "total": 102
+  },
+  "2023-10-27": {
+    "deaths": 48,
+    "missing": 32,
+    "total": 80
+  },
+  "2023-10-28": {
+    "deaths": 82,
+    "missing": 53,
+    "total": 135
+  },
+  "2023-10-29": {
+    "deaths": 79,
+    "missing": 34,
+    "total": 113
+  },
+  "2023-10-30": {
+    "deaths": 71,
+    "missing": 34,
+    "total": 105
+  },
+  "2023-10-31": {
+    "deaths": 67,
+    "missing": 33,
+    "total": 100
+  },
+  "2023-11-01": {
+    "deaths": 78,
+    "missing": 51,
+    "total": 129
+  },
+  "2023-11-02": {
+    "deaths": 99,
+    "missing": 42,
+    "total": 141
+  },
+  "2023-11-03": {
+    "deaths": 56,
+    "missing": 45,
+    "total": 101
+  },
+  "2023-11-04": {
+    "deaths": 56,
+    "missing": 21,
+    "total": 77
+  },
+  "2023-11-05": {
+    "deaths": 57,
+    "missing": 25,
+    "total": 82
+  },
+  "2023-11-06": {
+    "deaths": 64,
+    "missing": 45,
+    "total": 109
+  },
+  "2023-11-07": {
+    "deaths": 79,
+    "missing": 44,
+    "total": 123
+  },
+  "2023-11-08": {
+    "deaths": 47,
+    "missing": 27,
+    "total": 74
+  },
+  "2023-11-09": {
+    "deaths": 80,
+    "missing": 52,
+    "total": 132
+  },
+  "2023-11-10": {
+    "deaths": 61,
+    "missing": 29,
+    "total": 90
+  },
+  "2023-11-11": {
+    "deaths": 58,
+    "missing": 51,
+    "total": 109
+  },
+  "2023-11-12": {
+    "deaths": 70,
+    "missing": 30,
+    "total": 100
+  },
+  "2023-11-13": {
+    "deaths": 58,
+    "missing": 18,
+    "total": 76
+  },
+  "2023-11-14": {
+    "deaths": 64,
+    "missing": 38,
+    "total": 102
+  },
+  "2023-11-15": {
+    "deaths": 65,
+    "missing": 39,
+    "total": 104
+  },
+  "2023-11-16": {
+    "deaths": 88,
+    "missing": 31,
+    "total": 119
+  },
+  "2023-11-17": {
+    "deaths": 41,
+    "missing": 29,
+    "total": 70
+  },
+  "2023-11-18": {
+    "deaths": 33,
+    "missing": 26,
+    "total": 59
+  },
+  "2023-11-19": {
+    "deaths": 54,
+    "missing": 37,
+    "total": 91
+  },
+  "2023-11-20": {
+    "deaths": 50,
+    "missing": 18,
+    "total": 68
+  },
+  "2023-11-21": {
+    "deaths": 67,
+    "missing": 28,
+    "total": 95
+  },
+  "2023-11-22": {
+    "deaths": 65,
+    "missing": 27,
+    "total": 92
+  },
+  "2023-11-23": {
+    "deaths": 51,
+    "missing": 28,
+    "total": 79
+  },
+  "2023-11-24": {
+    "deaths": 51,
+    "missing": 33,
+    "total": 84
+  },
+  "2023-11-25": {
+    "deaths": 36,
+    "missing": 30,
+    "total": 66
+  },
+  "2023-11-26": {
+    "deaths": 58,
+    "missing": 34,
+    "total": 92
+  },
+  "2023-11-27": {
+    "deaths": 76,
+    "missing": 49,
+    "total": 125
+  },
+  "2023-11-28": {
+    "deaths": 77,
+    "missing": 75,
+    "total": 152
+  },
+  "2023-11-29": {
+    "deaths": 73,
+    "missing": 39,
+    "total": 112
+  },
+  "2023-11-30": {
+    "deaths": 55,
+    "missing": 48,
+    "total": 103
+  },
+  "2023-12-01": {
+    "deaths": 59,
+    "missing": 39,
+    "total": 98
+  },
+  "2023-12-02": {
+    "deaths": 34,
+    "missing": 26,
+    "total": 60
+  },
+  "2023-12-03": {
+    "deaths": 81,
+    "missing": 46,
+    "total": 127
+  },
+  "2023-12-04": {
+    "deaths": 76,
+    "missing": 49,
+    "total": 125
+  },
+  "2023-12-05": {
+    "deaths": 82,
+    "missing": 48,
+    "total": 130
+  },
+  "2023-12-06": {
+    "deaths": 46,
+    "missing": 56,
+    "total": 102
+  },
+  "2023-12-07": {
+    "deaths": 59,
+    "missing": 42,
+    "total": 101
+  },
+  "2023-12-08": {
+    "deaths": 44,
+    "missing": 68,
+    "total": 112
+  },
+  "2023-12-09": {
+    "deaths": 66,
+    "missing": 44,
+    "total": 110
+  },
+  "2023-12-10": {
+    "deaths": 62,
+    "missing": 43,
+    "total": 105
+  },
+  "2023-12-11": {
+    "deaths": 42,
+    "missing": 54,
+    "total": 96
+  },
+  "2023-12-12": {
+    "deaths": 66,
+    "missing": 37,
+    "total": 103
+  },
+  "2023-12-13": {
+    "deaths": 73,
+    "missing": 92,
+    "total": 165
+  },
+  "2023-12-14": {
+    "deaths": 53,
+    "missing": 56,
+    "total": 109
+  },
+  "2023-12-15": {
+    "deaths": 90,
+    "missing": 58,
+    "total": 148
+  },
+  "2023-12-16": {
+    "deaths": 58,
+    "missing": 29,
+    "total": 87
+  },
+  "2023-12-17": {
+    "deaths": 52,
+    "missing": 48,
+    "total": 100
+  },
+  "2023-12-18": {
+    "deaths": 55,
+    "missing": 39,
+    "total": 94
+  },
+  "2023-12-19": {
+    "deaths": 86,
+    "missing": 54,
+    "total": 140
+  },
+  "2023-12-20": {
+    "deaths": 50,
+    "missing": 35,
+    "total": 85
+  },
+  "2023-12-21": {
+    "deaths": 66,
+    "missing": 30,
+    "total": 96
+  },
+  "2023-12-22": {
+    "deaths": 48,
+    "missing": 26,
+    "total": 74
+  },
+  "2023-12-23": {
+    "deaths": 65,
+    "missing": 33,
+    "total": 98
+  },
+  "2023-12-24": {
+    "deaths": 55,
+    "missing": 37,
+    "total": 92
+  },
+  "2023-12-25": {
+    "deaths": 71,
+    "missing": 46,
+    "total": 117
+  },
+  "2023-12-26": {
+    "deaths": 73,
+    "missing": 38,
+    "total": 111
+  },
+  "2023-12-27": {
+    "deaths": 76,
+    "missing": 40,
+    "total": 116
+  },
+  "2023-12-28": {
+    "deaths": 69,
+    "missing": 43,
+    "total": 112
+  },
+  "2023-12-29": {
+    "deaths": 78,
+    "missing": 22,
+    "total": 100
+  },
+  "2023-12-30": {
+    "deaths": 58,
+    "missing": 17,
+    "total": 75
+  },
+  "2023-12-31": {
+    "deaths": 67,
+    "missing": 36,
+    "total": 103
+  },
+  "2024-01-01": {
+    "deaths": 54,
+    "missing": 25,
+    "total": 79
+  },
+  "2024-01-02": {
+    "deaths": 45,
+    "missing": 25,
+    "total": 70
+  },
+  "2024-01-03": {
+    "deaths": 55,
+    "missing": 38,
+    "total": 93
+  },
+  "2024-01-04": {
+    "deaths": 54,
+    "missing": 27,
+    "total": 81
+  },
+  "2024-01-05": {
+    "deaths": 55,
+    "missing": 12,
+    "total": 67
+  },
+  "2024-01-06": {
+    "deaths": 61,
+    "missing": 35,
+    "total": 96
+  },
+  "2024-01-07": {
+    "deaths": 51,
+    "missing": 39,
+    "total": 90
+  },
+  "2024-01-08": {
+    "deaths": 67,
+    "missing": 65,
+    "total": 132
+  },
+  "2024-01-09": {
+    "deaths": 40,
+    "missing": 27,
+    "total": 67
+  },
+  "2024-01-10": {
+    "deaths": 42,
+    "missing": 16,
+    "total": 58
+  },
+  "2024-01-11": {
+    "deaths": 48,
+    "missing": 24,
+    "total": 72
+  },
+  "2024-01-12": {
+    "deaths": 59,
+    "missing": 37,
+    "total": 96
+  },
+  "2024-01-13": {
+    "deaths": 79,
+    "missing": 29,
+    "total": 108
+  },
+  "2024-01-14": {
+    "deaths": 75,
+    "missing": 49,
+    "total": 124
+  },
+  "2024-01-15": {
+    "deaths": 35,
+    "missing": 20,
+    "total": 55
+  },
+  "2024-01-16": {
+    "deaths": 85,
+    "missing": 33,
+    "total": 118
+  },
+  "2024-01-17": {
+    "deaths": 69,
+    "missing": 60,
+    "total": 129
+  },
+  "2024-01-18": {
+    "deaths": 31,
+    "missing": 42,
+    "total": 73
+  },
+  "2024-01-19": {
+    "deaths": 43,
+    "missing": 32,
+    "total": 75
+  },
+  "2024-01-20": {
+    "deaths": 100,
+    "missing": 48,
+    "total": 148
+  },
+  "2024-01-21": {
+    "deaths": 64,
+    "missing": 20,
+    "total": 84
+  },
+  "2024-01-22": {
+    "deaths": 74,
+    "missing": 17,
+    "total": 91
+  },
+  "2024-01-23": {
+    "deaths": 131,
+    "missing": 31,
+    "total": 162
+  },
+  "2024-01-24": {
+    "deaths": 80,
+    "missing": 28,
+    "total": 108
+  },
+  "2024-01-25": {
+    "deaths": 56,
+    "missing": 36,
+    "total": 92
+  },
+  "2024-01-26": {
+    "deaths": 46,
+    "missing": 32,
+    "total": 78
+  },
+  "2024-01-27": {
+    "deaths": 43,
+    "missing": 38,
+    "total": 81
+  },
+  "2024-01-28": {
+    "deaths": 64,
+    "missing": 44,
+    "total": 108
+  },
+  "2024-01-29": {
+    "deaths": 71,
+    "missing": 30,
+    "total": 101
+  },
+  "2024-01-30": {
+    "deaths": 60,
+    "missing": 33,
+    "total": 93
+  },
+  "2024-01-31": {
+    "deaths": 62,
+    "missing": 37,
+    "total": 99
+  },
+  "2024-02-01": {
+    "deaths": 68,
+    "missing": 27,
+    "total": 95
+  },
+  "2024-02-02": {
+    "deaths": 54,
+    "missing": 15,
+    "total": 69
+  },
+  "2024-02-03": {
+    "deaths": 43,
+    "missing": 40,
+    "total": 83
+  },
+  "2024-02-04": {
+    "deaths": 45,
+    "missing": 40,
+    "total": 85
+  },
+  "2024-02-05": {
+    "deaths": 72,
+    "missing": 29,
+    "total": 101
+  },
+  "2024-02-06": {
+    "deaths": 61,
+    "missing": 25,
+    "total": 86
+  },
+  "2024-02-07": {
+    "deaths": 52,
+    "missing": 31,
+    "total": 83
+  },
+  "2024-02-08": {
+    "deaths": 68,
+    "missing": 79,
+    "total": 147
+  },
+  "2024-02-09": {
+    "deaths": 53,
+    "missing": 40,
+    "total": 93
+  },
+  "2024-02-10": {
+    "deaths": 37,
+    "missing": 38,
+    "total": 75
+  },
+  "2024-02-11": {
+    "deaths": 70,
+    "missing": 45,
+    "total": 115
+  },
+  "2024-02-12": {
+    "deaths": 67,
+    "missing": 52,
+    "total": 119
+  },
+  "2024-02-13": {
+    "deaths": 63,
+    "missing": 33,
+    "total": 96
+  },
+  "2024-02-14": {
+    "deaths": 64,
+    "missing": 54,
+    "total": 118
+  },
+  "2024-02-15": {
+    "deaths": 71,
+    "missing": 59,
+    "total": 130
+  },
+  "2024-02-16": {
+    "deaths": 98,
+    "missing": 71,
+    "total": 169
+  },
+  "2024-02-17": {
+    "deaths": 57,
+    "missing": 46,
+    "total": 103
+  },
+  "2024-02-18": {
+    "deaths": 91,
+    "missing": 61,
+    "total": 152
+  },
+  "2024-02-19": {
+    "deaths": 62,
+    "missing": 32,
+    "total": 94
+  },
+  "2024-02-20": {
+    "deaths": 74,
+    "missing": 36,
+    "total": 110
+  },
+  "2024-02-21": {
+    "deaths": 62,
+    "missing": 55,
+    "total": 117
+  },
+  "2024-02-22": {
+    "deaths": 74,
+    "missing": 45,
+    "total": 119
+  },
+  "2024-02-23": {
+    "deaths": 53,
+    "missing": 53,
+    "total": 106
+  },
+  "2024-02-24": {
+    "deaths": 92,
+    "missing": 60,
+    "total": 152
+  },
+  "2024-02-25": {
+    "deaths": 57,
+    "missing": 81,
+    "total": 138
+  },
+  "2024-02-26": {
+    "deaths": 71,
+    "missing": 34,
+    "total": 105
+  },
+  "2024-02-27": {
+    "deaths": 71,
+    "missing": 48,
+    "total": 119
+  },
+  "2024-02-28": {
+    "deaths": 66,
+    "missing": 29,
+    "total": 95
+  },
+  "2024-02-29": {
+    "deaths": 91,
+    "missing": 40,
+    "total": 131
+  },
+  "2024-03-01": {
+    "deaths": 53,
+    "missing": 29,
+    "total": 82
+  },
+  "2024-03-02": {
+    "deaths": 38,
+    "missing": 50,
+    "total": 88
+  },
+  "2024-03-03": {
+    "deaths": 59,
+    "missing": 21,
+    "total": 80
+  },
+  "2024-03-04": {
+    "deaths": 79,
+    "missing": 51,
+    "total": 130
+  },
+  "2024-03-05": {
+    "deaths": 51,
+    "missing": 37,
+    "total": 88
+  },
+  "2024-03-06": {
+    "deaths": 73,
+    "missing": 45,
+    "total": 118
+  },
+  "2024-03-07": {
+    "deaths": 54,
+    "missing": 23,
+    "total": 77
+  },
+  "2024-03-08": {
+    "deaths": 49,
+    "missing": 39,
+    "total": 88
+  },
+  "2024-03-09": {
+    "deaths": 43,
+    "missing": 27,
+    "total": 70
+  },
+  "2024-03-10": {
+    "deaths": 47,
+    "missing": 28,
+    "total": 75
+  },
+  "2024-03-11": {
+    "deaths": 70,
+    "missing": 39,
+    "total": 109
+  },
+  "2024-03-12": {
+    "deaths": 58,
+    "missing": 34,
+    "total": 92
+  },
+  "2024-03-13": {
+    "deaths": 72,
+    "missing": 36,
+    "total": 108
+  },
+  "2024-03-14": {
+    "deaths": 70,
+    "missing": 53,
+    "total": 123
+  },
+  "2024-03-15": {
+    "deaths": 45,
+    "missing": 17,
+    "total": 62
+  },
+  "2024-03-16": {
+    "deaths": 56,
+    "missing": 33,
+    "total": 89
+  },
+  "2024-03-17": {
+    "deaths": 56,
+    "missing": 25,
+    "total": 81
+  },
+  "2024-03-18": {
+    "deaths": 59,
+    "missing": 42,
+    "total": 101
+  },
+  "2024-03-19": {
+    "deaths": 50,
+    "missing": 42,
+    "total": 92
+  },
+  "2024-03-20": {
+    "deaths": 57,
+    "missing": 57,
+    "total": 114
+  },
+  "2024-03-21": {
+    "deaths": 70,
+    "missing": 21,
+    "total": 91
+  },
+  "2024-03-22": {
+    "deaths": 57,
+    "missing": 33,
+    "total": 90
+  },
+  "2024-03-23": {
+    "deaths": 34,
+    "missing": 44,
+    "total": 78
+  },
+  "2024-03-24": {
+    "deaths": 43,
+    "missing": 27,
+    "total": 70
+  },
+  "2024-03-25": {
+    "deaths": 54,
+    "missing": 57,
+    "total": 111
+  },
+  "2024-03-26": {
+    "deaths": 58,
+    "missing": 20,
+    "total": 78
+  },
+  "2024-03-27": {
+    "deaths": 59,
+    "missing": 47,
+    "total": 106
+  },
+  "2024-03-28": {
+    "deaths": 48,
+    "missing": 37,
+    "total": 85
+  },
+  "2024-03-29": {
+    "deaths": 45,
+    "missing": 37,
+    "total": 82
+  },
+  "2024-03-30": {
+    "deaths": 44,
+    "missing": 26,
+    "total": 70
+  },
+  "2024-03-31": {
+    "deaths": 59,
+    "missing": 43,
+    "total": 102
+  },
+  "2024-04-01": {
+    "deaths": 43,
+    "missing": 82,
+    "total": 125
+  },
+  "2024-04-02": {
+    "deaths": 83,
+    "missing": 32,
+    "total": 115
+  },
+  "2024-04-03": {
+    "deaths": 46,
+    "missing": 41,
+    "total": 87
+  },
+  "2024-04-04": {
+    "deaths": 52,
+    "missing": 54,
+    "total": 106
+  },
+  "2024-04-05": {
+    "deaths": 49,
+    "missing": 60,
+    "total": 109
+  },
+  "2024-04-06": {
+    "deaths": 61,
+    "missing": 67,
+    "total": 128
+  },
+  "2024-04-07": {
+    "deaths": 59,
+    "missing": 112,
+    "total": 171
+  },
+  "2024-04-08": {
+    "deaths": 51,
+    "missing": 52,
+    "total": 103
+  },
+  "2024-04-09": {
+    "deaths": 43,
+    "missing": 60,
+    "total": 103
+  },
+  "2024-04-10": {
+    "deaths": 54,
+    "missing": 44,
+    "total": 98
+  },
+  "2024-04-11": {
+    "deaths": 58,
+    "missing": 83,
+    "total": 141
+  },
+  "2024-04-12": {
+    "deaths": 42,
+    "missing": 48,
+    "total": 90
+  },
+  "2024-04-13": {
+    "deaths": 45,
+    "missing": 40,
+    "total": 85
+  },
+  "2024-04-14": {
+    "deaths": 42,
+    "missing": 69,
+    "total": 111
+  },
+  "2024-04-15": {
+    "deaths": 40,
+    "missing": 34,
+    "total": 74
+  },
+  "2024-04-16": {
+    "deaths": 80,
+    "missing": 53,
+    "total": 133
+  },
+  "2024-04-17": {
+    "deaths": 49,
+    "missing": 39,
+    "total": 88
+  },
+  "2024-04-18": {
+    "deaths": 48,
+    "missing": 41,
+    "total": 89
+  },
+  "2024-04-19": {
+    "deaths": 37,
+    "missing": 33,
+    "total": 70
+  },
+  "2024-04-20": {
+    "deaths": 39,
+    "missing": 34,
+    "total": 73
+  },
+  "2024-04-21": {
+    "deaths": 51,
+    "missing": 34,
+    "total": 85
+  },
+  "2024-04-22": {
+    "deaths": 60,
+    "missing": 34,
+    "total": 94
+  },
+  "2024-04-23": {
+    "deaths": 56,
+    "missing": 50,
+    "total": 106
+  },
+  "2024-04-24": {
+    "deaths": 50,
+    "missing": 43,
+    "total": 93
+  },
+  "2024-04-25": {
+    "deaths": 48,
+    "missing": 39,
+    "total": 87
+  },
+  "2024-04-26": {
+    "deaths": 40,
+    "missing": 27,
+    "total": 67
+  },
+  "2024-04-27": {
+    "deaths": 49,
+    "missing": 61,
+    "total": 110
+  },
+  "2024-04-28": {
+    "deaths": 48,
+    "missing": 55,
+    "total": 103
+  },
+  "2024-04-29": {
+    "deaths": 87,
+    "missing": 45,
+    "total": 132
+  },
+  "2024-04-30": {
+    "deaths": 78,
+    "missing": 43,
+    "total": 121
+  },
+  "2024-05-01": {
+    "deaths": 50,
+    "missing": 44,
+    "total": 94
+  },
+  "2024-05-02": {
+    "deaths": 44,
+    "missing": 60,
+    "total": 104
+  },
+  "2024-05-03": {
+    "deaths": 57,
+    "missing": 55,
+    "total": 112
+  },
+  "2024-05-04": {
+    "deaths": 68,
+    "missing": 83,
+    "total": 151
+  },
+  "2024-05-05": {
+    "deaths": 57,
+    "missing": 52,
+    "total": 109
+  },
+  "2024-05-06": {
+    "deaths": 62,
+    "missing": 51,
+    "total": 113
+  },
+  "2024-05-07": {
+    "deaths": 52,
+    "missing": 60,
+    "total": 112
+  },
+  "2024-05-08": {
+    "deaths": 56,
+    "missing": 42,
+    "total": 98
+  },
+  "2024-05-09": {
+    "deaths": 60,
+    "missing": 102,
+    "total": 162
+  },
+  "2024-05-10": {
+    "deaths": 64,
+    "missing": 63,
+    "total": 127
+  },
+  "2024-05-11": {
+    "deaths": 85,
+    "missing": 145,
+    "total": 230
+  },
+  "2024-05-12": {
+    "deaths": 68,
+    "missing": 88,
+    "total": 156
+  },
+  "2024-05-13": {
+    "deaths": 59,
+    "missing": 100,
+    "total": 159
+  },
+  "2024-05-14": {
+    "deaths": 83,
+    "missing": 89,
+    "total": 172
+  },
+  "2024-05-15": {
+    "deaths": 74,
+    "missing": 80,
+    "total": 154
+  },
+  "2024-05-16": {
+    "deaths": 60,
+    "missing": 92,
+    "total": 152
+  },
+  "2024-05-17": {
+    "deaths": 67,
+    "missing": 60,
+    "total": 127
+  },
+  "2024-05-18": {
+    "deaths": 56,
+    "missing": 77,
+    "total": 133
+  },
+  "2024-05-19": {
+    "deaths": 58,
+    "missing": 69,
+    "total": 127
+  },
+  "2024-05-20": {
+    "deaths": 72,
+    "missing": 85,
+    "total": 157
+  },
+  "2024-05-21": {
+    "deaths": 58,
+    "missing": 61,
+    "total": 119
+  },
+  "2024-05-22": {
+    "deaths": 57,
+    "missing": 61,
+    "total": 118
+  },
+  "2024-05-23": {
+    "deaths": 44,
+    "missing": 34,
+    "total": 78
+  },
+  "2024-05-24": {
+    "deaths": 54,
+    "missing": 51,
+    "total": 105
+  },
+  "2024-05-25": {
+    "deaths": 50,
+    "missing": 64,
+    "total": 114
+  },
+  "2024-05-26": {
+    "deaths": 68,
+    "missing": 47,
+    "total": 115
+  },
+  "2024-05-27": {
+    "deaths": 58,
+    "missing": 73,
+    "total": 131
+  },
+  "2024-05-28": {
+    "deaths": 65,
+    "missing": 71,
+    "total": 136
+  },
+  "2024-05-29": {
+    "deaths": 89,
+    "missing": 93,
+    "total": 182
+  },
+  "2024-05-30": {
+    "deaths": 47,
+    "missing": 53,
+    "total": 100
+  },
+  "2024-05-31": {
+    "deaths": 72,
+    "missing": 69,
+    "total": 141
+  },
+  "2024-06-01": {
+    "deaths": 52,
+    "missing": 53,
+    "total": 105
+  },
+  "2024-06-02": {
+    "deaths": 79,
+    "missing": 54,
+    "total": 133
+  },
+  "2024-06-03": {
+    "deaths": 59,
+    "missing": 82,
+    "total": 141
+  },
+  "2024-06-04": {
+    "deaths": 54,
+    "missing": 56,
+    "total": 110
+  },
+  "2024-06-05": {
+    "deaths": 56,
+    "missing": 63,
+    "total": 119
+  },
+  "2024-06-06": {
+    "deaths": 38,
+    "missing": 60,
+    "total": 98
+  },
+  "2024-06-07": {
+    "deaths": 42,
+    "missing": 59,
+    "total": 101
+  },
+  "2024-06-08": {
+    "deaths": 64,
+    "missing": 70,
+    "total": 134
+  },
+  "2024-06-09": {
+    "deaths": 58,
+    "missing": 65,
+    "total": 123
+  },
+  "2024-06-10": {
+    "deaths": 72,
+    "missing": 112,
+    "total": 184
+  },
+  "2024-06-11": {
+    "deaths": 65,
+    "missing": 79,
+    "total": 144
+  },
+  "2024-06-12": {
+    "deaths": 36,
+    "missing": 65,
+    "total": 101
+  },
+  "2024-06-13": {
+    "deaths": 50,
+    "missing": 55,
+    "total": 105
+  },
+  "2024-06-14": {
+    "deaths": 42,
+    "missing": 80,
+    "total": 122
+  },
+  "2024-06-15": {
+    "deaths": 53,
+    "missing": 89,
+    "total": 142
+  },
+  "2024-06-16": {
+    "deaths": 77,
+    "missing": 73,
+    "total": 150
+  },
+  "2024-06-17": {
+    "deaths": 60,
+    "missing": 76,
+    "total": 136
+  },
+  "2024-06-18": {
+    "deaths": 75,
+    "missing": 115,
+    "total": 190
+  },
+  "2024-06-19": {
+    "deaths": 47,
+    "missing": 54,
+    "total": 101
+  },
+  "2024-06-20": {
+    "deaths": 63,
+    "missing": 57,
+    "total": 120
+  },
+  "2024-06-21": {
+    "deaths": 45,
+    "missing": 77,
+    "total": 122
+  },
+  "2024-06-22": {
+    "deaths": 59,
+    "missing": 68,
+    "total": 127
+  },
+  "2024-06-23": {
+    "deaths": 55,
+    "missing": 97,
+    "total": 152
+  },
+  "2024-06-24": {
+    "deaths": 60,
+    "missing": 90,
+    "total": 150
+  },
+  "2024-06-25": {
+    "deaths": 58,
+    "missing": 92,
+    "total": 150
+  },
+  "2024-06-26": {
+    "deaths": 56,
+    "missing": 81,
+    "total": 137
+  },
+  "2024-06-27": {
+    "deaths": 48,
+    "missing": 69,
+    "total": 117
+  },
+  "2024-06-28": {
+    "deaths": 49,
+    "missing": 83,
+    "total": 132
+  },
+  "2024-06-29": {
+    "deaths": 62,
+    "missing": 70,
+    "total": 132
+  },
+  "2024-06-30": {
+    "deaths": 76,
+    "missing": 111,
+    "total": 187
+  },
+  "2024-07-01": {
+    "deaths": 65,
+    "missing": 82,
+    "total": 147
+  },
+  "2024-07-02": {
+    "deaths": 73,
+    "missing": 91,
+    "total": 164
+  },
+  "2024-07-03": {
+    "deaths": 76,
+    "missing": 89,
+    "total": 165
+  },
+  "2024-07-04": {
+    "deaths": 69,
+    "missing": 83,
+    "total": 152
+  },
+  "2024-07-05": {
+    "deaths": 55,
+    "missing": 94,
+    "total": 149
+  },
+  "2024-07-06": {
+    "deaths": 63,
+    "missing": 57,
+    "total": 120
+  },
+  "2024-07-07": {
+    "deaths": 73,
+    "missing": 79,
+    "total": 152
+  },
+  "2024-07-08": {
+    "deaths": 59,
+    "missing": 103,
+    "total": 162
+  },
+  "2024-07-09": {
+    "deaths": 50,
+    "missing": 88,
+    "total": 138
+  },
+  "2024-07-10": {
+    "deaths": 49,
+    "missing": 74,
+    "total": 123
+  },
+  "2024-07-11": {
+    "deaths": 53,
+    "missing": 76,
+    "total": 129
+  },
+  "2024-07-12": {
+    "deaths": 64,
+    "missing": 122,
+    "total": 186
+  },
+  "2024-07-13": {
+    "deaths": 52,
+    "missing": 98,
+    "total": 150
+  },
+  "2024-07-14": {
+    "deaths": 64,
+    "missing": 100,
+    "total": 164
+  },
+  "2024-07-15": {
+    "deaths": 74,
+    "missing": 66,
+    "total": 140
+  },
+  "2024-07-16": {
+    "deaths": 70,
+    "missing": 79,
+    "total": 149
+  },
+  "2024-07-17": {
+    "deaths": 53,
+    "missing": 94,
+    "total": 147
+  },
+  "2024-07-18": {
+    "deaths": 59,
+    "missing": 121,
+    "total": 180
+  },
+  "2024-07-19": {
+    "deaths": 74,
+    "missing": 93,
+    "total": 167
+  },
+  "2024-07-20": {
+    "deaths": 54,
+    "missing": 94,
+    "total": 148
+  },
+  "2024-07-21": {
+    "deaths": 52,
+    "missing": 108,
+    "total": 160
+  },
+  "2024-07-22": {
+    "deaths": 58,
+    "missing": 105,
+    "total": 163
+  },
+  "2024-07-23": {
+    "deaths": 76,
+    "missing": 128,
+    "total": 204
+  },
+  "2024-07-24": {
+    "deaths": 37,
+    "missing": 119,
+    "total": 156
+  },
+  "2024-07-25": {
+    "deaths": 71,
+    "missing": 117,
+    "total": 188
+  },
+  "2024-07-26": {
+    "deaths": 57,
+    "missing": 65,
+    "total": 122
+  },
+  "2024-07-27": {
+    "deaths": 63,
+    "missing": 83,
+    "total": 146
+  },
+  "2024-07-28": {
+    "deaths": 63,
+    "missing": 85,
+    "total": 148
+  },
+  "2024-07-29": {
+    "deaths": 57,
+    "missing": 70,
+    "total": 127
+  },
+  "2024-07-30": {
+    "deaths": 50,
+    "missing": 93,
+    "total": 143
+  },
+  "2024-07-31": {
+    "deaths": 61,
+    "missing": 89,
+    "total": 150
+  },
+  "2024-08-01": {
+    "deaths": 63,
+    "missing": 95,
+    "total": 158
+  },
+  "2024-08-02": {
+    "deaths": 55,
+    "missing": 65,
+    "total": 120
+  },
+  "2024-08-03": {
+    "deaths": 51,
+    "missing": 86,
+    "total": 137
+  },
+  "2024-08-04": {
+    "deaths": 54,
+    "missing": 95,
+    "total": 149
+  },
+  "2024-08-05": {
+    "deaths": 65,
+    "missing": 70,
+    "total": 135
+  },
+  "2024-08-06": {
+    "deaths": 86,
+    "missing": 88,
+    "total": 174
+  },
+  "2024-08-07": {
+    "deaths": 47,
+    "missing": 75,
+    "total": 122
+  },
+  "2024-08-08": {
+    "deaths": 83,
+    "missing": 75,
+    "total": 158
+  },
+  "2024-08-09": {
+    "deaths": 49,
+    "missing": 84,
+    "total": 133
+  },
+  "2024-08-10": {
+    "deaths": 77,
+    "missing": 114,
+    "total": 191
+  },
+  "2024-08-11": {
+    "deaths": 56,
+    "missing": 106,
+    "total": 162
+  },
+  "2024-08-12": {
+    "deaths": 61,
+    "missing": 102,
+    "total": 163
+  },
+  "2024-08-13": {
+    "deaths": 66,
+    "missing": 66,
+    "total": 132
+  },
+  "2024-08-14": {
+    "deaths": 69,
+    "missing": 74,
+    "total": 143
+  },
+  "2024-08-15": {
+    "deaths": 70,
+    "missing": 72,
+    "total": 142
+  },
+  "2024-08-16": {
+    "deaths": 53,
+    "missing": 80,
+    "total": 133
+  },
+  "2024-08-17": {
+    "deaths": 70,
+    "missing": 71,
+    "total": 141
+  },
+  "2024-08-18": {
+    "deaths": 73,
+    "missing": 87,
+    "total": 160
+  },
+  "2024-08-19": {
+    "deaths": 59,
+    "missing": 99,
+    "total": 158
+  },
+  "2024-08-20": {
+    "deaths": 57,
+    "missing": 84,
+    "total": 141
+  },
+  "2024-08-21": {
+    "deaths": 63,
+    "missing": 84,
+    "total": 147
+  },
+  "2024-08-22": {
+    "deaths": 93,
+    "missing": 70,
+    "total": 163
+  },
+  "2024-08-23": {
+    "deaths": 69,
+    "missing": 79,
+    "total": 148
+  },
+  "2024-08-24": {
+    "deaths": 65,
+    "missing": 69,
+    "total": 134
+  },
+  "2024-08-25": {
+    "deaths": 78,
+    "missing": 75,
+    "total": 153
+  },
+  "2024-08-26": {
+    "deaths": 82,
+    "missing": 80,
+    "total": 162
+  },
+  "2024-08-27": {
+    "deaths": 56,
+    "missing": 91,
+    "total": 147
+  },
+  "2024-08-28": {
+    "deaths": 76,
+    "missing": 105,
+    "total": 181
+  },
+  "2024-08-29": {
+    "deaths": 75,
+    "missing": 134,
+    "total": 209
+  },
+  "2024-08-30": {
+    "deaths": 69,
+    "missing": 120,
+    "total": 189
+  },
+  "2024-08-31": {
+    "deaths": 75,
+    "missing": 94,
+    "total": 169
+  },
+  "2024-09-01": {
+    "deaths": 71,
+    "missing": 122,
+    "total": 193
+  },
+  "2024-09-02": {
+    "deaths": 122,
+    "missing": 95,
+    "total": 217
+  },
+  "2024-09-03": {
+    "deaths": 88,
+    "missing": 97,
+    "total": 185
+  },
+  "2024-09-04": {
+    "deaths": 72,
+    "missing": 100,
+    "total": 172
+  },
+  "2024-09-05": {
+    "deaths": 54,
+    "missing": 95,
+    "total": 149
+  },
+  "2024-09-06": {
+    "deaths": 79,
+    "missing": 116,
+    "total": 195
+  },
+  "2024-09-07": {
+    "deaths": 68,
+    "missing": 131,
+    "total": 199
+  },
+  "2024-09-08": {
+    "deaths": 85,
+    "missing": 108,
+    "total": 193
+  },
+  "2024-09-09": {
+    "deaths": 68,
+    "missing": 110,
+    "total": 178
+  },
+  "2024-09-10": {
+    "deaths": 70,
+    "missing": 78,
+    "total": 148
+  },
+  "2024-09-11": {
+    "deaths": 72,
+    "missing": 101,
+    "total": 173
+  },
+  "2024-09-12": {
+    "deaths": 58,
+    "missing": 103,
+    "total": 161
+  },
+  "2024-09-13": {
+    "deaths": 66,
+    "missing": 100,
+    "total": 166
+  },
+  "2024-09-14": {
+    "deaths": 73,
+    "missing": 144,
+    "total": 217
+  },
+  "2024-09-15": {
+    "deaths": 63,
+    "missing": 113,
+    "total": 176
+  },
+  "2024-09-16": {
+    "deaths": 77,
+    "missing": 100,
+    "total": 177
+  },
+  "2024-09-17": {
+    "deaths": 62,
+    "missing": 105,
+    "total": 167
+  },
+  "2024-09-18": {
+    "deaths": 53,
+    "missing": 136,
+    "total": 189
+  },
+  "2024-09-19": {
+    "deaths": 66,
+    "missing": 120,
+    "total": 186
+  },
+  "2024-09-20": {
+    "deaths": 57,
+    "missing": 131,
+    "total": 188
+  },
+  "2024-09-21": {
+    "deaths": 68,
+    "missing": 97,
+    "total": 165
+  },
+  "2024-09-22": {
+    "deaths": 62,
+    "missing": 105,
+    "total": 167
+  },
+  "2024-09-23": {
+    "deaths": 43,
+    "missing": 86,
+    "total": 129
+  },
+  "2024-09-24": {
+    "deaths": 57,
+    "missing": 122,
+    "total": 179
+  },
+  "2024-09-25": {
+    "deaths": 59,
+    "missing": 106,
+    "total": 165
+  },
+  "2024-09-26": {
+    "deaths": 64,
+    "missing": 126,
+    "total": 190
+  },
+  "2024-09-27": {
+    "deaths": 54,
+    "missing": 136,
+    "total": 190
+  },
+  "2024-09-28": {
+    "deaths": 50,
+    "missing": 77,
+    "total": 127
+  },
+  "2024-09-29": {
+    "deaths": 98,
+    "missing": 138,
+    "total": 236
+  },
+  "2024-09-30": {
+    "deaths": 57,
+    "missing": 112,
+    "total": 169
+  },
+  "2024-10-01": {
+    "deaths": 67,
+    "missing": 93,
+    "total": 160
+  },
+  "2024-10-02": {
+    "deaths": 57,
+    "missing": 91,
+    "total": 148
+  },
+  "2024-10-03": {
+    "deaths": 50,
+    "missing": 80,
+    "total": 130
+  },
+  "2024-10-04": {
+    "deaths": 54,
+    "missing": 90,
+    "total": 144
+  },
+  "2024-10-05": {
+    "deaths": 61,
+    "missing": 85,
+    "total": 146
+  },
+  "2024-10-06": {
+    "deaths": 49,
+    "missing": 102,
+    "total": 151
+  },
+  "2024-10-07": {
+    "deaths": 42,
+    "missing": 43,
+    "total": 85
+  },
+  "2024-10-08": {
+    "deaths": 51,
+    "missing": 95,
+    "total": 146
+  },
+  "2024-10-09": {
+    "deaths": 76,
+    "missing": 95,
+    "total": 171
+  },
+  "2024-10-10": {
+    "deaths": 78,
+    "missing": 106,
+    "total": 184
+  },
+  "2024-10-11": {
+    "deaths": 53,
+    "missing": 83,
+    "total": 136
+  },
+  "2024-10-12": {
+    "deaths": 43,
+    "missing": 74,
+    "total": 117
+  },
+  "2024-10-13": {
+    "deaths": 71,
+    "missing": 75,
+    "total": 146
+  },
+  "2024-10-14": {
+    "deaths": 55,
+    "missing": 67,
+    "total": 122
+  },
+  "2024-10-15": {
+    "deaths": 84,
+    "missing": 138,
+    "total": 222
+  },
+  "2024-10-16": {
+    "deaths": 65,
+    "missing": 131,
+    "total": 196
+  },
+  "2024-10-17": {
+    "deaths": 56,
+    "missing": 88,
+    "total": 144
+  },
+  "2024-10-18": {
+    "deaths": 59,
+    "missing": 116,
+    "total": 175
+  },
+  "2024-10-19": {
+    "deaths": 56,
+    "missing": 102,
+    "total": 158
+  },
+  "2024-10-20": {
+    "deaths": 62,
+    "missing": 102,
+    "total": 164
+  },
+  "2024-10-21": {
+    "deaths": 70,
+    "missing": 86,
+    "total": 156
+  },
+  "2024-10-22": {
+    "deaths": 82,
+    "missing": 132,
+    "total": 214
+  },
+  "2024-10-23": {
+    "deaths": 60,
+    "missing": 121,
+    "total": 181
+  },
+  "2024-10-24": {
+    "deaths": 57,
+    "missing": 147,
+    "total": 204
+  },
+  "2024-10-25": {
+    "deaths": 51,
+    "missing": 84,
+    "total": 135
+  },
+  "2024-10-26": {
+    "deaths": 72,
+    "missing": 77,
+    "total": 149
+  },
+  "2024-10-27": {
+    "deaths": 65,
+    "missing": 88,
+    "total": 153
+  },
+  "2024-10-28": {
+    "deaths": 69,
+    "missing": 103,
+    "total": 172
+  },
+  "2024-10-29": {
+    "deaths": 73,
+    "missing": 95,
+    "total": 168
+  },
+  "2024-10-30": {
+    "deaths": 67,
+    "missing": 87,
+    "total": 154
+  },
+  "2024-10-31": {
+    "deaths": 64,
+    "missing": 88,
+    "total": 152
+  },
+  "2024-11-01": {
+    "deaths": 43,
+    "missing": 78,
+    "total": 121
+  },
+  "2024-11-02": {
+    "deaths": 51,
+    "missing": 92,
+    "total": 143
+  },
+  "2024-11-03": {
+    "deaths": 48,
+    "missing": 90,
+    "total": 138
+  },
+  "2024-11-04": {
+    "deaths": 52,
+    "missing": 83,
+    "total": 135
+  },
+  "2024-11-05": {
+    "deaths": 52,
+    "missing": 107,
+    "total": 159
+  },
+  "2024-11-06": {
+    "deaths": 46,
+    "missing": 90,
+    "total": 136
+  },
+  "2024-11-07": {
+    "deaths": 70,
+    "missing": 91,
+    "total": 161
+  },
+  "2024-11-08": {
+    "deaths": 66,
+    "missing": 94,
+    "total": 160
+  },
+  "2024-11-09": {
+    "deaths": 61,
+    "missing": 88,
+    "total": 149
+  },
+  "2024-11-10": {
+    "deaths": 85,
+    "missing": 147,
+    "total": 232
+  },
+  "2024-11-11": {
+    "deaths": 68,
+    "missing": 182,
+    "total": 250
+  },
+  "2024-11-12": {
+    "deaths": 64,
+    "missing": 90,
+    "total": 154
+  },
+  "2024-11-13": {
+    "deaths": 78,
+    "missing": 132,
+    "total": 210
+  },
+  "2024-11-14": {
+    "deaths": 63,
+    "missing": 128,
+    "total": 191
+  },
+  "2024-11-15": {
+    "deaths": 57,
+    "missing": 125,
+    "total": 182
+  },
+  "2024-11-16": {
+    "deaths": 46,
+    "missing": 151,
+    "total": 197
+  },
+  "2024-11-17": {
+    "deaths": 75,
+    "missing": 128,
+    "total": 203
+  },
+  "2024-11-18": {
+    "deaths": 56,
+    "missing": 76,
+    "total": 132
+  },
+  "2024-11-19": {
+    "deaths": 46,
+    "missing": 143,
+    "total": 189
+  },
+  "2024-11-20": {
+    "deaths": 46,
+    "missing": 87,
+    "total": 133
+  },
+  "2024-11-21": {
+    "deaths": 44,
+    "missing": 106,
+    "total": 150
+  },
+  "2024-11-22": {
+    "deaths": 64,
+    "missing": 116,
+    "total": 180
+  },
+  "2024-11-23": {
+    "deaths": 54,
+    "missing": 74,
+    "total": 128
+  },
+  "2024-11-24": {
+    "deaths": 56,
+    "missing": 100,
+    "total": 156
+  },
+  "2024-11-25": {
+    "deaths": 53,
+    "missing": 116,
+    "total": 169
+  },
+  "2024-11-26": {
+    "deaths": 80,
+    "missing": 96,
+    "total": 176
+  },
+  "2024-11-27": {
+    "deaths": 48,
+    "missing": 100,
+    "total": 148
+  },
+  "2024-11-28": {
+    "deaths": 65,
+    "missing": 89,
+    "total": 154
+  },
+  "2024-11-29": {
+    "deaths": 58,
+    "missing": 101,
+    "total": 159
+  },
+  "2024-11-30": {
+    "deaths": 40,
+    "missing": 73,
+    "total": 113
+  },
+  "2024-12-01": {
+    "deaths": 68,
+    "missing": 69,
+    "total": 137
+  },
+  "2024-12-02": {
+    "deaths": 63,
+    "missing": 89,
+    "total": 152
+  },
+  "2024-12-03": {
+    "deaths": 62,
+    "missing": 94,
+    "total": 156
+  },
+  "2024-12-04": {
+    "deaths": 52,
+    "missing": 81,
+    "total": 133
+  },
+  "2024-12-05": {
+    "deaths": 49,
+    "missing": 201,
+    "total": 250
+  },
+  "2024-12-06": {
+    "deaths": 49,
+    "missing": 92,
+    "total": 141
+  },
+  "2024-12-07": {
+    "deaths": 37,
+    "missing": 60,
+    "total": 97
+  },
+  "2024-12-08": {
+    "deaths": 50,
+    "missing": 75,
+    "total": 125
+  },
+  "2024-12-09": {
+    "deaths": 50,
+    "missing": 93,
+    "total": 143
+  },
+  "2024-12-10": {
+    "deaths": 49,
+    "missing": 81,
+    "total": 130
+  },
+  "2024-12-11": {
+    "deaths": 39,
+    "missing": 116,
+    "total": 155
+  },
+  "2024-12-12": {
+    "deaths": 47,
+    "missing": 121,
+    "total": 168
+  },
+  "2024-12-13": {
+    "deaths": 43,
+    "missing": 248,
+    "total": 291
+  },
+  "2024-12-14": {
+    "deaths": 58,
+    "missing": 156,
+    "total": 214
+  },
+  "2024-12-15": {
+    "deaths": 60,
+    "missing": 148,
+    "total": 208
+  },
+  "2024-12-16": {
+    "deaths": 50,
+    "missing": 113,
+    "total": 163
+  },
+  "2024-12-17": {
+    "deaths": 44,
+    "missing": 130,
+    "total": 174
+  },
+  "2024-12-18": {
+    "deaths": 55,
+    "missing": 155,
+    "total": 210
+  },
+  "2024-12-19": {
+    "deaths": 52,
+    "missing": 83,
+    "total": 135
+  },
+  "2024-12-20": {
+    "deaths": 47,
+    "missing": 113,
+    "total": 160
+  },
+  "2024-12-21": {
+    "deaths": 51,
+    "missing": 88,
+    "total": 139
+  },
+  "2024-12-22": {
+    "deaths": 54,
+    "missing": 85,
+    "total": 139
+  },
+  "2024-12-23": {
+    "deaths": 45,
+    "missing": 95,
+    "total": 140
+  },
+  "2024-12-24": {
+    "deaths": 87,
+    "missing": 97,
+    "total": 184
+  },
+  "2024-12-25": {
+    "deaths": 57,
+    "missing": 101,
+    "total": 158
+  },
+  "2024-12-26": {
+    "deaths": 46,
+    "missing": 102,
+    "total": 148
+  },
+  "2024-12-27": {
+    "deaths": 76,
+    "missing": 124,
+    "total": 200
+  },
+  "2024-12-28": {
+    "deaths": 63,
+    "missing": 133,
+    "total": 196
+  },
+  "2024-12-29": {
+    "deaths": 34,
+    "missing": 114,
+    "total": 148
+  },
+  "2024-12-30": {
+    "deaths": 81,
+    "missing": 150,
+    "total": 231
+  },
+  "2024-12-31": {
+    "deaths": 46,
+    "missing": 82,
+    "total": 128
+  },
+  "2025-01-01": {
+    "deaths": 42,
+    "missing": 92,
+    "total": 134
+  },
+  "2025-01-02": {
+    "deaths": 58,
+    "missing": 104,
+    "total": 162
+  },
+  "2025-01-03": {
+    "deaths": 63,
+    "missing": 110,
+    "total": 173
+  },
+  "2025-01-04": {
+    "deaths": 76,
+    "missing": 158,
+    "total": 234
+  },
+  "2025-01-05": {
+    "deaths": 61,
+    "missing": 254,
+    "total": 315
+  },
+  "2025-01-06": {
+    "deaths": 49,
+    "missing": 111,
+    "total": 160
+  },
+  "2025-01-07": {
+    "deaths": 52,
+    "missing": 98,
+    "total": 150
+  },
+  "2025-01-08": {
+    "deaths": 79,
+    "missing": 107,
+    "total": 186
+  },
+  "2025-01-09": {
+    "deaths": 58,
+    "missing": 103,
+    "total": 161
+  },
+  "2025-01-10": {
+    "deaths": 49,
+    "missing": 114,
+    "total": 163
+  },
+  "2025-01-11": {
+    "deaths": 46,
+    "missing": 118,
+    "total": 164
+  },
+  "2025-01-12": {
+    "deaths": 48,
+    "missing": 89,
+    "total": 137
+  },
+  "2025-01-13": {
+    "deaths": 80,
+    "missing": 82,
+    "total": 162
+  },
+  "2025-01-14": {
+    "deaths": 48,
+    "missing": 57,
+    "total": 105
+  },
+  "2025-01-15": {
+    "deaths": 67,
+    "missing": 121,
+    "total": 188
+  },
+  "2025-01-16": {
+    "deaths": 46,
+    "missing": 81,
+    "total": 127
+  },
+  "2025-01-17": {
+    "deaths": 33,
+    "missing": 111,
+    "total": 144
+  },
+  "2025-01-18": {
+    "deaths": 47,
+    "missing": 125,
+    "total": 172
+  },
+  "2025-01-19": {
+    "deaths": 51,
+    "missing": 100,
+    "total": 151
+  },
+  "2025-01-20": {
+    "deaths": 58,
+    "missing": 105,
+    "total": 163
+  },
+  "2025-01-21": {
+    "deaths": 38,
+    "missing": 63,
+    "total": 101
+  },
+  "2025-01-22": {
+    "deaths": 51,
+    "missing": 63,
+    "total": 114
+  },
+  "2025-01-23": {
+    "deaths": 34,
+    "missing": 123,
+    "total": 157
+  },
+  "2025-01-24": {
+    "deaths": 44,
+    "missing": 102,
+    "total": 146
+  },
+  "2025-01-25": {
+    "deaths": 36,
+    "missing": 67,
+    "total": 103
+  },
+  "2025-01-26": {
+    "deaths": 53,
+    "missing": 102,
+    "total": 155
+  },
+  "2025-01-27": {
+    "deaths": 26,
+    "missing": 53,
+    "total": 79
+  },
+  "2025-01-28": {
+    "deaths": 79,
+    "missing": 74,
+    "total": 153
+  },
+  "2025-01-29": {
+    "deaths": 56,
+    "missing": 90,
+    "total": 146
+  },
+  "2025-01-30": {
+    "deaths": 55,
+    "missing": 75,
+    "total": 130
+  },
+  "2025-01-31": {
+    "deaths": 40,
+    "missing": 57,
+    "total": 97
+  },
+  "2025-02-01": {
+    "deaths": 46,
+    "missing": 79,
+    "total": 125
+  },
+  "2025-02-02": {
+    "deaths": 45,
+    "missing": 70,
+    "total": 115
+  },
+  "2025-02-03": {
+    "deaths": 27,
+    "missing": 45,
+    "total": 72
+  },
+  "2025-02-04": {
+    "deaths": 53,
+    "missing": 74,
+    "total": 127
+  },
+  "2025-02-05": {
+    "deaths": 36,
+    "missing": 76,
+    "total": 112
+  },
+  "2025-02-06": {
+    "deaths": 37,
+    "missing": 81,
+    "total": 118
+  },
+  "2025-02-07": {
+    "deaths": 35,
+    "missing": 96,
+    "total": 131
+  },
+  "2025-02-08": {
+    "deaths": 44,
+    "missing": 77,
+    "total": 121
+  },
+  "2025-02-09": {
+    "deaths": 47,
+    "missing": 167,
+    "total": 214
+  },
+  "2025-02-10": {
+    "deaths": 38,
+    "missing": 81,
+    "total": 119
+  },
+  "2025-02-11": {
+    "deaths": 55,
+    "missing": 87,
+    "total": 142
+  },
+  "2025-02-12": {
+    "deaths": 41,
+    "missing": 79,
+    "total": 120
+  },
+  "2025-02-13": {
+    "deaths": 44,
+    "missing": 101,
+    "total": 145
+  },
+  "2025-02-14": {
+    "deaths": 50,
+    "missing": 165,
+    "total": 215
+  },
+  "2025-02-15": {
+    "deaths": 64,
+    "missing": 92,
+    "total": 156
+  },
+  "2025-02-16": {
+    "deaths": 42,
+    "missing": 116,
+    "total": 158
+  },
+  "2025-02-17": {
+    "deaths": 50,
+    "missing": 130,
+    "total": 180
+  },
+  "2025-02-18": {
+    "deaths": 41,
+    "missing": 115,
+    "total": 156
+  },
+  "2025-02-19": {
+    "deaths": 106,
+    "missing": 113,
+    "total": 219
+  },
+  "2025-02-20": {
+    "deaths": 40,
+    "missing": 77,
+    "total": 117
+  },
+  "2025-02-21": {
+    "deaths": 43,
+    "missing": 94,
+    "total": 137
+  },
+  "2025-02-22": {
+    "deaths": 43,
+    "missing": 70,
+    "total": 113
+  },
+  "2025-02-23": {
+    "deaths": 41,
+    "missing": 86,
+    "total": 127
+  },
+  "2025-02-24": {
+    "deaths": 52,
+    "missing": 81,
+    "total": 133
+  },
+  "2025-02-25": {
+    "deaths": 81,
+    "missing": 80,
+    "total": 161
+  },
+  "2025-02-26": {
+    "deaths": 35,
+    "missing": 123,
+    "total": 158
+  },
+  "2025-02-27": {
+    "deaths": 45,
+    "missing": 71,
+    "total": 116
+  },
+  "2025-02-28": {
+    "deaths": 65,
+    "missing": 71,
+    "total": 136
+  },
+  "2025-03-01": {
+    "deaths": 46,
+    "missing": 113,
+    "total": 159
+  },
+  "2025-03-02": {
+    "deaths": 46,
+    "missing": 75,
+    "total": 121
+  },
+  "2025-03-03": {
+    "deaths": 33,
+    "missing": 126,
+    "total": 159
+  },
+  "2025-03-04": {
+    "deaths": 33,
+    "missing": 122,
+    "total": 155
+  },
+  "2025-03-05": {
+    "deaths": 29,
+    "missing": 133,
+    "total": 162
+  },
+  "2025-03-06": {
+    "deaths": 61,
+    "missing": 129,
+    "total": 190
+  },
+  "2025-03-07": {
+    "deaths": 37,
+    "missing": 154,
+    "total": 191
+  },
+  "2025-03-08": {
+    "deaths": 38,
+    "missing": 180,
+    "total": 218
+  },
+  "2025-03-09": {
+    "deaths": 55,
+    "missing": 184,
+    "total": 239
+  },
+  "2025-03-10": {
+    "deaths": 38,
+    "missing": 157,
+    "total": 195
+  },
+  "2025-03-11": {
+    "deaths": 40,
+    "missing": 162,
+    "total": 202
+  },
+  "2025-03-12": {
+    "deaths": 69,
+    "missing": 161,
+    "total": 230
+  },
+  "2025-03-13": {
+    "deaths": 54,
+    "missing": 117,
+    "total": 171
+  },
+  "2025-03-14": {
+    "deaths": 34,
+    "missing": 126,
+    "total": 160
+  },
+  "2025-03-15": {
+    "deaths": 35,
+    "missing": 121,
+    "total": 156
+  },
+  "2025-03-16": {
+    "deaths": 44,
+    "missing": 86,
+    "total": 130
+  },
+  "2025-03-17": {
+    "deaths": 32,
+    "missing": 113,
+    "total": 145
+  },
+  "2025-03-18": {
+    "deaths": 39,
+    "missing": 117,
+    "total": 156
+  },
+  "2025-03-19": {
+    "deaths": 46,
+    "missing": 120,
+    "total": 166
+  },
+  "2025-03-20": {
+    "deaths": 65,
+    "missing": 100,
+    "total": 165
+  },
+  "2025-03-21": {
+    "deaths": 46,
+    "missing": 113,
+    "total": 159
+  },
+  "2025-03-22": {
+    "deaths": 30,
+    "missing": 120,
+    "total": 150
+  },
+  "2025-03-23": {
+    "deaths": 47,
+    "missing": 83,
+    "total": 130
+  },
+  "2025-03-24": {
+    "deaths": 37,
+    "missing": 103,
+    "total": 140
+  },
+  "2025-03-25": {
+    "deaths": 42,
+    "missing": 158,
+    "total": 200
+  },
+  "2025-03-26": {
+    "deaths": 42,
+    "missing": 143,
+    "total": 185
+  },
+  "2025-03-27": {
+    "deaths": 39,
+    "missing": 112,
+    "total": 151
+  },
+  "2025-03-28": {
+    "deaths": 46,
+    "missing": 128,
+    "total": 174
+  },
+  "2025-03-29": {
+    "deaths": 24,
+    "missing": 84,
+    "total": 108
+  },
+  "2025-03-30": {
+    "deaths": 39,
+    "missing": 114,
+    "total": 153
+  },
+  "2025-03-31": {
+    "deaths": 68,
+    "missing": 85,
+    "total": 153
+  },
+  "2025-04-01": {
+    "deaths": 36,
+    "missing": 170,
+    "total": 206
+  },
+  "2025-04-02": {
+    "deaths": 29,
+    "missing": 109,
+    "total": 138
+  },
+  "2025-04-03": {
+    "deaths": 49,
+    "missing": 115,
+    "total": 164
+  },
+  "2025-04-04": {
+    "deaths": 35,
+    "missing": 113,
+    "total": 148
+  },
+  "2025-04-05": {
+    "deaths": 30,
+    "missing": 80,
+    "total": 110
+  },
+  "2025-04-06": {
+    "deaths": 45,
+    "missing": 107,
+    "total": 152
+  },
+  "2025-04-07": {
+    "deaths": 52,
+    "missing": 123,
+    "total": 175
+  },
+  "2025-04-08": {
+    "deaths": 45,
+    "missing": 111,
+    "total": 156
+  },
+  "2025-04-09": {
+    "deaths": 31,
+    "missing": 104,
+    "total": 135
+  },
+  "2025-04-10": {
+    "deaths": 52,
+    "missing": 108,
+    "total": 160
+  },
+  "2025-04-11": {
+    "deaths": 44,
+    "missing": 86,
+    "total": 130
+  },
+  "2025-04-12": {
+    "deaths": 40,
+    "missing": 70,
+    "total": 110
+  },
+  "2025-04-13": {
+    "deaths": 48,
+    "missing": 80,
+    "total": 128
+  },
+  "2025-04-14": {
+    "deaths": 55,
+    "missing": 101,
+    "total": 156
+  },
+  "2025-04-15": {
+    "deaths": 26,
+    "missing": 95,
+    "total": 121
+  },
+  "2025-04-16": {
+    "deaths": 52,
+    "missing": 97,
+    "total": 149
+  },
+  "2025-04-17": {
+    "deaths": 33,
+    "missing": 137,
+    "total": 170
+  },
+  "2025-04-18": {
+    "deaths": 31,
+    "missing": 90,
+    "total": 121
+  },
+  "2025-04-19": {
+    "deaths": 26,
+    "missing": 94,
+    "total": 120
+  },
+  "2025-04-20": {
+    "deaths": 39,
+    "missing": 120,
+    "total": 159
+  },
+  "2025-04-21": {
+    "deaths": 40,
+    "missing": 98,
+    "total": 138
+  },
+  "2025-04-22": {
+    "deaths": 42,
+    "missing": 100,
+    "total": 142
+  },
+  "2025-04-23": {
+    "deaths": 50,
+    "missing": 131,
+    "total": 181
+  },
+  "2025-04-24": {
+    "deaths": 45,
+    "missing": 105,
+    "total": 150
+  },
+  "2025-04-25": {
+    "deaths": 44,
+    "missing": 116,
+    "total": 160
+  },
+  "2025-04-26": {
+    "deaths": 23,
+    "missing": 93,
+    "total": 116
+  },
+  "2025-04-27": {
+    "deaths": 49,
+    "missing": 144,
+    "total": 193
+  },
+  "2025-04-28": {
+    "deaths": 37,
+    "missing": 96,
+    "total": 133
+  },
+  "2025-04-29": {
+    "deaths": 34,
+    "missing": 128,
+    "total": 162
+  },
+  "2025-04-30": {
+    "deaths": 70,
+    "missing": 126,
+    "total": 196
+  },
+  "2025-05-01": {
+    "deaths": 41,
+    "missing": 124,
+    "total": 165
+  },
+  "2025-05-02": {
+    "deaths": 34,
+    "missing": 140,
+    "total": 174
+  },
+  "2025-05-03": {
+    "deaths": 35,
+    "missing": 127,
+    "total": 162
+  },
+  "2025-05-04": {
+    "deaths": 52,
+    "missing": 127,
+    "total": 179
+  },
+  "2025-05-05": {
+    "deaths": 35,
+    "missing": 146,
+    "total": 181
+  },
+  "2025-05-06": {
+    "deaths": 65,
+    "missing": 143,
+    "total": 208
+  },
+  "2025-05-07": {
+    "deaths": 39,
+    "missing": 132,
+    "total": 171
+  },
+  "2025-05-08": {
+    "deaths": 42,
+    "missing": 123,
+    "total": 165
+  },
+  "2025-05-09": {
+    "deaths": 36,
+    "missing": 99,
+    "total": 135
+  },
+  "2025-05-10": {
+    "deaths": 36,
+    "missing": 95,
+    "total": 131
+  },
+  "2025-05-11": {
+    "deaths": 45,
+    "missing": 107,
+    "total": 152
+  },
+  "2025-05-12": {
+    "deaths": 41,
+    "missing": 117,
+    "total": 158
+  },
+  "2025-05-13": {
+    "deaths": 42,
+    "missing": 106,
+    "total": 148
+  },
+  "2025-05-14": {
+    "deaths": 34,
+    "missing": 157,
+    "total": 191
+  },
+  "2025-05-15": {
+    "deaths": 29,
+    "missing": 115,
+    "total": 144
+  },
+  "2025-05-16": {
+    "deaths": 31,
+    "missing": 110,
+    "total": 141
+  },
+  "2025-05-17": {
+    "deaths": 30,
+    "missing": 90,
+    "total": 120
+  },
+  "2025-05-18": {
+    "deaths": 34,
+    "missing": 114,
+    "total": 148
+  },
+  "2025-05-19": {
+    "deaths": 53,
+    "missing": 106,
+    "total": 159
+  },
+  "2025-05-20": {
+    "deaths": 40,
+    "missing": 123,
+    "total": 163
+  },
+  "2025-05-21": {
+    "deaths": 29,
+    "missing": 83,
+    "total": 112
+  },
+  "2025-05-22": {
+    "deaths": 40,
+    "missing": 115,
+    "total": 155
+  },
+  "2025-05-23": {
+    "deaths": 52,
+    "missing": 126,
+    "total": 178
+  },
+  "2025-05-24": {
+    "deaths": 44,
+    "missing": 102,
+    "total": 146
+  },
+  "2025-05-25": {
+    "deaths": 44,
+    "missing": 123,
+    "total": 167
+  },
+  "2025-05-26": {
+    "deaths": 29,
+    "missing": 124,
+    "total": 153
+  },
+  "2025-05-27": {
+    "deaths": 36,
+    "missing": 106,
+    "total": 142
+  },
+  "2025-05-28": {
+    "deaths": 39,
+    "missing": 128,
+    "total": 167
+  },
+  "2025-05-29": {
+    "deaths": 77,
+    "missing": 155,
+    "total": 232
+  },
+  "2025-05-30": {
+    "deaths": 34,
+    "missing": 101,
+    "total": 135
+  },
+  "2025-05-31": {
+    "deaths": 44,
+    "missing": 115,
+    "total": 159
+  },
+  "2025-06-01": {
+    "deaths": 42,
+    "missing": 95,
+    "total": 137
+  },
+  "2025-06-02": {
+    "deaths": 43,
+    "missing": 135,
+    "total": 178
+  },
+  "2025-06-03": {
+    "deaths": 33,
+    "missing": 110,
+    "total": 143
+  },
+  "2025-06-04": {
+    "deaths": 37,
+    "missing": 80,
+    "total": 117
+  },
+  "2025-06-05": {
+    "deaths": 52,
+    "missing": 117,
+    "total": 169
+  },
+  "2025-06-06": {
+    "deaths": 32,
+    "missing": 104,
+    "total": 136
+  },
+  "2025-06-07": {
+    "deaths": 34,
+    "missing": 83,
+    "total": 117
+  },
+  "2025-06-08": {
+    "deaths": 41,
+    "missing": 148,
+    "total": 189
+  },
+  "2025-06-09": {
+    "deaths": 50,
+    "missing": 106,
+    "total": 156
+  },
+  "2025-06-10": {
+    "deaths": 43,
+    "missing": 140,
+    "total": 183
+  },
+  "2025-06-11": {
+    "deaths": 45,
+    "missing": 121,
+    "total": 166
+  },
+  "2025-06-12": {
+    "deaths": 63,
+    "missing": 123,
+    "total": 186
+  },
+  "2025-06-13": {
+    "deaths": 34,
+    "missing": 94,
+    "total": 128
+  },
+  "2025-06-14": {
+    "deaths": 27,
+    "missing": 134,
+    "total": 161
+  },
+  "2025-06-15": {
+    "deaths": 40,
+    "missing": 180,
+    "total": 220
+  },
+  "2025-06-16": {
+    "deaths": 53,
+    "missing": 125,
+    "total": 178
+  },
+  "2025-06-17": {
+    "deaths": 38,
+    "missing": 131,
+    "total": 169
+  },
+  "2025-06-18": {
+    "deaths": 31,
+    "missing": 125,
+    "total": 156
+  },
+  "2025-06-19": {
+    "deaths": 44,
+    "missing": 114,
+    "total": 158
+  },
+  "2025-06-20": {
+    "deaths": 40,
+    "missing": 128,
+    "total": 168
+  },
+  "2025-06-21": {
+    "deaths": 38,
+    "missing": 111,
+    "total": 149
+  },
+  "2025-06-22": {
+    "deaths": 45,
+    "missing": 93,
+    "total": 138
+  },
+  "2025-06-23": {
+    "deaths": 43,
+    "missing": 116,
+    "total": 159
+  },
+  "2025-06-24": {
+    "deaths": 48,
+    "missing": 84,
+    "total": 132
+  },
+  "2025-06-25": {
+    "deaths": 37,
+    "missing": 118,
+    "total": 155
+  },
+  "2025-06-26": {
+    "deaths": 51,
+    "missing": 105,
+    "total": 156
+  },
+  "2025-06-27": {
+    "deaths": 34,
+    "missing": 130,
+    "total": 164
+  },
+  "2025-06-28": {
+    "deaths": 44,
+    "missing": 138,
+    "total": 182
+  },
+  "2025-06-29": {
+    "deaths": 39,
+    "missing": 136,
+    "total": 175
+  },
+  "2025-06-30": {
+    "deaths": 44,
+    "missing": 107,
+    "total": 151
+  },
+  "2025-07-01": {
+    "deaths": 47,
+    "missing": 131,
+    "total": 178
+  },
+  "2025-07-02": {
+    "deaths": 46,
+    "missing": 136,
+    "total": 182
+  },
+  "2025-07-03": {
+    "deaths": 35,
+    "missing": 82,
+    "total": 117
+  },
+  "2025-07-04": {
+    "deaths": 45,
+    "missing": 101,
+    "total": 146
+  },
+  "2025-07-05": {
+    "deaths": 36,
+    "missing": 95,
+    "total": 131
+  },
+  "2025-07-06": {
+    "deaths": 37,
+    "missing": 118,
+    "total": 155
+  },
+  "2025-07-07": {
+    "deaths": 36,
+    "missing": 126,
+    "total": 162
+  },
+  "2025-07-08": {
+    "deaths": 36,
+    "missing": 122,
+    "total": 158
+  },
+  "2025-07-09": {
+    "deaths": 45,
+    "missing": 125,
+    "total": 170
+  },
+  "2025-07-10": {
+    "deaths": 47,
+    "missing": 92,
+    "total": 139
+  },
+  "2025-07-11": {
+    "deaths": 27,
+    "missing": 96,
+    "total": 123
+  },
+  "2025-07-12": {
+    "deaths": 40,
+    "missing": 108,
+    "total": 148
+  },
+  "2025-07-13": {
+    "deaths": 49,
+    "missing": 94,
+    "total": 143
+  },
+  "2025-07-14": {
+    "deaths": 38,
+    "missing": 134,
+    "total": 172
+  },
+  "2025-07-15": {
+    "deaths": 40,
+    "missing": 114,
+    "total": 154
+  },
+  "2025-07-16": {
+    "deaths": 26,
+    "missing": 111,
+    "total": 137
+  },
+  "2025-07-17": {
+    "deaths": 37,
+    "missing": 104,
+    "total": 141
+  },
+  "2025-07-18": {
+    "deaths": 45,
+    "missing": 85,
+    "total": 130
+  },
+  "2025-07-19": {
+    "deaths": 40,
+    "missing": 97,
+    "total": 137
+  },
+  "2025-07-20": {
+    "deaths": 47,
+    "missing": 83,
+    "total": 130
+  },
+  "2025-07-21": {
+    "deaths": 28,
+    "missing": 90,
+    "total": 118
+  },
+  "2025-07-22": {
+    "deaths": 58,
+    "missing": 83,
+    "total": 141
+  },
+  "2025-07-23": {
+    "deaths": 35,
+    "missing": 89,
+    "total": 124
+  },
+  "2025-07-24": {
+    "deaths": 30,
+    "missing": 93,
+    "total": 123
+  },
+  "2025-07-25": {
+    "deaths": 32,
+    "missing": 92,
+    "total": 124
+  },
+  "2025-07-26": {
+    "deaths": 19,
+    "missing": 103,
+    "total": 122
+  },
+  "2025-07-27": {
+    "deaths": 43,
+    "missing": 101,
+    "total": 144
+  },
+  "2025-07-28": {
+    "deaths": 44,
+    "missing": 92,
+    "total": 136
+  },
+  "2025-07-29": {
+    "deaths": 33,
+    "missing": 90,
+    "total": 123
+  },
+  "2025-07-30": {
+    "deaths": 42,
+    "missing": 107,
+    "total": 149
+  },
+  "2025-07-31": {
+    "deaths": 32,
+    "missing": 120,
+    "total": 152
+  },
+  "2025-08-01": {
+    "deaths": 29,
+    "missing": 74,
+    "total": 103
+  },
+  "2025-08-02": {
+    "deaths": 29,
+    "missing": 101,
+    "total": 130
+  },
+  "2025-08-03": {
+    "deaths": 19,
+    "missing": 92,
+    "total": 111
+  },
+  "2025-08-04": {
+    "deaths": 35,
+    "missing": 85,
+    "total": 120
+  },
+  "2025-08-05": {
+    "deaths": 27,
+    "missing": 111,
+    "total": 138
+  },
+  "2025-08-06": {
+    "deaths": 36,
+    "missing": 115,
+    "total": 151
+  },
+  "2025-08-07": {
+    "deaths": 44,
+    "missing": 93,
+    "total": 137
+  },
+  "2025-08-08": {
+    "deaths": 36,
+    "missing": 102,
+    "total": 138
+  },
+  "2025-08-09": {
+    "deaths": 24,
+    "missing": 96,
+    "total": 120
+  },
+  "2025-08-10": {
+    "deaths": 32,
+    "missing": 99,
+    "total": 131
+  },
+  "2025-08-11": {
+    "deaths": 26,
+    "missing": 67,
+    "total": 93
+  },
+  "2025-08-12": {
+    "deaths": 29,
+    "missing": 91,
+    "total": 120
+  },
+  "2025-08-13": {
+    "deaths": 36,
+    "missing": 79,
+    "total": 115
+  },
+  "2025-08-14": {
+    "deaths": 33,
+    "missing": 72,
+    "total": 105
+  },
+  "2025-08-15": {
+    "deaths": 30,
+    "missing": 101,
+    "total": 131
+  },
+  "2025-08-16": {
+    "deaths": 28,
+    "missing": 87,
+    "total": 115
+  },
+  "2025-08-17": {
+    "deaths": 34,
+    "missing": 102,
+    "total": 136
+  },
+  "2025-08-18": {
+    "deaths": 28,
+    "missing": 84,
+    "total": 112
+  },
+  "2025-08-19": {
+    "deaths": 30,
+    "missing": 102,
+    "total": 132
+  },
+  "2025-08-20": {
+    "deaths": 36,
+    "missing": 91,
+    "total": 127
+  },
+  "2025-08-21": {
+    "deaths": 58,
+    "missing": 106,
+    "total": 164
+  },
+  "2025-08-22": {
+    "deaths": 65,
+    "missing": 100,
+    "total": 165
+  },
+  "2025-08-23": {
+    "deaths": 33,
+    "missing": 107,
+    "total": 140
+  },
+  "2025-08-24": {
+    "deaths": 27,
+    "missing": 82,
+    "total": 109
+  },
+  "2025-08-25": {
+    "deaths": 46,
+    "missing": 113,
+    "total": 159
+  },
+  "2025-08-26": {
+    "deaths": 22,
+    "missing": 89,
+    "total": 111
+  },
+  "2025-08-27": {
+    "deaths": 31,
+    "missing": 127,
+    "total": 158
+  },
+  "2025-08-28": {
+    "deaths": 22,
+    "missing": 117,
+    "total": 139
+  },
+  "2025-08-29": {
+    "deaths": 57,
+    "missing": 140,
+    "total": 197
+  },
+  "2025-08-30": {
+    "deaths": 28,
+    "missing": 86,
+    "total": 114
+  },
+  "2025-08-31": {
+    "deaths": 22,
+    "missing": 113,
+    "total": 135
+  },
+  "2025-09-01": {
+    "deaths": 40,
+    "missing": 100,
+    "total": 140
+  },
+  "2025-09-02": {
+    "deaths": 28,
+    "missing": 97,
+    "total": 125
+  },
+  "2025-09-03": {
+    "deaths": 19,
+    "missing": 106,
+    "total": 125
+  },
+  "2025-09-04": {
+    "deaths": 31,
+    "missing": 127,
+    "total": 158
+  },
+  "2025-09-05": {
+    "deaths": 29,
+    "missing": 129,
+    "total": 158
+  },
+  "2025-09-06": {
+    "deaths": 31,
+    "missing": 113,
+    "total": 144
+  },
+  "2025-09-07": {
+    "deaths": 36,
+    "missing": 94,
+    "total": 130
+  },
+  "2025-09-08": {
+    "deaths": 26,
+    "missing": 120,
+    "total": 146
+  },
+  "2025-09-09": {
+    "deaths": 33,
+    "missing": 97,
+    "total": 130
+  },
+  "2025-09-10": {
+    "deaths": 22,
+    "missing": 115,
+    "total": 137
+  },
+  "2025-09-11": {
+    "deaths": 39,
+    "missing": 90,
+    "total": 129
+  },
+  "2025-09-12": {
+    "deaths": 35,
+    "missing": 119,
+    "total": 154
+  },
+  "2025-09-13": {
+    "deaths": 31,
+    "missing": 103,
+    "total": 134
+  },
+  "2025-09-14": {
+    "deaths": 25,
+    "missing": 96,
+    "total": 121
+  },
+  "2025-09-15": {
+    "deaths": 37,
+    "missing": 124,
+    "total": 161
+  },
+  "2025-09-16": {
+    "deaths": 59,
+    "missing": 104,
+    "total": 163
+  },
+  "2025-09-17": {
+    "deaths": 25,
+    "missing": 97,
+    "total": 122
+  },
+  "2025-09-18": {
+    "deaths": 26,
+    "missing": 129,
+    "total": 155
+  },
+  "2025-09-19": {
+    "deaths": 21,
+    "missing": 130,
+    "total": 151
+  },
+  "2025-09-20": {
+    "deaths": 41,
+    "missing": 143,
+    "total": 184
+  },
+  "2025-09-21": {
+    "deaths": 20,
+    "missing": 123,
+    "total": 143
+  },
+  "2025-09-22": {
+    "deaths": 18,
+    "missing": 99,
+    "total": 117
+  },
+  "2025-09-23": {
+    "deaths": 42,
+    "missing": 113,
+    "total": 155
+  },
+  "2025-09-24": {
+    "deaths": 26,
+    "missing": 87,
+    "total": 113
+  },
+  "2025-09-25": {
+    "deaths": 28,
+    "missing": 132,
+    "total": 160
+  },
+  "2025-09-26": {
+    "deaths": 10,
+    "missing": 93,
+    "total": 103
+  },
+  "2025-09-27": {
+    "deaths": 18,
+    "missing": 100,
+    "total": 118
+  },
+  "2025-09-28": {
+    "deaths": 26,
+    "missing": 131,
+    "total": 157
+  },
+  "2025-09-29": {
+    "deaths": 47,
+    "missing": 89,
+    "total": 136
+  },
+  "2025-09-30": {
+    "deaths": 22,
+    "missing": 83,
+    "total": 105
+  },
+  "2025-10-01": {
+    "deaths": 14,
+    "missing": 101,
+    "total": 115
+  },
+  "2025-10-02": {
+    "deaths": 30,
+    "missing": 125,
+    "total": 155
+  },
+  "2025-10-03": {
+    "deaths": 27,
+    "missing": 77,
+    "total": 104
+  },
+  "2025-10-04": {
+    "deaths": 30,
+    "missing": 146,
+    "total": 176
+  },
+  "2025-10-05": {
+    "deaths": 18,
+    "missing": 113,
+    "total": 131
+  },
+  "2025-10-06": {
+    "deaths": 25,
+    "missing": 89,
+    "total": 114
+  },
+  "2025-10-07": {
+    "deaths": 20,
+    "missing": 112,
+    "total": 132
+  },
+  "2025-10-08": {
+    "deaths": 19,
+    "missing": 109,
+    "total": 128
+  },
+  "2025-10-09": {
+    "deaths": 26,
+    "missing": 97,
+    "total": 123
+  },
+  "2025-10-10": {
+    "deaths": 26,
+    "missing": 93,
+    "total": 119
+  },
+  "2025-10-11": {
+    "deaths": 21,
+    "missing": 81,
+    "total": 102
+  },
+  "2025-10-12": {
+    "deaths": 16,
+    "missing": 87,
+    "total": 103
+  },
+  "2025-10-13": {
+    "deaths": 24,
+    "missing": 89,
+    "total": 113
+  },
+  "2025-10-14": {
+    "deaths": 18,
+    "missing": 74,
+    "total": 92
+  },
+  "2025-10-15": {
+    "deaths": 19,
+    "missing": 72,
+    "total": 91
+  },
+  "2025-10-16": {
+    "deaths": 16,
+    "missing": 68,
+    "total": 84
+  },
+  "2025-10-17": {
+    "deaths": 12,
+    "missing": 94,
+    "total": 106
+  },
+  "2025-10-18": {
+    "deaths": 14,
+    "missing": 78,
+    "total": 92
+  },
+  "2025-10-19": {
+    "deaths": 16,
+    "missing": 90,
+    "total": 106
+  },
+  "2025-10-20": {
+    "deaths": 12,
+    "missing": 62,
+    "total": 74
+  },
+  "2025-10-21": {
+    "deaths": 16,
+    "missing": 76,
+    "total": 92
+  },
+  "2025-10-22": {
+    "deaths": 21,
+    "missing": 92,
+    "total": 113
+  },
+  "2025-10-23": {
+    "deaths": 13,
+    "missing": 90,
+    "total": 103
+  },
+  "2025-10-24": {
+    "deaths": 7,
+    "missing": 0,
+    "total": 7
+  },
+  "2025-10-25": {
+    "deaths": 12,
+    "missing": 0,
+    "total": 12
+  },
+  "2025-10-26": {
+    "deaths": 15,
+    "missing": 0,
+    "total": 15
+  },
+  "2025-10-27": {
+    "deaths": 12,
+    "missing": 0,
+    "total": 12
+  },
+  "2025-10-28": {
+    "deaths": 6,
+    "missing": 0,
+    "total": 6
+  },
+  "2025-10-29": {
+    "deaths": 6,
+    "missing": 0,
+    "total": 6
+  },
+  "2025-10-30": {
+    "deaths": 3,
+    "missing": 0,
+    "total": 3
+  },
+  "2025-10-31": {
+    "deaths": 3,
+    "missing": 0,
+    "total": 3
+  },
+  "2025-11-01": {
+    "deaths": 3,
+    "missing": 0,
+    "total": 3
+  },
+  "2025-11-02": {
+    "deaths": 3,
+    "missing": 0,
+    "total": 3
+  },
+  "2025-11-03": {
+    "deaths": 2,
+    "missing": 0,
+    "total": 2
+  },
+  "2025-11-05": {
+    "deaths": 1,
+    "missing": 0,
+    "total": 1
+  }
+}

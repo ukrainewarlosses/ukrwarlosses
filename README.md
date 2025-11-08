@@ -99,39 +99,30 @@ NODE_ENV=development
 
 ### 3. Data Setup
 
-#### Option A: Using Vercel Blob Storage (Recommended for Production)
+The application uses hardcoded data files that are bundled with the deployment:
 
-The application now uses Vercel Blob Storage to store large data files, preventing serverless function size limits.
+- **Hardcoded Data Files**: Pre-generated JSON and TypeScript files in `src/data/`
+  - `hardcoded-casualty-totals.json` / `.ts` - Current casualty totals
+  - `hardcoded-chart-data.json` / `.ts` - Historical trend data
+  - `hardcoded-youtube-data.json` / `.ts` - Latest video content
+  
+- **Data Generation**: Run the scrapers and compilation scripts to update data:
+  ```bash
+  # Run scrapers
+  npm run dev  # Start server, then hit scraper endpoints
+  
+  # Compile data
+  npm run compile-ukraine-monthly
+  npm run compile-russia-monthly
+  npm run compile-ukraine-weekly
+  npm run compile-russia-weekly
+  
+  # Generate hardcoded files
+  npx tsx scripts/generate-hardcoded-chart-data.ts
+  npx tsx scripts/generate-hardcoded-casualty-totals.ts
+  ```
 
-1. **Upload data files to blob storage:**
-   ```bash
-   npm run upload-to-blob
-   ```
-
-2. **Add environment variables to your Vercel project:**
-   The upload script will output the required environment variables. Add them to your Vercel project settings:
-   - `UKRAINE_SOLDIERS_BLOB_URL`
-   - `UKRAINE_MONTHLY_BLOB_URL`
-   - `RUSSIA_MONTHLY_BLOB_URL`
-   - `UKRAINE_WEEKLY_BLOB_URL`
-   - `RUSSIA_WEEKLY_BLOB_URL`
-
-3. **For local development, add to `.env.local`:**
-   ```env
-   UKRAINE_SOLDIERS_BLOB_URL=your-blob-url
-   UKRAINE_MONTHLY_BLOB_URL=your-blob-url
-   RUSSIA_MONTHLY_BLOB_URL=your-blob-url
-   UKRAINE_WEEKLY_BLOB_URL=your-blob-url
-   RUSSIA_WEEKLY_BLOB_URL=your-blob-url
-   ```
-
-#### Option B: Local Data Files (Development Only)
-
-No database setup required! The application uses static JSON files:
-
-- Data is automatically generated from the mock scraper in development
-- In production, data is scraped from official sources daily
-- All data is stored in `src/data/casualties.json`
+- **Deployment**: Simply commit and push the updated hardcoded data files. Vercel will automatically deploy.
 
 ### 4. Run Development Server
 

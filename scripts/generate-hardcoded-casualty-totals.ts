@@ -1,11 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { loadCasualtyDataHybrid } from '../src/lib/hybridDataLoader';
 import { CasualtyData } from '../src/types';
-
-// Load environment variables from .env file
-import * as dotenv from 'dotenv';
-dotenv.config({ path: path.join(process.cwd(), '.env') });
 
 interface HardcodedCasualtyData {
   ukraine: CasualtyData;
@@ -13,46 +8,91 @@ interface HardcodedCasualtyData {
   lastUpdated: string;
 }
 
+async function loadRawData() {
+  const dataDir = path.join(process.cwd(), 'src', 'data');
+  
+  // Load Ukraine deduplicated soldiers data
+  const ukraineSoldiersPath = path.join(dataDir, 'ukraine', 'soldiers.json');
+  let ukraineSoldiers: any[] = [];
+  try {
+    ukraineSoldiers = JSON.parse(await fs.readFile(ukraineSoldiersPath, 'utf8'));
+  } catch (error) {
+    console.warn('⚠️ Could not load Ukraine soldiers.json');
+  }
+  
+  // Load Russia deduplicated casualties data
+  const russiaCasualtiesPath = path.join(dataDir, 'russia', 'casualties.json');
+  let russiaCasualties: any[] = [];
+  try {
+    russiaCasualties = JSON.parse(await fs.readFile(russiaCasualtiesPath, 'utf8'));
+  } catch (error) {
+    console.warn('⚠️ Could not load Russia casualties.json');
+  }
+  
+  // Also load monthly data for breakdown
+  const ukraineDir = path.join(dataDir, 'ukraine');
+  const ukraineFiles = await fs.readdir(ukraineDir);
+  const ukraineMonthlyFile = ukraineFiles
+    .filter(f => f.startsWith('monthly-deduplicated_') && f.endsWith('.json'))
+    .sort()
+    .pop();
+  
+  const russiaDir = path.join(dataDir, 'russia');
+  const russiaFiles = await fs.readdir(russiaDir);
+  const russiaMonthlyFile = russiaFiles
+    .filter(f => f.startsWith('monthly_') && f.endsWith('.json'))
+    .sort()
+    .pop();
+  
+  const ukraineMonthlyData: Record<string, { deaths: number; missing: number; total: number }> = ukraineMonthlyFile 
+    ? JSON.parse(await fs.readFile(path.join(ukraineDir, ukraineMonthlyFile), 'utf8'))
+    : {};
+    
+  const russiaMonthlyData: Record<string, { deaths: number; total: number }> = russiaMonthlyFile
+    ? JSON.parse(await fs.readFile(path.join(russiaDir, russiaMonthlyFile), 'utf8'))
+    : {};
+  
+  return { ukraineSoldiers, russiaCasualties, ukraineMonthlyData, russiaMonthlyData };
+}
+
 async function generateHardcodedCasualtyTotals(): Promise<HardcodedCasualtyData> {
   try {
     console.log('📊 Generating hardcoded casualty totals data...');
     
-    let casualtyData: HardcodedCasualtyData;
+    // Load raw data and calculate totals
+    const { ukraineSoldiers, russiaCasualties, ukraineMonthlyData, russiaMonthlyData } = await loadRawData();
     
-    try {
-      // Try to fetch latest data from hybrid loader
-      const data = await loadCasualtyDataHybrid();
-      casualtyData = {
-        ukraine: data.ukraine,
-        russia: data.russia,
-        lastUpdated: new Date().toISOString()
-      };
-      console.log('✅ Successfully fetched casualty totals from data sources');
-    } catch (error) {
-      console.warn('⚠️ Failed to fetch from data sources, using fallback totals:', error);
-      // Use fallback data if loading fails
-      casualtyData = {
-        ukraine: {
-          country: 'ukraine',
-          total_losses: 158892,
-          dead: 79061,
-          missing: 75253,
-          prisoners: 4578,
-          last_updated: new Date().toISOString(),
-          source_url: 'https://ualosses.org/en/soldiers/'
-        },
-        russia: {
-          country: 'russia',
-          total_losses: 121507,
-          last_updated: new Date().toISOString(),
-          source_url: 'https://en.zona.media/article/2025/08/01/casualties_eng-trl'
-        },
-        lastUpdated: new Date().toISOString()
-      };
-    }
+    // Calculate Ukraine totals from ALL deduplicated soldiers (not just those with dates)
+    const ukraineTotal = ukraineSoldiers.length;
+    const ukraineDeaths = ukraineSoldiers.filter((r: any) => r.recordType === 'death').length;
+    const ukraineMissing = ukraineSoldiers.filter((r: any) => r.recordType === 'missing').length;
+    
+    // Calculate Russia totals from deduplicated file (monthly data may include duplicates)
+    const russiaTotal = russiaCasualties.length;
+    
+    const casualtyData: HardcodedCasualtyData = {
+      ukraine: {
+        country: 'ukraine',
+        total_losses: ukraineTotal,
+        dead: ukraineDeaths,
+        missing: ukraineMissing,
+        prisoners: 0,
+        last_updated: new Date().toISOString(),
+        source_url: 'https://lostarmour.info/ukr200'
+      },
+      russia: {
+        country: 'russia',
+        total_losses: russiaTotal,
+        last_updated: new Date().toISOString(),
+        source_url: 'https://svo.rf.gd'
+      },
+      lastUpdated: new Date().toISOString()
+    };
     
     console.log(`📊 Generated casualty totals:`, {
       ukraineTotal: casualtyData.ukraine.total_losses,
+      ukraineDeaths: casualtyData.ukraine.dead,
+      ukraineMissing: casualtyData.ukraine.missing,
       russiaTotal: casualtyData.russia.total_losses,
       lastUpdated: casualtyData.lastUpdated
     });

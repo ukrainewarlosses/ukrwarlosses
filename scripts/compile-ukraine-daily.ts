@@ -45,9 +45,11 @@ async function main() {
   console.log(`   Missing: ${missingRecords.length.toLocaleString()}`);
   
   const warStart = new Date('2022-02-01T00:00:00Z');
-  // Stop at current date minus one (e.g., if current date is August 21, stop at August 20)
+  // Cutoff: Last day of previous month (consistent with monthly/weekly)
   const now = new Date();
-  const cutoffDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1); // Previous day
+  const firstDayOfCurrentMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+  const lastDayOfPreviousMonth = new Date(firstDayOfCurrentMonth.getTime() - 1);
+  const cutoffDate = lastDayOfPreviousMonth;
   
   const dailyData: Record<string, UkraineDailyData> = {};
 
@@ -59,10 +61,11 @@ async function main() {
     let eventDateStr: string;
     let isDeathRecord = false;
     
-    if (record.recordType === 'death' && record.deathDate) {
+    // Use the EXACT same logic as monthly compilation for consistency
+    if ((record.recordType === 'death' || !record.recordType) && record.deathDate && record.deathDate !== '') {
       eventDateStr = record.deathDate;
       isDeathRecord = true;
-    } else if (record.recordType === 'missing' && record.missingDate) {
+    } else if ((record.recordType === 'missing' || !record.recordType) && record.missingDate && record.missingDate !== '') {
       eventDateStr = record.missingDate;
       isDeathRecord = false;
     } else {
@@ -117,8 +120,10 @@ async function main() {
     sortedDailyData[key] = dailyData[key];
   }
 
-  // Save the compiled daily data as raw summary
-  const outputPath = path.join(process.cwd(), 'src', 'data', 'ukraine', `daily-raw_${new Date().toISOString().split('T')[0]}.json`);
+  // Save the compiled daily data (use "deduplicated" if input is soldiers.json, otherwise "raw")
+  const isDeduped = inputPath.includes('soldiers.json');
+  const prefix = isDeduped ? 'daily-deduplicated' : 'daily-raw';
+  const outputPath = path.join(process.cwd(), 'src', 'data', 'ukraine', `${prefix}_${new Date().toISOString().split('T')[0]}.json`);
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, JSON.stringify(sortedDailyData, null, 2), 'utf-8');
   

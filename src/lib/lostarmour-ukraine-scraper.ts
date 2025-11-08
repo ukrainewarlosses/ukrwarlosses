@@ -264,7 +264,7 @@ export class LostArmourUkraineScraper {
     return records.map(record => {
       // Handle different date fields for deaths vs missing
       const deathDateValue = this.normalizeDate(record.date_of_death || record.death_at) || '';
-      const missingDateValue = this.normalizeDate(record.date_of_miss) || '';
+      const missingDateValue = this.normalizeDate(record.date_of_miss || null) || '';
       
       // Handle different region fields for deaths vs missing
       const regionDeath = record.region_of_death || '';

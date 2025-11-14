@@ -140,14 +140,7 @@ export default function RootLayout({
                 }
               },
                              keywords: ['ukraine war', 'russia war', 'casualties', 'military losses', 'conflict data', 'historylegends', 'history legends'],
-              license: 'https://creativecommons.org/licenses/by-nc/4.0/',
-              distribution: [
-                {
-                  '@type': 'DataDownload',
-                  encodingFormat: 'JSON',
-                  contentUrl: 'https://ukrainewarlosses.org/api/data'
-                }
-              ]
+              license: 'https://creativecommons.org/licenses/by-nc/4.0/'
             })
           }}
         />

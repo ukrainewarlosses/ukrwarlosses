@@ -7,13 +7,16 @@
     "dev": "next dev -p 3500",
     "build": "next build",
     "start": "next start -p 3500",
+    "export": "next build && next export",
+    "serve": "npx serve@latest out -p 3000",
     "lint": "next lint",
     "scrape": "node scripts/scrape.js",
     "export-soldiers-csv": "npx tsx scripts/export-soldiers-csv.ts",
     "compile-ukraine-monthly": "npx tsx scripts/compile-ukraine-monthly.ts",
     "compile-russia-monthly": "npx tsx scripts/compile-russia-monthly.ts",
     "compile-ukraine-weekly": "npx tsx scripts/compile-ukraine-weekly.ts",
-    "compile-russia-weekly": "npx tsx scripts/compile-russia-weekly.ts"
+    "compile-russia-weekly": "npx tsx scripts/compile-russia-weekly.ts",
+    "generate-data": "npm run compile-ukraine-monthly && npm run compile-russia-monthly && npm run compile-ukraine-weekly && npm run compile-russia-weekly && npx tsx scripts/generate-hardcoded-chart-data.ts && npx tsx scripts/generate-hardcoded-casualty-totals.ts"
   },
   "repository": {
     "type": "git",
@@ -36,7 +39,6 @@
     "@types/node": "^22.8.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vercel/blob": "^0.23.4",
     "autoprefixer": "^10.4.20",
     "cheerio": "^1.1.2",
     "date-fns": "^4.1.0",

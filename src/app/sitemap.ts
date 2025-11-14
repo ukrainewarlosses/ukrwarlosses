@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -13,12 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
-    },
-    {
-             url: 'https://ukrainewarlosses.org/api/data',
-      lastModified: new Date(),
-      changeFrequency: 'hourly',
-      priority: 0.6,
     },
   ];
 }

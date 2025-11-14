@@ -4,11 +4,8 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import StatsCard from '@/components/StatsCard';
 import AdBanner from '@/components/AdBanner';
-import VideoCard from '@/components/VideoCard';
 import SourceCard from '@/components/SourceCard';
 import ChartEnhanced from '@/components/ChartEnhanced';
-import { YouTubeEmbed } from '@/types';
-import { hardcodedYouTubeData } from '@/data/hardcoded-youtube-data';
 import { hardcodedChartData } from '@/data/hardcoded-chart-data';
 import { hardcodedCasualtyData } from '@/data/hardcoded-casualty-totals';
 
@@ -74,12 +71,10 @@ export const metadata: Metadata = {
   },
 };
 
-// YouTube videos now loaded dynamically from scraped data
-
 // Hardcoded casualty totals are now imported from the data file
 
-// Use dynamic rendering to avoid build-time data loading issues
-export const dynamic = 'force-dynamic';
+// Use static rendering for Cloudflare Pages static export
+export const dynamic = 'force-static';
 
 export default function HomePage() {
   // Use hardcoded casualty totals (most accurate source)
@@ -209,18 +204,6 @@ export default function HomePage() {
 
         {/* Mobile Sidebar Ad */}
         <AdBanner size="mobile" adSlot="1122334455" />
-
-        {/* Latest Media Coverage */}
-        <section id="videos" className="bg-card-bg border border-border-color rounded-lg p-8 my-8">
-          <h2 className="text-xl font-bold text-text-primary mb-4">
-            📺 Latest Media Coverage
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-            {hardcodedYouTubeData.videos.map((video, index) => (
-              <VideoCard key={index} video={video} />
-            ))}
-          </div>
-        </section>
 
         {/* Data Sources */}
         <section id="sources" className="bg-card-bg border border-border-color rounded-lg p-8 my-8">

@@ -60,12 +60,16 @@ const MobileChartMemo = memo(function MobileChart({
 
   const xMin = 0;
   const xMax = data.length - 1;
-  const yMaxPeriod = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotal, d.russiaDeaths)));
+  const yMaxPeriod = timePeriod === 'daily' ? 600 : timePeriod === 'weekly' ? 2000 : Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotal, d.russiaDeaths)));
   const yMaxCum = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotalCumulative, d.russiaTotalCumulative)));
 
   const X_PAD = 8;
   const xScale = (index: number) => margin.left + (index / xMax) * (innerWidth - X_PAD);
-  const yScalePeriod = (value: number) => margin.top + innerHeight - (value / yMaxPeriod) * innerHeight;
+  const yScalePeriod = (value: number) => {
+    // For daily and weekly charts, clamp values at max so they appear at the top edge
+    const clampedValue = (timePeriod === 'daily' || timePeriod === 'weekly') ? Math.min(value, yMaxPeriod) : value;
+    return margin.top + innerHeight - (clampedValue / yMaxPeriod) * innerHeight;
+  };
   const yScaleCum = (value: number) => margin.top + innerHeight - (value / yMaxCum) * innerHeight;
 
   const xToIndex = (x: number) => {
@@ -175,9 +179,37 @@ const MobileChartMemo = memo(function MobileChart({
         <line x1={margin.left} y1={margin.top + innerHeight} x2={margin.left + innerWidth - X_PAD} y2={margin.top + innerHeight} stroke="#a0aec0" />
         <line x1={margin.left} y1={margin.top} x2={margin.left} y2={margin.top + innerHeight} stroke="#a0aec0" />
         <line x1={margin.left + innerWidth - X_PAD} y1={margin.top} x2={margin.left + innerWidth - X_PAD} y2={margin.top + innerHeight} stroke="#a0aec0" />
-        {[0, 1, 2, 3, 4].map(i => (
-          <text key={i} x={margin.left - 5} y={margin.top + (innerHeight / 4) * i + 4} textAnchor="end" fill="#a0aec0" fontSize="8">{Math.round((yMaxPeriod / 4) * (4 - i) / 1000)}k</text>
-        ))}
+        {timePeriod === 'daily' ? (
+          [0, 150, 300, 450, 600].map((value, i) => (
+            <text
+              key={i}
+              x={margin.left - 5}
+              y={margin.top + innerHeight - (value / yMaxPeriod) * innerHeight + 4}
+              textAnchor="end"
+              fill="#a0aec0"
+              fontSize="8"
+            >
+              {value}
+            </text>
+          ))
+        ) : timePeriod === 'weekly' ? (
+          [0, 500, 1000, 1500, 2000].map((value, i) => (
+            <text
+              key={i}
+              x={margin.left - 5}
+              y={margin.top + innerHeight - (value / yMaxPeriod) * innerHeight + 4}
+              textAnchor="end"
+              fill="#a0aec0"
+              fontSize="8"
+            >
+              {value}
+            </text>
+          ))
+        ) : (
+          [0, 1, 2, 3, 4].map(i => (
+            <text key={i} x={margin.left - 5} y={margin.top + (innerHeight / 4) * i + 4} textAnchor="end" fill="#a0aec0" fontSize="8">{Math.round((yMaxPeriod / 4) * (4 - i) / 1000)}k</text>
+          ))
+        )}
         {[0, 1, 2, 3, 4].map(i => (
           <text key={`cum-${i}`} x={margin.left + innerWidth - X_PAD + 2} y={margin.top + (innerHeight / 4) * i + 4} textAnchor="start" fill="#a0aec0" fontSize="8">{Math.round((yMaxCum / 4) * (4 - i) / 1000)}k</text>
         ))}
@@ -426,7 +458,29 @@ const DesktopChartMemo = memo(function DesktopChart({
                 }
               }}
             />
-            <YAxis yAxisId="period" stroke="#a0aec0" fontSize={12} tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} width={50} label={{ value: 'Period Losses', angle: -90, position: 'insideLeft', style: { fill: '#a0aec0', fontSize: 10 } }} />
+            <YAxis 
+              yAxisId="period" 
+              stroke="#a0aec0" 
+              fontSize={12} 
+              tickFormatter={(v) => {
+                if (timePeriod === 'daily') return v.toString();
+                if (timePeriod === 'weekly') return v.toString();
+                return `${(v / 1000).toFixed(0)}k`;
+              }}
+              domain={
+                timePeriod === 'daily' ? (_dataMin: any, _dataMax: any) => [0, 600] :
+                timePeriod === 'weekly' ? (_dataMin: any, _dataMax: any) => [0, 2000] :
+                undefined
+              }
+              ticks={
+                timePeriod === 'daily' ? [0, 150, 300, 450, 600] :
+                timePeriod === 'weekly' ? [0, 500, 1000, 1500, 2000] :
+                undefined
+              }
+              allowDataOverflow={(timePeriod === 'daily' || timePeriod === 'weekly') ? true : false}
+              width={50} 
+              label={{ value: 'Period Losses', angle: -90, position: 'insideLeft', style: { fill: '#a0aec0', fontSize: 10 } }} 
+            />
             <YAxis yAxisId="cumulative" orientation="right" stroke="#a0aec0" fontSize={12} tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} width={50} label={{ value: 'Cumulative', angle: 90, position: 'insideRight', style: { fill: '#a0aec0', fontSize: 10 } }} />
             <Tooltip content={() => null} cursor={false} />
             <Legend wrapperStyle={{ color: '#a0aec0', fontSize: '12px', paddingTop: '10px' }} iconType="line" />
@@ -778,12 +832,16 @@ export default function ChartEnhanced() {
 
     const xMin = 0;
     const xMax = data.length - 1;
-    const yMaxPeriod = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotal, d.russiaDeaths)));
+    const yMaxPeriod = timePeriod === 'daily' ? 600 : timePeriod === 'weekly' ? 2000 : Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotal, d.russiaDeaths)));
     const yMaxCum = Math.max(...data.map((d: ChartData) => Math.max(d.ukraineTotalCumulative, d.russiaTotalCumulative)));
 
     const X_PAD = 8;
     const xScale = (index: number) => margin.left + (index / xMax) * (innerWidth - X_PAD);
-    const yScalePeriod = (value: number) => margin.top + innerHeight - (value / yMaxPeriod) * innerHeight;
+    const yScalePeriod = (value: number) => {
+      // For daily charts, clamp values at 600 so they appear at the top edge
+      const clampedValue = timePeriod === 'daily' ? Math.min(value, yMaxPeriod) : value;
+      return margin.top + innerHeight - (clampedValue / yMaxPeriod) * innerHeight;
+    };
     const yScaleCum = (value: number) => margin.top + innerHeight - (value / yMaxCum) * innerHeight;
 
     // Convert X position to data index
@@ -1052,18 +1110,46 @@ export default function ChartEnhanced() {
           />
 
           {/* Left Y-axis labels (Period) */}
-          {[0, 1, 2, 3, 4].map(i => (
-            <text
-              key={i}
-              x={margin.left - 5}
-              y={margin.top + (innerHeight / 4) * i + 4}
-              textAnchor="end"
-              fill="#a0aec0"
-              fontSize="8"
-            >
-              {Math.round((yMaxPeriod / 4) * (4 - i) / 1000)}k
-            </text>
-          ))}
+          {timePeriod === 'daily' ? (
+            [0, 150, 300, 450, 600].map((value, i) => (
+              <text
+                key={i}
+                x={margin.left - 5}
+                y={margin.top + innerHeight - (value / yMaxPeriod) * innerHeight + 4}
+                textAnchor="end"
+                fill="#a0aec0"
+                fontSize="8"
+              >
+                {value}
+              </text>
+            ))
+          ) : timePeriod === 'weekly' ? (
+            [0, 500, 1000, 1500, 2000].map((value, i) => (
+              <text
+                key={i}
+                x={margin.left - 5}
+                y={margin.top + innerHeight - (value / yMaxPeriod) * innerHeight + 4}
+                textAnchor="end"
+                fill="#a0aec0"
+                fontSize="8"
+              >
+                {value}
+              </text>
+            ))
+          ) : (
+            [0, 1, 2, 3, 4].map(i => (
+              <text
+                key={i}
+                x={margin.left - 5}
+                y={margin.top + (innerHeight / 4) * i + 4}
+                textAnchor="end"
+                fill="#a0aec0"
+                fontSize="8"
+              >
+                {Math.round((yMaxPeriod / 4) * (4 - i) / 1000)}k
+              </text>
+            ))
+          )}
 
           {/* Right Y-axis labels (Cumulative) */}
           {[0, 1, 2, 3, 4].map(i => (
@@ -1466,7 +1552,22 @@ export default function ChartEnhanced() {
           yAxisId="period"
           stroke="#a0aec0" 
           fontSize={12}
-          tickFormatter={(value) => `${(value / 1000).toFixed(0)}k`}
+          tickFormatter={(value) => {
+            if (timePeriod === 'daily') return value.toString();
+            if (timePeriod === 'weekly') return value.toString();
+            return `${(value / 1000).toFixed(0)}k`;
+          }}
+          domain={
+            timePeriod === 'daily' ? (_dataMin: any, _dataMax: any) => [0, 600] :
+            timePeriod === 'weekly' ? (_dataMin: any, _dataMax: any) => [0, 2000] :
+            undefined
+          }
+          ticks={
+            timePeriod === 'daily' ? [0, 150, 300, 450, 600] :
+            timePeriod === 'weekly' ? [0, 500, 1000, 1500, 2000] :
+            undefined
+          }
+          allowDataOverflow={(timePeriod === 'daily' || timePeriod === 'weekly') ? true : false}
           width={50}
           label={{ 
             value: 'Period Losses', 

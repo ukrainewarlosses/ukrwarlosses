@@ -102,9 +102,9 @@ export default function MethodologyPage() {
       <Header />
       
       {/* Header Banner Ad */}
-      <div className="container">
+      {/* <div className="container">
         <AdBanner size="header" adSlot="1234567890" />
-      </div>
+      </div> */}
 
       <div className="container">
         {/* Hero Section */}
@@ -120,7 +120,7 @@ export default function MethodologyPage() {
         </section>
 
         {/* In-Content Ad */}
-        <AdBanner size="content" adSlot="0987654321" />
+        {/* <AdBanner size="content" adSlot="0987654321" /> */}
 
         {/* Overview Section */}
         <section className="bg-card-bg border border-border-color rounded-lg p-6 md:p-8 mb-8">
@@ -434,9 +434,9 @@ export default function MethodologyPage() {
       </div>
 
       {/* Footer Banner Ad */}
-      <div className="container">
+      {/* <div className="container">
         <AdBanner size="footer" adSlot="5566778899" />
-      </div>
+      </div> */}
 
       <Footer />
     </main>

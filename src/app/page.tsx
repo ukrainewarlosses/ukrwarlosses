@@ -145,9 +145,9 @@ export default function HomePage() {
       <Header />
       
       {/* Header Banner Ad (Desktop) */}
-      <div className="container">
+      {/* <div className="container">
         <AdBanner size="header" adSlot="1234567890" />
-      </div>
+      </div> */}
 
       <div className="container">
         <Hero />
@@ -193,7 +193,7 @@ export default function HomePage() {
         </section>
 
         {/* In-Content Ad */}
-        <AdBanner size="content" adSlot="0987654321" />
+        {/* <AdBanner size="content" adSlot="0987654321" /> */}
 
         {/* Trends Chart Section */}
         <section id="trends" className="bg-card-bg border border-border-color rounded-lg p-4 sm:p-6 lg:p-8 my-8">
@@ -206,7 +206,7 @@ export default function HomePage() {
         </section>
 
         {/* Mobile Sidebar Ad */}
-        <AdBanner size="mobile" adSlot="1122334455" />
+        {/* <AdBanner size="mobile" adSlot="1122334455" /> */}
 
         {/* Data Sources */}
         <section id="sources" className="bg-card-bg border border-border-color rounded-lg p-8 my-8">
@@ -243,9 +243,9 @@ export default function HomePage() {
       </div>
 
       {/* Footer Banner Ad */}
-      <div className="container">
+      {/* <div className="container">
         <AdBanner size="footer" adSlot="5566778899" />
-      </div>
+      </div> */}
 
       <Footer />
     </main>

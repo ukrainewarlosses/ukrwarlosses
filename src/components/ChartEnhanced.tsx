@@ -1760,28 +1760,46 @@ export default function ChartEnhanced() {
 
       {/* Country Selection */}
       <div className="flex justify-center mb-4">
-        <div className="flex bg-card-bg rounded-lg p-1 border border-border-color gap-1">
+        <div className="flex bg-card-bg rounded-lg p-1 border border-border-color gap-2">
           <button
             onClick={() => setShowUkraine(!showUkraine)}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors flex items-center gap-1 ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all flex items-center gap-2 border-2 ${
               showUkraine
-                ? 'bg-[#0057B7] text-white'
-                : 'text-text-secondary hover:text-text-primary hover:bg-gray-700'
+                ? 'bg-[#0057B7] text-white border-[#0057B7] shadow-md'
+                : 'text-text-secondary hover:text-text-primary hover:bg-gray-700 border-border-color bg-background'
             }`}
+            title={showUkraine ? 'Click to hide Ukraine data' : 'Click to show Ukraine data'}
           >
-            <div className={`w-2 h-2 rounded-full ${showUkraine ? 'bg-white' : 'bg-[#0057B7]'}`}></div>
-            Ukraine
+            {showUkraine ? (
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+            <span>Show Ukraine</span>
           </button>
           <button
             onClick={() => setShowRussia(!showRussia)}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors flex items-center gap-1 ${
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all flex items-center gap-2 border-2 ${
               showRussia
-                ? 'bg-[#DA291C] text-white'
-                : 'text-text-secondary hover:text-text-primary hover:bg-gray-700'
+                ? 'bg-[#DA291C] text-white border-[#DA291C] shadow-md'
+                : 'text-text-secondary hover:text-text-primary hover:bg-gray-700 border-border-color bg-background'
             }`}
+            title={showRussia ? 'Click to hide Russia data' : 'Click to show Russia data'}
           >
-            <div className={`w-2 h-2 rounded-full ${showRussia ? 'bg-white' : 'bg-[#DA291C]'}`}></div>
-            Russia
+            {showRussia ? (
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            ) : (
+              <svg className="w-4 h-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+            <span>Show Russia</span>
           </button>
         </div>
       </div>

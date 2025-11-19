@@ -55,44 +55,22 @@ export default function StatsCard({ country, casualties, title, breakdown }: Sta
           {title}
         </div>
       </div>
-      <div className="text-4xl font-black text-casualty mb-1 leading-none">
-        {displayCount.toLocaleString()}
-      </div>
-      <div className="text-sm text-text-light uppercase tracking-wide font-semibold">
-        Total Personnel Losses
-      </div>
-      <div className="text-xs text-text-muted mt-1">
-        February 24, 2022 - {(() => {
-          const now = new Date();
-          const prevMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-          return prevMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-        })()}
+      <div className="text-sm text-text-light mb-2">
+        Total Fatalities: <span className="text-2xl font-black text-casualty">{displayCount.toLocaleString()}</span>
       </div>
       
-      {breakdown && (breakdown.dead || breakdown.missing || breakdown.prisoners) && (
-        <div className="mt-3 pt-3 border-t border-border-color">
-          <div className="grid grid-cols-3 gap-2 text-xs">
-            {breakdown.dead && (
-              <div className="text-center">
-                <div className="text-red-400 font-semibold">{breakdown.dead.toLocaleString()}</div>
-                <div className="text-text-light">Dead</div>
-              </div>
-            )}
-            {typeof breakdown.missing !== 'undefined' && (
-              <div className="text-center">
-                <div className="text-orange-400 font-semibold">
-                  {typeof breakdown.missing === 'string' ? breakdown.missing : breakdown.missing.toLocaleString()}
-                </div>
-                <div className="text-text-light">Missing</div>
-              </div>
-            )}
-            {breakdown.prisoners && (
-              <div className="text-center">
-                <div className="text-blue-400 font-semibold">{breakdown.prisoners.toLocaleString()}</div>
-                <div className="text-text-light">Prisoners</div>
-              </div>
-            )}
-          </div>
+      {country === 'ukraine' && breakdown && (breakdown.dead || (typeof breakdown.missing === 'number' && breakdown.missing > 0)) && (
+        <div className="mt-2 space-y-1 text-xs">
+          {breakdown.dead && (
+            <div className="text-text-muted">
+              Confirmed Deaths: <span className="text-text-primary font-semibold">{breakdown.dead.toLocaleString()}</span>
+            </div>
+          )}
+          {typeof breakdown.missing === 'number' && breakdown.missing > 0 && (
+            <div className="text-text-muted">
+              Missing: <span className="text-text-primary font-semibold">{breakdown.missing.toLocaleString()}</span>
+            </div>
+          )}
         </div>
       )}
     </div>

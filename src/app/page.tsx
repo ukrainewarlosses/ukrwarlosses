@@ -84,8 +84,18 @@ export default function HomePage() {
   const russiaTotal = hardcodedCasualtyData.russia.total_losses;
   const russiaKilled = russiaTotal; // Russian missing are counted as dead
   const russiaMissing = 0; // Russian missing are counted as dead
-  const ratioTotalVsTotal = ukraineTotal > 0 ? russiaTotal / ukraineTotal : 0;
-  const ratioKilledOnly = ukraineKilled > 0 ? russiaKilled / ukraineKilled : 0;
+  
+  // Calculate ratio with lowest number always 1 on left
+  const calculateRatio = (left: number, right: number): { left: number; right: number } => {
+    if (left === 0 || right === 0) return { left: 0, right: 0 };
+    if (left <= right) {
+      return { left: 1, right: Number((right / left).toFixed(2)) };
+    } else {
+      return { left: Number((left / right).toFixed(2)), right: 1 };
+    }
+  };
+  
+  const totalRatio = calculateRatio(russiaTotal, ukraineTotal);
 
   // Structured data for the main page
   const structuredData = {
@@ -171,20 +181,13 @@ export default function HomePage() {
 
           {/* Ratios */}
           <div className="bg-card-bg border border-border-color rounded-lg p-4 mt-4">
-            <p className="text-text-muted text-sm mb-2">Loss Ratios (Russian : Ukrainian)</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-              <div className="bg-background rounded p-3 border border-border-color">
-                <div className="flex justify-between items-baseline">
-                  <span className="text-text-light">Death Ratio</span>
-                  <span className="text-primary font-bold">{ratioKilledOnly.toFixed(2)}:1</span>
-                </div>
-              </div>
-              <div className="bg-background rounded p-3 border border-border-color">
-                <div className="flex justify-between items-baseline">
-                  <span className="text-text-light">Death Ratio</span>
-                  <span className="text-primary font-bold">{ratioTotalVsTotal.toFixed(2)}:1</span>
-                </div>
-              </div>
+            <p className="text-text-muted text-sm mb-2">Loss Ratio</p>
+            <div className="bg-background rounded p-3 border border-border-color text-center">
+              <span className="text-primary font-bold text-lg flex items-center justify-center gap-2">
+                <div className="russia-flag"></div>
+                {totalRatio.left} : {totalRatio.right}
+                <div className="ukraine-flag"></div>
+              </span>
             </div>
           </div>
         </section>

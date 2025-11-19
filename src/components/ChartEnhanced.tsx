@@ -479,6 +479,57 @@ export default function ChartEnhanced() {
   }) => {
     if (!info) return null;
     
+    // Helper function to format month name from date string (e.g., "Feb 2022" -> "February 2022")
+    const formatMonthName = (dateStr: string): string => {
+      if (timePeriod !== 'monthly') return '';
+      
+      // Handle format like "Feb 2022" or "Sep 2025"
+      const monthAbbrMap: Record<string, string> = {
+        'Jan': 'January', 'Feb': 'February', 'Mar': 'March', 'Apr': 'April',
+        'May': 'May', 'Jun': 'June', 'Jul': 'July', 'Aug': 'August',
+        'Sep': 'September', 'Oct': 'October', 'Nov': 'November', 'Dec': 'December'
+      };
+      
+      const parts = dateStr.split(' ');
+      if (parts.length === 2) {
+        const monthAbbr = parts[0];
+        const year = parts[1];
+        const fullMonth = monthAbbrMap[monthAbbr];
+        if (fullMonth) {
+          return `${fullMonth} ${year}`;
+        }
+      }
+      
+      // Fallback: try to parse as "YYYY-MM" format
+      const [year, month] = dateStr.split('-');
+      if (year && month) {
+        const monthIndex = parseInt(month) - 1;
+        if (!isNaN(monthIndex) && monthIndex >= 0 && monthIndex <= 11) {
+          const date = new Date(parseInt(year), monthIndex, 1);
+          return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        }
+      }
+      
+      return '';
+    };
+    
+    // Helper function to calculate ratio with lowest number always 1 on left
+    const calculateRatio = (left: number, right: number): { left: number; right: number } => {
+      if (left === 0 || right === 0) return { left: 0, right: 0 };
+      if (left <= right) {
+        return { left: 1, right: Number((right / left).toFixed(2)) };
+      } else {
+        return { left: Number((left / right).toFixed(2)), right: 1 };
+      }
+    };
+    
+    const periodRatio = calculateRatio(
+      info.data.russiaDeaths || 0,
+      info.data.ukraineTotal || 0
+    );
+    
+    const monthName = timePeriod === 'monthly' ? formatMonthName(info.label) : '';
+    
     return (
       <div className="mt-4 p-3 bg-card-bg border border-border-color rounded-lg">
         <div className="text-center mb-3">
@@ -493,7 +544,7 @@ export default function ChartEnhanced() {
                  year: 'numeric'
                })}`;
              })() : 
-             `Monthly Data - ${info.label}`}
+             monthName || `Monthly Data - ${info.label}`}
           </p>
           <p className="text-text-muted text-xs">
             {timePeriod === 'daily' ? 'Losses recorded on this date' :
@@ -508,19 +559,19 @@ export default function ChartEnhanced() {
           {showUkraine && (
             <div className="flex-1">
               <div className="flex items-center gap-1 mb-2">
-                <span style={{ color: '#0057B7' }}>🇺🇦</span>
+                <div className="ukraine-flag"></div>
                 <p className={`font-semibold ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ color: '#0057B7' }}>
                   {isMobile ? 'UA' : 'Ukraine'}
                 </p>
               </div>
               <div className={`space-y-1 ${isMobile ? 'text-xs' : 'text-sm'}`}>
                 <p className="text-text-muted">
-                  <span className="font-medium">Period:</span> {(info.data.ukraineTotal || 0).toLocaleString()}
+                  <span className="font-medium">Total Fatalities:</span> {(info.data.ukraineTotal || 0).toLocaleString()}
                 </p>
                 {!isMobile && (
                   <>
                     <p className="text-text-muted">
-                      <span className="font-medium">Deaths:</span> {(info.data.ukraineDeaths || 0).toLocaleString()}
+                      <span className="font-medium">Confirmed Deaths:</span> {(info.data.ukraineDeaths || 0).toLocaleString()}
                     </p>
                     <p className="text-text-muted">
                       <span className="font-medium">Missing:</span> {(info.data.ukraineMissing || 0).toLocaleString()}
@@ -545,25 +596,15 @@ export default function ChartEnhanced() {
           {showRussia && (
             <div className="flex-1">
               <div className="flex items-center gap-1 mb-2">
-                <span style={{ color: '#DA291C' }}>🇷🇺</span>
+                <div className="russia-flag"></div>
                 <p className={`font-semibold ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ color: '#DA291C' }}>
                   {isMobile ? 'RU' : 'Russia'}
                 </p>
               </div>
               <div className={`space-y-1 ${isMobile ? 'text-xs' : 'text-sm'}`}>
                 <p className="text-text-muted">
-                  <span className="font-medium">Period:</span> {(info.data.russiaDeaths || 0).toLocaleString()}
+                  <span className="font-medium">Total Fatalities:</span> {(info.data.russiaDeaths || 0).toLocaleString()}
                 </p>
-                {!isMobile && (
-                  <>
-                    <p className="text-text-muted">
-                      <span className="font-medium">Deaths:</span> {(info.data.russiaDeaths || 0).toLocaleString()}
-                    </p>
-                    <p className="text-text-muted">
-                      <span className="font-medium">Missing:</span> Not tracked
-                    </p>
-                  </>
-                )}
                 <div className="border-t border-border-color pt-1 mt-1">
                   <p className={`text-text-primary font-semibold ${isMobile ? 'text-xs' : 'text-sm'}`}>
                     Total: {(info.data.russiaTotalCumulative || 0).toLocaleString()}
@@ -578,17 +619,14 @@ export default function ChartEnhanced() {
         {showUkraine && showRussia && (
           <div className="border-t border-border-color pt-2">
             <p className={`text-text-muted ${isMobile ? 'text-xs' : 'text-sm'} mb-1 text-center`}>
-              Loss Ratios (Russian:Ukrainian)
+              {timePeriod === 'monthly' && monthName ? monthName : 'Loss Ratio'}
             </p>
-            <div className={`flex justify-between ${isMobile ? 'text-xs' : 'text-sm'}`}>
-              <div className="text-center">
-                <p className="text-text-muted">This Period</p>
-                <p className="text-primary font-bold">{info.periodRatio}:1</p>
-              </div>
-              <div className="text-center">
-                <p className="text-text-muted">War Total</p>
-                <p className="text-primary font-bold">{info.cumulativeRatio}:1</p>
-              </div>
+            <div className="bg-background rounded p-3 border border-border-color text-center">
+              <span className="text-primary font-bold text-lg flex items-center justify-center gap-2">
+                <div className="russia-flag"></div>
+                {periodRatio.left} : {periodRatio.right}
+                <div className="ukraine-flag"></div>
+              </span>
             </div>
           </div>
         )}

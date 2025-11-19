@@ -162,7 +162,7 @@ export default function HomePage() {
             <StatsCard
               country="russia"
               casualties={russiaTotal}
-              title="Russian Forces"
+              title="Russian Federation Forces"
               breakdown={{
                 dead: russiaKilled,
                 missing: 'counted as dead'

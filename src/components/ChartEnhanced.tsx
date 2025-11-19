@@ -341,6 +341,8 @@ type DesktopChartProps = {
   showRussia: boolean;
   setHoverInfo: (info: HoverInfo | null) => void;
   setSelectedRange: (range: any) => void;
+  setIsHoverInfoPinned: (pinned: boolean) => void;
+  isHoverInfoPinned: boolean;
 };
 
 const DesktopChartMemo = memo(function DesktopChart({
@@ -350,7 +352,9 @@ const DesktopChartMemo = memo(function DesktopChart({
   showUkraine,
   showRussia,
   setHoverInfo,
-  setSelectedRange
+  setSelectedRange,
+  setIsHoverInfoPinned,
+  isHoverInfoPinned
 }: DesktopChartProps) {
   const [refAreaLeft, setRefAreaLeft] = useState<string>('');
   const [refAreaRight, setRefAreaRight] = useState<string>('');
@@ -376,25 +380,30 @@ const DesktopChartMemo = memo(function DesktopChart({
     }
   }, [isSelectingDesktop, refAreaLeft, fullData, showUkraine, showRussia, setSelectedRange]);
 
-  const handleChartMouseMove = useCallback((dataEvt: any) => {
-    if (dataEvt && dataEvt.activePayload && dataEvt.activePayload.length > 0) {
-      const payload = dataEvt.activePayload[0].payload;
-      const ukrainePeriod = payload.ukraineTotal || 0;
-      const russiaPeriod = payload.russiaDeaths || 0;
-      const ukraineCumulative = payload.ukraineTotalCumulative || 0;
-      const russiaCumulative = payload.russiaTotalCumulative || 0;
-      const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
-      const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
-      setHoverInfo({ data: payload, label: payload.date, periodRatio, cumulativeRatio });
-    }
-    if (isSelectingDesktop && refAreaLeft && dataEvt && dataEvt.activeLabel) {
-      setRefAreaRight(dataEvt.activeLabel);
-    }
-  }, [isSelectingDesktop, refAreaLeft, setHoverInfo]);
+    const handleChartMouseMove = useCallback((dataEvt: any) => {
+      if (dataEvt && dataEvt.activePayload && dataEvt.activePayload.length > 0) {
+        const payload = dataEvt.activePayload[0].payload;
+        const ukrainePeriod = payload.ukraineTotal || 0;
+        const russiaPeriod = payload.russiaDeaths || 0;
+        const ukraineCumulative = payload.ukraineTotalCumulative || 0;
+        const russiaCumulative = payload.russiaTotalCumulative || 0;
+        const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
+        const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
+        setHoverInfo({ data: payload, label: payload.date, periodRatio, cumulativeRatio });
+        // Auto-pin when hovering (desktop mode)
+        setIsHoverInfoPinned(true);
+      }
+      if (isSelectingDesktop && refAreaLeft && dataEvt && dataEvt.activeLabel) {
+        setRefAreaRight(dataEvt.activeLabel);
+      }
+    }, [isSelectingDesktop, refAreaLeft, setHoverInfo]);
 
-  const handleChartMouseLeave = useCallback(() => {
-    setHoverInfo(null);
-  }, [setHoverInfo]);
+    const handleChartMouseLeave = useCallback(() => {
+      // Don't clear hover info if it's pinned (only in desktop mode)
+      if (!isHoverInfoPinned) {
+        setHoverInfo(null);
+      }
+    }, [isHoverInfoPinned]);
 
   const cancelSelection = () => {
     setRefAreaLeft('');
@@ -522,14 +531,16 @@ export default function ChartEnhanced() {
   
   // Unified hover info state for both desktop and mobile
   const [hoverInfo, setHoverInfo] = useState<any>(null);
+  const [isHoverInfoPinned, setIsHoverInfoPinned] = useState<boolean>(false);
 
   // Memoized hover info display component to prevent chart re-renders
-  const HoverInfoDisplay = memo(({ info, timePeriod, showUkraine, showRussia, isMobile }: {
+  const HoverInfoDisplay = memo(({ info, timePeriod, showUkraine, showRussia, isMobile, onClose }: {
     info: any;
     timePeriod: TimePeriod;
     showUkraine: boolean;
     showRussia: boolean;
     isMobile: boolean;
+    onClose?: () => void;
   }) => {
     if (!info) return null;
     
@@ -585,7 +596,20 @@ export default function ChartEnhanced() {
     const monthName = timePeriod === 'monthly' ? formatMonthName(info.label) : '';
     
     return (
-      <div className="mt-4 p-3 bg-card-bg border border-border-color rounded-lg">
+      <div className="mt-4 p-3 bg-card-bg border border-border-color rounded-lg relative">
+        {!isMobile && onClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-2 right-2 text-text-muted hover:text-text-primary transition-colors p-1 rounded hover:bg-background"
+            aria-label="Close info box"
+            title="Close"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="4" y1="4" x2="12" y2="12" />
+              <line x1="12" y1="4" x2="4" y2="12" />
+            </svg>
+          </button>
+        )}
         <div className="text-center mb-3">
           <p className="text-text-primary font-semibold text-sm">
             {timePeriod === 'daily' ? `Daily Data - ${info.label}` : 
@@ -1439,6 +1463,8 @@ export default function ChartEnhanced() {
           periodRatio,
           cumulativeRatio
         });
+        // Auto-pin when hovering (only in desktop mode)
+        setIsHoverInfoPinned(true);
       }
       
       // Handle selection preview
@@ -1448,8 +1474,11 @@ export default function ChartEnhanced() {
     }, [isSelectingDesktop, refAreaLeft]);
 
     const handleChartMouseLeave = useCallback(() => {
-      setHoverInfo(null);
-    }, []);
+      // Don't clear hover info if it's pinned (only in desktop mode)
+      if (!isHoverInfoPinned) {
+        setHoverInfo(null);
+      }
+    }, [isHoverInfoPinned]);
 
     const cancelSelection = () => {
       setRefAreaLeft('');
@@ -1784,6 +1813,8 @@ export default function ChartEnhanced() {
             showRussia={showRussia}
             setHoverInfo={setHoverInfo}
             setSelectedRange={setSelectedRange}
+            setIsHoverInfoPinned={setIsHoverInfoPinned}
+            isHoverInfoPinned={isHoverInfoPinned}
           />
         )}
         
@@ -1794,6 +1825,10 @@ export default function ChartEnhanced() {
           showUkraine={showUkraine}
           showRussia={showRussia}
           isMobile={isMobile}
+          onClose={!isMobile ? () => {
+            setIsHoverInfoPinned(false);
+            setHoverInfo(null);
+          } : undefined}
         />
       </div>
 

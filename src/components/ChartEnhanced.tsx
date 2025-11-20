@@ -11,6 +11,39 @@ type TimePeriod = 'daily' | 'weekly' | 'monthly';
 
 type HoverInfo = any;
 
+// Custom Legend component that shows solid vs dashed lines
+const CustomLegend = ({ payload }: any) => {
+  if (!payload || !payload.length) return null;
+  
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '12px', paddingTop: '10px', color: '#a0aec0', fontSize: '12px' }}>
+      {payload.map((entry: any, index: number) => {
+        const isCumulative = entry.value?.includes('Cumulative');
+        const strokeWidth = isCumulative ? 3 : 2;
+        const opacity = isCumulative ? 1 : 0.8;
+        
+        return (
+          <div key={index} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <svg width="20" height="4" style={{ display: 'block' }}>
+              <line
+                x1="0"
+                y1="2"
+                x2="20"
+                y2="2"
+                stroke={entry.color}
+                strokeWidth={strokeWidth}
+                opacity={opacity}
+                strokeDasharray={isCumulative ? '6 4' : undefined}
+              />
+            </svg>
+            <span>{entry.value}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 type MobileChartProps = {
   displayData: ChartData[];
   timePeriod: TimePeriod;
@@ -494,7 +527,7 @@ const DesktopChartMemo = memo(function DesktopChart({
             />
             <YAxis yAxisId="cumulative" orientation="right" stroke="#a0aec0" fontSize={12} tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} width={50} label={{ value: 'Cumulative', angle: 90, position: 'insideRight', style: { fill: '#a0aec0', fontSize: 10 } }} />
             <Tooltip content={() => null} cursor={false} />
-            <Legend wrapperStyle={{ color: '#a0aec0', fontSize: '12px', paddingTop: '10px' }} iconType="line" />
+            <Legend content={<CustomLegend />} />
             {refAreaLeft && refAreaRight && (
               <ReferenceArea yAxisId="period" x1={refAreaLeft} x2={refAreaRight} strokeOpacity={0.3} fill="#d4a574" fillOpacity={0.3} />
             )}
@@ -1964,14 +1997,7 @@ export default function ChartEnhanced() {
           cursor={false}
         />
         
-        <Legend 
-          wrapperStyle={{ 
-            color: '#a0aec0', 
-            fontSize: '12px',
-            paddingTop: '10px'
-          }}
-          iconType="line"
-        />
+        <Legend content={<CustomLegend />} />
         
         {/* Reference Area for Selection */}
         {refAreaLeft && refAreaRight && (
@@ -2147,414 +2173,33 @@ export default function ChartEnhanced() {
           ? `Select a range: tap "Set Range Start", then move your finger to choose the end. Or change the ${timePeriod === 'daily' ? 'date' : timePeriod === 'weekly' ? 'week' : 'month'} inputs below.`
           : `Select a range: click once to set the start, then click again to set the end. Or change the ${timePeriod === 'daily' ? 'date' : timePeriod === 'weekly' ? 'week' : 'month'} inputs below.`}
       </p>
-      
-      {/* Date Range Slider for All Time Periods */}
-      {chartData.length > 0 && (
-        <div className="mb-4 p-4 bg-card-bg border border-border-color rounded-lg">
-          <div className="mb-3">
-            <label className="text-text-primary text-base font-medium mb-1 block">
-              Navigate {timePeriod === 'daily' ? 'Daily' : timePeriod === 'weekly' ? 'Weekly' : 'Monthly'} Data Range
-            </label>
-            <p className="text-text-muted text-sm">
-              Drag the handles below to select a date range. The chart will automatically update to show the selected period.
-            </p>
-          </div>
-          
-          <div className="relative py-2">
-            {/* Slider Track Container */}
-            <div className="relative h-8">
-              {/* Background Track */}
-              <div className="absolute top-3 left-0 right-0 h-2 bg-background rounded-full" />
-              
-              {/* Active Range Highlight */}
-              <div
-                className="absolute top-3 h-2 bg-primary rounded-full transition-all duration-150"
-                style={{
-                  left: `${sliderStart}%`,
-                  width: `${sliderEnd - sliderStart}%`
-                }}
-              />
-              
-              {/* Start Handle */}
-              <div
-                className="absolute top-0 cursor-pointer touch-none z-10"
-                style={{
-                  left: `calc(${sliderStart}% - 9px)`,
-                  width: '18px',
-                  height: '18px'
-                }}
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  setIsDraggingSlider('start');
-                  const sliderContainer = e.currentTarget.parentElement?.parentElement;
-                  if (!sliderContainer) return;
-                  
-                  const handleMouseMove = (moveEvent: MouseEvent) => {
-                    const rect = sliderContainer.getBoundingClientRect();
-                    const percent = Math.max(0, Math.min(100, ((moveEvent.clientX - rect.left) / rect.width) * 100));
-                    if (percent < sliderEnd - 1) {
-                      setSliderStart(percent);
-                    }
-                  };
-                  const handleMouseUp = () => {
-                    setIsDraggingSlider(null);
-                    setActiveFilter(null); // Clear filter when manually dragging slider
-                    document.removeEventListener('mousemove', handleMouseMove);
-                    document.removeEventListener('mouseup', handleMouseUp);
-                  };
-                  document.addEventListener('mousemove', handleMouseMove);
-                  document.addEventListener('mouseup', handleMouseUp);
-                }}
-                onTouchStart={(e) => {
-                  e.preventDefault();
-                  setIsDraggingSlider('start');
-                  const sliderContainer = e.currentTarget.parentElement?.parentElement;
-                  if (!sliderContainer) return;
-                  
-                  const handleTouchMove = (moveEvent: TouchEvent) => {
-                    if (!moveEvent.touches[0]) return;
-                    const rect = sliderContainer.getBoundingClientRect();
-                    const percent = Math.max(0, Math.min(100, ((moveEvent.touches[0].clientX - rect.left) / rect.width) * 100));
-                    if (percent < sliderEnd - 1) {
-                      setSliderStart(percent);
-                    }
-                  };
-                  const handleTouchEnd = () => {
-                    setIsDraggingSlider(null);
-                    setActiveFilter(null); // Clear filter when manually dragging slider
-                    document.removeEventListener('touchmove', handleTouchMove);
-                    document.removeEventListener('touchend', handleTouchEnd);
-                  };
-                  document.addEventListener('touchmove', handleTouchMove, { passive: false });
-                  document.addEventListener('touchend', handleTouchEnd);
-                }}
-              >
-                <div className="w-4 h-4 bg-primary border-2 border-white rounded-full shadow-lg hover:scale-110 transition-transform" />
-              </div>
-              
-              {/* End Handle */}
-              <div
-                className="absolute top-0 cursor-pointer touch-none z-10"
-                style={{
-                  left: `calc(${sliderEnd}% - 9px)`,
-                  width: '18px',
-                  height: '18px'
-                }}
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  setIsDraggingSlider('end');
-                  const sliderContainer = e.currentTarget.parentElement?.parentElement;
-                  if (!sliderContainer) return;
-                  
-                  const handleMouseMove = (moveEvent: MouseEvent) => {
-                    const rect = sliderContainer.getBoundingClientRect();
-                    const percent = Math.max(0, Math.min(100, ((moveEvent.clientX - rect.left) / rect.width) * 100));
-                    if (percent > sliderStart + 1) {
-                      setSliderEnd(percent);
-                    }
-                  };
-                  const handleMouseUp = () => {
-                    setIsDraggingSlider(null);
-                    setActiveFilter(null); // Clear filter when manually dragging slider
-                    document.removeEventListener('mousemove', handleMouseMove);
-                    document.removeEventListener('mouseup', handleMouseUp);
-                  };
-                  document.addEventListener('mousemove', handleMouseMove);
-                  document.addEventListener('mouseup', handleMouseUp);
-                }}
-                onTouchStart={(e) => {
-                  e.preventDefault();
-                  setIsDraggingSlider('end');
-                  const sliderContainer = e.currentTarget.parentElement?.parentElement;
-                  if (!sliderContainer) return;
-                  
-                  const handleTouchMove = (moveEvent: TouchEvent) => {
-                    if (!moveEvent.touches[0]) return;
-                    const rect = sliderContainer.getBoundingClientRect();
-                    const percent = Math.max(0, Math.min(100, ((moveEvent.touches[0].clientX - rect.left) / rect.width) * 100));
-                    if (percent > sliderStart + 1) {
-                      setSliderEnd(percent);
-                    }
-                  };
-                  const handleTouchEnd = () => {
-                    setIsDraggingSlider(null);
-                    setActiveFilter(null); // Clear filter when manually dragging slider
-                    document.removeEventListener('touchmove', handleTouchMove);
-                    document.removeEventListener('touchend', handleTouchEnd);
-                  };
-                  document.addEventListener('touchmove', handleTouchMove, { passive: false });
-                  document.addEventListener('touchend', handleTouchEnd);
-                }}
-              >
-                <div className="w-4 h-4 bg-primary border-2 border-white rounded-full shadow-lg hover:scale-110 transition-transform" />
-              </div>
-            </div>
-            
-            {/* Date Labels */}
-            <div className="flex justify-between mt-3 text-sm">
-              <div className="text-text-muted">
-                <div className="font-medium text-text-primary">Start:</div>
-                <div>
-                  {(() => {
-                    const startIndex = Math.floor((sliderStart / 100) * chartData.length);
-                    const dateStr = chartData[Math.max(0, Math.min(startIndex, chartData.length - 1))]?.date || '';
-                    if (timePeriod === 'weekly') {
-                      const [year, week] = dateStr.split('-W');
-                      if (year && week) {
-                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
-                        return weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-                      }
-                    }
-                    return dateStr;
-                  })()}
-                </div>
-              </div>
-              <div className="text-text-muted text-right">
-                <div className="font-medium text-text-primary">End:</div>
-                <div>
-                  {(() => {
-                    const endIndex = Math.floor((sliderEnd / 100) * chartData.length);
-                    const dateStr = chartData[Math.max(0, Math.min(endIndex, chartData.length - 1))]?.date || '';
-                    if (timePeriod === 'weekly') {
-                      const [year, week] = dateStr.split('-W');
-                      if (year && week) {
-                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
-                        return weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-                      }
-                    }
-                    return dateStr;
-                  })()}
-                </div>
-              </div>
-            </div>
-            
-            {/* Quick Range Buttons - By Year and Battles */}
-            <div className="flex flex-wrap gap-2 mt-4">
-              {(() => {
-                // Helper function to parse date based on time period
-                const parseDate = (dateStr: string): Date | null => {
-                  if (timePeriod === 'daily') {
-                    return new Date(dateStr);
-                  } else if (timePeriod === 'weekly') {
-                    const [year, week] = dateStr.split('-W');
-                    if (!year || !week) return null;
-                    // Calculate the start of the week
-                    const jan1 = new Date(parseInt(year), 0, 1);
-                    const daysOffset = (parseInt(week) - 1) * 7;
-                    return new Date(jan1.getTime() + daysOffset * 24 * 60 * 60 * 1000);
-                  } else {
-                    // Monthly format: "Feb 2022" or "2022-02"
-                    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                    if (dateStr.includes('-')) {
-                      const [year, month] = dateStr.split('-');
-                      return new Date(parseInt(year), parseInt(month) - 1, 1);
-                    } else {
-                      const parts = dateStr.split(' ');
-                      if (parts.length === 2) {
-                        const monthIndex = monthNames.indexOf(parts[0]);
-                        if (monthIndex !== -1) {
-                          return new Date(parseInt(parts[1]), monthIndex, 1);
-                        }
-                      }
-                    }
-                    return null;
-                  }
-                };
-
-                // Helper function to compare dates based on time period
-                const compareDates = (dataDate: string, targetDate: Date, comparison: 'start' | 'end'): boolean => {
-                  const parsed = parseDate(dataDate);
-                  if (!parsed) return false;
-                  
-                  if (timePeriod === 'daily') {
-                    return comparison === 'start' 
-                      ? parsed >= targetDate 
-                      : parsed <= targetDate;
-                  } else if (timePeriod === 'weekly') {
-                    // For weekly, compare the week start date
-                    return comparison === 'start'
-                      ? parsed >= targetDate
-                      : parsed <= targetDate;
-                  } else {
-                    // For monthly, compare month/year
-                    return comparison === 'start'
-                      ? parsed >= targetDate
-                      : parsed <= targetDate;
-                  }
-                };
-
-                // Helper function to get year range
-                const getYearRange = (year: number) => {
-                  const yearStart = new Date(year, 0, 1);
-                  const yearEnd = new Date(year, 11, 31);
-                  
-                  // Find first data point in this year
-                  const startIndex = chartData.findIndex(d => {
-                    const parsed = parseDate(d.date);
-                    return parsed && parsed >= yearStart;
-                  });
-                  
-                  // Find first data point in next year (or end of data)
-                  const endIndex = chartData.findIndex((d, idx) => {
-                    if (idx <= startIndex) return false;
-                    const parsed = parseDate(d.date);
-                    return parsed && parsed > yearEnd;
-                  });
-                  
-                  if (startIndex === -1) return null;
-                  
-                  // Use the last index of the year, or the last data point if no next year found
-                  const actualEndIndex = endIndex === -1 ? chartData.length - 1 : endIndex - 1;
-                  
-                  // Ensure we have valid indices
-                  if (startIndex > actualEndIndex) return null;
-                  
-                  return {
-                    startPercent: (startIndex / chartData.length) * 100,
-                    endPercent: ((actualEndIndex + 1) / chartData.length) * 100
-                  };
-                };
-
-                // Helper function to get battle range
-                const getBattleRange = (startDateStr: string, endDateStr: string) => {
-                  const startDate = new Date(startDateStr);
-                  const endDate = new Date(endDateStr);
-                  
-                  // Helper to check if a period overlaps with battle range
-                  const periodOverlaps = (dataDate: string): boolean => {
-                    const parsed = parseDate(dataDate);
-                    if (!parsed) return false;
-                    
-                    if (timePeriod === 'daily') {
-                      return parsed >= startDate && parsed <= endDate;
-                    } else if (timePeriod === 'weekly') {
-                      // For weekly, check if the week overlaps with battle period
-                      // Week starts at parsed date, ends 6 days later
-                      const weekEnd = new Date(parsed);
-                      weekEnd.setDate(weekEnd.getDate() + 6);
-                      return parsed <= endDate && weekEnd >= startDate;
-                    } else {
-                      // For monthly, check if the month overlaps with battle period
-                      // Month starts at parsed date, ends at last day of month
-                      const monthEnd = new Date(parsed.getFullYear(), parsed.getMonth() + 1, 0);
-                      return parsed <= endDate && monthEnd >= startDate;
-                    }
-                  };
-                  
-                  // Find first data point that overlaps with battle period
-                  const startIndex = chartData.findIndex(d => periodOverlaps(d.date));
-                  
-                  // Find last data point that overlaps with battle period
-                  let actualEndIndex = -1;
-                  for (let i = chartData.length - 1; i >= 0; i--) {
-                    if (periodOverlaps(chartData[i].date)) {
-                      actualEndIndex = i;
-                      break;
-                    }
-                  }
-                  
-                  if (startIndex === -1 || actualEndIndex === -1) return null;
-                  
-                  // Ensure we have valid indices
-                  if (startIndex > actualEndIndex) return null;
-                  
-                  return {
-                    startPercent: (startIndex / chartData.length) * 100,
-                    endPercent: ((actualEndIndex + 1) / chartData.length) * 100
-                  };
-                };
-                
-                const years = [2022, 2023, 2024, 2025];
-                const yearRanges = years.map(year => ({
-                  year,
-                  range: getYearRange(year)
-                })).filter(item => item.range !== null);
-
-                // Battle definitions
-                const battles = [
-                  { name: 'Bakhmut', start: '2022-08-01', end: '2023-05-20' },
-                  { name: 'Ukraine Summer Offensive 2023', start: '2023-06-04', end: '2023-09-30' },
-                  { name: 'Avdiivka', start: '2023-10-10', end: '2024-02-17' },
-                  { name: 'Kursk Operation', start: '2024-08-06', end: '2025-03-31' }
-                ];
-                
-                const battleRanges = battles.map(battle => ({
-                  name: battle.name,
-                  range: getBattleRange(battle.start, battle.end)
-                })).filter(item => item.range !== null);
-                
-                return (
-                  <>
-                    <div className="w-full mb-2">
-                      <span className="text-text-muted text-sm font-medium">Years:</span>
-                    </div>
-                    {yearRanges.map(({ year, range }) => (
-                      <button
-                        key={year}
-                        onClick={() => {
-                          if (range) {
-                            setSliderStart(range.startPercent);
-                            setSliderEnd(range.endPercent);
-                            setActiveFilter(year);
-                          }
-                        }}
-                        className={`px-3 py-1.5 text-sm rounded transition-colors ${
-                          activeFilter === year
-                            ? 'bg-primary text-background font-medium'
-                            : 'bg-background border border-border-color hover:bg-gray-700'
-                        }`}
-                      >
-                        {year}
-                      </button>
-                    ))}
-                    <button
-                      onClick={() => {
-                        setSliderStart(0);
-                        setSliderEnd(100);
-                        setActiveFilter(null);
-                      }}
-                      className={`px-3 py-1.5 text-sm rounded transition-colors font-medium ${
-                        activeFilter === null
-                          ? 'bg-primary text-background'
-                          : 'bg-background border border-border-color hover:bg-gray-700'
-                      }`}
-                    >
-                      All Years
-                    </button>
-                    
-                    <div className="w-full mt-3 mb-2">
-                      <span className="text-text-muted text-sm font-medium">Battles:</span>
-                    </div>
-                    {battleRanges.map(({ name, range }) => (
-                      <button
-                        key={name}
-                        onClick={() => {
-                          if (range) {
-                            setSliderStart(range.startPercent);
-                            setSliderEnd(range.endPercent);
-                            setActiveFilter(name);
-                          }
-                        }}
-                        className={`px-3 py-1.5 text-sm rounded transition-colors ${
-                          activeFilter === name
-                            ? 'bg-primary text-background font-medium'
-                            : 'bg-background border border-border-color hover:bg-gray-700'
-                        }`}
-                        title={`${name}: ${battles.find(b => b.name === name)?.start} to ${battles.find(b => b.name === name)?.end}`}
-                      >
-                        {name}
-                      </button>
-                    ))}
-                  </>
-                );
-              })()}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Chart */}
-      <div className="rounded-lg border border-border-color p-2 md:p-4" style={{ backgroundColor: '#1B1B1C' }}>
+      <div className="rounded-lg border border-border-color p-2 md:p-4 relative" style={{ backgroundColor: '#1B1B1C' }}>
+        {/* Hover Tooltip - Above Chart */}
+        {hoverInfo && hoverInfo.data && (
+          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-20 bg-card-bg border border-border-color rounded-lg px-4 py-2 shadow-lg flex items-center gap-3 text-sm">
+            <span className="text-text-primary font-medium">
+              Date: {hoverInfo.label || hoverInfo.data.date}
+            </span>
+            {showRussia && (
+              <div className="flex items-center gap-1">
+                <div className="russia-flag"></div>
+                <span className="text-text-muted">
+                  {hoverInfo.data.russiaDeaths?.toLocaleString() || 0}
+                </span>
+              </div>
+            )}
+            {showUkraine && (
+              <div className="flex items-center gap-1">
+                <div className="ukraine-flag"></div>
+                <span className="text-text-muted">
+                  {hoverInfo.data.ukraineTotal?.toLocaleString() || 0}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
         {isMobile ? (
           <MobileChartMemo
             displayData={selectedRange ? selectedRange.data : chartData}
@@ -2578,6 +2223,411 @@ export default function ChartEnhanced() {
             setActiveFilter={setActiveFilter}
           />
         )}
+
+        {/* Date Range Slider for All Time Periods */}
+        {chartData.length > 0 && (
+          <div className="mt-4 p-4 bg-card-bg border border-border-color rounded-lg">
+            <div className="mb-3">
+              <label className="text-text-primary text-base font-medium mb-1 block">
+                Navigate {timePeriod === 'daily' ? 'Daily' : timePeriod === 'weekly' ? 'Weekly' : 'Monthly'} Data Range
+              </label>
+              <p className="text-text-muted text-sm">
+                Drag the handles below to select a date range. The chart will automatically update to show the selected period.
+              </p>
+            </div>
+            
+            <div className="relative py-2">
+              {/* Slider Track Container */}
+              <div className="relative h-8">
+                {/* Background Track */}
+                <div className="absolute top-3 left-0 right-0 h-2 bg-background rounded-full" />
+                
+                {/* Active Range Highlight */}
+                <div
+                  className="absolute top-3 h-2 bg-primary rounded-full transition-all duration-150"
+                  style={{
+                    left: `${sliderStart}%`,
+                    width: `${sliderEnd - sliderStart}%`
+                  }}
+                />
+                
+                {/* Start Handle */}
+                <div
+                  className="absolute top-0 cursor-pointer touch-none z-10"
+                  style={{
+                    left: `calc(${sliderStart}% - 9px)`,
+                    width: '18px',
+                    height: '18px'
+                  }}
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    setIsDraggingSlider('start');
+                    const sliderContainer = e.currentTarget.parentElement?.parentElement;
+                    if (!sliderContainer) return;
+                    
+                    const handleMouseMove = (moveEvent: MouseEvent) => {
+                      const rect = sliderContainer.getBoundingClientRect();
+                      const percent = Math.max(0, Math.min(100, ((moveEvent.clientX - rect.left) / rect.width) * 100));
+                      if (percent < sliderEnd - 1) {
+                        setSliderStart(percent);
+                      }
+                    };
+                    const handleMouseUp = () => {
+                      setIsDraggingSlider(null);
+                      setActiveFilter(null); // Clear filter when manually dragging slider
+                      document.removeEventListener('mousemove', handleMouseMove);
+                      document.removeEventListener('mouseup', handleMouseUp);
+                    };
+                    document.addEventListener('mousemove', handleMouseMove);
+                    document.addEventListener('mouseup', handleMouseUp);
+                  }}
+                  onTouchStart={(e) => {
+                    e.preventDefault();
+                    setIsDraggingSlider('start');
+                    const sliderContainer = e.currentTarget.parentElement?.parentElement;
+                    if (!sliderContainer) return;
+                    
+                    const handleTouchMove = (moveEvent: TouchEvent) => {
+                      if (!moveEvent.touches[0]) return;
+                      const rect = sliderContainer.getBoundingClientRect();
+                      const percent = Math.max(0, Math.min(100, ((moveEvent.touches[0].clientX - rect.left) / rect.width) * 100));
+                      if (percent < sliderEnd - 1) {
+                        setSliderStart(percent);
+                      }
+                    };
+                    const handleTouchEnd = () => {
+                      setIsDraggingSlider(null);
+                      setActiveFilter(null); // Clear filter when manually dragging slider
+                      document.removeEventListener('touchmove', handleTouchMove);
+                      document.removeEventListener('touchend', handleTouchEnd);
+                    };
+                    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+                    document.addEventListener('touchend', handleTouchEnd);
+                  }}
+                >
+                  <div className="w-4 h-4 bg-primary border-2 border-white rounded-full shadow-lg hover:scale-110 transition-transform" />
+                </div>
+                
+                {/* End Handle */}
+                <div
+                  className="absolute top-0 cursor-pointer touch-none z-10"
+                  style={{
+                    left: `calc(${sliderEnd}% - 9px)`,
+                    width: '18px',
+                    height: '18px'
+                  }}
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    setIsDraggingSlider('end');
+                    const sliderContainer = e.currentTarget.parentElement?.parentElement;
+                    if (!sliderContainer) return;
+                    
+                    const handleMouseMove = (moveEvent: MouseEvent) => {
+                      const rect = sliderContainer.getBoundingClientRect();
+                      const percent = Math.max(0, Math.min(100, ((moveEvent.clientX - rect.left) / rect.width) * 100));
+                      if (percent > sliderStart + 1) {
+                        setSliderEnd(percent);
+                      }
+                    };
+                    const handleMouseUp = () => {
+                      setIsDraggingSlider(null);
+                      setActiveFilter(null); // Clear filter when manually dragging slider
+                      document.removeEventListener('mousemove', handleMouseMove);
+                      document.removeEventListener('mouseup', handleMouseUp);
+                    };
+                    document.addEventListener('mousemove', handleMouseMove);
+                    document.addEventListener('mouseup', handleMouseUp);
+                  }}
+                  onTouchStart={(e) => {
+                    e.preventDefault();
+                    setIsDraggingSlider('end');
+                    const sliderContainer = e.currentTarget.parentElement?.parentElement;
+                    if (!sliderContainer) return;
+                    
+                    const handleTouchMove = (moveEvent: TouchEvent) => {
+                      if (!moveEvent.touches[0]) return;
+                      const rect = sliderContainer.getBoundingClientRect();
+                      const percent = Math.max(0, Math.min(100, ((moveEvent.touches[0].clientX - rect.left) / rect.width) * 100));
+                      if (percent > sliderStart + 1) {
+                        setSliderEnd(percent);
+                      }
+                    };
+                    const handleTouchEnd = () => {
+                      setIsDraggingSlider(null);
+                      setActiveFilter(null); // Clear filter when manually dragging slider
+                      document.removeEventListener('touchmove', handleTouchMove);
+                      document.removeEventListener('touchend', handleTouchEnd);
+                    };
+                    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+                    document.addEventListener('touchend', handleTouchEnd);
+                  }}
+                >
+                  <div className="w-4 h-4 bg-primary border-2 border-white rounded-full shadow-lg hover:scale-110 transition-transform" />
+                </div>
+              </div>
+              
+              {/* Date Labels */}
+              <div className="flex justify-between mt-3 text-sm">
+                <div className="text-text-muted">
+                  <div className="font-medium text-text-primary">Start:</div>
+                  <div>
+                    {(() => {
+                      const startIndex = Math.floor((sliderStart / 100) * chartData.length);
+                      const dateStr = chartData[Math.max(0, Math.min(startIndex, chartData.length - 1))]?.date || '';
+                      if (timePeriod === 'weekly') {
+                        const [year, week] = dateStr.split('-W');
+                        if (year && week) {
+                          const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                          return weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                        }
+                      }
+                      return dateStr;
+                    })()}
+                  </div>
+                </div>
+                <div className="text-text-muted text-right">
+                  <div className="font-medium text-text-primary">End:</div>
+                  <div>
+                    {(() => {
+                      const endIndex = Math.floor((sliderEnd / 100) * chartData.length);
+                      const dateStr = chartData[Math.max(0, Math.min(endIndex, chartData.length - 1))]?.date || '';
+                      if (timePeriod === 'weekly') {
+                        const [year, week] = dateStr.split('-W');
+                        if (year && week) {
+                          const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                          return weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                        }
+                      }
+                      return dateStr;
+                    })()}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Quick Range Buttons - By Year and Battles */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {(() => {
+                  // Helper function to parse date based on time period
+                  const parseDate = (dateStr: string): Date | null => {
+                    if (timePeriod === 'daily') {
+                      return new Date(dateStr);
+                    } else if (timePeriod === 'weekly') {
+                      const [year, week] = dateStr.split('-W');
+                      if (!year || !week) return null;
+                      // Calculate the start of the week
+                      const jan1 = new Date(parseInt(year), 0, 1);
+                      const daysOffset = (parseInt(week) - 1) * 7;
+                      return new Date(jan1.getTime() + daysOffset * 24 * 60 * 60 * 1000);
+                    } else {
+                      // Monthly format: "Feb 2022" or "2022-02"
+                      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                      if (dateStr.includes('-')) {
+                        const [year, month] = dateStr.split('-');
+                        return new Date(parseInt(year), parseInt(month) - 1, 1);
+                      } else {
+                        const parts = dateStr.split(' ');
+                        if (parts.length === 2) {
+                          const monthIndex = monthNames.indexOf(parts[0]);
+                          if (monthIndex !== -1) {
+                            return new Date(parseInt(parts[1]), monthIndex, 1);
+                          }
+                        }
+                      }
+                      return null;
+                    }
+                  };
+
+                  // Helper function to compare dates based on time period
+                  const compareDates = (dataDate: string, targetDate: Date, comparison: 'start' | 'end'): boolean => {
+                    const parsed = parseDate(dataDate);
+                    if (!parsed) return false;
+                    
+                    if (timePeriod === 'daily') {
+                      return comparison === 'start' 
+                        ? parsed >= targetDate 
+                        : parsed <= targetDate;
+                    } else if (timePeriod === 'weekly') {
+                      // For weekly, compare the week start date
+                      return comparison === 'start'
+                        ? parsed >= targetDate
+                        : parsed <= targetDate;
+                    } else {
+                      // For monthly, compare month/year
+                      return comparison === 'start'
+                        ? parsed >= targetDate
+                        : parsed <= targetDate;
+                    }
+                  };
+
+                  // Helper function to get year range
+                  const getYearRange = (year: number) => {
+                    const yearStart = new Date(year, 0, 1);
+                    const yearEnd = new Date(year, 11, 31);
+                    
+                    // Find first data point in this year
+                    const startIndex = chartData.findIndex(d => {
+                      const parsed = parseDate(d.date);
+                      return parsed && parsed >= yearStart;
+                    });
+                    
+                    // Find first data point in next year (or end of data)
+                    const endIndex = chartData.findIndex((d, idx) => {
+                      if (idx <= startIndex) return false;
+                      const parsed = parseDate(d.date);
+                      return parsed && parsed > yearEnd;
+                    });
+                    
+                    if (startIndex === -1) return null;
+                    
+                    // Use the last index of the year, or the last data point if no next year found
+                    const actualEndIndex = endIndex === -1 ? chartData.length - 1 : endIndex - 1;
+                    
+                    // Ensure we have valid indices
+                    if (startIndex > actualEndIndex) return null;
+                    
+                    return {
+                      startPercent: (startIndex / chartData.length) * 100,
+                      endPercent: ((actualEndIndex + 1) / chartData.length) * 100
+                    };
+                  };
+
+                  // Helper function to get battle range
+                  const getBattleRange = (startDateStr: string, endDateStr: string) => {
+                    const startDate = new Date(startDateStr);
+                    const endDate = new Date(endDateStr);
+                    
+                    // Helper to check if a period overlaps with battle range
+                    const periodOverlaps = (dataDate: string): boolean => {
+                      const parsed = parseDate(dataDate);
+                      if (!parsed) return false;
+                      
+                      if (timePeriod === 'daily') {
+                        return parsed >= startDate && parsed <= endDate;
+                      } else if (timePeriod === 'weekly') {
+                        // For weekly, check if the week overlaps with battle period
+                        // Week starts at parsed date, ends 6 days later
+                        const weekEnd = new Date(parsed);
+                        weekEnd.setDate(weekEnd.getDate() + 6);
+                        return parsed <= endDate && weekEnd >= startDate;
+                      } else {
+                        // For monthly, check if the month overlaps with battle period
+                        // Month starts at parsed date, ends at last day of month
+                        const monthEnd = new Date(parsed.getFullYear(), parsed.getMonth() + 1, 0);
+                        return parsed <= endDate && monthEnd >= startDate;
+                      }
+                    };
+                    
+                    // Find first data point that overlaps with battle period
+                    const startIndex = chartData.findIndex(d => periodOverlaps(d.date));
+                    
+                    // Find last data point that overlaps with battle period
+                    let actualEndIndex = -1;
+                    for (let i = chartData.length - 1; i >= 0; i--) {
+                      if (periodOverlaps(chartData[i].date)) {
+                        actualEndIndex = i;
+                        break;
+                      }
+                    }
+                    
+                    if (startIndex === -1 || actualEndIndex === -1) return null;
+                    
+                    // Ensure we have valid indices
+                    if (startIndex > actualEndIndex) return null;
+                    
+                    return {
+                      startPercent: (startIndex / chartData.length) * 100,
+                      endPercent: ((actualEndIndex + 1) / chartData.length) * 100
+                    };
+                  };
+                  
+                  const years = [2022, 2023, 2024, 2025];
+                  const yearRanges = years.map(year => ({
+                    year,
+                    range: getYearRange(year)
+                  })).filter(item => item.range !== null);
+
+                  // Battle definitions
+                  const battles = [
+                    { name: 'Bakhmut', start: '2022-08-01', end: '2023-05-20' },
+                    { name: 'Ukraine Summer Offensive 2023', start: '2023-06-04', end: '2023-09-30' },
+                    { name: 'Avdiivka', start: '2023-10-10', end: '2024-02-17' },
+                    { name: 'Kursk Operation', start: '2024-08-06', end: '2025-03-31' }
+                  ];
+                  
+                  const battleRanges = battles.map(battle => ({
+                    name: battle.name,
+                    range: getBattleRange(battle.start, battle.end)
+                  })).filter(item => item.range !== null);
+                  
+                  return (
+                    <>
+                      <div className="w-full mb-2">
+                        <span className="text-text-muted text-sm font-medium">Years:</span>
+                      </div>
+                      {yearRanges.map(({ year, range }) => (
+                        <button
+                          key={year}
+                          onClick={() => {
+                            if (range) {
+                              setSliderStart(range.startPercent);
+                              setSliderEnd(range.endPercent);
+                              setActiveFilter(year);
+                            }
+                          }}
+                          className={`px-3 py-1.5 text-sm rounded transition-colors ${
+                            activeFilter === year
+                              ? 'bg-primary text-background font-medium'
+                              : 'bg-background border border-border-color hover:bg-gray-700'
+                          }`}
+                        >
+                          {year}
+                        </button>
+                      ))}
+                      <button
+                        onClick={() => {
+                          setSliderStart(0);
+                          setSliderEnd(100);
+                          setActiveFilter(null);
+                        }}
+                        className={`px-3 py-1.5 text-sm rounded transition-colors font-medium ${
+                          activeFilter === null
+                            ? 'bg-primary text-background'
+                            : 'bg-background border border-border-color hover:bg-gray-700'
+                        }`}
+                      >
+                        All Years
+                      </button>
+                      
+                      <div className="w-full mt-3 mb-2">
+                        <span className="text-text-muted text-sm font-medium">Battles:</span>
+                      </div>
+                      {battleRanges.map(({ name, range }) => (
+                        <button
+                          key={name}
+                          onClick={() => {
+                            if (range) {
+                              setSliderStart(range.startPercent);
+                              setSliderEnd(range.endPercent);
+                              setActiveFilter(name);
+                            }
+                          }}
+                          className={`px-3 py-1.5 text-sm rounded transition-colors ${
+                            activeFilter === name
+                              ? 'bg-primary text-background font-medium'
+                              : 'bg-background border border-border-color hover:bg-gray-700'
+                          }`}
+                          title={`${name}: ${battles.find(b => b.name === name)?.start} to ${battles.find(b => b.name === name)?.end}`}
+                        >
+                          {name}
+                        </button>
+                      ))}
+                    </>
+                  );
+                })()}
+              </div>
+            </div>
+          </div>
+        )}
         
         {/* Dynamic Data Display - Inside chart component, under the chart */}
         <HoverInfoDisplay 
@@ -2598,35 +2648,6 @@ export default function ChartEnhanced() {
             setHoverInfo(null);
           } : undefined}
         />
-      </div>
-
-
-      {/* Legend */}
-      <div className="mt-4 flex flex-wrap justify-center gap-3 text-sm">
-        {showUkraine && (
-          <>
-            <div className="flex items-center gap-1">
-              <div className="w-3 h-0.5 bg-[#0057B7] opacity-80"></div>
-              <span className="text-text-muted">Ukraine Period</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-3 h-1 border-t-2 border-dashed border-[#0057B7]" style={{ background: 'transparent' }}></div>
-              <span className="text-text-muted">Ukraine Cumulative</span>
-            </div>
-          </>
-        )}
-        {showRussia && (
-          <>
-            <div className="flex items-center gap-1">
-              <div className="w-3 h-0.5 bg-[#DA291C] opacity-80"></div>
-              <span className="text-text-muted">Russia Period</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-3 h-1 border-t-2 border-dashed border-[#DA291C]" style={{ background: 'transparent' }}></div>
-              <span className="text-text-muted">Russia Cumulative</span>
-            </div>
-          </>
-        )}
       </div>
 
     </div>

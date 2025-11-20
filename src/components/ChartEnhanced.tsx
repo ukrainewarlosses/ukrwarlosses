@@ -519,7 +519,7 @@ export default function ChartEnhanced() {
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const [timePeriod, setTimePeriod] = useState<TimePeriod>('monthly');
+  const [timePeriod, setTimePeriod] = useState<TimePeriod>('daily');
   const [selectedRange, setSelectedRange] = useState<any>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState<number | null>(null);
@@ -539,14 +539,242 @@ export default function ChartEnhanced() {
   const [isDraggingSlider, setIsDraggingSlider] = useState<'start' | 'end' | null>(null);
 
   // Memoized hover info display component to prevent chart re-renders
-  const HoverInfoDisplay = memo(({ info, timePeriod, showUkraine, showRussia, isMobile, onClose }: {
+  const HoverInfoDisplay = memo(({ info, timePeriod, showUkraine, showRussia, isMobile, onClose, selectedRange, chartData, handleManualDateChange, handleResetRange, convertMonthDisplayToInput, convertMonthInputToDisplay }: {
     info: any;
     timePeriod: TimePeriod;
     showUkraine: boolean;
     showRussia: boolean;
     isMobile: boolean;
     onClose?: () => void;
+    selectedRange?: any;
+    chartData?: ChartData[];
+    handleManualDateChange?: (startDate: string, endDate: string) => void;
+    handleResetRange?: () => void;
+    convertMonthDisplayToInput?: (displayMonth: string) => string;
+    convertMonthInputToDisplay?: (inputMonth: string) => string;
   }) => {
+    // If selectedRange exists, show range analysis instead of single date info
+    if (selectedRange) {
+      // Show range analysis
+      const formatWeekDate = (dateStr: string) => {
+        const [year, week] = dateStr.split('-W');
+        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+        return `Week of ${weekStart.toLocaleDateString('en-US', { 
+          month: 'long', 
+          day: 'numeric', 
+          year: 'numeric' 
+        })}`;
+      };
+
+      const rangePeriodRatio = (() => {
+        const ukraineTotal = selectedRange.ukraineTotal || 0;
+        const russiaTotal = selectedRange.russiaTotal || 0;
+        if (ukraineTotal === 0 || russiaTotal === 0) return { left: 0, right: 0 };
+        if (russiaTotal <= ukraineTotal) {
+          return { left: 1, right: Number((ukraineTotal / russiaTotal).toFixed(2)) };
+        } else {
+          return { left: Number((russiaTotal / ukraineTotal).toFixed(2)), right: 1 };
+        }
+      })();
+
+      return (
+        <div className="mt-4 p-3 bg-card-bg border border-border-color rounded-lg relative">
+          {!isMobile && onClose && (
+            <button
+              onClick={onClose}
+              className="absolute top-2 right-2 text-text-muted hover:text-text-primary transition-colors p-1 rounded hover:bg-background"
+              aria-label="Close info box"
+              title="Close"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="4" y1="4" x2="12" y2="12" />
+                <line x1="12" y1="4" x2="4" y2="12" />
+              </svg>
+            </button>
+          )}
+          
+          <div className="text-center mb-3">
+            <p className="text-primary font-medium text-sm mb-1">Selected Range Analysis</p>
+            <p className="text-text-muted text-xs mb-2">
+              {timePeriod === 'weekly' ? `${formatWeekDate(selectedRange.start)} to ${formatWeekDate(selectedRange.end)}` : `${selectedRange.start} to ${selectedRange.end}`}
+            </p>
+            
+            {/* Manual Period Input */}
+            {timePeriod === 'daily' && handleManualDateChange && (
+              <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-center">
+                <div className="flex items-center gap-2">
+                  <label className="text-text-muted text-xs">From:</label>
+                  <input
+                    type="date"
+                    value={selectedRange.start}
+                    min="2022-02-23"
+                    max={chartData && chartData.length > 0 ? chartData[chartData.length - 1]?.date || "2025-12-31" : "2025-12-31"}
+                    onChange={(e) => handleManualDateChange(e.target.value, selectedRange.end)}
+                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <label className="text-text-muted text-xs">To:</label>
+                  <input
+                    type="date"
+                    value={selectedRange.end}
+                    min="2022-02-23"
+                    max={chartData && chartData.length > 0 ? chartData[chartData.length - 1]?.date || "2025-12-31" : "2025-12-31"}
+                    onChange={(e) => handleManualDateChange(selectedRange.start, e.target.value)}
+                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  />
+                </div>
+              </div>
+            )}
+            
+            {timePeriod === 'weekly' && handleManualDateChange && chartData && (
+              <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-center">
+                <div className="flex items-center gap-2">
+                  <label className="text-text-muted text-xs">From:</label>
+                  <select
+                    value={selectedRange.start}
+                    onChange={(e) => handleManualDateChange(e.target.value, selectedRange.end)}
+                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  >
+                    {chartData.map((item) => {
+                      const [year, week] = item.date.split('-W');
+                      const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                      const readableDate = `Week of ${weekStart.toLocaleDateString('en-US', { 
+                        month: 'long', 
+                        day: 'numeric', 
+                        year: 'numeric' 
+                      })}`;
+                      return (
+                        <option key={item.date} value={item.date}>
+                          {readableDate}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+                <div className="flex items-center gap-2">
+                  <label className="text-text-muted text-xs">To:</label>
+                  <select
+                    value={selectedRange.end}
+                    onChange={(e) => handleManualDateChange(selectedRange.start, e.target.value)}
+                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  >
+                    {chartData.map((item) => {
+                      const [year, week] = item.date.split('-W');
+                      const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                      const readableDate = `Week of ${weekStart.toLocaleDateString('en-US', { 
+                        month: 'long', 
+                        day: 'numeric', 
+                        year: 'numeric' 
+                      })}`;
+                      return (
+                        <option key={item.date} value={item.date}>
+                          {readableDate}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+            )}
+            
+            {timePeriod === 'monthly' && handleManualDateChange && convertMonthDisplayToInput && convertMonthInputToDisplay && chartData && (
+              <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-center">
+                <div className="flex items-center gap-2">
+                  <label className="text-text-muted text-xs">From:</label>
+                  <input
+                    type="month"
+                    value={convertMonthDisplayToInput(selectedRange.start)}
+                    min="2022-02"
+                    max={convertMonthDisplayToInput(chartData[chartData.length - 1]?.date) || "2025-12"}
+                    onChange={(e) => handleManualDateChange(convertMonthInputToDisplay(e.target.value), selectedRange.end)}
+                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <label className="text-text-muted text-xs">To:</label>
+                  <input
+                    type="month"
+                    value={convertMonthDisplayToInput(selectedRange.end)}
+                    min="2022-02"
+                    max={convertMonthDisplayToInput(chartData[chartData.length - 1]?.date) || "2025-12"}
+                    onChange={(e) => handleManualDateChange(selectedRange.start, convertMonthInputToDisplay(e.target.value))}
+                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                  />
+                </div>
+              </div>
+            )}
+            
+            {handleResetRange && (
+              <button 
+                onClick={handleResetRange}
+                className="mt-2 px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs whitespace-nowrap"
+              >
+                Reset to Full Range
+              </button>
+            )}
+          </div>
+          
+          {/* Range Stats Grid */}
+          <div className={`grid gap-2 ${showUkraine && showRussia ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-3'} mb-3`}>
+            {showUkraine && (
+              <div className="bg-background rounded p-2">
+                <p className="text-text-muted text-xs">Ukraine Total</p>
+                <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#0057B7' }}>
+                  {selectedRange.ukraineTotal?.toLocaleString()}
+                </p>
+              </div>
+            )}
+            {showRussia && (
+              <div className="bg-background rounded p-2">
+                <p className="text-text-muted text-xs">Russia Total</p>
+                <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#DA291C' }}>
+                  {selectedRange.russiaTotal?.toLocaleString()}
+                </p>
+              </div>
+            )}
+            <div className="bg-background rounded p-2">
+              <p className="text-text-muted text-xs">
+                {timePeriod === 'daily' ? 'Days in Range' : 
+                 timePeriod === 'weekly' ? 'Weeks in Range' : 
+                 'Months in Range'}
+              </p>
+              <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold text-text-primary`}>
+                {selectedRange.data.length}
+              </p>
+            </div>
+            <div className="bg-background rounded p-2">
+              <p className="text-text-muted text-xs">
+                {timePeriod === 'daily' ? 'Daily Average' : 
+                 timePeriod === 'weekly' ? 'Weekly Average' : 
+                 'Monthly Average'}
+              </p>
+              <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold text-primary`}>
+                {Math.round(((showUkraine ? selectedRange.ukraineTotal : 0) + (showRussia ? selectedRange.russiaTotal : 0)) / selectedRange.data.length).toLocaleString()}
+              </p>
+            </div>
+          </div>
+
+          {/* Range Ratio */}
+          {showUkraine && showRussia && (
+            <div className="border-t border-border-color pt-2">
+              <p className={`text-text-muted ${isMobile ? 'text-xs' : 'text-sm'} mb-1 text-center`}>
+                Range Loss Ratio
+              </p>
+              <div className="bg-background rounded p-3 border border-border-color text-center">
+                <span className="text-primary font-bold text-lg flex items-center justify-center gap-2">
+                  <div className="russia-flag"></div>
+                  {rangePeriodRatio.left} : {rangePeriodRatio.right}
+                  <div className="ukraine-flag"></div>
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Show single date info when no range is selected
     if (!info) return null;
     
     // Helper function to format month name from date string (e.g., "Feb 2022" -> "February 2022")
@@ -1774,14 +2002,14 @@ export default function ChartEnhanced() {
       <div className="flex justify-center mb-4">
         <div className="flex bg-card-bg rounded-lg p-1 border border-border-color">
           <button
-            onClick={() => setTimePeriod('monthly')}
+            onClick={() => setTimePeriod('daily')}
             className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-              timePeriod === 'monthly'
+              timePeriod === 'daily'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
             }`}
           >
-            Monthly
+            Daily
           </button>
           <button
             onClick={() => setTimePeriod('weekly')}
@@ -1794,14 +2022,14 @@ export default function ChartEnhanced() {
             Weekly
           </button>
           <button
-            onClick={() => setTimePeriod('daily')}
+            onClick={() => setTimePeriod('monthly')}
             className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-              timePeriod === 'daily'
+              timePeriod === 'monthly'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
             }`}
           >
-            Daily
+            Monthly
           </button>
         </div>
       </div>
@@ -2125,6 +2353,12 @@ export default function ChartEnhanced() {
           showUkraine={showUkraine}
           showRussia={showRussia}
           isMobile={isMobile}
+          selectedRange={selectedRange}
+          chartData={chartData}
+          handleManualDateChange={handleManualDateChange}
+          handleResetRange={handleResetRange}
+          convertMonthDisplayToInput={convertMonthDisplayToInput}
+          convertMonthInputToDisplay={convertMonthInputToDisplay}
           onClose={!isMobile ? () => {
             setIsHoverInfoPinned(false);
             setHoverInfo(null);
@@ -2132,181 +2366,6 @@ export default function ChartEnhanced() {
         />
       </div>
 
-      {/* Selected range stats */}
-      {selectedRange && (
-        <div className="mt-4 p-3 bg-card-bg rounded-lg border border-border-color">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 gap-3">
-            <div>
-              <p className="text-primary font-medium text-sm mb-1">Selected Range Analysis</p>
-              <p className="text-text-muted text-xs mb-2">
-                {timePeriod === 'weekly' ? (() => {
-                  const formatWeekDate = (dateStr: string) => {
-                    const [year, week] = dateStr.split('-W');
-                    const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
-                    return `Week of ${weekStart.toLocaleDateString('en-US', { 
-                      month: 'long', 
-                      day: 'numeric', 
-                      year: 'numeric' 
-                    })}`;
-                  };
-                  return `${formatWeekDate(selectedRange.start)} to ${formatWeekDate(selectedRange.end)}`;
-                })() : `${selectedRange.start} to ${selectedRange.end}`}
-              </p>
-              
-              {/* Manual Period Input */}
-              {timePeriod === 'daily' && (
-                <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
-                  <div className="flex items-center gap-2">
-                    <label className="text-text-muted text-xs">From:</label>
-                    <input
-                      type="date"
-                      value={selectedRange.start}
-                      min="2022-02-23"
-                      max={chartData[chartData.length - 1]?.date || "2025-12-31"}
-                      onChange={(e) => handleManualDateChange(e.target.value, selectedRange.end)}
-                      className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
-                    />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <label className="text-text-muted text-xs">To:</label>
-                    <input
-                      type="date"
-                      value={selectedRange.end}
-                      min="2022-02-23"
-                      max={chartData[chartData.length - 1]?.date || "2025-12-31"}
-                      onChange={(e) => handleManualDateChange(selectedRange.start, e.target.value)}
-                      className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
-                    />
-                  </div>
-                </div>
-              )}
-              
-              {timePeriod === 'weekly' && (
-                <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
-                  <div className="flex items-center gap-2">
-                    <label className="text-text-muted text-xs">From:</label>
-                    <select
-                      value={selectedRange.start}
-                      onChange={(e) => handleManualDateChange(e.target.value, selectedRange.end)}
-                      className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
-                    >
-                      {chartData.map((item) => {
-                        const [year, week] = item.date.split('-W');
-                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
-                        const readableDate = `Week of ${weekStart.toLocaleDateString('en-US', { 
-                          month: 'long', 
-                          day: 'numeric', 
-                          year: 'numeric' 
-                        })}`;
-                        return (
-                          <option key={item.date} value={item.date}>
-                            {readableDate}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <label className="text-text-muted text-xs">To:</label>
-                    <select
-                      value={selectedRange.end}
-                      onChange={(e) => handleManualDateChange(selectedRange.start, e.target.value)}
-                      className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
-                    >
-                      {chartData.map((item) => {
-                        const [year, week] = item.date.split('-W');
-                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
-                        const readableDate = `Week of ${weekStart.toLocaleDateString('en-US', { 
-                          month: 'long', 
-                          day: 'numeric', 
-                          year: 'numeric' 
-                        })}`;
-                        return (
-                          <option key={item.date} value={item.date}>
-                            {readableDate}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </div>
-                </div>
-              )}
-              
-              {timePeriod === 'monthly' && (
-                <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
-                  <div className="flex items-center gap-2">
-                    <label className="text-text-muted text-xs">From:</label>
-                    <input
-                      type="month"
-                      value={convertMonthDisplayToInput(selectedRange.start)}
-                      min="2022-02"
-                      max={convertMonthDisplayToInput(chartData[chartData.length - 1]?.date) || "2025-12"}
-                      onChange={(e) => handleManualDateChange(convertMonthInputToDisplay(e.target.value), selectedRange.end)}
-                      className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
-                    />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <label className="text-text-muted text-xs">To:</label>
-                    <input
-                      type="month"
-                      value={convertMonthDisplayToInput(selectedRange.end)}
-                      min="2022-02"
-                      max={convertMonthDisplayToInput(chartData[chartData.length - 1]?.date) || "2025-12"}
-                      onChange={(e) => handleManualDateChange(selectedRange.start, convertMonthInputToDisplay(e.target.value))}
-                      className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-            <button 
-              onClick={handleResetRange}
-              className="px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs whitespace-nowrap"
-            >
-              Reset to Full Range
-            </button>
-          </div>
-          
-          <div className={`grid gap-2 ${showUkraine && showRussia ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-3'}`}>
-            {showUkraine && (
-              <div className="bg-background rounded p-2">
-                <p className="text-text-muted text-xs">Ukraine Total</p>
-                <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#0057B7' }}>
-                  {selectedRange.ukraineTotal?.toLocaleString()}
-                </p>
-              </div>
-            )}
-            {showRussia && (
-              <div className="bg-background rounded p-2">
-                <p className="text-text-muted text-xs">Russia Total</p>
-                <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#DA291C' }}>
-                  {selectedRange.russiaTotal?.toLocaleString()}
-                </p>
-              </div>
-            )}
-            <div className="bg-background rounded p-2">
-              <p className="text-text-muted text-xs">
-                {timePeriod === 'daily' ? 'Days in Range' : 
-                 timePeriod === 'weekly' ? 'Weeks in Range' : 
-                 'Months in Range'}
-              </p>
-              <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold text-text-primary`}>
-                {selectedRange.data.length}
-              </p>
-            </div>
-            <div className="bg-background rounded p-2">
-              <p className="text-text-muted text-xs">
-                {timePeriod === 'daily' ? 'Daily Average' : 
-                 timePeriod === 'weekly' ? 'Weekly Average' : 
-                 'Monthly Average'}
-              </p>
-              <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold text-primary`}>
-                {Math.round(((showUkraine ? selectedRange.ukraineTotal : 0) + (showRussia ? selectedRange.russiaTotal : 0)) / selectedRange.data.length).toLocaleString()}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Legend */}
       <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs">

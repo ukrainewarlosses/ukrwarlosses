@@ -450,7 +450,7 @@ const DesktopChartMemo = memo(function DesktopChart({
     <div className="relative">
       <div className="relative">
         {isSelectingDesktop && (
-          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10 bg-primary text-background px-3 py-1 rounded-full text-xs font-medium">
+          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-30 bg-primary text-background px-3 py-1 rounded-full text-xs font-medium">
             Click on chart to set end point
             <button onClick={cancelSelection} className="ml-2 text-background/80 hover:text-background">✕</button>
           </div>
@@ -1864,7 +1864,7 @@ export default function ChartEnhanced() {
         <div className="relative">
           {/* Desktop selection status */}
           {isSelectingDesktop && (
-            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-30
                             bg-primary text-background px-3 py-1 rounded-full text-xs font-medium">
               Click on chart to set end point
               <button 
@@ -2083,6 +2083,13 @@ export default function ChartEnhanced() {
     );
   }
 
+  // Handler to clear tooltip when mouse leaves the chart container
+  const handleChartContainerMouseLeave = () => {
+    // Always clear tooltip when leaving the container, regardless of pinned state
+    setHoverInfo(null);
+    setIsHoverInfoPinned(false);
+  };
+
   return (
     <div className="w-full">
       {/* Period selector */}
@@ -2175,10 +2182,14 @@ export default function ChartEnhanced() {
       </p>
 
       {/* Chart */}
-      <div className="rounded-lg border border-border-color p-2 md:p-4 relative" style={{ backgroundColor: '#1B1B1C' }}>
+      <div 
+        className="rounded-lg border border-border-color p-2 md:p-4 relative" 
+        style={{ backgroundColor: '#1B1B1C' }}
+        onMouseLeave={handleChartContainerMouseLeave}
+      >
         {/* Hover Tooltip - Above Chart */}
         {hoverInfo && hoverInfo.data && (
-          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-20 bg-card-bg border border-border-color rounded-lg px-4 py-2 shadow-lg flex items-center gap-3 text-sm">
+          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-20 bg-card-bg border border-border-color rounded-lg px-4 py-2 shadow-lg flex items-center gap-3 text-sm pointer-events-none">
             <span className="text-text-primary font-medium">
               📅 {(() => {
                 const dateStr = hoverInfo.label || hoverInfo.data.date;

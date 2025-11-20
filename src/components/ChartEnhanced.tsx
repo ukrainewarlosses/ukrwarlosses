@@ -2180,7 +2180,17 @@ export default function ChartEnhanced() {
         {hoverInfo && hoverInfo.data && (
           <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-20 bg-card-bg border border-border-color rounded-lg px-4 py-2 shadow-lg flex items-center gap-3 text-sm">
             <span className="text-text-primary font-medium">
-              Date: {hoverInfo.label || hoverInfo.data.date}
+              📅 {(() => {
+                const dateStr = hoverInfo.label || hoverInfo.data.date;
+                if (timePeriod === 'weekly') {
+                  const [year, week] = dateStr.split('-W');
+                  if (year && week) {
+                    const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                    return `Week of ${weekStart.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+                  }
+                }
+                return dateStr;
+              })()}
             </span>
             {showRussia && (
               <div className="flex items-center gap-1">

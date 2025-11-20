@@ -111,51 +111,73 @@ const MobileChartMemo = memo(function MobileChart({
     return Math.max(0, Math.min(xMax, index));
   };
 
-  const handleTouchStart = useCallback((e: React.TouchEvent<SVGSVGElement>) => {
-    e.preventDefault();
-    const touch = e.touches[0];
-    const rect = svgRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    const x = touch.clientX - rect.left;
-    if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
-      const touchIndex = xToIndex(x);
-      const touchedData = data[touchIndex];
-      const ukrainePeriod = touchedData.ukraineTotal || 0;
-      const russiaPeriod = touchedData.russiaDeaths || 0;
-      const ukraineCumulative = touchedData.ukraineTotalCumulative || 0;
-      const russiaCumulative = touchedData.russiaTotalCumulative || 0;
-      const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
-      const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
-      setHoverInfo({ data: touchedData, label: touchedData.date, periodRatio, cumulativeRatio });
-      setCurrentHoverIndex(touchIndex);
-      if (isSettingRange && rangeStartIndex !== null) setRangeEndIndex(touchIndex);
-    }
-  }, [data, innerWidth, isSettingRange, rangeStartIndex]);
+  // Use native event listeners to avoid passive event listener warning
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
 
-  const handleTouchMove = useCallback((e: React.TouchEvent<SVGSVGElement>) => {
-    e.preventDefault();
-    const touch = e.touches[0];
-    const rect = svgRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    const x = touch.clientX - rect.left;
-    if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
-      const touchIndex = xToIndex(x);
-      const touchedData = data[touchIndex];
-      const ukrainePeriod = touchedData.ukraineTotal || 0;
-      const russiaPeriod = touchedData.russiaDeaths || 0;
-      const ukraineCumulative = touchedData.ukraineTotalCumulative || 0;
-      const russiaCumulative = touchedData.russiaTotalCumulative || 0;
-      const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
-      const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
-      setHoverInfo({ data: touchedData, label: touchedData.date, periodRatio, cumulativeRatio });
-      setCurrentHoverIndex(touchIndex);
-      if (isSettingRange && rangeStartIndex !== null) setRangeEndIndex(touchIndex);
-    }
-  }, [data, innerWidth, isSettingRange, rangeStartIndex]);
+    const handleTouchStart = (e: TouchEvent) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = svg.getBoundingClientRect();
+      if (!rect) return;
+      const x = touch.clientX - rect.left;
+      if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
+        const touchIndex = xToIndex(x);
+        const touchedData = data[touchIndex];
+        const ukrainePeriod = touchedData.ukraineTotal || 0;
+        const russiaPeriod = touchedData.russiaDeaths || 0;
+        const ukraineCumulative = touchedData.ukraineTotalCumulative || 0;
+        const russiaCumulative = touchedData.russiaTotalCumulative || 0;
+        const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
+        const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
+        setHoverInfo({ data: touchedData, label: touchedData.date, periodRatio, cumulativeRatio });
+        setCurrentHoverIndex(touchIndex);
+        if (isSettingRange && rangeStartIndex !== null) setRangeEndIndex(touchIndex);
+      }
+    };
 
-  const handleTouchEnd = useCallback((e: React.TouchEvent<SVGSVGElement>) => {
-    e.preventDefault();
-  }, []);
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = svg.getBoundingClientRect();
+      if (!rect) return;
+      const x = touch.clientX - rect.left;
+      if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
+        const touchIndex = xToIndex(x);
+        const touchedData = data[touchIndex];
+        const ukrainePeriod = touchedData.ukraineTotal || 0;
+        const russiaPeriod = touchedData.russiaDeaths || 0;
+        const ukraineCumulative = touchedData.ukraineTotalCumulative || 0;
+        const russiaCumulative = touchedData.russiaTotalCumulative || 0;
+        const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
+        const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
+        setHoverInfo({ data: touchedData, label: touchedData.date, periodRatio, cumulativeRatio });
+        setCurrentHoverIndex(touchIndex);
+        if (isSettingRange && rangeStartIndex !== null) setRangeEndIndex(touchIndex);
+      }
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+
+    const handleTouchCancel = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+
+    svg.addEventListener('touchstart', handleTouchStart, { passive: false });
+    svg.addEventListener('touchmove', handleTouchMove, { passive: false });
+    svg.addEventListener('touchend', handleTouchEnd, { passive: false });
+    svg.addEventListener('touchcancel', handleTouchCancel, { passive: false });
+
+    return () => {
+      svg.removeEventListener('touchstart', handleTouchStart);
+      svg.removeEventListener('touchmove', handleTouchMove);
+      svg.removeEventListener('touchend', handleTouchEnd);
+      svg.removeEventListener('touchcancel', handleTouchCancel);
+    };
+  }, [data, innerWidth, isSettingRange, rangeStartIndex, margin.left, X_PAD, xToIndex, setHoverInfo, setCurrentHoverIndex, setRangeEndIndex]);
 
   const getHoverLine = () => {
     if (currentHoverIndex !== null && !isSettingRange) {
@@ -182,10 +204,6 @@ const MobileChartMemo = memo(function MobileChart({
         ref={svgRef}
         width={width}
         height={height}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        onTouchCancel={handleTouchEnd}
         style={{ touchAction: 'none', userSelect: 'none', WebkitUserSelect: 'none' }}
       >
         {[0, 1, 2, 3, 4, 5].map(i => (
@@ -295,10 +313,92 @@ const MobileChartMemo = memo(function MobileChart({
             <line x1={xScale(Math.min(rangeStartIndex, rangeEndIndex))} y1={margin.top + innerHeight / 2} x2={xScale(Math.max(rangeStartIndex, rangeEndIndex))} y2={margin.top + innerHeight / 2} stroke="#d4a574" strokeWidth="3" opacity="0.7" />
           </>
         )}
+        {/* Mobile hover info text inside chart */}
+        {currentHoverIndex !== null && !isSettingRange && data[currentHoverIndex] && (() => {
+          const hoverData = data[currentHoverIndex];
+          const infoX = margin.left + 5;
+          const infoY = margin.top + 12;
+          const lineHeight = 12;
+          
+          // Calculate line positions
+          let currentY = infoY;
+          const lines: Array<{y: number, content: JSX.Element}> = [];
+          
+          // Date line
+          lines.push({
+            y: currentY,
+            content: (
+              <text key="date" x={infoX} y={currentY} fill="#d4a574" fontSize="10" fontWeight="bold">
+                {hoverData.date}
+              </text>
+            )
+          });
+          currentY += lineHeight;
+          
+          // Ukraine line
+          if (showUkraine) {
+            lines.push({
+              y: currentY,
+              content: (
+                <g key="ua">
+                  <text x={infoX} y={currentY} fill="#0057B7" fontSize="9" fontWeight="bold">UA:</text>
+                  <text x={infoX + 25} y={currentY} fill="#a0aec0" fontSize="9">
+                    {(hoverData.ukraineTotal || 0).toLocaleString()}
+                  </text>
+                </g>
+              )
+            });
+            currentY += lineHeight;
+          }
+          
+          // Russia line
+          if (showRussia) {
+            lines.push({
+              y: currentY,
+              content: (
+                <g key="ru">
+                  <text x={infoX} y={currentY} fill="#DA291C" fontSize="9" fontWeight="bold">RU:</text>
+                  <text x={infoX + 25} y={currentY} fill="#a0aec0" fontSize="9">
+                    {(hoverData.russiaDeaths || 0).toLocaleString()}
+                  </text>
+                </g>
+              )
+            });
+          }
+          
+          const totalHeight = lines.length * lineHeight + 6;
+          // Calculate width based on content - ensure it fits the numbers
+          const maxWidth = Math.max(
+            120,
+            Math.max(
+              (hoverData.ukraineTotal || 0).toLocaleString().length * 6,
+              (hoverData.russiaDeaths || 0).toLocaleString().length * 6
+            ) + 30
+          );
+          
+          return (
+            <g>
+              {/* Background rectangle */}
+              <rect
+                x={infoX - 3}
+                y={infoY - 10}
+                width={maxWidth}
+                height={totalHeight}
+                fill="#1b1b1b"
+                fillOpacity="0.85"
+                stroke="#d4a574"
+                strokeWidth="1"
+                rx="3"
+              />
+              {/* All text lines */}
+              {lines.map(line => line.content)}
+            </g>
+          );
+        })()}
       </svg>
 
-      {/* Hide buttons on mobile since we have the Date Range Slider */}
-      <div className="mt-3 flex flex-col items-center gap-2 hidden md:flex">
+      {/* Range selection buttons - visible on mobile */}
+      <div className="mt-3 flex flex-col items-center gap-2">
         {!isSettingRange ? (
           <button
             onClick={() => {
@@ -310,14 +410,14 @@ const MobileChartMemo = memo(function MobileChart({
               }
             }}
             disabled={currentHoverIndex === null}
-            className="px-3 py-1.5 bg-primary text-background rounded text-sm font-medium hover:bg-primary/80 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
+            className="px-3 py-1.5 bg-primary text-background rounded text-xs md:text-sm font-medium hover:bg-primary/80 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
           >
             Set Range Start
           </button>
         ) : (
           <div className="flex flex-col items-center gap-2">
             <div className="text-center">
-              <p className="text-sm text-text-muted mb-2">
+              <p className="text-xs md:text-sm text-text-muted mb-1 md:mb-2">
                 Range: {(() => {
                   const startDate = data[rangeStartIndex!]?.date;
                   const endDate = data[rangeEndIndex!]?.date;
@@ -333,7 +433,7 @@ const MobileChartMemo = memo(function MobileChart({
                   }
                 })()}
               </p>
-              <p className="text-sm text-primary font-medium">Move finger to adjust end point, then confirm below</p>
+              <p className="text-xs md:text-sm text-primary font-medium">Move finger to adjust end point, then confirm below</p>
             </div>
             <div className="flex gap-2">
               <button
@@ -349,13 +449,13 @@ const MobileChartMemo = memo(function MobileChart({
                   setRangeEndIndex(null);
                   setCurrentHoverIndex(null);
                 }}
-                className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white rounded text-sm font-medium transition-colors"
+                className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white rounded text-xs md:text-sm font-medium transition-colors"
               >
                 Set Range End
               </button>
               <button
                 onClick={() => { setIsSettingRange(false); setRangeStartIndex(null); setRangeEndIndex(null); setCurrentHoverIndex(null); }}
-                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm"
+                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs md:text-sm"
               >
                 Cancel
               </button>
@@ -533,16 +633,16 @@ const DesktopChartMemo = memo(function DesktopChart({
               <ReferenceArea yAxisId="period" x1={refAreaLeft} x2={refAreaRight} strokeOpacity={0.3} fill="#d4a574" fillOpacity={0.3} />
             )}
             {showUkraine && (
-              <Line yAxisId="period" type="monotone" dataKey="ukraineTotal" stroke="#0057B7" strokeWidth={2} opacity={0.8} name="Ukraine Period" dot={timePeriod === 'monthly' ? { fill: '#0057B7', r: 3 } : false} activeDot={{ r: 5 }} />
+              <Line yAxisId="period" type="monotone" dataKey="ukraineTotal" stroke="#0057B7" strokeWidth={2} opacity={0.8} name="Ukraine Period" dot={timePeriod === 'monthly' ? { fill: '#0057B7', r: 3 } : false} activeDot={{ r: 5 }} isAnimationActive={!isSelectingDesktop} />
             )}
             {showRussia && (
-              <Line yAxisId="period" type="monotone" dataKey="russiaDeaths" stroke="#DA291C" strokeWidth={2} opacity={0.8} name="Russia Period" dot={timePeriod === 'monthly' ? { fill: '#DA291C', r: 3 } : false} activeDot={{ r: 5 }} />
+              <Line yAxisId="period" type="monotone" dataKey="russiaDeaths" stroke="#DA291C" strokeWidth={2} opacity={0.8} name="Russia Period" dot={timePeriod === 'monthly' ? { fill: '#DA291C', r: 3 } : false} activeDot={{ r: 5 }} isAnimationActive={!isSelectingDesktop} />
             )}
             {showUkraine && (
-              <Line yAxisId="cumulative" type="monotone" dataKey="ukraineTotalCumulative" stroke="#0057B7" strokeWidth={3} strokeDasharray="6 4" name="Ukraine Cumulative" dot={false} activeDot={{ r: 6 }} />
+              <Line yAxisId="cumulative" type="monotone" dataKey="ukraineTotalCumulative" stroke="#0057B7" strokeWidth={3} strokeDasharray="6 4" name="Ukraine Cumulative" dot={false} activeDot={{ r: 6 }} isAnimationActive={!isSelectingDesktop} />
             )}
             {showRussia && (
-              <Line yAxisId="cumulative" type="monotone" dataKey="russiaTotalCumulative" stroke="#DA291C" strokeWidth={3} strokeDasharray="6 4" name="Russia Cumulative" dot={false} activeDot={{ r: 6 }} />
+              <Line yAxisId="cumulative" type="monotone" dataKey="russiaTotalCumulative" stroke="#DA291C" strokeWidth={3} strokeDasharray="6 4" name="Russia Cumulative" dot={false} activeDot={{ r: 6 }} isAnimationActive={!isSelectingDesktop} />
             )}
           </LineChart>
         </ResponsiveContainer>
@@ -911,7 +1011,7 @@ export default function ChartEnhanced() {
     const monthName = timePeriod === 'monthly' ? formatMonthName(info.label) : '';
     
     return (
-      <div className="mt-4 p-3 bg-card-bg border border-border-color rounded-lg relative">
+      <div className={`${isMobile ? 'mt-2 p-2' : 'mt-4 p-3'} bg-card-bg border border-border-color rounded-lg relative ${isMobile ? 'max-h-[40vh] overflow-y-auto' : ''}`}>
         {!isMobile && onClose && (
           <button
             onClick={onClose}
@@ -925,8 +1025,8 @@ export default function ChartEnhanced() {
             </svg>
           </button>
         )}
-        <div className="text-center mb-3">
-          <p className="text-text-primary font-semibold text-base">
+        <div className={`text-center ${isMobile ? 'mb-2' : 'mb-3'}`}>
+          <p className={`text-text-primary font-semibold ${isMobile ? 'text-sm' : 'text-base'}`}>
             {timePeriod === 'daily' ? `Daily Data - ${info.label}` : 
              timePeriod === 'weekly' ? (() => {
                const [year, week] = info.label.split('-W');
@@ -939,27 +1039,29 @@ export default function ChartEnhanced() {
              })() : 
              monthName || `Monthly Data - ${info.label}`}
           </p>
-          <p className="text-text-muted text-sm">
-            {timePeriod === 'daily' ? 'Losses recorded on this date' :
-             timePeriod === 'weekly' ? 'Losses recorded during this week' :
-             'Losses recorded during this month'}
-          </p>
+          {!isMobile && (
+            <p className="text-text-muted text-sm">
+              {timePeriod === 'daily' ? 'Losses recorded on this date' :
+               timePeriod === 'weekly' ? 'Losses recorded during this week' :
+               'Losses recorded during this month'}
+            </p>
+          )}
         </div>
         
         {/* Desktop/Mobile responsive layout */}
-        <div className={`${isMobile ? 'flex gap-3' : 'flex gap-4'} mb-3`}>
+        <div className={`${isMobile ? 'flex gap-2' : 'flex gap-4'} ${isMobile ? 'mb-2' : 'mb-3'}`}>
           {/* Ukraine Data */}
           {showUkraine && (
             <div className="flex-1">
-              <div className="flex items-center gap-1 mb-2">
+              <div className={`flex items-center gap-1 ${isMobile ? 'mb-1' : 'mb-2'}`}>
                 <div className="ukraine-flag"></div>
-                <p className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`} style={{ color: '#0057B7' }}>
+                <p className={`font-semibold ${isMobile ? 'text-xs' : 'text-base'}`} style={{ color: '#0057B7' }}>
                   {isMobile ? 'UA' : 'Ukraine'}
                 </p>
               </div>
-              <div className={`space-y-1 ${isMobile ? 'text-sm' : 'text-base'}`}>
+              <div className={`${isMobile ? 'space-y-0.5' : 'space-y-1'} ${isMobile ? 'text-xs' : 'text-base'}`}>
                 <p className="text-text-muted">
-                  <span className="font-medium">Total Fatalities:</span> {(info.data.ukraineTotal || 0).toLocaleString()}
+                  <span className="font-medium">Total:</span> {(info.data.ukraineTotal || 0).toLocaleString()}
                 </p>
                 {!isMobile && (
                   <>
@@ -972,8 +1074,8 @@ export default function ChartEnhanced() {
                   </>
                 )}
                 <div className="border-t border-border-color pt-1 mt-1">
-                  <p className={`text-text-primary font-semibold ${isMobile ? 'text-sm' : 'text-base'}`}>
-                    Total: {(info.data.ukraineTotalCumulative || 0).toLocaleString()}
+                  <p className={`text-text-primary font-semibold ${isMobile ? 'text-xs' : 'text-base'}`}>
+                    Cumulative: {(info.data.ukraineTotalCumulative || 0).toLocaleString()}
                   </p>
                 </div>
               </div>
@@ -988,19 +1090,19 @@ export default function ChartEnhanced() {
           {/* Russia Data */}
           {showRussia && (
             <div className="flex-1">
-              <div className="flex items-center gap-1 mb-2">
+              <div className={`flex items-center gap-1 ${isMobile ? 'mb-1' : 'mb-2'}`}>
                 <div className="russia-flag"></div>
-                <p className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`} style={{ color: '#DA291C' }}>
+                <p className={`font-semibold ${isMobile ? 'text-xs' : 'text-base'}`} style={{ color: '#DA291C' }}>
                   {isMobile ? 'RU' : 'Russia'}
                 </p>
               </div>
-              <div className={`space-y-1 ${isMobile ? 'text-sm' : 'text-base'}`}>
+              <div className={`${isMobile ? 'space-y-0.5' : 'space-y-1'} ${isMobile ? 'text-xs' : 'text-base'}`}>
                 <p className="text-text-muted">
-                  <span className="font-medium">Total Fatalities:</span> {(info.data.russiaDeaths || 0).toLocaleString()}
+                  <span className="font-medium">Total:</span> {(info.data.russiaDeaths || 0).toLocaleString()}
                 </p>
                 <div className="border-t border-border-color pt-1 mt-1">
-                  <p className={`text-text-primary font-semibold ${isMobile ? 'text-sm' : 'text-base'}`}>
-                    Total: {(info.data.russiaTotalCumulative || 0).toLocaleString()}
+                  <p className={`text-text-primary font-semibold ${isMobile ? 'text-xs' : 'text-base'}`}>
+                    Cumulative: {(info.data.russiaTotalCumulative || 0).toLocaleString()}
                   </p>
                 </div>
               </div>
@@ -1010,12 +1112,12 @@ export default function ChartEnhanced() {
         
         {/* Ratios */}
         {showUkraine && showRussia && (
-          <div className="border-t border-border-color pt-2">
-            <p className={`text-text-muted ${isMobile ? 'text-xs' : 'text-sm'} mb-1 text-center`}>
+          <div className={`border-t border-border-color ${isMobile ? 'pt-1' : 'pt-2'}`}>
+            <p className={`text-text-muted ${isMobile ? 'text-xs' : 'text-sm'} ${isMobile ? 'mb-0.5' : 'mb-1'} text-center`}>
               {timePeriod === 'monthly' && monthName ? monthName : 'Loss Ratio'}
             </p>
-            <div className="bg-background rounded p-3 border border-border-color text-center">
-              <span className="text-primary font-bold text-lg flex items-center justify-center gap-2">
+            <div className={`bg-background rounded ${isMobile ? 'p-2' : 'p-3'} border border-border-color text-center`}>
+              <span className={`text-primary font-bold ${isMobile ? 'text-sm' : 'text-lg'} flex items-center justify-center gap-2`}>
                 <div className="russia-flag"></div>
                 {periodRatio.left} : {periodRatio.right}
                 <div className="ukraine-flag"></div>
@@ -1241,92 +1343,90 @@ export default function ChartEnhanced() {
       return Math.max(0, Math.min(xMax, index));
     };
 
-    // Touch event handlers - memoized to prevent re-renders
-    const handleTouchStart = useCallback((e: React.TouchEvent<SVGSVGElement>) => {
-      e.preventDefault(); // Prevent scrolling
-      const touch = e.touches[0];
-      const rect = svgRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      
-      const x = touch.clientX - rect.left;
-      
-      if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
-        const touchIndex = xToIndex(x);
-        const touchedData = data[touchIndex];
-        
-        // Update corner info with touched data
-        const ukrainePeriod = touchedData.ukraineTotal || 0;
-        const russiaPeriod = touchedData.russiaDeaths || 0;
-        const ukraineCumulative = touchedData.ukraineTotalCumulative || 0;
-        const russiaCumulative = touchedData.russiaTotalCumulative || 0;
-        
-        const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
-        const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
-        
-        setHoverInfo({
-          data: touchedData,
-          label: touchedData.date,
-          periodRatio,
-          cumulativeRatio
-        });
-        
-        // Update hover index for preview line
-        setCurrentHoverIndex(touchIndex);
-        
-        // If in range setting mode, update end point
-        if (isSettingRange && rangeStartIndex !== null) {
-          setRangeEndIndex(touchIndex);
-        }
-      }
-    }, [data, margin, innerWidth, xToIndex, isSettingRange, rangeStartIndex]);
+    // Use native event listeners to avoid passive event listener warning
+    useEffect(() => {
+      const svg = svgRef.current;
+      if (!svg) return;
 
-    const handleTouchMove = useCallback((e: React.TouchEvent<SVGSVGElement>) => {
-      e.preventDefault(); // Prevent scrolling
-      
-      const touch = e.touches[0];
-      const rect = svgRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      
-      const x = touch.clientX - rect.left;
-      
-      if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
-        const touchIndex = xToIndex(x);
-        const touchedData = data[touchIndex];
-        
-        // Update corner info with moved data
-        const ukrainePeriod = touchedData.ukraineTotal || 0;
-        const russiaPeriod = touchedData.russiaDeaths || 0;
-        const ukraineCumulative = touchedData.ukraineTotalCumulative || 0;
-        const russiaCumulative = touchedData.russiaTotalCumulative || 0;
-        
-        const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
-        const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
-        
-        setHoverInfo({
-          data: touchedData,
-          label: touchedData.date,
-          periodRatio,
-          cumulativeRatio
-        });
-        
-        // Update hover index for preview line
-        setCurrentHoverIndex(touchIndex);
-        
-        // If in range setting mode, update end point
-        if (isSettingRange && rangeStartIndex !== null) {
-          setRangeEndIndex(touchIndex);
+      const handleTouchStart = (e: TouchEvent) => {
+        e.preventDefault(); // Prevent scrolling
+        const touch = e.touches[0];
+        const rect = svg.getBoundingClientRect();
+        if (!rect) return;
+        const x = touch.clientX - rect.left;
+        if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
+          const touchIndex = xToIndex(x);
+          const touchedData = data[touchIndex];
+          const ukrainePeriod = touchedData.ukraineTotal || 0;
+          const russiaPeriod = touchedData.russiaDeaths || 0;
+          const ukraineCumulative = touchedData.ukraineTotalCumulative || 0;
+          const russiaCumulative = touchedData.russiaTotalCumulative || 0;
+          const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
+          const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
+          setHoverInfo({
+            data: touchedData,
+            label: touchedData.date,
+            periodRatio,
+            cumulativeRatio
+          });
+          setCurrentHoverIndex(touchIndex);
+          if (isSettingRange && rangeStartIndex !== null) {
+            setRangeEndIndex(touchIndex);
+          }
         }
-      }
-    }, [data, margin, innerWidth, xToIndex, isSettingRange, rangeStartIndex]);
+      };
 
-    const handleTouchEnd = useCallback((e: React.TouchEvent<SVGSVGElement>) => {
-      e.preventDefault();
-      
-      // Keep corner info visible (no timeout needed)
-      
-      // Keep hover line visible - don't clear currentHoverIndex
-      // It will be cleared when user touches elsewhere or clicks "Set Range Start"
-    }, []);
+      const handleTouchMove = (e: TouchEvent) => {
+        e.preventDefault(); // Prevent scrolling
+        const touch = e.touches[0];
+        const rect = svg.getBoundingClientRect();
+        if (!rect) return;
+        const x = touch.clientX - rect.left;
+        if (x >= margin.left && x <= margin.left + innerWidth - X_PAD) {
+          const touchIndex = xToIndex(x);
+          const touchedData = data[touchIndex];
+          const ukrainePeriod = touchedData.ukraineTotal || 0;
+          const russiaPeriod = touchedData.russiaDeaths || 0;
+          const ukraineCumulative = touchedData.ukraineTotalCumulative || 0;
+          const russiaCumulative = touchedData.russiaTotalCumulative || 0;
+          const periodRatio = ukrainePeriod > 0 ? (russiaPeriod / ukrainePeriod).toFixed(2) : '0';
+          const cumulativeRatio = ukraineCumulative > 0 ? (russiaCumulative / ukraineCumulative).toFixed(2) : '0';
+          setHoverInfo({
+            data: touchedData,
+            label: touchedData.date,
+            periodRatio,
+            cumulativeRatio
+          });
+          setCurrentHoverIndex(touchIndex);
+          if (isSettingRange && rangeStartIndex !== null) {
+            setRangeEndIndex(touchIndex);
+          }
+        }
+      };
+
+      const handleTouchEnd = (e: TouchEvent) => {
+        e.preventDefault();
+        // Keep corner info visible (no timeout needed)
+        // Keep hover line visible - don't clear currentHoverIndex
+        // It will be cleared when user touches elsewhere or clicks "Set Range Start"
+      };
+
+      const handleTouchCancel = (e: TouchEvent) => {
+        e.preventDefault();
+      };
+
+      svg.addEventListener('touchstart', handleTouchStart, { passive: false });
+      svg.addEventListener('touchmove', handleTouchMove, { passive: false });
+      svg.addEventListener('touchend', handleTouchEnd, { passive: false });
+      svg.addEventListener('touchcancel', handleTouchCancel, { passive: false });
+
+      return () => {
+        svg.removeEventListener('touchstart', handleTouchStart);
+        svg.removeEventListener('touchmove', handleTouchMove);
+        svg.removeEventListener('touchend', handleTouchEnd);
+        svg.removeEventListener('touchcancel', handleTouchCancel);
+      };
+    }, [data, margin, innerWidth, xToIndex, isSettingRange, rangeStartIndex, margin.left, X_PAD, setHoverInfo, setCurrentHoverIndex, setRangeEndIndex]);
 
     // Get hover line (like desktop)
     const getHoverLine = () => {
@@ -1365,10 +1465,6 @@ export default function ChartEnhanced() {
           ref={svgRef}
           width={width} 
           height={height}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onTouchCancel={handleTouchEnd}
           style={{ 
             touchAction: 'none',
             userSelect: 'none',
@@ -1858,7 +1954,10 @@ export default function ChartEnhanced() {
     };
 
 
-    const displayData = selectedRange ? selectedRange.data : chartData;
+    // Memoize displayData to prevent unnecessary chart re-renders when only selection state changes
+    const displayData = useMemo(() => {
+      return selectedRange ? selectedRange.data : chartData;
+    }, [selectedRange, chartData]);
 
     return (
       <div className="relative">
@@ -2024,6 +2123,7 @@ export default function ChartEnhanced() {
             name="Ukraine Period"
             dot={timePeriod === 'monthly' ? { fill: '#0057B7', r: 3 } : false}
             activeDot={{ r: 5 }}
+            isAnimationActive={!isSelectingDesktop}
           />
         )}
         
@@ -2038,6 +2138,7 @@ export default function ChartEnhanced() {
             name="Russia Period"
             dot={timePeriod === 'monthly' ? { fill: '#DA291C', r: 3 } : false}
             activeDot={{ r: 5 }}
+            isAnimationActive={!isSelectingDesktop}
           />
         )}
         
@@ -2053,6 +2154,7 @@ export default function ChartEnhanced() {
             name="Ukraine Cumulative"
             dot={false}
             activeDot={{ r: 6 }}
+            isAnimationActive={!isSelectingDesktop}
           />
         )}
         
@@ -2067,6 +2169,7 @@ export default function ChartEnhanced() {
             name="Russia Cumulative"
             dot={false}
             activeDot={{ r: 6 }}
+            isAnimationActive={!isSelectingDesktop}
           />
         )}
         </LineChart>
@@ -2188,8 +2291,8 @@ export default function ChartEnhanced() {
         style={{ backgroundColor: '#1B1B1C' }}
         onMouseLeave={handleChartContainerMouseLeave}
       >
-        {/* Hover Tooltip - Above Chart */}
-        {hoverInfo && hoverInfo.data && (
+        {/* Hover Tooltip - Above Chart (Desktop only) */}
+        {!isMobile && hoverInfo && hoverInfo.data && (
           <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-20 bg-card-bg border border-border-color rounded-lg px-4 py-2 shadow-lg flex items-center gap-3 text-sm pointer-events-none">
             <span className="text-text-primary font-medium">
               📅 {(() => {
@@ -2306,7 +2409,9 @@ export default function ChartEnhanced() {
                     document.addEventListener('mouseup', handleMouseUp);
                   }}
                   onTouchStart={(e) => {
-                    e.preventDefault();
+                    if (e.cancelable) {
+                      e.preventDefault();
+                    }
                     setIsDraggingSlider('start');
                     const sliderContainer = e.currentTarget.parentElement?.parentElement;
                     if (!sliderContainer) return;
@@ -2363,7 +2468,9 @@ export default function ChartEnhanced() {
                     document.addEventListener('mouseup', handleMouseUp);
                   }}
                   onTouchStart={(e) => {
-                    e.preventDefault();
+                    if (e.cancelable) {
+                      e.preventDefault();
+                    }
                     setIsDraggingSlider('end');
                     const sliderContainer = e.currentTarget.parentElement?.parentElement;
                     if (!sliderContainer) return;
@@ -2654,9 +2761,10 @@ export default function ChartEnhanced() {
         )}
         
         {/* Dynamic Data Display - Inside chart component, under the chart and range slider */}
-        <div className={isMobile ? 'order-3' : ''}>
+        {/* Show HoverInfoDisplay for selectedRange on all devices, and for hoverInfo on desktop only */}
+        <div className="order-3">
           <HoverInfoDisplay 
-            info={hoverInfo}
+            info={selectedRange ? null : (isMobile ? null : hoverInfo)}
             timePeriod={timePeriod}
             showUkraine={showUkraine}
             showRussia={showRussia}

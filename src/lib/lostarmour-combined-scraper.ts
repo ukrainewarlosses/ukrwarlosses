@@ -44,7 +44,7 @@ export class LostArmourCombinedScraper {
     console.log('🚀 Starting Lost Armour Combined Ukraine scraping...');
     console.log(`📋 Mode: ${this.config.testMode ? 'TEST' : 'PRODUCTION'}`);
     
-    const allRecords: CombinedUkraineRecord[] = [];
+    let allRecords: CombinedUkraineRecord[] = [];
     
     try {
       // 1. Scrape Deaths Data
@@ -76,7 +76,8 @@ export class LostArmourCombinedScraper {
         estimatedDeathDate: record.deathDate
       }));
       
-      allRecords.push(...combinedDeaths);
+      // Use concat instead of spread to avoid stack overflow with large arrays
+      allRecords = allRecords.concat(combinedDeaths);
       console.log(`📊 Added ${combinedDeaths.length} death records to combined dataset`);
       
       // 2. Scrape Missing Persons Data
@@ -99,7 +100,8 @@ export class LostArmourCombinedScraper {
         estimatedDeathDate: record.estimatedDeathDate || record.missingDate
       }));
       
-      allRecords.push(...combinedMissing);
+      // Use concat instead of spread to avoid stack overflow with large arrays
+      allRecords = allRecords.concat(combinedMissing);
       console.log(`📊 Added ${combinedMissing.length} missing records to combined dataset`);
       
       // 3. Summary

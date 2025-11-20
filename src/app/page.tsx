@@ -152,6 +152,16 @@ export default function HomePage() {
       <div className="container">
         <Hero />
 
+        {/* Methodology Note */}
+        <section className="py-6">
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 sm:p-6">
+            <p className="text-sm sm:text-base text-yellow-900 dark:text-yellow-100 leading-relaxed">
+              <span className="text-lg mr-2">⚠️</span>
+              <strong>Methodology Note:</strong> Casualty figures are compiled from publicly available sources including obituaries, social media reports, and official announcements. Each death is certified with the name and death date as well as social media link to funeral/obituary. These figures represent the minimum number of confirmed fatalities. Actual figures may be higher due to unreported casualties and classification restrictions.
+            </p>
+          </div>
+        </section>
+
         {/* Killed and Missing Personnel Overview */}
         <section id="overview" className="py-8">
           <h2 className="text-2xl font-bold text-text-primary mb-6">

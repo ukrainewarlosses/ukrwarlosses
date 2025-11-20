@@ -1,48 +1,43 @@
 #!/usr/bin/env tsx
 
-import { createLostArmourCombinedScraper } from '../src/lib/lostarmour-combined-scraper';
+import { createRussiaCasualtiesScraper } from '../src/lib/russia-casualties-scraper';
 import { execSync } from 'child_process';
 import fs from 'fs/promises';
 import path from 'path';
 
-async function runUkraineLostArmourProduction() {
-  console.log('🚀 Starting Ukraine Lost Armour Production Pipeline...\n');
+async function runRussiaProduction() {
+  console.log('🇷🇺 Starting Russia Casualties Production Pipeline...\n');
   
   const startTime = Date.now();
   
   try {
-    // Step 1: Scrape both deaths and missing persons from Lost Armour
-    console.log('📊 STEP 1: Scraping Ukrainian casualties from Lost Armour...');
-    console.log('   - Deaths: https://lostarmour.info/panel/next/api/public/ukr200/search');
-    console.log('   - Missing: https://lostarmour.info/panel/next/api/public/ukr-mia/search');
+    // Step 1: Scrape Russian casualties
+    console.log('📊 STEP 1: Scraping Russian casualties from svo.rf.gd...');
     
-    const scraper = createLostArmourCombinedScraper({
-      delayBetweenRequests: 1500, // Be respectful to their API
+    const scraper = createRussiaCasualtiesScraper({
+      delayBetweenRequests: 2000, // Be respectful to their server
       maxRetries: 3,
       enableCaching: true,
-      testMode: false // Full production mode
+      maxPages: undefined // Scrape all pages
     });
     
-    const combinedRecords = await scraper.scrapeAllData();
+    const allRecords = await scraper.scrapeAllPages();
     
-    // Generate summary
-    scraper.generateSummary(combinedRecords);
-    
-    // Save combined data
-    const savedPath = await scraper.saveToFile(combinedRecords);
+    // Save raw data
+    const savedPath = await scraper.saveToFile(allRecords);
     
     const scrapingTime = (Date.now() - startTime) / 1000;
     console.log(`✅ Step 1 completed: Scraping successful!`);
     console.log(`⏱️  Scraping time: ${(scrapingTime / 60).toFixed(1)} minutes`);
-    console.log(`📊 Total records: ${combinedRecords.length.toLocaleString()}`);
+    console.log(`📊 Total records: ${allRecords.length.toLocaleString()}`);
     console.log(`💾 Data saved: ${savedPath}`);
     
     // Step 2: Deduplicate the data
-    console.log('\n📊 STEP 2: Deduplicating Ukrainian data...');
+    console.log('\n📊 STEP 2: Deduplicating Russian data...');
     const dedupeStartTime = Date.now();
     
     try {
-      execSync('npx tsx scripts/deduplicate-ukraine-lostarmour.ts', {
+      execSync('npx tsx scripts/deduplicate-russia-data.ts', {
         stdio: 'inherit',
         cwd: process.cwd()
       });
@@ -57,15 +52,12 @@ async function runUkraineLostArmourProduction() {
       // Continue with compilation even if deduplication fails
     }
     
-    // Step 3: Compile DAILY data from deduplicated records
-    console.log('\n📊 STEP 3: Compiling DAILY data from deduplicated records...');
+    // Step 3: Compile DAILY data
+    console.log('\n📊 STEP 3: Compiling DAILY data...');
     const dailyCompileStartTime = Date.now();
     
     try {
-      const deduplicatedPath = path.join(process.cwd(), 'src', 'data', 'ukraine', 'soldiers.json');
-      await fs.access(deduplicatedPath);
-      
-      execSync('npx tsx scripts/compile-ukraine-daily.ts --input=src/data/ukraine/soldiers.json', {
+      execSync('npx tsx scripts/compile-russia-daily.ts', {
         stdio: 'inherit',
         cwd: process.cwd()
       });
@@ -80,12 +72,12 @@ async function runUkraineLostArmourProduction() {
       throw error;
     }
     
-    // Step 4: Compile WEEKLY data from daily compiled data
+    // Step 4: Compile WEEKLY data from daily data
     console.log('\n📊 STEP 4: Compiling WEEKLY data from daily data...');
     const weeklyCompileStartTime = Date.now();
     
     try {
-      execSync('npx tsx scripts/compile-ukraine-weekly-from-daily.ts', {
+      execSync('npx tsx scripts/compile-russia-weekly-from-daily.ts', {
         stdio: 'inherit',
         cwd: process.cwd()
       });
@@ -100,12 +92,12 @@ async function runUkraineLostArmourProduction() {
       throw error;
     }
     
-    // Step 5: Compile MONTHLY data from daily compiled data
+    // Step 5: Compile MONTHLY data from daily data
     console.log('\n📊 STEP 5: Compiling MONTHLY data from daily data...');
     const monthlyCompileStartTime = Date.now();
     
     try {
-      execSync('npx tsx scripts/compile-ukraine-monthly-from-daily.ts', {
+      execSync('npx tsx scripts/compile-russia-monthly-from-daily.ts', {
         stdio: 'inherit',
         cwd: process.cwd()
       });
@@ -120,25 +112,20 @@ async function runUkraineLostArmourProduction() {
       throw error;
     }
     
-    // Step 5: Summary and next steps
+    // Step 4: Summary
     const totalTime = (Date.now() - startTime) / 1000;
-    console.log('\n🎉 UKRAINE LOST ARMOUR PRODUCTION PIPELINE COMPLETED!');
+    console.log('\n🎉 RUSSIA CASUALTIES PRODUCTION PIPELINE COMPLETED!');
     console.log(`⏱️  Total time: ${(totalTime / 60).toFixed(1)} minutes`);
-    
-    console.log('\n📊 RESULTS:');
-    console.log(`   Raw records: ${combinedRecords.length.toLocaleString()}`);
-    console.log(`   Deaths: ${combinedRecords.filter(r => r.recordType === 'death').length.toLocaleString()}`);
-    console.log(`   Missing: ${combinedRecords.filter(r => r.recordType === 'missing').length.toLocaleString()}`);
+    console.log(`📊 Total records scraped: ${allRecords.length.toLocaleString()}`);
     
     // Check for generated files
-    const dataDir = path.join(process.cwd(), 'src', 'data', 'ukraine');
+    const dataDir = path.join(process.cwd(), 'src', 'data', 'russia');
     const files = await fs.readdir(dataDir);
     
     console.log('\n📁 Generated files:');
     const relevantFiles = files.filter(f => 
-      f.includes('soldiers-raw.json') || 
-      f.includes('soldiers.json') || 
-      f.includes('monthly-')
+      f.includes('casualties') || 
+      f.includes('monthly')
     );
     
     for (const file of relevantFiles) {
@@ -147,12 +134,6 @@ async function runUkraineLostArmourProduction() {
       const sizeMB = (stats.size / 1024 / 1024).toFixed(1);
       console.log(`   ${file} (${sizeMB} MB)`);
     }
-    
-    console.log('\n🎯 NEXT STEPS:');
-    console.log('   1. The chart will now use the new Lost Armour data');
-    console.log('   2. Data is much cleaner with no duplicates from website glitches');
-    console.log('   3. Missing persons are now properly categorized');
-    console.log('   4. Run "npm run dev" to see updated charts');
     
     console.log('\n✅ Production pipeline completed successfully!');
     
@@ -173,4 +154,5 @@ process.on('SIGTERM', () => {
   process.exit(1);
 });
 
-runUkraineLostArmourProduction();
+runRussiaProduction();
+

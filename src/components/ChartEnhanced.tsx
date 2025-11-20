@@ -343,6 +343,7 @@ type DesktopChartProps = {
   setSelectedRange: (range: any) => void;
   setIsHoverInfoPinned: (pinned: boolean) => void;
   isHoverInfoPinned: boolean;
+  setActiveFilter?: (filter: string | number | null) => void;
 };
 
 const DesktopChartMemo = memo(function DesktopChart({
@@ -354,7 +355,8 @@ const DesktopChartMemo = memo(function DesktopChart({
   setHoverInfo,
   setSelectedRange,
   setIsHoverInfoPinned,
-  isHoverInfoPinned
+  isHoverInfoPinned,
+  setActiveFilter
 }: DesktopChartProps) {
   const [refAreaLeft, setRefAreaLeft] = useState<string>('');
   const [refAreaRight, setRefAreaRight] = useState<string>('');
@@ -537,9 +539,12 @@ export default function ChartEnhanced() {
   const [sliderStart, setSliderStart] = useState<number>(0);
   const [sliderEnd, setSliderEnd] = useState<number>(100);
   const [isDraggingSlider, setIsDraggingSlider] = useState<'start' | 'end' | null>(null);
+  
+  // Active filter state (year number or battle name)
+  const [activeFilter, setActiveFilter] = useState<string | number | null>(null);
 
   // Memoized hover info display component to prevent chart re-renders
-  const HoverInfoDisplay = memo(({ info, timePeriod, showUkraine, showRussia, isMobile, onClose, selectedRange, chartData, handleManualDateChange, handleResetRange, convertMonthDisplayToInput, convertMonthInputToDisplay }: {
+  const HoverInfoDisplay = memo(({ info, timePeriod, showUkraine, showRussia, isMobile, onClose, selectedRange, chartData, handleManualDateChange, handleResetRange, convertMonthDisplayToInput, convertMonthInputToDisplay, activeFilter }: {
     info: any;
     timePeriod: TimePeriod;
     showUkraine: boolean;
@@ -552,6 +557,7 @@ export default function ChartEnhanced() {
     handleResetRange?: () => void;
     convertMonthDisplayToInput?: (displayMonth: string) => string;
     convertMonthInputToDisplay?: (inputMonth: string) => string;
+    activeFilter?: string | number | null;
   }) => {
     // If selectedRange exists, show range analysis instead of single date info
     if (selectedRange) {
@@ -594,7 +600,14 @@ export default function ChartEnhanced() {
           )}
           
           <div className="text-center mb-3">
-            <p className="text-primary font-medium text-base mb-1">Selected Range Analysis</p>
+            <p className="text-primary font-medium text-base mb-1">
+              Selected Range Analysis
+              {activeFilter && (
+                <span className="text-text-muted font-normal">
+                  {' '}({typeof activeFilter === 'number' ? `Year ${activeFilter}` : `Battle of ${activeFilter}`})
+                </span>
+              )}
+            </p>
             <p className="text-text-muted text-sm mb-2">
               {timePeriod === 'weekly' ? `${formatWeekDate(selectedRange.start)} to ${formatWeekDate(selectedRange.end)}` : `${selectedRange.start} to ${selectedRange.end}`}
             </p>
@@ -715,24 +728,59 @@ export default function ChartEnhanced() {
             )}
           </div>
           
-          {/* Range Stats Grid */}
+          {/* Range Stats Grid - Period Totals */}
+          <div className="mb-3">
+            <p className="text-text-muted text-sm font-medium mb-2">Period Totals (in selected range)</p>
+            <div className={`grid gap-2 ${showUkraine && showRussia ? 'grid-cols-2' : 'grid-cols-1'}`}>
+              {showUkraine && (
+                <div className="bg-background rounded p-2">
+                  <p className="text-text-muted text-sm">Ukraine Total</p>
+                  <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#0057B7' }}>
+                    {selectedRange.ukraineTotal?.toLocaleString()}
+                  </p>
+                </div>
+              )}
+              {showRussia && (
+                <div className="bg-background rounded p-2">
+                  <p className="text-text-muted text-sm">Russia Total</p>
+                  <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#DA291C' }}>
+                    {selectedRange.russiaTotal?.toLocaleString()}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Cumulative Totals at End of Range */}
+          {selectedRange.data && selectedRange.data.length > 0 && (() => {
+            const lastDataPoint = selectedRange.data[selectedRange.data.length - 1];
+            return (
+              <div className="mb-3">
+                <p className="text-text-muted text-sm font-medium mb-2">Cumulative Totals (at end of range)</p>
+                <div className={`grid gap-2 ${showUkraine && showRussia ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                  {showUkraine && (
+                    <div className="bg-background rounded p-2">
+                      <p className="text-text-muted text-sm">Ukraine Cumulative</p>
+                      <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#0057B7' }}>
+                        {(lastDataPoint.ukraineTotalCumulative || 0).toLocaleString()}
+                      </p>
+                    </div>
+                  )}
+                  {showRussia && (
+                    <div className="bg-background rounded p-2">
+                      <p className="text-text-muted text-sm">Russia Cumulative</p>
+                      <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#DA291C' }}>
+                        {(lastDataPoint.russiaTotalCumulative || 0).toLocaleString()}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* Additional Stats */}
           <div className={`grid gap-2 ${showUkraine && showRussia ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-3'} mb-3`}>
-            {showUkraine && (
-              <div className="bg-background rounded p-2">
-                <p className="text-text-muted text-sm">Ukraine Total</p>
-                <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#0057B7' }}>
-                  {selectedRange.ukraineTotal?.toLocaleString()}
-                </p>
-              </div>
-            )}
-            {showRussia && (
-              <div className="bg-background rounded p-2">
-                <p className="text-text-muted text-sm">Russia Total</p>
-                <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#DA291C' }}>
-                  {selectedRange.russiaTotal?.toLocaleString()}
-                </p>
-              </div>
-            )}
             <div className="bg-background rounded p-2">
               <p className="text-text-muted text-sm">
                 {timePeriod === 'daily' ? 'Days in Range' : 
@@ -980,6 +1028,8 @@ export default function ChartEnhanced() {
       // Reset slider for all time periods
       setSliderStart(0);
       setSliderEnd(100);
+      // Clear active filter when time period changes
+      setActiveFilter(null);
     }
     
     setLoading(false);
@@ -1063,6 +1113,9 @@ export default function ChartEnhanced() {
       russiaTotal
     });
     
+    // Clear active filter when manually changing dates
+    setActiveFilter(null);
+    
     // Sync slider with manual date changes (for daily data)
     if (timePeriod === 'daily' && chartData.length > 0) {
       const startIndex = chartData.findIndex(d => d.date >= startDate);
@@ -1089,6 +1142,11 @@ export default function ChartEnhanced() {
         ukraineTotal,
         russiaTotal
       });
+      
+      // Clear active filter when resetting
+      setActiveFilter(null);
+      setSliderStart(0);
+      setSliderEnd(100);
     }
   };
 
@@ -1709,13 +1767,18 @@ export default function ChartEnhanced() {
             russiaTotal
           });
           
+          // Clear filter when range is selected via chart clicks
+          if (setActiveFilter) {
+            setActiveFilter(null);
+          }
+          
           // Reset selection state
           setRefAreaLeft('');
           setRefAreaRight('');
           setIsSelectingDesktop(false);
         }
       }
-    }, [isSelectingDesktop, refAreaLeft, chartData, showUkraine, showRussia]);
+    }, [isSelectingDesktop, refAreaLeft, chartData, showUkraine, showRussia, setSelectedRange, setActiveFilter]);
 
     // Handle chart hover to update corner info - memoized to prevent re-renders
     const handleChartMouseMove = useCallback((data: any) => {
@@ -2135,6 +2198,7 @@ export default function ChartEnhanced() {
                   };
                   const handleMouseUp = () => {
                     setIsDraggingSlider(null);
+                    setActiveFilter(null); // Clear filter when manually dragging slider
                     document.removeEventListener('mousemove', handleMouseMove);
                     document.removeEventListener('mouseup', handleMouseUp);
                   };
@@ -2157,6 +2221,7 @@ export default function ChartEnhanced() {
                   };
                   const handleTouchEnd = () => {
                     setIsDraggingSlider(null);
+                    setActiveFilter(null); // Clear filter when manually dragging slider
                     document.removeEventListener('touchmove', handleTouchMove);
                     document.removeEventListener('touchend', handleTouchEnd);
                   };
@@ -2190,6 +2255,7 @@ export default function ChartEnhanced() {
                   };
                   const handleMouseUp = () => {
                     setIsDraggingSlider(null);
+                    setActiveFilter(null); // Clear filter when manually dragging slider
                     document.removeEventListener('mousemove', handleMouseMove);
                     document.removeEventListener('mouseup', handleMouseUp);
                   };
@@ -2212,6 +2278,7 @@ export default function ChartEnhanced() {
                   };
                   const handleTouchEnd = () => {
                     setIsDraggingSlider(null);
+                    setActiveFilter(null); // Clear filter when manually dragging slider
                     document.removeEventListener('touchmove', handleTouchMove);
                     document.removeEventListener('touchend', handleTouchEnd);
                   };
@@ -2428,6 +2495,7 @@ export default function ChartEnhanced() {
                           if (range) {
                             setSliderStart(range.startPercent);
                             setSliderEnd(range.endPercent);
+                            setActiveFilter(year);
                           }
                         }}
                         className="px-3 py-1.5 text-sm bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
@@ -2439,6 +2507,7 @@ export default function ChartEnhanced() {
                       onClick={() => {
                         setSliderStart(0);
                         setSliderEnd(100);
+                        setActiveFilter(null);
                       }}
                       className="px-3 py-1.5 text-sm bg-primary text-background rounded hover:bg-primary/80 transition-colors font-medium"
                     >
@@ -2455,6 +2524,7 @@ export default function ChartEnhanced() {
                           if (range) {
                             setSliderStart(range.startPercent);
                             setSliderEnd(range.endPercent);
+                            setActiveFilter(name);
                           }
                         }}
                         className="px-3 py-1.5 text-sm bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
@@ -2493,6 +2563,7 @@ export default function ChartEnhanced() {
             setSelectedRange={setSelectedRange}
             setIsHoverInfoPinned={setIsHoverInfoPinned}
             isHoverInfoPinned={isHoverInfoPinned}
+            setActiveFilter={setActiveFilter}
           />
         )}
         
@@ -2509,6 +2580,7 @@ export default function ChartEnhanced() {
           handleResetRange={handleResetRange}
           convertMonthDisplayToInput={convertMonthDisplayToInput}
           convertMonthInputToDisplay={convertMonthInputToDisplay}
+          activeFilter={activeFilter}
           onClose={!isMobile ? () => {
             setIsHoverInfoPinned(false);
             setHoverInfo(null);

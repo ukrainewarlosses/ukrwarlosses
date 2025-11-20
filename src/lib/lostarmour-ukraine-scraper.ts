@@ -97,7 +97,7 @@ async function fetchWithRetry(url: string, maxRetries: number): Promise<LostArmo
 }
 
 async function scrapeLetterPages(letter: string, config: LostArmourScraperConfig, recordType: 'death' | 'missing' = 'death'): Promise<LostArmourUkraineRecord[]> {
-  const allRecords: LostArmourUkraineRecord[] = [];
+  let allRecords: LostArmourUkraineRecord[] = [];
   let currentPage = 1;
   let hasMorePages = true;
   
@@ -114,7 +114,8 @@ async function scrapeLetterPages(letter: string, config: LostArmourScraperConfig
       if (response.items && response.items.length > 0) {
         // Add recordType to each item
         const itemsWithType = response.items.map(item => ({ ...item, recordType }));
-        allRecords.push(...itemsWithType);
+        // Use concat instead of spread to avoid stack overflow with large arrays
+        allRecords = allRecords.concat(itemsWithType);
         console.log(`  📄 Page ${currentPage}: ${response.items.length} records (total so far: ${allRecords.length})`);
         
         // Check if there are more pages
@@ -156,7 +157,7 @@ export class LostArmourUkraineScraper {
     console.log(`📋 Will scrape ${UKRAINIAN_LETTERS.length} letters from BOTH deaths (ukr200) and missing (ukr_mia) endpoints`);
     console.log(`⏱️  Delay between requests: ${this.config.delayBetweenRequests}ms`);
     
-    const allRecords: LostArmourUkraineRecord[] = [];
+    let allRecords: LostArmourUkraineRecord[] = [];
     
     // PHASE 1: Scrape deaths (ukr200)
     console.log('\n═══════════════════════════════════════════');
@@ -170,7 +171,8 @@ export class LostArmourUkraineScraper {
       
       try {
         const letterRecords = await scrapeLetterPages(letter, this.config, 'death');
-        allRecords.push(...letterRecords);
+        // Use concat instead of spread to avoid stack overflow with large arrays
+        allRecords = allRecords.concat(letterRecords);
         
         console.log(`✅ Letter "${letter}" (deaths) completed: ${letterRecords.length} records`);
         console.log(`📊 Running total: ${allRecords.length} records`);
@@ -201,7 +203,8 @@ export class LostArmourUkraineScraper {
       
       try {
         const letterRecords = await scrapeLetterPages(letter, this.config, 'missing');
-        allRecords.push(...letterRecords);
+        // Use concat instead of spread to avoid stack overflow with large arrays
+        allRecords = allRecords.concat(letterRecords);
         
         console.log(`✅ Letter "${letter}" (missing) completed: ${letterRecords.length} records`);
         console.log(`📊 Running total: ${allRecords.length} records`);

@@ -276,14 +276,14 @@ const MobileChartMemo = memo(function MobileChart({
               }
             }}
             disabled={currentHoverIndex === null}
-            className="px-3 py-1.5 bg-primary text-background rounded text-xs font-medium hover:bg-primary/80 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
+            className="px-3 py-1.5 bg-primary text-background rounded text-sm font-medium hover:bg-primary/80 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
           >
             Set Range Start
           </button>
         ) : (
           <div className="flex flex-col items-center gap-2">
             <div className="text-center">
-              <p className="text-xs text-text-muted mb-2">
+              <p className="text-sm text-text-muted mb-2">
                 Range: {(() => {
                   const startDate = data[rangeStartIndex!]?.date;
                   const endDate = data[rangeEndIndex!]?.date;
@@ -299,7 +299,7 @@ const MobileChartMemo = memo(function MobileChart({
                   }
                 })()}
               </p>
-              <p className="text-xs text-primary font-medium">Move finger to adjust end point, then confirm below</p>
+              <p className="text-sm text-primary font-medium">Move finger to adjust end point, then confirm below</p>
             </div>
             <div className="flex gap-2">
               <button
@@ -315,13 +315,13 @@ const MobileChartMemo = memo(function MobileChart({
                   setRangeEndIndex(null);
                   setCurrentHoverIndex(null);
                 }}
-                className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white rounded text-xs font-medium transition-colors"
+                className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white rounded text-sm font-medium transition-colors"
               >
                 Set Range End
               </button>
               <button
                 onClick={() => { setIsSettingRange(false); setRangeStartIndex(null); setRangeEndIndex(null); setCurrentHoverIndex(null); }}
-                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs"
+                className="px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm"
               >
                 Cancel
               </button>
@@ -594,8 +594,8 @@ export default function ChartEnhanced() {
           )}
           
           <div className="text-center mb-3">
-            <p className="text-primary font-medium text-sm mb-1">Selected Range Analysis</p>
-            <p className="text-text-muted text-xs mb-2">
+            <p className="text-primary font-medium text-base mb-1">Selected Range Analysis</p>
+            <p className="text-text-muted text-sm mb-2">
               {timePeriod === 'weekly' ? `${formatWeekDate(selectedRange.start)} to ${formatWeekDate(selectedRange.end)}` : `${selectedRange.start} to ${selectedRange.end}`}
             </p>
             
@@ -603,25 +603,25 @@ export default function ChartEnhanced() {
             {timePeriod === 'daily' && handleManualDateChange && (
               <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-center">
                 <div className="flex items-center gap-2">
-                  <label className="text-text-muted text-xs">From:</label>
+                  <label className="text-text-muted text-sm">From:</label>
                   <input
                     type="date"
                     value={selectedRange.start}
                     min="2022-02-23"
                     max={chartData && chartData.length > 0 ? chartData[chartData.length - 1]?.date || "2025-12-31" : "2025-12-31"}
                     onChange={(e) => handleManualDateChange(e.target.value, selectedRange.end)}
-                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="px-2 py-1 text-sm bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
                 <div className="flex items-center gap-2">
-                  <label className="text-text-muted text-xs">To:</label>
+                  <label className="text-text-muted text-sm">To:</label>
                   <input
                     type="date"
                     value={selectedRange.end}
                     min="2022-02-23"
                     max={chartData && chartData.length > 0 ? chartData[chartData.length - 1]?.date || "2025-12-31" : "2025-12-31"}
                     onChange={(e) => handleManualDateChange(selectedRange.start, e.target.value)}
-                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="px-2 py-1 text-sm bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
               </div>
@@ -630,11 +630,11 @@ export default function ChartEnhanced() {
             {timePeriod === 'weekly' && handleManualDateChange && chartData && (
               <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-center">
                 <div className="flex items-center gap-2">
-                  <label className="text-text-muted text-xs">From:</label>
+                  <label className="text-text-muted text-sm">From:</label>
                   <select
                     value={selectedRange.start}
                     onChange={(e) => handleManualDateChange(e.target.value, selectedRange.end)}
-                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="px-2 py-1 text-sm bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
                   >
                     {chartData.map((item) => {
                       const [year, week] = item.date.split('-W');
@@ -653,11 +653,11 @@ export default function ChartEnhanced() {
                   </select>
                 </div>
                 <div className="flex items-center gap-2">
-                  <label className="text-text-muted text-xs">To:</label>
+                  <label className="text-text-muted text-sm">To:</label>
                   <select
                     value={selectedRange.end}
                     onChange={(e) => handleManualDateChange(selectedRange.start, e.target.value)}
-                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="px-2 py-1 text-sm bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
                   >
                     {chartData.map((item) => {
                       const [year, week] = item.date.split('-W');
@@ -681,25 +681,25 @@ export default function ChartEnhanced() {
             {timePeriod === 'monthly' && handleManualDateChange && convertMonthDisplayToInput && convertMonthInputToDisplay && chartData && (
               <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-center">
                 <div className="flex items-center gap-2">
-                  <label className="text-text-muted text-xs">From:</label>
+                  <label className="text-text-muted text-sm">From:</label>
                   <input
                     type="month"
                     value={convertMonthDisplayToInput(selectedRange.start)}
                     min="2022-02"
                     max={convertMonthDisplayToInput(chartData[chartData.length - 1]?.date) || "2025-12"}
                     onChange={(e) => handleManualDateChange(convertMonthInputToDisplay(e.target.value), selectedRange.end)}
-                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="px-2 py-1 text-sm bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
                 <div className="flex items-center gap-2">
-                  <label className="text-text-muted text-xs">To:</label>
+                  <label className="text-text-muted text-sm">To:</label>
                   <input
                     type="month"
                     value={convertMonthDisplayToInput(selectedRange.end)}
                     min="2022-02"
                     max={convertMonthDisplayToInput(chartData[chartData.length - 1]?.date) || "2025-12"}
                     onChange={(e) => handleManualDateChange(selectedRange.start, convertMonthInputToDisplay(e.target.value))}
-                    className="px-2 py-1 text-xs bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
+                    className="px-2 py-1 text-sm bg-background border border-border-color rounded focus:outline-none focus:ring-1 focus:ring-primary"
                   />
                 </div>
               </div>
@@ -708,7 +708,7 @@ export default function ChartEnhanced() {
             {handleResetRange && (
               <button 
                 onClick={handleResetRange}
-                className="mt-2 px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs whitespace-nowrap"
+                className="mt-2 px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm whitespace-nowrap"
               >
                 Reset to Full Range
               </button>
@@ -719,7 +719,7 @@ export default function ChartEnhanced() {
           <div className={`grid gap-2 ${showUkraine && showRussia ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-3'} mb-3`}>
             {showUkraine && (
               <div className="bg-background rounded p-2">
-                <p className="text-text-muted text-xs">Ukraine Total</p>
+                <p className="text-text-muted text-sm">Ukraine Total</p>
                 <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#0057B7' }}>
                   {selectedRange.ukraineTotal?.toLocaleString()}
                 </p>
@@ -727,14 +727,14 @@ export default function ChartEnhanced() {
             )}
             {showRussia && (
               <div className="bg-background rounded p-2">
-                <p className="text-text-muted text-xs">Russia Total</p>
+                <p className="text-text-muted text-sm">Russia Total</p>
                 <p className={`${isMobile ? 'text-lg' : 'text-2xl'} font-bold`} style={{ color: '#DA291C' }}>
                   {selectedRange.russiaTotal?.toLocaleString()}
                 </p>
               </div>
             )}
             <div className="bg-background rounded p-2">
-              <p className="text-text-muted text-xs">
+              <p className="text-text-muted text-sm">
                 {timePeriod === 'daily' ? 'Days in Range' : 
                  timePeriod === 'weekly' ? 'Weeks in Range' : 
                  'Months in Range'}
@@ -744,7 +744,7 @@ export default function ChartEnhanced() {
               </p>
             </div>
             <div className="bg-background rounded p-2">
-              <p className="text-text-muted text-xs">
+              <p className="text-text-muted text-sm">
                 {timePeriod === 'daily' ? 'Daily Average' : 
                  timePeriod === 'weekly' ? 'Weekly Average' : 
                  'Monthly Average'}
@@ -844,7 +844,7 @@ export default function ChartEnhanced() {
           </button>
         )}
         <div className="text-center mb-3">
-          <p className="text-text-primary font-semibold text-sm">
+          <p className="text-text-primary font-semibold text-base">
             {timePeriod === 'daily' ? `Daily Data - ${info.label}` : 
              timePeriod === 'weekly' ? (() => {
                const [year, week] = info.label.split('-W');
@@ -857,7 +857,7 @@ export default function ChartEnhanced() {
              })() : 
              monthName || `Monthly Data - ${info.label}`}
           </p>
-          <p className="text-text-muted text-xs">
+          <p className="text-text-muted text-sm">
             {timePeriod === 'daily' ? 'Losses recorded on this date' :
              timePeriod === 'weekly' ? 'Losses recorded during this week' :
              'Losses recorded during this month'}
@@ -871,11 +871,11 @@ export default function ChartEnhanced() {
             <div className="flex-1">
               <div className="flex items-center gap-1 mb-2">
                 <div className="ukraine-flag"></div>
-                <p className={`font-semibold ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ color: '#0057B7' }}>
+                <p className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`} style={{ color: '#0057B7' }}>
                   {isMobile ? 'UA' : 'Ukraine'}
                 </p>
               </div>
-              <div className={`space-y-1 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+              <div className={`space-y-1 ${isMobile ? 'text-sm' : 'text-base'}`}>
                 <p className="text-text-muted">
                   <span className="font-medium">Total Fatalities:</span> {(info.data.ukraineTotal || 0).toLocaleString()}
                 </p>
@@ -890,7 +890,7 @@ export default function ChartEnhanced() {
                   </>
                 )}
                 <div className="border-t border-border-color pt-1 mt-1">
-                  <p className={`text-text-primary font-semibold ${isMobile ? 'text-xs' : 'text-sm'}`}>
+                  <p className={`text-text-primary font-semibold ${isMobile ? 'text-sm' : 'text-base'}`}>
                     Total: {(info.data.ukraineTotalCumulative || 0).toLocaleString()}
                   </p>
                 </div>
@@ -908,16 +908,16 @@ export default function ChartEnhanced() {
             <div className="flex-1">
               <div className="flex items-center gap-1 mb-2">
                 <div className="russia-flag"></div>
-                <p className={`font-semibold ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ color: '#DA291C' }}>
+                <p className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`} style={{ color: '#DA291C' }}>
                   {isMobile ? 'RU' : 'Russia'}
                 </p>
               </div>
-              <div className={`space-y-1 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+              <div className={`space-y-1 ${isMobile ? 'text-sm' : 'text-base'}`}>
                 <p className="text-text-muted">
                   <span className="font-medium">Total Fatalities:</span> {(info.data.russiaDeaths || 0).toLocaleString()}
                 </p>
                 <div className="border-t border-border-color pt-1 mt-1">
-                  <p className={`text-text-primary font-semibold ${isMobile ? 'text-xs' : 'text-sm'}`}>
+                  <p className={`text-text-primary font-semibold ${isMobile ? 'text-sm' : 'text-base'}`}>
                     Total: {(info.data.russiaTotalCumulative || 0).toLocaleString()}
                   </p>
                 </div>
@@ -977,19 +977,17 @@ export default function ChartEnhanced() {
         russiaTotal
       });
       
-      // Reset slider for daily data
-      if (timePeriod === 'daily') {
-        setSliderStart(0);
-        setSliderEnd(100);
-      }
+      // Reset slider for all time periods
+      setSliderStart(0);
+      setSliderEnd(100);
     }
     
     setLoading(false);
   }, [timePeriod]);
   
-  // Update selected range when slider changes (for daily data)
+  // Update selected range when slider changes (for all time periods)
   useEffect(() => {
-    if (timePeriod === 'daily' && chartData.length > 0) {
+    if (chartData.length > 0) {
       const startIndex = Math.floor((sliderStart / 100) * chartData.length);
       const endIndex = Math.floor((sliderEnd / 100) * chartData.length);
       const clampedStartIndex = Math.max(0, Math.min(startIndex, chartData.length - 1));
@@ -2003,7 +2001,7 @@ export default function ChartEnhanced() {
         <div className="flex bg-card-bg rounded-lg p-1 border border-border-color">
           <button
             onClick={() => setTimePeriod('daily')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+            className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
               timePeriod === 'daily'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
@@ -2013,7 +2011,7 @@ export default function ChartEnhanced() {
           </button>
           <button
             onClick={() => setTimePeriod('weekly')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+            className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
               timePeriod === 'weekly'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
@@ -2023,7 +2021,7 @@ export default function ChartEnhanced() {
           </button>
           <button
             onClick={() => setTimePeriod('monthly')}
-            className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+            className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
               timePeriod === 'monthly'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
@@ -2081,20 +2079,20 @@ export default function ChartEnhanced() {
       </div>
 
       {/* Instructions */}
-      <p className="text-center text-text-muted text-xs mb-2">
+      <p className="text-center text-text-muted text-sm mb-2">
         {isMobile
           ? `Select a range: tap "Set Range Start", then move your finger to choose the end. Or change the ${timePeriod === 'daily' ? 'date' : timePeriod === 'weekly' ? 'week' : 'month'} inputs below.`
           : `Select a range: click once to set the start, then click again to set the end. Or change the ${timePeriod === 'daily' ? 'date' : timePeriod === 'weekly' ? 'week' : 'month'} inputs below.`}
       </p>
       
-      {/* Date Range Slider for Daily Data */}
-      {timePeriod === 'daily' && chartData.length > 0 && (
+      {/* Date Range Slider for All Time Periods */}
+      {chartData.length > 0 && (
         <div className="mb-4 p-4 bg-card-bg border border-border-color rounded-lg">
           <div className="mb-3">
-            <label className="text-text-primary text-sm font-medium mb-1 block">
-              Navigate Daily Data Range
+            <label className="text-text-primary text-base font-medium mb-1 block">
+              Navigate {timePeriod === 'daily' ? 'Daily' : timePeriod === 'weekly' ? 'Weekly' : 'Monthly'} Data Range
             </label>
-            <p className="text-text-muted text-xs">
+            <p className="text-text-muted text-sm">
               Drag the handles below to select a date range. The chart will automatically update to show the selected period.
             </p>
           </div>
@@ -2226,13 +2224,21 @@ export default function ChartEnhanced() {
             </div>
             
             {/* Date Labels */}
-            <div className="flex justify-between mt-3 text-xs">
+            <div className="flex justify-between mt-3 text-sm">
               <div className="text-text-muted">
                 <div className="font-medium text-text-primary">Start:</div>
                 <div>
                   {(() => {
                     const startIndex = Math.floor((sliderStart / 100) * chartData.length);
-                    return chartData[Math.max(0, Math.min(startIndex, chartData.length - 1))]?.date || '';
+                    const dateStr = chartData[Math.max(0, Math.min(startIndex, chartData.length - 1))]?.date || '';
+                    if (timePeriod === 'weekly') {
+                      const [year, week] = dateStr.split('-W');
+                      if (year && week) {
+                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                        return weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                      }
+                    }
+                    return dateStr;
                   })()}
                 </div>
               </div>
@@ -2241,31 +2247,91 @@ export default function ChartEnhanced() {
                 <div>
                   {(() => {
                     const endIndex = Math.floor((sliderEnd / 100) * chartData.length);
-                    return chartData[Math.max(0, Math.min(endIndex, chartData.length - 1))]?.date || '';
+                    const dateStr = chartData[Math.max(0, Math.min(endIndex, chartData.length - 1))]?.date || '';
+                    if (timePeriod === 'weekly') {
+                      const [year, week] = dateStr.split('-W');
+                      if (year && week) {
+                        const weekStart = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7);
+                        return weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                      }
+                    }
+                    return dateStr;
                   })()}
                 </div>
               </div>
             </div>
             
-            {/* Quick Range Buttons - By Year */}
+            {/* Quick Range Buttons - By Year and Battles */}
             <div className="flex flex-wrap gap-2 mt-4">
               {(() => {
+                // Helper function to parse date based on time period
+                const parseDate = (dateStr: string): Date | null => {
+                  if (timePeriod === 'daily') {
+                    return new Date(dateStr);
+                  } else if (timePeriod === 'weekly') {
+                    const [year, week] = dateStr.split('-W');
+                    if (!year || !week) return null;
+                    // Calculate the start of the week
+                    const jan1 = new Date(parseInt(year), 0, 1);
+                    const daysOffset = (parseInt(week) - 1) * 7;
+                    return new Date(jan1.getTime() + daysOffset * 24 * 60 * 60 * 1000);
+                  } else {
+                    // Monthly format: "Feb 2022" or "2022-02"
+                    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                    if (dateStr.includes('-')) {
+                      const [year, month] = dateStr.split('-');
+                      return new Date(parseInt(year), parseInt(month) - 1, 1);
+                    } else {
+                      const parts = dateStr.split(' ');
+                      if (parts.length === 2) {
+                        const monthIndex = monthNames.indexOf(parts[0]);
+                        if (monthIndex !== -1) {
+                          return new Date(parseInt(parts[1]), monthIndex, 1);
+                        }
+                      }
+                    }
+                    return null;
+                  }
+                };
+
+                // Helper function to compare dates based on time period
+                const compareDates = (dataDate: string, targetDate: Date, comparison: 'start' | 'end'): boolean => {
+                  const parsed = parseDate(dataDate);
+                  if (!parsed) return false;
+                  
+                  if (timePeriod === 'daily') {
+                    return comparison === 'start' 
+                      ? parsed >= targetDate 
+                      : parsed <= targetDate;
+                  } else if (timePeriod === 'weekly') {
+                    // For weekly, compare the week start date
+                    return comparison === 'start'
+                      ? parsed >= targetDate
+                      : parsed <= targetDate;
+                  } else {
+                    // For monthly, compare month/year
+                    return comparison === 'start'
+                      ? parsed >= targetDate
+                      : parsed <= targetDate;
+                  }
+                };
+
                 // Helper function to get year range
                 const getYearRange = (year: number) => {
-                  const yearStart = `${year}-01-01`;
-                  const yearEnd = `${year}-12-31`;
+                  const yearStart = new Date(year, 0, 1);
+                  const yearEnd = new Date(year, 11, 31);
                   
                   // Find first data point in this year
                   const startIndex = chartData.findIndex(d => {
-                    const dateYear = new Date(d.date).getFullYear();
-                    return dateYear >= year;
+                    const parsed = parseDate(d.date);
+                    return parsed && parsed >= yearStart;
                   });
                   
                   // Find first data point in next year (or end of data)
                   const endIndex = chartData.findIndex((d, idx) => {
                     if (idx <= startIndex) return false;
-                    const dateYear = new Date(d.date).getFullYear();
-                    return dateYear > year;
+                    const parsed = parseDate(d.date);
+                    return parsed && parsed > yearEnd;
                   });
                   
                   if (startIndex === -1) return null;
@@ -2281,15 +2347,80 @@ export default function ChartEnhanced() {
                     endPercent: ((actualEndIndex + 1) / chartData.length) * 100
                   };
                 };
+
+                // Helper function to get battle range
+                const getBattleRange = (startDateStr: string, endDateStr: string) => {
+                  const startDate = new Date(startDateStr);
+                  const endDate = new Date(endDateStr);
+                  
+                  // Helper to check if a period overlaps with battle range
+                  const periodOverlaps = (dataDate: string): boolean => {
+                    const parsed = parseDate(dataDate);
+                    if (!parsed) return false;
+                    
+                    if (timePeriod === 'daily') {
+                      return parsed >= startDate && parsed <= endDate;
+                    } else if (timePeriod === 'weekly') {
+                      // For weekly, check if the week overlaps with battle period
+                      // Week starts at parsed date, ends 6 days later
+                      const weekEnd = new Date(parsed);
+                      weekEnd.setDate(weekEnd.getDate() + 6);
+                      return parsed <= endDate && weekEnd >= startDate;
+                    } else {
+                      // For monthly, check if the month overlaps with battle period
+                      // Month starts at parsed date, ends at last day of month
+                      const monthEnd = new Date(parsed.getFullYear(), parsed.getMonth() + 1, 0);
+                      return parsed <= endDate && monthEnd >= startDate;
+                    }
+                  };
+                  
+                  // Find first data point that overlaps with battle period
+                  const startIndex = chartData.findIndex(d => periodOverlaps(d.date));
+                  
+                  // Find last data point that overlaps with battle period
+                  let actualEndIndex = -1;
+                  for (let i = chartData.length - 1; i >= 0; i--) {
+                    if (periodOverlaps(chartData[i].date)) {
+                      actualEndIndex = i;
+                      break;
+                    }
+                  }
+                  
+                  if (startIndex === -1 || actualEndIndex === -1) return null;
+                  
+                  // Ensure we have valid indices
+                  if (startIndex > actualEndIndex) return null;
+                  
+                  return {
+                    startPercent: (startIndex / chartData.length) * 100,
+                    endPercent: ((actualEndIndex + 1) / chartData.length) * 100
+                  };
+                };
                 
                 const years = [2022, 2023, 2024, 2025];
                 const yearRanges = years.map(year => ({
                   year,
                   range: getYearRange(year)
                 })).filter(item => item.range !== null);
+
+                // Battle definitions
+                const battles = [
+                  { name: 'Bakhmut', start: '2022-08-01', end: '2023-05-20' },
+                  { name: 'Ukraine Summer Offensive 2023', start: '2023-06-04', end: '2023-09-30' },
+                  { name: 'Avdiivka', start: '2023-10-10', end: '2024-02-17' },
+                  { name: 'Kursk Operation', start: '2024-08-06', end: '2025-03-31' }
+                ];
+                
+                const battleRanges = battles.map(battle => ({
+                  name: battle.name,
+                  range: getBattleRange(battle.start, battle.end)
+                })).filter(item => item.range !== null);
                 
                 return (
                   <>
+                    <div className="w-full mb-2">
+                      <span className="text-text-muted text-sm font-medium">Years:</span>
+                    </div>
                     {yearRanges.map(({ year, range }) => (
                       <button
                         key={year}
@@ -2299,7 +2430,7 @@ export default function ChartEnhanced() {
                             setSliderEnd(range.endPercent);
                           }
                         }}
-                        className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+                        className="px-3 py-1.5 text-sm bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
                       >
                         {year}
                       </button>
@@ -2309,10 +2440,29 @@ export default function ChartEnhanced() {
                         setSliderStart(0);
                         setSliderEnd(100);
                       }}
-                      className="px-3 py-1.5 text-xs bg-primary text-background rounded hover:bg-primary/80 transition-colors font-medium"
+                      className="px-3 py-1.5 text-sm bg-primary text-background rounded hover:bg-primary/80 transition-colors font-medium"
                     >
                       All Years
                     </button>
+                    
+                    <div className="w-full mt-3 mb-2">
+                      <span className="text-text-muted text-sm font-medium">Battles:</span>
+                    </div>
+                    {battleRanges.map(({ name, range }) => (
+                      <button
+                        key={name}
+                        onClick={() => {
+                          if (range) {
+                            setSliderStart(range.startPercent);
+                            setSliderEnd(range.endPercent);
+                          }
+                        }}
+                        className="px-3 py-1.5 text-sm bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+                        title={`${name}: ${battles.find(b => b.name === name)?.start} to ${battles.find(b => b.name === name)?.end}`}
+                      >
+                        {name}
+                      </button>
+                    ))}
                   </>
                 );
               })()}
@@ -2368,7 +2518,7 @@ export default function ChartEnhanced() {
 
 
       {/* Legend */}
-      <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs">
+      <div className="mt-4 flex flex-wrap justify-center gap-3 text-sm">
         {showUkraine && (
           <>
             <div className="flex items-center gap-1">

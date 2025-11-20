@@ -521,7 +521,7 @@ export default function ChartEnhanced() {
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const [timePeriod, setTimePeriod] = useState<TimePeriod>('daily');
+  const [timePeriod, setTimePeriod] = useState<TimePeriod>('monthly');
   const [selectedRange, setSelectedRange] = useState<any>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState<number | null>(null);
@@ -2063,14 +2063,14 @@ export default function ChartEnhanced() {
       <div className="flex justify-center mb-4">
         <div className="flex bg-card-bg rounded-lg p-1 border border-border-color">
           <button
-            onClick={() => setTimePeriod('daily')}
+            onClick={() => setTimePeriod('monthly')}
             className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-              timePeriod === 'daily'
+              timePeriod === 'monthly'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
             }`}
           >
-            Daily
+            Monthly
           </button>
           <button
             onClick={() => setTimePeriod('weekly')}
@@ -2083,14 +2083,14 @@ export default function ChartEnhanced() {
             Weekly
           </button>
           <button
-            onClick={() => setTimePeriod('monthly')}
+            onClick={() => setTimePeriod('daily')}
             className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-              timePeriod === 'monthly'
+              timePeriod === 'daily'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
             }`}
           >
-            Monthly
+            Daily
           </button>
         </div>
       </div>
@@ -2498,7 +2498,11 @@ export default function ChartEnhanced() {
                             setActiveFilter(year);
                           }
                         }}
-                        className="px-3 py-1.5 text-sm bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+                        className={`px-3 py-1.5 text-sm rounded transition-colors ${
+                          activeFilter === year
+                            ? 'bg-primary text-background font-medium'
+                            : 'bg-background border border-border-color hover:bg-gray-700'
+                        }`}
                       >
                         {year}
                       </button>
@@ -2509,7 +2513,11 @@ export default function ChartEnhanced() {
                         setSliderEnd(100);
                         setActiveFilter(null);
                       }}
-                      className="px-3 py-1.5 text-sm bg-primary text-background rounded hover:bg-primary/80 transition-colors font-medium"
+                      className={`px-3 py-1.5 text-sm rounded transition-colors font-medium ${
+                        activeFilter === null
+                          ? 'bg-primary text-background'
+                          : 'bg-background border border-border-color hover:bg-gray-700'
+                      }`}
                     >
                       All Years
                     </button>
@@ -2527,7 +2535,11 @@ export default function ChartEnhanced() {
                             setActiveFilter(name);
                           }
                         }}
-                        className="px-3 py-1.5 text-sm bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+                        className={`px-3 py-1.5 text-sm rounded transition-colors ${
+                          activeFilter === name
+                            ? 'bg-primary text-background font-medium'
+                            : 'bg-background border border-border-color hover:bg-gray-700'
+                        }`}
                         title={`${name}: ${battles.find(b => b.name === name)?.start} to ${battles.find(b => b.name === name)?.end}`}
                       >
                         {name}

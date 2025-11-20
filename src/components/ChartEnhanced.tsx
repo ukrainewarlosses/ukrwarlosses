@@ -50,7 +50,7 @@ const MobileChartMemo = memo(function MobileChart({
   }, []);
 
   const width = containerWidth;
-  const height = 350;
+  const height = timePeriod === 'daily' ? 450 : 350;
   const margin = { top: 20, right: 40, bottom: 55, left: 30 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
@@ -532,6 +532,11 @@ export default function ChartEnhanced() {
   // Unified hover info state for both desktop and mobile
   const [hoverInfo, setHoverInfo] = useState<any>(null);
   const [isHoverInfoPinned, setIsHoverInfoPinned] = useState<boolean>(false);
+  
+  // Slider state for daily data navigation
+  const [sliderStart, setSliderStart] = useState<number>(0);
+  const [sliderEnd, setSliderEnd] = useState<number>(100);
+  const [isDraggingSlider, setIsDraggingSlider] = useState<'start' | 'end' | null>(null);
 
   // Memoized hover info display component to prevent chart re-renders
   const HoverInfoDisplay = memo(({ info, timePeriod, showUkraine, showRussia, isMobile, onClose }: {
@@ -743,10 +748,41 @@ export default function ChartEnhanced() {
         ukraineTotal,
         russiaTotal
       });
+      
+      // Reset slider for daily data
+      if (timePeriod === 'daily') {
+        setSliderStart(0);
+        setSliderEnd(100);
+      }
     }
     
     setLoading(false);
   }, [timePeriod]);
+  
+  // Update selected range when slider changes (for daily data)
+  useEffect(() => {
+    if (timePeriod === 'daily' && chartData.length > 0) {
+      const startIndex = Math.floor((sliderStart / 100) * chartData.length);
+      const endIndex = Math.floor((sliderEnd / 100) * chartData.length);
+      const clampedStartIndex = Math.max(0, Math.min(startIndex, chartData.length - 1));
+      const clampedEndIndex = Math.max(0, Math.min(endIndex, chartData.length - 1));
+      
+      const start = Math.min(clampedStartIndex, clampedEndIndex);
+      const end = Math.max(clampedStartIndex, clampedEndIndex);
+      
+      const filteredData = chartData.slice(start, end + 1);
+      const ukraineTotal = filteredData.reduce((sum: number, d: ChartData) => sum + (showUkraine ? d.ukraineTotal : 0), 0);
+      const russiaTotal = filteredData.reduce((sum: number, d: ChartData) => sum + (showRussia ? d.russiaDeaths : 0), 0);
+      
+      setSelectedRange({
+        start: chartData[start].date,
+        end: chartData[end].date,
+        data: filteredData,
+        ukraineTotal,
+        russiaTotal
+      });
+    }
+  }, [sliderStart, sliderEnd, timePeriod, chartData, showUkraine, showRussia]);
 
   // Helper functions for month format conversion
   const convertMonthDisplayToInput = (displayMonth: string): string => {
@@ -800,6 +836,18 @@ export default function ChartEnhanced() {
       ukraineTotal,
       russiaTotal
     });
+    
+    // Sync slider with manual date changes (for daily data)
+    if (timePeriod === 'daily' && chartData.length > 0) {
+      const startIndex = chartData.findIndex(d => d.date >= startDate);
+      const endIndex = chartData.findIndex(d => d.date >= endDate);
+      if (startIndex !== -1 && endIndex !== -1) {
+        const newStart = (startIndex / chartData.length) * 100;
+        const newEnd = (endIndex / chartData.length) * 100;
+        setSliderStart(newStart);
+        setSliderEnd(newEnd);
+      }
+    }
   };
 
   // Handler for resetting to full range
@@ -846,7 +894,7 @@ export default function ChartEnhanced() {
     }, []);
 
     const width = containerWidth;
-    const height = 350;
+    const height = timePeriod === 'daily' ? 450 : 350;
     const margin = { top: 20, right: 40, bottom: 55, left: 30 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
@@ -1506,7 +1554,7 @@ export default function ChartEnhanced() {
             </div>
           )}
           
-          <ResponsiveContainer width="100%" height={400}>
+          <ResponsiveContainer width="100%" height={timePeriod === 'daily' ? 600 : 400}>
           <LineChart 
             data={displayData}
             onClick={handleChartClick}
@@ -1810,6 +1858,218 @@ export default function ChartEnhanced() {
           ? `Select a range: tap "Set Range Start", then move your finger to choose the end. Or change the ${timePeriod === 'daily' ? 'date' : timePeriod === 'weekly' ? 'week' : 'month'} inputs below.`
           : `Select a range: click once to set the start, then click again to set the end. Or change the ${timePeriod === 'daily' ? 'date' : timePeriod === 'weekly' ? 'week' : 'month'} inputs below.`}
       </p>
+      
+      {/* Date Range Slider for Daily Data */}
+      {timePeriod === 'daily' && chartData.length > 0 && (
+        <div className="mb-4 p-4 bg-card-bg border border-border-color rounded-lg">
+          <div className="mb-3">
+            <label className="text-text-primary text-sm font-medium mb-1 block">
+              Navigate Daily Data Range
+            </label>
+            <p className="text-text-muted text-xs">
+              Drag the handles below to select a date range. The chart will automatically update to show the selected period.
+            </p>
+          </div>
+          
+          <div className="relative py-2">
+            {/* Slider Track Container */}
+            <div className="relative h-8">
+              {/* Background Track */}
+              <div className="absolute top-3 left-0 right-0 h-2 bg-background rounded-full" />
+              
+              {/* Active Range Highlight */}
+              <div
+                className="absolute top-3 h-2 bg-primary rounded-full transition-all duration-150"
+                style={{
+                  left: `${sliderStart}%`,
+                  width: `${sliderEnd - sliderStart}%`
+                }}
+              />
+              
+              {/* Start Handle */}
+              <div
+                className="absolute top-0 cursor-pointer touch-none z-10"
+                style={{
+                  left: `calc(${sliderStart}% - 9px)`,
+                  width: '18px',
+                  height: '18px'
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  setIsDraggingSlider('start');
+                  const sliderContainer = e.currentTarget.parentElement?.parentElement;
+                  if (!sliderContainer) return;
+                  
+                  const handleMouseMove = (moveEvent: MouseEvent) => {
+                    const rect = sliderContainer.getBoundingClientRect();
+                    const percent = Math.max(0, Math.min(100, ((moveEvent.clientX - rect.left) / rect.width) * 100));
+                    if (percent < sliderEnd - 1) {
+                      setSliderStart(percent);
+                    }
+                  };
+                  const handleMouseUp = () => {
+                    setIsDraggingSlider(null);
+                    document.removeEventListener('mousemove', handleMouseMove);
+                    document.removeEventListener('mouseup', handleMouseUp);
+                  };
+                  document.addEventListener('mousemove', handleMouseMove);
+                  document.addEventListener('mouseup', handleMouseUp);
+                }}
+                onTouchStart={(e) => {
+                  e.preventDefault();
+                  setIsDraggingSlider('start');
+                  const sliderContainer = e.currentTarget.parentElement?.parentElement;
+                  if (!sliderContainer) return;
+                  
+                  const handleTouchMove = (moveEvent: TouchEvent) => {
+                    if (!moveEvent.touches[0]) return;
+                    const rect = sliderContainer.getBoundingClientRect();
+                    const percent = Math.max(0, Math.min(100, ((moveEvent.touches[0].clientX - rect.left) / rect.width) * 100));
+                    if (percent < sliderEnd - 1) {
+                      setSliderStart(percent);
+                    }
+                  };
+                  const handleTouchEnd = () => {
+                    setIsDraggingSlider(null);
+                    document.removeEventListener('touchmove', handleTouchMove);
+                    document.removeEventListener('touchend', handleTouchEnd);
+                  };
+                  document.addEventListener('touchmove', handleTouchMove, { passive: false });
+                  document.addEventListener('touchend', handleTouchEnd);
+                }}
+              >
+                <div className="w-4 h-4 bg-primary border-2 border-white rounded-full shadow-lg hover:scale-110 transition-transform" />
+              </div>
+              
+              {/* End Handle */}
+              <div
+                className="absolute top-0 cursor-pointer touch-none z-10"
+                style={{
+                  left: `calc(${sliderEnd}% - 9px)`,
+                  width: '18px',
+                  height: '18px'
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  setIsDraggingSlider('end');
+                  const sliderContainer = e.currentTarget.parentElement?.parentElement;
+                  if (!sliderContainer) return;
+                  
+                  const handleMouseMove = (moveEvent: MouseEvent) => {
+                    const rect = sliderContainer.getBoundingClientRect();
+                    const percent = Math.max(0, Math.min(100, ((moveEvent.clientX - rect.left) / rect.width) * 100));
+                    if (percent > sliderStart + 1) {
+                      setSliderEnd(percent);
+                    }
+                  };
+                  const handleMouseUp = () => {
+                    setIsDraggingSlider(null);
+                    document.removeEventListener('mousemove', handleMouseMove);
+                    document.removeEventListener('mouseup', handleMouseUp);
+                  };
+                  document.addEventListener('mousemove', handleMouseMove);
+                  document.addEventListener('mouseup', handleMouseUp);
+                }}
+                onTouchStart={(e) => {
+                  e.preventDefault();
+                  setIsDraggingSlider('end');
+                  const sliderContainer = e.currentTarget.parentElement?.parentElement;
+                  if (!sliderContainer) return;
+                  
+                  const handleTouchMove = (moveEvent: TouchEvent) => {
+                    if (!moveEvent.touches[0]) return;
+                    const rect = sliderContainer.getBoundingClientRect();
+                    const percent = Math.max(0, Math.min(100, ((moveEvent.touches[0].clientX - rect.left) / rect.width) * 100));
+                    if (percent > sliderStart + 1) {
+                      setSliderEnd(percent);
+                    }
+                  };
+                  const handleTouchEnd = () => {
+                    setIsDraggingSlider(null);
+                    document.removeEventListener('touchmove', handleTouchMove);
+                    document.removeEventListener('touchend', handleTouchEnd);
+                  };
+                  document.addEventListener('touchmove', handleTouchMove, { passive: false });
+                  document.addEventListener('touchend', handleTouchEnd);
+                }}
+              >
+                <div className="w-4 h-4 bg-primary border-2 border-white rounded-full shadow-lg hover:scale-110 transition-transform" />
+              </div>
+            </div>
+            
+            {/* Date Labels */}
+            <div className="flex justify-between mt-3 text-xs">
+              <div className="text-text-muted">
+                <div className="font-medium text-text-primary">Start:</div>
+                <div>
+                  {(() => {
+                    const startIndex = Math.floor((sliderStart / 100) * chartData.length);
+                    return chartData[Math.max(0, Math.min(startIndex, chartData.length - 1))]?.date || '';
+                  })()}
+                </div>
+              </div>
+              <div className="text-text-muted text-right">
+                <div className="font-medium text-text-primary">End:</div>
+                <div>
+                  {(() => {
+                    const endIndex = Math.floor((sliderEnd / 100) * chartData.length);
+                    return chartData[Math.max(0, Math.min(endIndex, chartData.length - 1))]?.date || '';
+                  })()}
+                </div>
+              </div>
+            </div>
+            
+            {/* Quick Range Buttons */}
+            <div className="flex flex-wrap gap-2 mt-4">
+              <button
+                onClick={() => {
+                  setSliderStart(0);
+                  setSliderEnd(25);
+                }}
+                className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+              >
+                First 25%
+              </button>
+              <button
+                onClick={() => {
+                  setSliderStart(25);
+                  setSliderEnd(50);
+                }}
+                className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+              >
+                25-50%
+              </button>
+              <button
+                onClick={() => {
+                  setSliderStart(50);
+                  setSliderEnd(75);
+                }}
+                className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+              >
+                50-75%
+              </button>
+              <button
+                onClick={() => {
+                  setSliderStart(75);
+                  setSliderEnd(100);
+                }}
+                className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+              >
+                Last 25%
+              </button>
+              <button
+                onClick={() => {
+                  setSliderStart(0);
+                  setSliderEnd(100);
+                }}
+                className="px-3 py-1.5 text-xs bg-primary text-background rounded hover:bg-primary/80 transition-colors font-medium"
+              >
+                Full Range
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Chart */}
       <div className="rounded-lg border border-border-color p-2 md:p-4" style={{ backgroundColor: '#1B1B1C' }}>

@@ -131,9 +131,14 @@ export default function MethodologyPage() {
                        <p className="text-text-light leading-relaxed mb-4">
              Our Ukraine-Russia war personnel losses tracking system employs a comprehensive methodology combining multi-source data compilation, rigorous verification processes, statistical analysis, and continuous quality control. We prioritize accuracy, transparency, and comprehensive coverage of both Ukrainian and Russian military casualties.
            </p>
-           <p className="text-text-light leading-relaxed">
+           <p className="text-text-light leading-relaxed mb-4">
              This methodology ensures that our data represents the most accurate and up-to-date assessment of personnel losses available from verified sources, while maintaining strict standards for data verification and statistical reliability.
            </p>
+           <div className="bg-yellow-900/20 border border-yellow-700/40 rounded-md p-4 mt-4">
+             <p className="text-text-light leading-relaxed">
+               <strong>⚠️ Methodology Note:</strong> Casualty figures are compiled from publicly available sources including obituaries, social media reports, and official announcements. Each death is certified with the name and death date as well as social media link to funeral/obituary. Each number represents a real documented death. No speculation. Numbers represent confirmed minimum losses and actual figures may be higher due to unreported casualties and classification restrictions.
+             </p>
+           </div>
           </div>
         </section>
 
@@ -213,6 +218,22 @@ export default function MethodologyPage() {
            </h2>
            
            <div className="space-y-6">
+             <div className="bg-green-900/20 border border-green-700/40 rounded-md p-4 mb-6">
+               <h3 className="text-xl font-semibold text-green-400 mb-3">
+                 ✅ Certification Requirements
+               </h3>
+               <p className="text-text-light leading-relaxed mb-3">
+                 Every single casualty entry in our database must meet strict certification standards. We maintain zero tolerance for speculation or unverified claims.
+               </p>
+               <ul className="text-sm text-text-light space-y-2">
+                 <li><strong>✓ Name Verification:</strong> Each death must include the full name of the deceased individual</li>
+                 <li><strong>✓ Death Date Certification:</strong> Every entry requires a confirmed date of death</li>
+                 <li><strong>✓ Source Documentation:</strong> Each casualty must have a social media link to funeral/obituary or official announcement</li>
+                 <li><strong>✓ Real Documented Deaths Only:</strong> Every number represents an actual, documented death - no estimates, no projections, no speculation</li>
+                 <li><strong>✓ Zero Speculation Policy:</strong> We do not include any figures that cannot be directly traced to a verified source with name, date, and documentation link</li>
+               </ul>
+             </div>
+             
              <div>
                <h3 className="text-xl font-semibold text-primary mb-3">
                  Multi-Source Data Compilation
@@ -442,3 +463,4 @@ export default function MethodologyPage() {
     </main>
   );
 }
+

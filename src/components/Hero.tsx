@@ -17,19 +17,19 @@ export default function Hero() {
           
           {/* Collaboration Section */}
           <div className="mt-6 pt-6 border-t border-border-color/30">
-            <p className="text-sm text-text-muted mb-4 text-center md:text-left">
+            <p className="text-sm text-text-muted mb-5 text-center md:text-left">
               A collaboration between
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6">
               {/* History Legends */}
               <a 
                 href="https://www.youtube.com/@historylegends" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 group transition-all hover:scale-105 active:scale-95"
+                className="flex items-center gap-3 group transition-all hover:scale-105 active:scale-95 sm:flex-shrink-0"
                 title="History Legends on YouTube"
               >
-                <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/60 group-hover:ring-[3px] transition-all shadow-md">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/60 group-hover:ring-[3px] transition-all shadow-md flex-shrink-0">
                   <Image
                     src="/images/history-legends-logo.jpg"
                     alt="History Legends"
@@ -37,22 +37,22 @@ export default function Hero() {
                     className="object-cover"
                   />
                 </div>
-                <span className="text-base font-semibold text-text-primary group-hover:text-primary transition-colors">
+                <span className="text-base font-semibold text-text-primary group-hover:text-primary transition-colors whitespace-nowrap">
                   History Legends
                 </span>
               </a>
 
-              <span className="text-text-muted hidden sm:inline">and</span>
+              <span className="text-text-muted text-sm py-1 sm:py-0 sm:px-2">and</span>
 
               {/* Middle East Observer */}
               <a 
                 href="https://x.com/ME_Observer_" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 group transition-all hover:scale-105 active:scale-95"
+                className="flex items-center gap-3 group transition-all hover:scale-105 active:scale-95 sm:flex-shrink-0"
                 title="Middle East Observer on X"
               >
-                <div className="relative w-14 h-14 rounded-lg overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/60 group-hover:ring-[3px] transition-all shadow-md">
+                <div className="relative w-14 h-14 rounded-lg overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/60 group-hover:ring-[3px] transition-all shadow-md flex-shrink-0">
                   <Image
                     src="/images/middle-east-observer-logo.jpg"
                     alt="Middle East Observer"
@@ -60,7 +60,7 @@ export default function Hero() {
                     className="object-cover"
                   />
                 </div>
-                <span className="text-base font-semibold text-text-primary group-hover:text-primary transition-colors">
+                <span className="text-base font-semibold text-text-primary group-hover:text-primary transition-colors whitespace-nowrap">
                   Middle East Observer
                 </span>
               </a>

@@ -102,9 +102,9 @@ export default function MethodologyPage() {
       <Header />
       
       {/* Header Banner Ad */}
-      <div className="container">
+      {/* <div className="container">
         <AdBanner size="header" adSlot="1234567890" />
-      </div>
+      </div> */}
 
       <div className="container">
         {/* Hero Section */}

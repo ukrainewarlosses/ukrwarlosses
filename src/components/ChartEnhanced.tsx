@@ -519,7 +519,7 @@ export default function ChartEnhanced() {
   const [chartData, setChartData] = useState<ChartData[]>([]);
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const [timePeriod, setTimePeriod] = useState<TimePeriod>('daily');
+  const [timePeriod, setTimePeriod] = useState<TimePeriod>('monthly');
   const [selectedRange, setSelectedRange] = useState<any>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState<number | null>(null);
@@ -1774,14 +1774,14 @@ export default function ChartEnhanced() {
       <div className="flex justify-center mb-4">
         <div className="flex bg-card-bg rounded-lg p-1 border border-border-color">
           <button
-            onClick={() => setTimePeriod('daily')}
+            onClick={() => setTimePeriod('monthly')}
             className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-              timePeriod === 'daily'
+              timePeriod === 'monthly'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
             }`}
           >
-            Daily
+            Monthly
           </button>
           <button
             onClick={() => setTimePeriod('weekly')}
@@ -1794,14 +1794,14 @@ export default function ChartEnhanced() {
             Weekly
           </button>
           <button
-            onClick={() => setTimePeriod('monthly')}
+            onClick={() => setTimePeriod('daily')}
             className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-              timePeriod === 'monthly'
+              timePeriod === 'daily'
                 ? 'bg-primary text-background'
                 : 'text-text-secondary hover:text-text-primary'
             }`}
           >
-            Monthly
+            Daily
           </button>
         </div>
       </div>
@@ -2019,53 +2019,75 @@ export default function ChartEnhanced() {
               </div>
             </div>
             
-            {/* Quick Range Buttons */}
+            {/* Quick Range Buttons - By Year */}
             <div className="flex flex-wrap gap-2 mt-4">
-              <button
-                onClick={() => {
-                  setSliderStart(0);
-                  setSliderEnd(25);
-                }}
-                className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
-              >
-                First 25%
-              </button>
-              <button
-                onClick={() => {
-                  setSliderStart(25);
-                  setSliderEnd(50);
-                }}
-                className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
-              >
-                25-50%
-              </button>
-              <button
-                onClick={() => {
-                  setSliderStart(50);
-                  setSliderEnd(75);
-                }}
-                className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
-              >
-                50-75%
-              </button>
-              <button
-                onClick={() => {
-                  setSliderStart(75);
-                  setSliderEnd(100);
-                }}
-                className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
-              >
-                Last 25%
-              </button>
-              <button
-                onClick={() => {
-                  setSliderStart(0);
-                  setSliderEnd(100);
-                }}
-                className="px-3 py-1.5 text-xs bg-primary text-background rounded hover:bg-primary/80 transition-colors font-medium"
-              >
-                Full Range
-              </button>
+              {(() => {
+                // Helper function to get year range
+                const getYearRange = (year: number) => {
+                  const yearStart = `${year}-01-01`;
+                  const yearEnd = `${year}-12-31`;
+                  
+                  // Find first data point in this year
+                  const startIndex = chartData.findIndex(d => {
+                    const dateYear = new Date(d.date).getFullYear();
+                    return dateYear >= year;
+                  });
+                  
+                  // Find first data point in next year (or end of data)
+                  const endIndex = chartData.findIndex((d, idx) => {
+                    if (idx <= startIndex) return false;
+                    const dateYear = new Date(d.date).getFullYear();
+                    return dateYear > year;
+                  });
+                  
+                  if (startIndex === -1) return null;
+                  
+                  // Use the last index of the year, or the last data point if no next year found
+                  const actualEndIndex = endIndex === -1 ? chartData.length - 1 : endIndex - 1;
+                  
+                  // Ensure we have valid indices
+                  if (startIndex > actualEndIndex) return null;
+                  
+                  return {
+                    startPercent: (startIndex / chartData.length) * 100,
+                    endPercent: ((actualEndIndex + 1) / chartData.length) * 100
+                  };
+                };
+                
+                const years = [2022, 2023, 2024, 2025];
+                const yearRanges = years.map(year => ({
+                  year,
+                  range: getYearRange(year)
+                })).filter(item => item.range !== null);
+                
+                return (
+                  <>
+                    {yearRanges.map(({ year, range }) => (
+                      <button
+                        key={year}
+                        onClick={() => {
+                          if (range) {
+                            setSliderStart(range.startPercent);
+                            setSliderEnd(range.endPercent);
+                          }
+                        }}
+                        className="px-3 py-1.5 text-xs bg-background border border-border-color rounded hover:bg-gray-700 transition-colors"
+                      >
+                        {year}
+                      </button>
+                    ))}
+                    <button
+                      onClick={() => {
+                        setSliderStart(0);
+                        setSliderEnd(100);
+                      }}
+                      className="px-3 py-1.5 text-xs bg-primary text-background rounded hover:bg-primary/80 transition-colors font-medium"
+                    >
+                      All Years
+                    </button>
+                  </>
+                );
+              })()}
             </div>
           </div>
         </div>

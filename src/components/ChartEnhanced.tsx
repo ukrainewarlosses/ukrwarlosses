@@ -297,7 +297,8 @@ const MobileChartMemo = memo(function MobileChart({
         )}
       </svg>
 
-      <div className="mt-3 flex flex-col items-center gap-2">
+      {/* Hide buttons on mobile since we have the Date Range Slider */}
+      <div className="mt-3 flex flex-col items-center gap-2 hidden md:flex">
         {!isSettingRange ? (
           <button
             onClick={() => {
@@ -2183,7 +2184,7 @@ export default function ChartEnhanced() {
 
       {/* Chart */}
       <div 
-        className="rounded-lg border border-border-color p-2 md:p-4 relative" 
+        className="rounded-lg border border-border-color p-2 md:p-4 relative flex flex-col" 
         style={{ backgroundColor: '#1B1B1C' }}
         onMouseLeave={handleChartContainerMouseLeave}
       >
@@ -2222,14 +2223,16 @@ export default function ChartEnhanced() {
           </div>
         )}
         {isMobile ? (
-          <MobileChartMemo
-            displayData={selectedRange ? selectedRange.data : chartData}
-            timePeriod={timePeriod}
-            showUkraine={showUkraine}
-            showRussia={showRussia}
-            setHoverInfo={setHoverInfo}
-            setSelectedRange={setSelectedRange}
-          />
+          <div className="order-1">
+            <MobileChartMemo
+              displayData={selectedRange ? selectedRange.data : chartData}
+              timePeriod={timePeriod}
+              showUkraine={showUkraine}
+              showRussia={showRussia}
+              setHoverInfo={setHoverInfo}
+              setSelectedRange={setSelectedRange}
+            />
+          </div>
         ) : (
           <DesktopChartMemo
             fullData={chartData}
@@ -2247,7 +2250,7 @@ export default function ChartEnhanced() {
 
         {/* Date Range Slider for All Time Periods */}
         {chartData.length > 0 && (
-          <div className="mt-4 p-4 bg-card-bg border border-border-color rounded-lg">
+          <div className={`${isMobile ? 'order-2' : ''} mt-4 p-4 bg-card-bg border border-border-color rounded-lg`}>
             <div className="mb-3">
               <label className="text-text-primary text-base font-medium mb-1 block">
                 Navigate {timePeriod === 'daily' ? 'Daily' : timePeriod === 'weekly' ? 'Weekly' : 'Monthly'} Data Range
@@ -2650,25 +2653,27 @@ export default function ChartEnhanced() {
           </div>
         )}
         
-        {/* Dynamic Data Display - Inside chart component, under the chart */}
-        <HoverInfoDisplay 
-          info={hoverInfo}
-          timePeriod={timePeriod}
-          showUkraine={showUkraine}
-          showRussia={showRussia}
-          isMobile={isMobile}
-          selectedRange={selectedRange}
-          chartData={chartData}
-          handleManualDateChange={handleManualDateChange}
-          handleResetRange={handleResetRange}
-          convertMonthDisplayToInput={convertMonthDisplayToInput}
-          convertMonthInputToDisplay={convertMonthInputToDisplay}
-          activeFilter={activeFilter}
-          onClose={!isMobile ? () => {
-            setIsHoverInfoPinned(false);
-            setHoverInfo(null);
-          } : undefined}
-        />
+        {/* Dynamic Data Display - Inside chart component, under the chart and range slider */}
+        <div className={isMobile ? 'order-3' : ''}>
+          <HoverInfoDisplay 
+            info={hoverInfo}
+            timePeriod={timePeriod}
+            showUkraine={showUkraine}
+            showRussia={showRussia}
+            isMobile={isMobile}
+            selectedRange={selectedRange}
+            chartData={chartData}
+            handleManualDateChange={handleManualDateChange}
+            handleResetRange={handleResetRange}
+            convertMonthDisplayToInput={convertMonthDisplayToInput}
+            convertMonthInputToDisplay={convertMonthInputToDisplay}
+            activeFilter={activeFilter}
+            onClose={!isMobile ? () => {
+              setIsHoverInfoPinned(false);
+              setHoverInfo(null);
+            } : undefined}
+          />
+        </div>
       </div>
 
     </div>

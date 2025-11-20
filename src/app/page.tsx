@@ -6,8 +6,12 @@ import StatsCard from '@/components/StatsCard';
 import AdBanner from '@/components/AdBanner';
 import SourceCard from '@/components/SourceCard';
 import ChartEnhanced from '@/components/ChartEnhanced';
+import ForeignMercenaries from '@/components/ForeignMercenaries';
 import { hardcodedChartData } from '@/data/hardcoded-chart-data';
 import { hardcodedCasualtyData } from '@/data/hardcoded-casualty-totals';
+import { translateCountry } from '@/lib/country-mapping';
+import fs from 'fs/promises';
+import path from 'path';
 
 export const metadata: Metadata = {
   title: 'Ukraine-Russia War Personnel Losses Tracker | Real-Time Casualty Data & Statistics',
@@ -76,7 +80,74 @@ export const metadata: Metadata = {
 // Use static rendering for Cloudflare Pages static export
 export const dynamic = 'force-static';
 
-export default function HomePage() {
+async function loadMercenaryData() {
+  try {
+    // Load Russian foreign fighters data
+    const russiaPath = path.join(process.cwd(), 'src', 'data', 'russia', 'russian_foreign_fighters.json');
+    const russiaContent = await fs.readFile(russiaPath, 'utf-8');
+    const russiaData = JSON.parse(russiaContent);
+    
+    // Load Ukrainian mercenaries data
+    const ukrainePath = path.join(process.cwd(), 'src', 'data', 'ukraine', 'mercenaries.json');
+    const ukraineContent = await fs.readFile(ukrainePath, 'utf-8');
+    const ukraineData = JSON.parse(ukraineContent);
+
+    // Process Russian data - group by regionDisplay (country)
+    const russiaByCountry = new Map<string, number>();
+    russiaData.forEach((fighter: any) => {
+      const country = fighter.regionDisplay || fighter.region || 'Unknown';
+      russiaByCountry.set(country, (russiaByCountry.get(country) || 0) + 1);
+    });
+
+    // Process Ukrainian data - group by citizenship
+    const ukraineByCountry = new Map<string, number>();
+    ukraineData.forEach((mercenary: any) => {
+      const country = mercenary.citizenship || 'Unknown';
+      ukraineByCountry.set(country, (ukraineByCountry.get(country) || 0) + 1);
+    });
+
+    // Sort by count descending and translate to English with country codes
+    const russiaSorted = Array.from(russiaByCountry.entries())
+      .map(([country, count]) => {
+        const translated = translateCountry(country);
+        return { 
+          name: translated.name, 
+          code: translated.code, 
+          count 
+        };
+      })
+      .sort((a, b) => b.count - a.count);
+
+    const ukraineSorted = Array.from(ukraineByCountry.entries())
+      .map(([country, count]) => {
+        const translated = translateCountry(country);
+        return { 
+          name: translated.name, 
+          code: translated.code, 
+          count 
+        };
+      })
+      .sort((a, b) => b.count - a.count);
+
+    return {
+      russia: {
+        total: russiaData.length,
+        byCountry: russiaSorted
+      },
+      ukraine: {
+        total: ukraineData.length,
+        byCountry: ukraineSorted
+      }
+    };
+  } catch (error) {
+    console.error('Error loading mercenary data:', error);
+    return null;
+  }
+}
+
+export default async function HomePage() {
+  // Load mercenary data
+  const mercenaryData = await loadMercenaryData();
   // Use hardcoded casualty totals (most accurate source)
   const ukraineTotal = hardcodedCasualtyData.ukraine.total_losses;
   const ukraineKilled = hardcodedCasualtyData.ukraine.dead || 0;
@@ -207,6 +278,9 @@ export default function HomePage() {
 
         {/* Mobile Sidebar Ad */}
         {/* <AdBanner size="mobile" adSlot="1122334455" /> */}
+
+        {/* Foreign Mercenaries Section */}
+        {mercenaryData && <ForeignMercenaries data={mercenaryData} />}
 
         {/* Data Sources */}
         <section id="sources" className="bg-card-bg border border-border-color rounded-lg p-8 my-8">

@@ -76,6 +76,30 @@ body {
   flex-shrink: 0;
 }
 
+/* Styled scrollbar for country lists */
+.country-list-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #5a5a5a #2d2d2d;
+}
+
+.country-list-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.country-list-scroll::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 4px;
+}
+
+.country-list-scroll::-webkit-scrollbar-thumb {
+  background: #5a5a5a;
+  border-radius: 4px;
+}
+
+.country-list-scroll::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a;
+}
+
 /* Ad placeholder styling for development */
 .ad-placeholder {
   background: #333333;

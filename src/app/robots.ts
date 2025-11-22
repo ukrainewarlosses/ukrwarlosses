@@ -8,15 +8,16 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/scrape', '/api/test-*'],
+        disallow: ['/api/', '/cache/', '/_next/'],
+        crawlDelay: 1,
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/scrape'],
+        disallow: ['/api/'],
       },
     ],
-               sitemap: 'https://ukrainewarlosses.org/sitemap.xml',
-           host: 'https://ukrainewarlosses.org',
+    sitemap: 'https://ukrainewarlosses.org/sitemap.xml',
+    host: 'https://ukrainewarlosses.org',
   };
 }

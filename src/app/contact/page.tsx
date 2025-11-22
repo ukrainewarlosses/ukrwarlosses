@@ -2,10 +2,11 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AdBanner from '@/components/AdBanner';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Contact - Ukraine-Russia War Personnel Losses Tracker',
-  description: 'Contact information for Ukraine War Losses Tracker. Get in touch with questions, feedback, or data inquiries about the Ukraine-Russia war casualty tracking project.',
+  description: 'Contact Ukraine War Losses Tracker for data inquiries, methodology questions, or collaboration opportunities. Independent casualty tracking project with established media partnerships.',
   keywords: 'ukraine war losses contact, russia war casualties contact, war tracking contact, historylegends, history legends',
   openGraph: {
     title: 'Contact - Ukraine-Russia War Personnel Losses Tracker',
@@ -77,6 +78,10 @@ export default function ContactPage() {
       <Header />
       
       <div className="container">
+        <Breadcrumb items={[
+          { name: 'Home', href: '/' },
+          { name: 'Contact', href: '/contact' }
+        ]} />
         {/* Hero Section */}
         <section className="py-12">
           <div className="text-center mb-8">

@@ -2,10 +2,11 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AdBanner from '@/components/AdBanner';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Methodology - Ukraine-Russia War Personnel Losses Tracking | Data Sources & Analysis',
-  description: 'Data sourced from svo.rf.gd and lostarmour.info. Learn about their data collection methods, verification processes, and statistical analysis techniques for tracking Ukraine-Russia war casualties.',
+  description: 'Transparent data methodology: We aggregate from svo.rf.gd and lostarmour.info memorial databases. Sample 500+ pages monthly, scale to official totals. Learn our verification and statistical analysis processes.',
   keywords: 'ukraine russia war methodology, casualty tracking methodology, military losses data sources, war casualties verification, ukraine war statistics methodology, russia war losses methodology, conflict data collection, military personnel tracking, historylegends, history legends',
   openGraph: {
     title: 'Methodology - Ukraine-Russia War Personnel Losses Tracking',
@@ -39,6 +40,46 @@ export const metadata: Metadata = {
 };
 
 export default function MethodologyPage() {
+  // FAQ schema for methodology page
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How accurate is this casualty data?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Our data comes from verified memorial databases (svo.rf.gd and lostarmour.info) that track confirmed casualties. We sample 500+ memorial pages monthly and scale to match official totals. Numbers represent confirmed minimum losses.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How often is the data updated?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Data updates are dependent on our sources capabilities to find the new data. The updates are made approximately one time per month, but it's possible to last longer depending on the sources capabilities."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What are the data sources?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Ukrainian casualties: ualosses.org memorial database with individual death dates. Russian casualties: svo.rf.gd verified named personnel list. Both sources independently verify casualties before listing.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: "What's the difference between confirmed and unconfirmed casualties?",
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Confirmed casualties have specific known death dates. Unconfirmed entries have estimated dates (shown in parentheses on memorial pages) due to delayed reporting or incomplete information.'
+        }
+      }
+    ]
+  };
+
   // Structured data for methodology page
   const structuredData = {
     '@context': 'https://schema.org',
@@ -87,6 +128,12 @@ export default function MethodologyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData)
         }}
       />
@@ -98,6 +145,10 @@ export default function MethodologyPage() {
       </div> */}
 
       <div className="container">
+        <Breadcrumb items={[
+          { name: 'Home', href: '/' },
+          { name: 'Methodology', href: '/methodology' }
+        ]} />
         {/* Hero Section */}
         <section className="py-12">
           <div className="text-center mb-8">
@@ -326,6 +377,50 @@ export default function MethodologyPage() {
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="bg-card-bg border border-border-color rounded-lg p-6 md:p-8 mb-8">
+          <h2 className="text-2xl font-bold text-text-primary mb-6">
+            ❓ Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold text-primary mb-2">
+                How accurate is this casualty data?
+              </h3>
+              <p className="text-text-light leading-relaxed">
+                Our data comes from verified memorial databases (svo.rf.gd and lostarmour.info) that track confirmed casualties. We sample 500+ memorial pages monthly and scale to match official totals. Numbers represent confirmed minimum losses.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-primary mb-2">
+                How often is the data updated?
+              </h3>
+              <p className="text-text-light leading-relaxed">
+                Data updates are dependent on our sources capabilities to find the new data. The updates are made approximately one time per month, but it's possible to last longer depending on the sources capabilities.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-primary mb-2">
+                What are the data sources?
+              </h3>
+              <p className="text-text-light leading-relaxed">
+                Ukrainian casualties: ualosses.org memorial database with individual death dates. Russian casualties: svo.rf.gd verified named personnel list. Both sources independently verify casualties before listing.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-primary mb-2">
+                What's the difference between confirmed and unconfirmed casualties?
+              </h3>
+              <p className="text-text-light leading-relaxed">
+                Confirmed casualties have specific known death dates. Unconfirmed entries have estimated dates (shown in parentheses on memorial pages) due to delayed reporting or incomplete information.
+              </p>
             </div>
           </div>
         </section>

@@ -15,7 +15,7 @@ import path from 'path';
 
 export const metadata: Metadata = {
   title: 'Ukraine-Russia War Personnel Losses Tracker | Real-Time Casualty Data & Statistics',
-  description: 'Comprehensive real-time tracking of Ukraine-Russia war personnel casualties. Get accurate statistics, historical trends, and verified data from official sources. Updated daily with advanced web scraping technology.',
+  description: 'Track verified Ukraine-Russia war casualties: 154,563+ Ukrainian losses (dead, missing, POWs) and 122,670+ Russian KIA from memorial databases. Updated monthly with historical trends since February 2022.',
      keywords: 'ukraine russia war casualties, ukraine war losses, russia war losses, military casualties tracker, ukraine russia conflict statistics, war casualties data, ukraine military losses, russia military losses, conflict casualty tracking, ukraine war statistics, russia war statistics, military personnel losses, war data analysis, ukraine russia war tracker, historylegends, history legends',
   authors: [{ name: 'Ukraine War Losses Team' }],
   creator: 'Ukraine War Losses Tracker',
@@ -213,12 +213,32 @@ export default async function HomePage() {
     }
   };
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Ukraine War Losses Tracker',
+    url: 'https://ukrainewarlosses.org',
+    description: 'Independent tracker of Ukraine-Russia war personnel casualties',
+    foundingDate: '2024',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'General Inquiry',
+      url: 'https://ukrainewarlosses.org/contact'
+    }
+  };
+
   return (
     <main className="min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema)
         }}
       />
       <Header />

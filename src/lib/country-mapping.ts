@@ -4,6 +4,7 @@ export const countryMapping: Record<string, { name: string; code: string }> = {
   'Непал': { name: 'Nepal', code: 'NP' },
   'Узбекистан': { name: 'Uzbekistan', code: 'UZ' },
   'Таджикистан': { name: 'Tajikistan', code: 'TJ' },
+  'Туркменистан': { name: 'Turkmenistan', code: 'TM' },
   'Кыргызстан': { name: 'Kyrgyzstan', code: 'KG' },
   'Казахстан': { name: 'Kazakhstan', code: 'KZ' },
   'Азербайджан': { name: 'Azerbaijan', code: 'AZ' },

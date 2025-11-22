@@ -1,7 +1,12 @@
 import UpdateIndicator from './UpdateIndicator';
 import Image from 'next/image';
 
-export default function Hero() {
+interface HeroProps {
+  russiaLastDate?: string | null;
+  ukraineLastDate?: string | null;
+}
+
+export default function Hero({ russiaLastDate, ukraineLastDate }: HeroProps) {
   return (
     <section className="bg-card-bg py-8 pb-4 border-b border-border-color">
       <div className="container">
@@ -13,7 +18,7 @@ export default function Hero() {
             Real-time tracking of military personnel casualties in the Ukraine-Russia conflict, based on verified open sources, obituaries, and official reports.
           </p>
           
-          <UpdateIndicator />
+          <UpdateIndicator russiaLastDate={russiaLastDate} ukraineLastDate={ukraineLastDate} />
           
           {/* Collaboration Section */}
           <div className="mt-6 pt-6 border-t border-border-color/30">

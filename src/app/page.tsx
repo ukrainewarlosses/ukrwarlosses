@@ -156,6 +156,23 @@ export default async function HomePage() {
   const russiaKilled = russiaTotal; // Russian missing are counted as dead
   const russiaMissing = 0; // Russian missing are counted as dead
   
+  // Find last date with deaths for Russia and Ukraine
+  const dailyData = hardcodedChartData.daily;
+  let russiaLastDate: string | null = null;
+  let ukraineLastDate: string | null = null;
+  
+  // Iterate backwards to find the last date with deaths
+  for (let i = dailyData.length - 1; i >= 0; i--) {
+    const entry = dailyData[i];
+    if (!russiaLastDate && entry.russiaDeaths > 0) {
+      russiaLastDate = entry.isoDate;
+    }
+    if (!ukraineLastDate && entry.ukraineDeaths > 0) {
+      ukraineLastDate = entry.isoDate;
+    }
+    if (russiaLastDate && ukraineLastDate) break;
+  }
+  
   // Calculate ratio with lowest number always 1 on left
   const calculateRatio = (left: number, right: number): { left: number; right: number } => {
     if (left === 0 || right === 0) return { left: 0, right: 0 };
@@ -221,7 +238,7 @@ export default async function HomePage() {
       </div> */}
 
       <div className="container">
-        <Hero />
+        <Hero russiaLastDate={russiaLastDate} ukraineLastDate={ukraineLastDate} />
 
         {/* Killed and Missing Personnel Overview */}
         <section id="overview" className="py-8">

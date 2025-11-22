@@ -100,6 +100,40 @@ body {
   background: #6a6a6a;
 }
 
+/* Make scrollbar more visible on mobile */
+@media (max-width: 767px) {
+  .country-list-scroll {
+    scrollbar-width: auto; /* Thicker scrollbar on mobile */
+    scrollbar-color: #7a7a7a #2d2d2d;
+  }
+
+  .country-list-scroll::-webkit-scrollbar {
+    width: 12px; /* Wider scrollbar on mobile */
+  }
+
+  .country-list-scroll::-webkit-scrollbar-thumb {
+    background: #7a7a7a; /* Lighter color for better visibility */
+    border: 2px solid #2d2d2d; /* Add border for better visibility */
+  }
+
+  .country-list-scroll::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Darker track for contrast */
+  }
+}
+
+/* Fade gradient at bottom to indicate scrollable content */
+.country-list-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(27, 27, 27, 0.95));
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 /* Ad placeholder styling for development */
 .ad-placeholder {
   background: #333333;

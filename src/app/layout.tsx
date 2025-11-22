@@ -23,16 +23,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ukraine-Russia War Personnel Losses Tracker',
     description: 'Real-time tracking of Ukraine-Russia war personnel casualties with verified data, historical trends, and comprehensive statistics.',
-    url: 'https://ukrainewarlosses.com',
+    url: 'https://ukrainewarlosses.org',
     siteName: 'Ukraine War Losses Tracker',
-    images: [
-      {
-        url: '/og-main.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ukraine-Russia War Casualties Tracker',
-      },
-    ],
     locale: 'en_US',
     type: 'website',
   },
@@ -41,7 +33,6 @@ export const metadata: Metadata = {
     title: 'Ukraine-Russia War Personnel Losses Tracker',
     description: 'Real-time tracking of Ukraine-Russia war personnel casualties with verified data and comprehensive statistics.',
     creator: '@ukrainewarlosses',
-    images: ['/og-main.jpg'],
   },
   robots: {
     index: true,

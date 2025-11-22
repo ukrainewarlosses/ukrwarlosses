@@ -12,20 +12,11 @@ export const metadata: Metadata = {
     description: 'Data sourced from svo.rf.gd and lostarmour.info. Learn about their data collection methods, verification processes, and statistical analysis techniques.',
     type: 'website',
     url: 'https://ukrainewarlosses.org/methodology',
-    images: [
-      {
-        url: '/og-methodology.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ukraine-Russia War Methodology'
-      }
-    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Methodology - Ukraine-Russia War Personnel Losses Tracking',
     description: 'Data sourced from svo.rf.gd and lostarmour.info. Learn about their methodology.',
-    images: ['/og-methodology.jpg']
   },
   alternates: {
     canonical: 'https://ukrainewarlosses.org/methodology'

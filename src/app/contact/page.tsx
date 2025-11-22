@@ -12,20 +12,11 @@ export const metadata: Metadata = {
     description: 'Contact information for Ukraine War Losses Tracker. Get in touch with questions, feedback, or data inquiries.',
     type: 'website',
     url: 'https://ukrainewarlosses.org/contact',
-    images: [
-      {
-        url: '/og-contact.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ukraine-Russia War Contact'
-      }
-    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact - Ukraine-Russia War Personnel Losses Tracker',
     description: 'Contact information for Ukraine War Losses Tracker.',
-    images: ['/og-contact.jpg']
   },
   alternates: {
     canonical: 'https://ukrainewarlosses.org/contact'
